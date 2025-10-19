@@ -14,7 +14,7 @@ parts:
       - file: 01-python/w1-python-basics.ipynb
       - file: 01-python/w1-python-datatypes.ipynb
       - file: 01-python/w1-python-basicIO.ipynb
-    #
+    
     #  - file: 01-python/w2-python-advanced-datatypes.ipynb
    
    #   - file: 01-python/w2-python-control-flow.ipynb
