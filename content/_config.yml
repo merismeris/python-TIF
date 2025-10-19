@@ -21,13 +21,14 @@ latex:
 repository:
   url: https://github.com/merismeris/python-TIF
   path_to_book: content  # Optional path to your book, relative to the repository root
-  branch: main  # Which branch of the repository should be used when creating links (optional)
+  branch: mi-cambio  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_issues_button: true
   use_repository_button: true
+  baseurl: /python-TIF/
   extra_footer: |
     <p>
     &copy; 2023-2025; CC-BY-NC-SA 4.0
