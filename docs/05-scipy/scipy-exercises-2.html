@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=359afcf4" />
@@ -476,8 +476,8 @@ document.write(`
 <section id="q1-condition-number">
 <h2>Q1: Condition number<a class="headerlink" href="#q1-condition-number" title="Link to this heading">#</a></h2>
 <p>For a linear system, <span class="math notranslate nohighlight">\({\bf A x} = {\bf b}\)</span>, we can only solve for <span class="math notranslate nohighlight">\(x\)</span> if the determinant of the matrix <span class="math notranslate nohighlight">\({\bf A}\)</span> is non-zero.  If the determinant is zero, then we call the matrix <em>singular</em>.  The <em>condition number</em> of a matrix is a measure of how close we are to being singular.  The formal definition is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e7173438-11b9-45c6-a483-1f5bf7a70ad5">
-<span class="eqno">()<a class="headerlink" href="#equation-e7173438-11b9-45c6-a483-1f5bf7a70ad5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f9a73ddd-15c5-472c-bb00-6cfc42caad0f">
+<span class="eqno">()<a class="headerlink" href="#equation-f9a73ddd-15c5-472c-bb00-6cfc42caad0f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \mathrm{cond}({\bf A}) = \| {\bf A}\| \| {\bf A}^{-1} \|
 \end{equation}\]</div>
 <p>But we can think of it as a measure of how much <span class="math notranslate nohighlight">\({\bf x}\)</span> would change due to a small change in <span class="math notranslate nohighlight">\({\bf b}\)</span>.  A large condition number means that our solution for <span class="math notranslate nohighlight">\({\bf x}\)</span> could be inaccurate.</p>
@@ -508,21 +508,21 @@ document.write(`
 <section id="q2-noisy-signal">
 <h2>Q2: Noisy signal<a class="headerlink" href="#q2-noisy-signal" title="Link to this heading">#</a></h2>
 <p>A convolution is defined as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ad08628e-21ce-45e9-bcb3-3d9ca1561da4">
-<span class="eqno">()<a class="headerlink" href="#equation-ad08628e-21ce-45e9-bcb3-3d9ca1561da4" title="Permalink to this equation">#</a></span>\[\begin{equation}                                                                           
+<div class="amsmath math notranslate nohighlight" id="equation-45fdcfd0-1e16-4d44-9821-9dd29b96fc15">
+<span class="eqno">()<a class="headerlink" href="#equation-45fdcfd0-1e16-4d44-9821-9dd29b96fc15" title="Permalink to this equation">#</a></span>\[\begin{equation}                                                                           
   (f \star g)(t) \equiv \int_{-\infty}^{\infty} f(\tau) g(t - \tau) d\tau                   
 \end{equation}                                                                             \]</div>
 <p>It is easy to compute this with FFTs, via the <a class="reference external" href="https://en.wikipedia.org/wiki/Convolution_theorem">convolution theorem</a>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e8b3a65d-b070-46ac-9d2d-b3921992b504">
-<span class="eqno">()<a class="headerlink" href="#equation-e8b3a65d-b070-46ac-9d2d-b3921992b504" title="Permalink to this equation">#</a></span>\[\begin{equation}                                         
+<div class="amsmath math notranslate nohighlight" id="equation-90ae7aca-5967-4129-8f30-691974b8a204">
+<span class="eqno">()<a class="headerlink" href="#equation-90ae7aca-5967-4129-8f30-691974b8a204" title="Permalink to this equation">#</a></span>\[\begin{equation}                                         
   \mathcal{F}\{f \star g\} = \mathcal{F}\{f\} \, \mathcal{F}\{g\}                                          
 \end{equation}                                         \]</div>
 <p>That is the Fourier transform of the convolution of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> is simply
 the product of the individual transforms of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span>.  This allows us
 to compute the convolution via multiplication in Fourier space and then take
 the inverse transform, <span class="math notranslate nohighlight">\(\mathcal{F}^{-1}\{\}\)</span>, to recover the convolution in real space:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fd082ff2-e58b-495e-af91-1a2a5654bef8">
-<span class="eqno">()<a class="headerlink" href="#equation-fd082ff2-e58b-495e-af91-1a2a5654bef8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5f1f183b-0a7c-4f3b-9749-c54dcce9ac82">
+<span class="eqno">()<a class="headerlink" href="#equation-5f1f183b-0a7c-4f3b-9749-c54dcce9ac82" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f \star g = \mathcal{F}^{-1}\{ \mathcal{F}\{f\} \, \mathcal{F}\{g\}\}
 \end{equation}\]</div>
 <p>A common use of a convolution is to smooth noisy data, for example by convolving noisy data with a Gaussian.  We’ll do that here.</p>
@@ -553,10 +553,10 @@ f \star g = \mathcal{F}^{-1}\{ \mathcal{F}\{f\} \, \mathcal{F}\{g\}\}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x123f271f0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1212131f0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/1ef0b59af09ed75c1b5a45338f30f74aa7d8ad252e953985da94978806ab92ca.png" src="../_images/1ef0b59af09ed75c1b5a45338f30f74aa7d8ad252e953985da94978806ab92ca.png" />
+<img alt="../_images/58519547dee672fc97eb160f695c40e2957ae945fc2174f644c805d428546aff.png" src="../_images/58519547dee672fc97eb160f695c40e2957ae945fc2174f644c805d428546aff.png" />
 </div>
 </div>
 <p>SciPy provides a convolution function <code class="docutils literal notranslate"><span class="pre">scipy.signal.convolve()</span></code> that can do the convolution for us directly.  To smooth the data, we want to use a Gaussian, which can be produced by <code class="docutils literal notranslate"><span class="pre">scipy.signal.gaussian()</span></code>.</p>

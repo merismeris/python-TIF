@@ -28,6 +28,7 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  use_baseurl: true
   baseurl: /python-TIF/
   extra_footer: |
     <p>
@@ -41,6 +42,7 @@ sphinx:
     nb_execution_timeout: 300
 
 launch_buttons:
+   thebe: false
    binderhub_url: "https://mybinder.org"
    colab_url: "https://colab.research.google.com"
 
