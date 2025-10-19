@@ -1,0 +1,1315 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tipos de dato básicos y operadores en Python &#8212; Introducción a Python. Asignatura Técnicas Informáticas en Física</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=359afcf4" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01-python/w1-python-datatypes';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Entrada y Salida de Datos" href="w1-python-basicIO.html" />
+    <link rel="prev" title="Primeros pasos con Python" href="w1-python-basics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../Introduction.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Introducción a Python. Asignatura Técnicas Informáticas en Física</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Introduction.html">
+                    ¿Qué es Pytnon?
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Conociendo Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Primer vistazo a Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using.html">Primeros pasos con VS Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conceptos básicos en Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="basics.html">Python Basics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="w1-python-basics.html">Primeros pasos con Python</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Tipos de dato básicos y operadores en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w1-python-basicIO.html">Entrada y Salida de Datos</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/merismeris/python-TIF/main?urlpath=tree/content/01-python/w1-python-datatypes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/merismeris/python-TIF/blob/main/content/01-python/w1-python-datatypes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/merismeris/python-TIF" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/merismeris/python-TIF/issues/new?title=Issue%20on%20page%20%2F01-python/w1-python-datatypes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/01-python/w1-python-datatypes.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tipos de dato básicos y operadores en Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enteros-int">Enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-de-punto-flotante-float-reales">Números de punto flotante (<code class="docutils literal notranslate"><span class="pre">float</span></code>) - Reales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-booleanos-bool">Valores booleanos (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-complejos-complex">Números complejos (<code class="docutils literal notranslate"><span class="pre">complex</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores">Operadores</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-aritmeticos">Operadores Aritméticos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacion">Operadores de Comparación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores lógicos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casting">Casting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-operaciones-mas-complejas">Otras operaciones más complejas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cadenas-strings">Cadenas (strings)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tipos-de-dato-basicos-y-operadores-en-python">
+<h1>Tipos de dato básicos y operadores en Python<a class="headerlink" href="#tipos-de-dato-basicos-y-operadores-en-python" title="Link to this heading">#</a></h1>
+<p>Python es un lenguaje de tipado dinámico: esto significa que no es
+necesario especificar de antemano qué tipo de dato se va a almacenar
+en una variable.  Sin embargo, existen algunos tipos de datos básicos
+con los que debemos familiarizarnos al usar el lenguaje.</p>
+<p>Estos tipos de datos básicos son:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code>: enteros (números sin parte decimal)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code>: números de punto flotante (números con parte decimal)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code>: valores booleanos (True o False)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">complex</span></code>: números complejos (números con parte real e imaginaria)
+Además de estos tipos de datos básicos, Python incluye varios tipos
+de datos compuestos, que permiten almacenar colecciones de datos:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list</span></code>: listas (colecciones ordenadas y mutables de elementos)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tuple</span></code>: tuplas (colecciones ordenadas e inmutables de elementos)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code>: cadenas de texto (se definen entre comillas simples o dobles)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dict</span></code>: diccionarios (colecciones de pares clave-valor)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set</span></code>: conjuntos (colecciones no ordenadas de elementos únicos)</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>El punto flotante es esencial para la ciencia computacional. Una
+gran introducción al punto flotante y sus limitaciones es: <a class="reference external" href="http://dl.acm.org/citation.cfm?id=103163">Lo que
+todo científico de la computación debería saber sobre la aritmética
+de punto flotante</a> por
+D. Goldberg.</p>
+</div>
+<p>Los tipos de datos básicos son contenedores de un solo valor.  Podemos
+realizar operaciones matemáticas y lógicas con estos tipos de datos.  Por
+ejemplo, podemos sumar dos enteros o comparar dos valores booleanos.</p>
+<p>Vamos a ver sus características principales y operaciones aritméticas básicas.</p>
+<section id="enteros-int">
+<h2>Enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>)<a class="headerlink" href="#enteros-int" title="Link to this heading">#</a></h2>
+<p>Loss enteros son números sin parte decimal.  Pueden ser positivos o negativos.  La mayoría de los lenguajes de programación usan una cantidad finita de memoria para almacenar un solo entero, pero en python se expandirá la cantidad de memoria según sea necesario para almacenar enteros grandes.
+Los operadores básicos, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, y <code class="docutils literal notranslate"><span class="pre">/</span></code> funcionan con enteros.  Además, python incluye el operador <code class="docutils literal notranslate"><span class="pre">//</span></code> para división entera (que redondea hacia abajo al entero más cercano) y el operador <code class="docutils literal notranslate"><span class="pre">%</span></code> para obtener el resto de una división.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">*-</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>En python, dividir dos enteros resulta en un número de punto flotante (real). Si se desea una división entera, se debe usar el operador <code class="docutils literal notranslate"><span class="pre">//</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">//</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python es un lenguaje de tipado dinámico: esto significa que no es necesario especificar de antemano qué tipo de dato se va a almacenar en una variable. Para inicializar una variable, se utiliza el operador <code class="docutils literal notranslate"><span class="pre">=</span></code> para asignarle un valor, como hemos visto en el capítulo anterior</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos realizar operaciones aritméticas con variables de tipo entero:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se pueden inicializar múltiples variables en una sola línea:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como hemos comentado, la función <code class="docutils literal notranslate"><span class="pre">type()</span></code> returns the data type of a variable</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>En otros lenguajes de programación, los enteros tienen un tamaño fijo. En estos lenguajes, si se intenta almacenar un entero que excede el tamaño máximo permitido, se produce un error de desbordamiento (<em>overflow</em>). En Python, los enteros pueden crecer en tamaño según sea necesario, lo que evita este problema.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">12345678901234567890123456789012345123456789012345678901234567890</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">bit_length</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12345678901234567890123456789012345123456789012345678901234567890
+213
+&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numeros-de-punto-flotante-float-reales">
+<h2>Números de punto flotante (<code class="docutils literal notranslate"><span class="pre">float</span></code>) - Reales<a class="headerlink" href="#numeros-de-punto-flotante-float-reales" title="Link to this heading">#</a></h2>
+<p>Los reales son números que pueden tener una parte decimal.   Los operadores básicos, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, y <code class="docutils literal notranslate"><span class="pre">/</span></code> funcionan con números reales. Podemos mezclar enteros y reales en operaciones aritméticas, y el resultado será un número real.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>No todos los números pueden ser representados en punto flotante.  Dado que hay infinitos números reales entre dos límites cualesquiera, pero estamos usando una cantidad finita de memoria, en una computadora tenemos que aproximar los números.  Existe un estándar IEEE para punto flotante que prácticamente todos los lenguajes y procesadores siguen. En python, los números de punto flotante se representan utilizando el estándar IEEE 754 de doble precisión, lo que significa que ocupan 64 bits de memoria.</p>
+<p>Esto significa que:</p>
+<ul class="simple">
+<li><p>no todos los números reales tendrán una representación exacta en punto flotante</p></li>
+<li><p>existe una precisión finita para los números – por debajo de esta perdemos el seguimiento de las diferencias (es el error de <em>redondeo</em>)</p></li>
+</ul>
+</div>
+<p>Consideremos esta expresión. Al ejecutarlo, ¿qué resultado esperamos?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">0.3</span><span class="o">/</span><span class="mf">0.1</span> <span class="o">-</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.440892098500626e-16
+</pre></div>
+</div>
+</div>
+</div>
+<p>¿Por qué ha ocurrido esto? El número 0.1 no puede representarse en binario de forma exacta.
+En nuestro print, usamos un especificador de formato (lo que está dentro de los <code class="docutils literal notranslate"><span class="pre">{}</span></code>) para pedir que se muestre más precisión:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:30.20}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        0.10000000000000000555
+</pre></div>
+</div>
+</div>
+</div>
+<p>Al preguntar por la precisión, vemos que solo se pueden almacenar números entre ciertos límites: 2.2e-308 y 1.8e+308.  Si se intenta almacenar un número fuera de estos límites, se produce un error de desbordamiento (<em>overflow</em>). Además, la precisión es de 2.22e-16, lo que significa que las diferencias menores a este valor no se pueden representar con precisión. Esto se conoce como machine epsilon.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">float_info</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sys.float_info(max=1.7976931348623157e+308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2.220446049250313e-16, radix=2, rounds=1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that this says that we can only store numbers between 2.2250738585072014e-308 and 1.7976931348623157e+308</p>
+<p>We also see that the precision is 2.220446049250313e-16 (this is commonly called <em>machine epsilon</em>).  To see this, consider adding a small number to 1.0.  We’ll use the equality operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>) to test if two numbers are equal:</p>
+<div class="admonition-ejercicio-rapido admonition">
+<p class="admonition-title">Ejercicio Rápido</p>
+<p>Define dos variables, <span class="math notranslate nohighlight">\(a = 1\)</span>, y <span class="math notranslate nohighlight">\(e = 10^{-16}\)</span>.
+Ahora define una tercera variable, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">e</span></code>
+Usamos el operador <code class="docutils literal notranslate"><span class="pre">==</span></code> de python para probar la igualdad. ¿Qué esperas que devuelva <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">==</span> <span class="pre">a</span></code>? ejecútalo y ve si coincide con tu suposición.
+¿Qué valor se muestra al imprimir <code class="docutils literal notranslate"><span class="pre">b</span></code> con 20 dígitos de precisión?</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">e</span><span class="o">=</span><span class="mf">1e-16</span>
+<span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">e</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">==</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:30.20}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+                           1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="valores-booleanos-bool">
+<h2>Valores booleanos (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)<a class="headerlink" href="#valores-booleanos-bool" title="Link to this heading">#</a></h2>
+<p>Los valores booleanos representan dos estados: verdadero (<code class="docutils literal notranslate"><span class="pre">True</span></code>) y falso (<code class="docutils literal notranslate"><span class="pre">False</span></code>).  En python, los valores booleanos son de tipo <code class="docutils literal notranslate"><span class="pre">bool</span></code>.  Podemos crear variables booleanas asignándoles los valores <code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code> directamente, o utilizando operadores de comparación.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Esto es True</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># Esto es False</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;bool&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los valores booleanos se almacenan utilizando un solo bit de memoria, donde <code class="docutils literal notranslate"><span class="pre">True</span></code> se representa como 1 y <code class="docutils literal notranslate"><span class="pre">False</span></code> como 0.</p>
+</section>
+<section id="numeros-complejos-complex">
+<h2>Números complejos (<code class="docutils literal notranslate"><span class="pre">complex</span></code>)<a class="headerlink" href="#numeros-complejos-complex" title="Link to this heading">#</a></h2>
+<p>Los números complejos tienen una parte real y una parte imaginaria.  En python, los números complejos se representan utilizando el tipo de dato <code class="docutils literal notranslate"><span class="pre">complex</span></code>.  Podemos crear números complejos utilizando la letra <code class="docutils literal notranslate"><span class="pre">j</span></code> para representar la unidad imaginaria.  Por ejemplo, <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4j</span></code> representa el número complejo con parte real 3 y parte imaginaria 4.</p>
+<p>Podemos realizar operaciones aritméticas con números complejos utilizando los operadores básicos <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, y <code class="docutils literal notranslate"><span class="pre">/</span></code>.  Python maneja automáticamente las operaciones con números complejos, siguiendo las reglas matemáticas correspondientes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="n">j</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="n">j</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>  <span class="c1"># Suma</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>  <span class="c1"># Multiplicación</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>  <span class="c1"># División</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Suma:&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplicación:&quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;División:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Suma: (4+2j)
+Multiplicación: (11-2j)
+División: (-1+2j)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los números complejos se almacenan utilizando dos números de punto flotante: uno para la parte real y otro para la parte imaginaria.  Por lo tanto, las limitaciones y precisiones discutidas anteriormente para los números de punto flotante también se aplican a las partes real e imaginaria de los números complejos.</p>
+</section>
+<section id="operadores">
+<h2>Operadores<a class="headerlink" href="#operadores" title="Link to this heading">#</a></h2>
+<p>Los operadores son ítems o símbolos que actúan sobre uno, dos o más operandos para realizar una determinada operación. Siempre producen un resultado. Hay varios tipos de operadores en Python, incluyendo:</p>
+<ul class="simple">
+<li><p>Aritméticos: <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code></p></li>
+<li><p>Comparación o relación: <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, `</p></li>
+<li><p>Lógicos: <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">is</span></code></p></li>
+<li><p>Asignación: <code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">+=</span></code>, <code class="docutils literal notranslate"><span class="pre">-=</span></code>, <code class="docutils literal notranslate"><span class="pre">*=</span></code>, <code class="docutils literal notranslate"><span class="pre">/=</span></code></p></li>
+<li><p>Bit a bit: <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">^</span></code>, <code class="docutils literal notranslate"><span class="pre">~</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></p></li>
+<li><p>Casting: <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code>, <code class="docutils literal notranslate"><span class="pre">bool()</span></code>, <code class="docutils literal notranslate"><span class="pre">complex()</span></code></p></li>
+<li><p>Operadores especiales (de pertenencia e identidad): <code class="docutils literal notranslate"><span class="pre">in</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>, <code class="docutils literal notranslate"><span class="pre">is</span></code>, <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> – En el próximo tema</p></li>
+</ul>
+<section id="operadores-aritmeticos">
+<h3>Operadores Aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Link to this heading">#</a></h3>
+<p>Los operadores aritméticos se utilizan para realizar operaciones matemáticas básicas. Aquí hay una lista de los operadores aritméticos más comunes en Python:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> : Suma</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> : Resta o bien, cambio de signo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> : Multiplicación</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> : División</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">//</span></code> : División entera (redondea hacia abajo al entero más cercano)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> : Módulo (resto de la división para valores enteros o punto flotante)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**</span></code> : Exponenciación (potenciación)  (¡ojo con el uso de <code class="docutils literal notranslate"><span class="pre">^</span></code> que en python es un operador bit a bit!)</p></li>
+</ul>
+<p>La precedencia de los operadores sigue la de la mayoría de los lenguajes.  Ver:</p>
+<p><a class="reference external" href="https://docs.python.org/3/reference/expressions.html#operator-precedence">https://docs.python.org/3/reference/expressions.html#operator-precedence</a></p>
+<p>Los operadores se evalúan en el siguiente orden (de mayor a menor precedencia):</p>
+<ul class="simple">
+<li><p>expresiones en <code class="docutils literal notranslate"><span class="pre">()</span></code></p></li>
+<li><p>exponenciación (<code class="docutils literal notranslate"><span class="pre">**</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>
+Por último, vienen los operadores de comparación y lógicos.</p></li>
+</ul>
+</section>
+<section id="operadores-de-comparacion">
+<h3>Operadores de Comparación<a class="headerlink" href="#operadores-de-comparacion" title="Link to this heading">#</a></h3>
+<p>Los operadores de comparación se utilizan para comparar dos valores. Aquí hay una lista de los operadores de comparación más comunes en Python:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> : Igualdad</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code> : Desigualdad</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> : Menor que</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> : Mayor que</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> : Menor o igual que</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> : Mayor o igual que
+Estos operadores devuelven un valor booleano (<code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>) dependiendo del resultado de la comparación.</p></li>
+</ul>
+<p>Algunos ejemplos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">b</span><span class="o">=-</span><span class="mi">3</span>
+<span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="n">d</span><span class="o">=</span><span class="n">a</span><span class="o">*</span><span class="n">b</span>
+<span class="n">e</span><span class="o">=</span><span class="n">a</span><span class="o">/</span><span class="n">b</span>
+<span class="n">f</span><span class="o">=</span><span class="n">a</span><span class="o">**</span><span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">==</span><span class="n">d</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">&lt;</span><span class="n">e</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>En Python, podemos encadenar comparaciones para verificar múltiples condiciones a la vez:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">)</span> <span class="c1"># False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operadores-logicos">
+<h3>Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Link to this heading">#</a></h3>
+<p>Los operadores lógicos se utilizan para combinar expresiones booleanas. Aquí hay una lista de los operadores lógicos más comunes en Python:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code> : Devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> si ambas expresiones son <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code> : Devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> si al menos una de las expresiones es <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span></code> : Invierte el valor de una expresión<br />
+Algunos ejemplos:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span>  <span class="c1"># Esto es False</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">a</span> <span class="ow">or</span> <span class="n">b</span>   <span class="c1"># Esto es True</span>
+<span class="n">e</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">a</span>    <span class="c1"># Esto es False</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False True False
+</pre></div>
+</div>
+</div>
+</div>
+<p>En Python, se considera que ciertos valores son “falsos” en un contexto booleano, incluyendo:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p>Cero de cualquier tipo numérico: <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">0.0</span></code>, `0</p></li>
+<li><p>Cadenas vacías: <code class="docutils literal notranslate"><span class="pre">''</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p></li>
+<li><p>Listas, tuplas, conjuntos y diccionarios vacíos: <code class="docutils literal notranslate"><span class="pre">[]</span></code>, <code class="docutils literal notranslate"><span class="pre">()</span></code>, <code class="docutils literal notranslate"><span class="pre">{}</span></code>, <code class="docutils literal notranslate"><span class="pre">set()</span></code></p></li>
+</ul>
+<p>Para comprobarlo, podemos usar la función <code class="docutils literal notranslate"><span class="pre">bool()</span></code> para convertir cualquier valor a su equivalente booleano:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>          <span class="c1"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>         <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">))</span>         <span class="c1"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">))</span>    <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">([]))</span>         <span class="c1"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>  <span class="c1"># True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
+False
+True
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Ojo con confundirnos con MATLAB! Si utilizáis los símbolos <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> y <code class="docutils literal notranslate"><span class="pre">|</span></code> para operaciones lógicas, en python estos son operadores bit a bit.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="mi">3</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Resultado: 1 (AND bit a bit)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="mi">3</span> <span class="o">|</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Resultado: 3 (OR bit a bit)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="mi">3</span> <span class="o">^</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Resultado: 2 (XOR bit a bit)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3
+2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="casting">
+<h3>Casting<a class="headerlink" href="#casting" title="Link to this heading">#</a></h3>
+<p>Python permite convertir en ocasines variables con un tipo determinado a otro tipo diferente. Las conversiones pueden ser:</p>
+<ul class="simple">
+<li><p>Implícitas: Ejecutadas automáticamente (como en la división <code class="docutils literal notranslate"><span class="pre">/</span></code>)</p></li>
+<li><p>Explícitas: Realizadas por el programador. Estas obligan a una variable o expresión a ser <strong>temporalmente</strong> de un determinado tipo. Para hacer casting, se utilizan las funciones integradas: <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code>, <code class="docutils literal notranslate"><span class="pre">bool()</span></code>, <code class="docutils literal notranslate"><span class="pre">complex()</span></code>…  Algunos ejemplos</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>          <span class="c1"># x es un entero</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>   <span class="c1"># y es un número de punto flotante (5.0)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>     <span class="c1"># z es un entero (5)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># w es un número complejo (5+0j)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="otras-operaciones-mas-complejas">
+<h2>Otras operaciones más complejas<a class="headerlink" href="#otras-operaciones-mas-complejas" title="Link to this heading">#</a></h2>
+<p>El núcleo de Python se extiende mediante una biblioteca estándar que proporciona funcionalidad adicional. Estas piezas añadidas están en forma de módulos que podemos <em>importar</em> en nuestra sesión de Python (o programa), como ya hemos visto.</p>
+<p>Hay varios módulos integrados en Python que proporcionan funcionalidades adicionales. Uno de los módulos más comunes es el módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>, que proporciona funciones matemáticas avanzadas y constantes (o <code class="docutils literal notranslate"><span class="pre">cmath</span></code> para números complejos).</p>
+<p>Dejamos aquí algunas operaciones básicas usando el módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">math</span></code> nos da el valor de pi, e, y otras constantes matemáticas comunes.  También proporciona funciones trigonométricas, logarítmicas, y exponenciales, entre otras.  Aquí hay algunos ejemplos adicionales usando el módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7071067811865476
+</pre></div>
+</div>
+</div>
+</div>
+<p>Recuerda que podemos saber cómo funciona cada función usando la función <code class="docutils literal notranslate"><span class="pre">help()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function sin in module math:
+
+sin(x, /)
+    Return the sine of x (measured in radians).
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cadenas-strings">
+<h2>Cadenas (strings)<a class="headerlink" href="#cadenas-strings" title="Link to this heading">#</a></h2>
+<p>Una cadena es una secuencia de caracteres.  En python, las cadenas se representan utilizando comillas simples (<code class="docutils literal notranslate"><span class="pre">'...'</span></code>) o comillas dobles (<code class="docutils literal notranslate"><span class="pre">&quot;...&quot;</span></code>).  Podemos crear cadenas asignándolas a variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;mi cadena&quot;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;yo soy otra cadenita&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mi cadena
+yo soy otra cadenita
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dos caracteres de comillas dobles o simples seguidos representan una cadena vacía.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alguna operaciones básicas con cadenas incluyen la concatenación (unir dos cadenas) y la repetición (repetir una cadena varias veces) (ojo con confundirnos con la suma o multiplicación de números):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;mi cadenayo soy otra cadenita&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="s2">&quot;. &quot;</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;mi cadena. yo soy otra cadenita&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;mi cadenami cadena&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>existen algunos caracteres de escape que se interpretan en las cadenas. Estos comienzan con una barra invertida, <code class="docutils literal notranslate"><span class="pre">\</span></code>. Por ejemplo, puedes usar <code class="docutils literal notranslate"><span class="pre">\n</span></code> para un salto de línea, <code class="docutils literal notranslate"><span class="pre">\t</span></code> para una tabulación, y <code class="docutils literal notranslate"><span class="pre">\\</span></code> para una barra invertida literal. Aquí hay algunos ejemplos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">b</span><span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">a</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mi cadena
+
+yo soy otra cadenita	mi cadena
+</pre></div>
+</div>
+</div>
+</div>
+<p>La triple comilla simple o doble permite definir cadenas multilínea:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </span>
+<span class="s2">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </span>
+<span class="s2">nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </span>
+<span class="s2">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore </span>
+<span class="s2">eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt </span>
+<span class="s2">in culpa qui officia deserunt mollit anim id est laborum.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt 
+in culpa qui officia deserunt mollit anim id est laborum.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si queremos no utilizar los caracteres de escape, podemos definir una <em>raw string</em>, poniendo una <code class="docutils literal notranslate"><span class="pre">r</span></code>justo antes de la cadena (sin espacios en medio):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;this is a raw string\n&quot;</span>
+<span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;this is a raw string\\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos formatear cadenas utilizando una f: <em>f-strings</em> de la siuiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">; b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">; c = </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = mi cadena
+; b = yo soy otra cadenita	mi cadena
+; c = 
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt 
+in culpa qui officia deserunt mollit anim id est laborum.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Veremos más ejemplos en el siguiente capítulo de E/S de datos. Asimismo, veremos más operatoria con cadenas en el próximo tema.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01-python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="w1-python-basics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Primeros pasos con Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="w1-python-basicIO.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Entrada y Salida de Datos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enteros-int">Enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-de-punto-flotante-float-reales">Números de punto flotante (<code class="docutils literal notranslate"><span class="pre">float</span></code>) - Reales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-booleanos-bool">Valores booleanos (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-complejos-complex">Números complejos (<code class="docutils literal notranslate"><span class="pre">complex</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores">Operadores</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-aritmeticos">Operadores Aritméticos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacion">Operadores de Comparación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores lógicos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casting">Casting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-operaciones-mas-complejas">Otras operaciones más complejas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cadenas-strings">Cadenas (strings)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://merismeris.github.io">María Navarro y Álvaro Lozano</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+&copy; 2023-2025; CC-BY-NC-SA 4.0
+<p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
