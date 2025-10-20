@@ -42,8 +42,10 @@ sphinx:
     nb_execution_timeout: 300
 
 launch_buttons:
-   thebe: false
-   binderhub_url: "https://mybinder.org"
+   thebe: true
+   binder: false
+   notebook_inetrface: "jupyterlite"
+   #binderhub_url: "https://mybinder.org"
    colab_url: "https://colab.research.google.com"
 
 parse:
