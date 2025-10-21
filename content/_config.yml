@@ -43,9 +43,8 @@ sphinx:
 
 launch_buttons:
    thebe: true
-   binder: false
-   notebook_inetrface: "jupyterlite"
-   #binderhub_url: "https://mybinder.org"
+   notebook_interface: "jupyterlab"
+   binderhub_url: "https://mybinder.org"
    colab_url: "https://colab.research.google.com"
 
 parse:
