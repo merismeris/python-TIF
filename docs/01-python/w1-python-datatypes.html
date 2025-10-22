@@ -173,7 +173,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../Introduction.html">
-                    ¿Qué es Pytnon?
+                    ¿Qué es Python?
                 </a>
             </li>
         </ul>
@@ -693,7 +693,7 @@ En nuestro print, usamos un especificador de formato (lo que está dentro de los
 </div>
 </div>
 </div>
-<p>Al preguntar por la precisión, vemos que solo se pueden almacenar números entre ciertos límites: 2.2e-308 y 1.8e+308.  Si se intenta almacenar un número fuera de estos límites, se produce un error de desbordamiento (<em>overflow</em>). Además, la precisión es de 2.22e-16, lo que significa que las diferencias menores a este valor no se pueden representar con precisión. Esto se conoce como machine epsilon.</p>
+<p>Al preguntar por la precisión, vemos que solo se pueden almacenar números entre ciertos límites: 2.2e-308 y 1.8e+308.  Si se intenta almacenar un número fuera de estos límites, se produce un error de desbordamiento (<em>overflow</em>). Además, la precisión es de 2.22e-16, lo que significa que las diferencias menores a este valor no se pueden representar con precisión. Esto se conoce como <em>machine epsilon</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
@@ -707,8 +707,6 @@ En nuestro print, usamos un especificador de formato (lo que está dentro de los
 </div>
 </div>
 </div>
-<p>Note that this says that we can only store numbers between 2.2250738585072014e-308 and 1.7976931348623157e+308</p>
-<p>We also see that the precision is 2.220446049250313e-16 (this is commonly called <em>machine epsilon</em>).  To see this, consider adding a small number to 1.0.  We’ll use the equality operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>) to test if two numbers are equal:</p>
 <div class="admonition-ejercicio-rapido admonition">
 <p class="admonition-title">Ejercicio Rápido</p>
 <p>Define dos variables, <span class="math notranslate nohighlight">\(a = 1\)</span>, y <span class="math notranslate nohighlight">\(e = 10^{-16}\)</span>.
@@ -898,7 +896,7 @@ Algunos ejemplos:</p></li>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
-<li><p>Cero de cualquier tipo numérico: <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">0.0</span></code>, `0</p></li>
+<li><p>Cero de cualquier tipo numérico: <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">0.0</span></code>, <code class="docutils literal notranslate"><span class="pre">0j</span></code></p></li>
 <li><p>Cadenas vacías: <code class="docutils literal notranslate"><span class="pre">''</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p></li>
 <li><p>Listas, tuplas, conjuntos y diccionarios vacíos: <code class="docutils literal notranslate"><span class="pre">[]</span></code>, <code class="docutils literal notranslate"><span class="pre">()</span></code>, <code class="docutils literal notranslate"><span class="pre">{}</span></code>, <code class="docutils literal notranslate"><span class="pre">set()</span></code></p></li>
 </ul>
