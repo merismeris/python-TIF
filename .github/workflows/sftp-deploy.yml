@@ -2,7 +2,7 @@ name: SFTP Deploy Documentation to USAL
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, mi-cambio ]  # Añadida rama mi-cambio para pruebas
     paths:
       - 'content/**'
       - 'requirements.txt'
