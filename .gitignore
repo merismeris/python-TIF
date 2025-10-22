@@ -20,3 +20,35 @@ syllabus.out
 *.fodp
 
 _build
+
+.conda/
+.env
+.vscode/
+
+# Jupyter Book
+_build/
+.jupyter_cache/
+**/.ipynb_checkpoints/
+**/__pycache__/
+**/*.pyc
+.DS_Store
+
+# Sphinx documentation
+docs/_build/
+docs/_static/
+docs/_autosummary/
+
+# MyST-NB
+.myst_nb_cache/
+
+# Jupyter Book config
+.jupyter-book-cache/
+
+# HTML build files
+*.html
+!_static/*.html
+
+# Generated files
+*.pdf
+*.epub
+
