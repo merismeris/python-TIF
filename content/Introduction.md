@@ -1,4 +1,4 @@
-# ¿Qué es Pytnon?
+# ¿Qué es Python?
 
 ![xkcd](01-python/python.png)
 
