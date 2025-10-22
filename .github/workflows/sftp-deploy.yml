@@ -2,7 +2,7 @@ name: SFTP Deploy Documentation to USAL
 
 on:
   push:
-    branches: [ main, mi-cambio ]  # Añadida rama mi-cambio para pruebas
+    branches: [ mi-cambio ]
     paths:
       - 'content/**'
       - 'requirements.txt'
@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
+        with:
+          ref: mi-cambio  # Asegura que siempre use la rama mi-cambio
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
