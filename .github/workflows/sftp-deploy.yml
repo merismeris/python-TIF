@@ -1,0 +1,84 @@
+name: SFTP Deploy Documentation to USAL
+
+on:
+  push:
+    branches: [ mi-cambio ]
+    paths:
+      - 'content/**'
+      - 'requirements.txt'
+      - '.github/workflows/sftp-deploy.yml'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      SFTP_SERVER: ${{ secrets.FTP_SERVER_USAL_PYTHON_TIF }}
+      SFTP_USERNAME: ${{ secrets.FTP_USERNAME_PYTHON_TIF }}
+      SFTP_PASSWORD: ${{ secrets.FTP_PASSWORD_PYTHON_TIF }}
+      SFTP_REMOTE_DIR: 'public_html'  # Ajusta según la estructura de tu servidor USAL
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          ref: mi-cambio  # Asegura que siempre use la rama mi-cambio
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip graphviz
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Configure for USAL deployment (without baseurl)
+        run: |
+          # Backup original config
+          cp ./content/_config.yml ./content/_config.yml.bak
+          # Remove or modify baseurl for USAL deployment
+          sed -i 's|baseurl: /python-TIF/|baseurl: /|g' ./content/_config.yml
+
+      - name: Build Jupyter Book
+        run: jupyter-book build ./content
+
+      - name: Restore original config
+        run: mv ./content/_config.yml.bak ./content/_config.yml
+
+      - name: Verify generated files
+        run: ls -R ./content/_build/html
+
+      # Limpiar la carpeta remota por SFTP (opcional, comentar si no se desea)
+      - name: Clean remote directory via SFTP
+        run: |
+          sudo apt-get install -y sshpass
+          sshpass -p "$SFTP_PASSWORD" sftp -o StrictHostKeyChecking=no -P 22 "$SFTP_USERNAME"@"$SFTP_SERVER" <<EOF
+            cd $SFTP_REMOTE_DIR
+            rm -r *
+            bye
+          EOF
+        env:
+          SFTP_SERVER: ${{ env.SFTP_SERVER }}
+          SFTP_USERNAME: ${{ env.SFTP_USERNAME }}
+          SFTP_PASSWORD: ${{ env.SFTP_PASSWORD }}
+          SFTP_REMOTE_DIR: ${{ env.SFTP_REMOTE_DIR }}
+
+      # Subir la documentación compilada al servidor USAL
+      - name: SFTP uploader
+        uses: wangyucode/sftp-upload-action@v2.0.4
+        with:
+          host: ${{ env.SFTP_SERVER }}
+          port: 22
+          username: ${{ env.SFTP_USERNAME }}
+          password: ${{ env.SFTP_PASSWORD }}
+          localDir: 'content/_build/html'
+          remoteDir: ${{ env.SFTP_REMOTE_DIR }}
+          compress: true # Compression for faster upload

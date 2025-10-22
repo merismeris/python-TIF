@@ -10,14 +10,10 @@ Para el intérprete hay opciones:
 * Instalar lo imprescindible, el intérprete (Python.org)
 * Instalar el intérprete + "extras" (Anaconda, Mamba,...)
 
-Para la entrada de datos:
-* Ficheros .py creados
-* Ficheros interactivos (.ipynb)
+En esta asignatura utilizaremos principalmente dos tipos de ficheros con código fuente Python:
 
-Para la salida de datos:
-* Visualización a través de terminal
-* Visualización en hostings
-* FIcheros interactivos (.ipynb)
+* Ficheros .py (ficheros de script de Python)
+* Cuadernos Interactivos o Interactive Python Notebooks (.ipynb)
 
 ### Entonces... ¿necesito tantos componentes?
 Sí... y no. Para ayudarnos, existen los `Entornos de Desarrollo Integrados (IDEs)`. 

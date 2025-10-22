@@ -6,8 +6,12 @@
 
 * Python es un lenguaje de alto nivel
 * Software libre y multiplataforma.
-* Creado a finales de los 80
+* Primera versión publicada en 1991 por Guido van Rossum.
 * Lenguaje muy usado
+
+# Documental de Python
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GfH4QL4VqJ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Algunas características
 
@@ -27,6 +31,6 @@
 
 ### Y ¿por qué nosotros enseñamos aquí Python?
 
-Básicamente, porque Python se está utilizando ampliamente en la comunidad científica, casi en cualquier ámbito. 
+Básicamente, porque Python se está utilizando ampliamente en la comunidad científica, casi en cualquier ámbito.
 
 
