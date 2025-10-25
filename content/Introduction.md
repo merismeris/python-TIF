@@ -2,12 +2,12 @@
 
 ![xkcd](01-python/python.png)
 
-(from https://xkcd.com)
+Fuente: [https://xkcd.com/353/](https://xkcd.com/353/)
 
 * Python es un lenguaje de alto nivel
 * Software libre y multiplataforma.
 * Primera versión publicada en 1991 por Guido van Rossum.
-* Lenguaje muy usado
+* Lenguaje ampliamente utilizado en ciencia e ingeniería.
 
 # Documental de Python
 
@@ -15,7 +15,7 @@
 
 ## Algunas características
 
-* Multiparadigma (objetos, estructurado) 
+* Multiparadigma (objetos, estructurado, funcional...) 
 * Lenguaje interpretado
 * Extensible (fácilmente integrable con otros lenguajes como Fortran, C/C++, ...)
 * Sensible a mayúsculas y minúsculas
