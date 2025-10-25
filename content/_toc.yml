@@ -19,8 +19,8 @@ parts:
     chapters:
     - file: 01-python/data-classes
       sections:
-      - file: 01-python/w4-python-classes.ipynb
-      - file: 01-python/w2-python-estructura-de-datos.ipynb
+      - file: 01-python/w2-python-classes.ipynb
+      - file: 01-python/w2-python-advanced-data.ipynb
  # - caption: Funciones en Python
   - caption: Material adicional de Python
     chapters:
