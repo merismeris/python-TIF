@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Miscellaneous &#8212; Introducción a Python. Asignatura Técnicas Informáticas en Física</title>
+    <title>Algunos conceptos y material adicionales &#8212; Introducción a Python. Asignatura Técnicas Informáticas en Física</title>
   
   
   
@@ -58,10 +58,14 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '01-python/misc';</script>
     <link rel="canonical" href="/python-TIF/01-python/misc.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pequeña introducción a la creación de clases en Python" href="w4-python-ad-classes.html" />
+    <link rel="prev" title="Estructuras de datos" href="data-classes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +128,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -171,13 +173,12 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../Introduction.html">
-                    ¿Qué es Pytnon?
+                    ¿Qué es Python?
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Conociendo Python</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="installing.html">Primer vistazo a Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using.html">Primeros pasos con VS Code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Conceptos básicos en Python</span></p>
@@ -186,6 +187,21 @@
 <li class="toctree-l2"><a class="reference internal" href="w1-python-basics.html">Primeros pasos con Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="w1-python-datatypes.html">Tipos de dato básicos y operadores en Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="w1-python-basicIO.html">Entrada y Salida de Datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w1-python-control-flow.html">Control de flujo</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras de datos en Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="data-classes.html">Estructuras de datos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Material adicional de Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Algunos conceptos y material adicionales</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="w4-python-ad-classes.html">Pequeña introducción a la creación de clases en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w4-python-ad-exceptions.html">Excepciones</a></li>
 </ul>
 </details></li>
 </ul>
@@ -371,7 +387,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Miscellaneous</h1>
+    <h1>Algunos conceptos y material adicionales</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,11 +401,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="miscellaneous">
-<h1>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Link to this heading">#</a></h1>
-<p>There are a lot of topics that we didn’t cover, as well as a lot of
-the python standard library that we won’t address.  Here we introduce
-a few more concepts.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="algunos-conceptos-y-material-adicionales">
+<h1>Algunos conceptos y material adicionales<a class="headerlink" href="#algunos-conceptos-y-material-adicionales" title="Link to this heading">#</a></h1>
+<p>Hay muchos temas que no podemos cubrir durante el curso por falta de tiempo. Aquí os dejamos material adicional para que podáis explorar por vuestra cuenta si tenéis interés.</p>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -422,6 +438,24 @@ a few more concepts.</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="data-classes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Estructuras de datos</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="w4-python-ad-classes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Pequeña introducción a la creación de clases en Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
