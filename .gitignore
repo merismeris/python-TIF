@@ -45,7 +45,6 @@ docs/_autosummary/
 .jupyter-book-cache/
 
 # HTML build files
-*.html
 !_static/*.html
 
 # Generated files

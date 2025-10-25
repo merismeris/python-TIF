@@ -1,0 +1,994 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Control de flujo &#8212; Introducción a Python. Asignatura Técnicas Informáticas en Física</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=359afcf4" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01-python/w1-python-control-flow';</script>
+    <link rel="canonical" href="/python-TIF/01-python/w1-python-control-flow.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Estructuras de datos" href="data-classes.html" />
+    <link rel="prev" title="Entrada y Salida de Datos" href="w1-python-basicIO.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../Introduction.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Introducción a Python. Asignatura Técnicas Informáticas en Física</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Introduction.html">
+                    ¿Qué es Python?
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Conociendo Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="using.html">Primeros pasos con VS Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conceptos básicos en Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="basics.html">Python Basics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="w1-python-basics.html">Primeros pasos con Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w1-python-datatypes.html">Tipos de dato básicos y operadores en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w1-python-basicIO.html">Entrada y Salida de Datos</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Control de flujo</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras de datos en Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="data-classes.html">Estructuras de datos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="w2-python-classes.html">Introducción a la Programación Orientada a Objetos en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w2-python-advanced-data.html">Tipos de dato</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Material adicional de Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="misc.html">Algunos conceptos y material adicionales</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="w4-python-ad-classes.html">Pequeña introducción a la creación de clases en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w4-python-ad-exceptions.html">Excepciones</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/merismeris/python-TIF/mi-cambio?urlpath=lab/tree/content/01-python/w1-python-control-flow.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/merismeris/python-TIF/blob/mi-cambio/content/01-python/w1-python-control-flow.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/merismeris/python-TIF" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/merismeris/python-TIF/issues/new?title=Issue%20on%20page%20%2F01-python/w1-python-control-flow.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/01-python/w1-python-control-flow.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Control de flujo</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-while">Bucle While</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminacion-del-bucle">Terminación del bucle</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-for">Bucle For</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminacion-de-bucles">Terminación de bucles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-break">Sentencia <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-continue">Sentencia <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-else-en-bucles">Sentencia <code class="docutils literal notranslate"><span class="pre">else</span></code> en bucles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-pass">Sentencia <code class="docutils literal notranslate"><span class="pre">pass</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-if-else">Sentencia if-else</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions">List Comprehensions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="control-de-flujo">
+<h1>Control de flujo<a class="headerlink" href="#control-de-flujo" title="Link to this heading">#</a></h1>
+<p>En algunas ocasiones, necesitamos que se jecuten operaciones o tareas solo en determinados casos, bajo algunas condiciones. Por ejemplo, si un usuario tiene una edad mayor a 18 años, puede acceder a cierto contenido. Si no, no puede.</p>
+<p>Para esto, Python nos ofrece las estructuras de <strong>control de flujo</strong> o sentencias de control. Las sentencias de control son de dos tipos principales:</p>
+<ul class="simple">
+<li><p>Sentencias condicionales: permiten ejecutar un bloque de código solo si se cumple una condición. Son las sentencias <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> y <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p></li>
+<li><p>Bucles: permiten ejecutar un bloque de código varias veces, mientras se cumpla una condición. Cada repetición se suele denominar iteración. En Python, existen dos tipos de bucles: el bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> y el bucle <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Python utiliza indentación (espacios en blanco al inicio de una línea) para definir bloques de código. Esto significa que el código dentro de una estructura de control debe estar indentado o tabulado con respecto al código principal.</p>
+</div>
+<section id="bucle-while">
+<h2>Bucle While<a class="headerlink" href="#bucle-while" title="Link to this heading">#</a></h2>
+<p>Permite ejecutar un bloque de código mientras una condición sea verdadera. La condición se evalúa ** antes** de entrar en el bucle. Por tanto, se puede repetir entre 0 y n veces.</p>
+<p>En el cuerpo se debe incluir alguna sentencia que en algún momento haga que la condición deje de cumplirse, para evitar bucles infinitos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>          <span class="c1"># condición</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>         <span class="c1"># cuerpo del bucle</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>       <span class="c1"># actualización de la variable de control. Hemos usado el operador compacto `+=`: `n += 1` es lo mismo que `n = n + 1`.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Observa que hay una variable (<code class="docutils literal notranslate"><span class="pre">n</span></code> en este caso) que se inicializa antes del bucle, se utiliza en la condición y se actualiza dentro del cuerpo del bucle. Esta variable se denomina variable de control del bucle.</p>
+</div>
+<section id="terminacion-del-bucle">
+<h3>Terminación del bucle<a class="headerlink" href="#terminacion-del-bucle" title="Link to this heading">#</a></h3>
+<p>Existen varios métodos para controlar la terminación de un bucle <code class="docutils literal notranslate"><span class="pre">while</span></code>. Algunos de los más comunes y que veremos a lo largo del curso son:</p>
+</section>
+</section>
+<section id="bucle-for">
+<h2>Bucle For<a class="headerlink" href="#bucle-for" title="Link to this heading">#</a></h2>
+<p>El bucle for permite iterar sobre una secuencia u objeto iterable (como una lista, una tupla, un diccionario, un conjunto o una cadena de texto) o sobre un rango de números. La variable de control del bucle toma cada uno de los valores de la secuencia o del rango en cada iteración, es decir, se convierte en un iterador.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">alist</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2.0
+three
+4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s2">&quot;this is a string&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t
+h
+i
+s
+ 
+i
+s
+ 
+a
+ 
+s
+t
+r
+i
+n
+g
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+6
+8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Ojo</strong> al usar range() para iterar de m hasta n, porque el valor n no se incluye en la iteración.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;key1&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;key2&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;key3&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;key = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">, value = </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>key = key1, value = 1
+key = key2, value = 2
+key = key3, value = 3
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="terminacion-de-bucles">
+<h2>Terminación de bucles<a class="headerlink" href="#terminacion-de-bucles" title="Link to this heading">#</a></h2>
+<p>Existen varias formas de terminar un bucle, entre las que se incluyen:</p>
+<ul class="simple">
+<li><p>La condición del bucle se vuelve falsa. Esto puede ocurrir utilizando varios métodos, nosotros destacamos:</p>
+<ul>
+<li><p>Con un contador: se inicializa una variable antes del bucle, se utiliza en la condición y se va decrementando o incrementando dentro del cuerpo del bucle.</p></li>
+<li><p>Con un acumulador: se utiliza una variable para acumular un valor (como una suma o un producto) y se actualiza dentro del cuerpo del bucle.</p></li>
+<li><p>Con una condición lógica (bandera): se utiliza una variable booleana que se actualiza dentro del cuerpo del bucle.</p></li>
+</ul>
+</li>
+<li><p>Se produce una excepción o error dentro del bucle. Esto incluiría el manejo de errores, que no veremos en este curso.</p></li>
+<li><p>Se utiliza la sentencia <code class="docutils literal notranslate"><span class="pre">break</span></code> dentro del cuerpo del bucle para salir del mismo de forma inmediata.</p></li>
+</ul>
+<section id="sentencia-break">
+<h3>Sentencia <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#sentencia-break" title="Link to this heading">#</a></h3>
+<p>La sentencia <code class="docutils literal notranslate"><span class="pre">break</span></code> permite salir de un bucle de forma inmediata, independientemente de si la condición del bucle es verdadera o falsa. Se utiliza dentro del cuerpo del bucle y puede ser útil para terminar un bucle cuando se cumple una condición específica. Si hay bucles anidados, <code class="docutils literal notranslate"><span class="pre">break</span></code> solo termina el bucle más interno en el que se encuentra.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Usar <code class="docutils literal notranslate"><span class="pre">break</span></code> puede hacer que el código sea menos legible, por lo que se recomienda usarlo con moderación y solo cuando sea necesario.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>  <span class="c1"># Sale del bucle cuando i es igual a 5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sentencia-continue">
+<h3>Sentencia <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#sentencia-continue" title="Link to this heading">#</a></h3>
+<p>La sentencia <code class="docutils literal notranslate"><span class="pre">continue</span></code> permite saltar a la siguiente iteración del bucle, omitiendo el resto del código en el cuerpo del bucle para la iteración actual. Se utiliza dentro del cuerpo del bucle y puede ser útil para evitar ejecutar ciertas partes del código cuando se cumple una condición específica. Al igual que con <code class="docutils literal notranslate"><span class="pre">break</span></code>, si hay bucles anidados, <code class="docutils literal notranslate"><span class="pre">continue</span></code> solo afecta al bucle más interno en el que se encuentra.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Al igual que con <code class="docutils literal notranslate"><span class="pre">break</span></code>, el uso excesivo de <code class="docutils literal notranslate"><span class="pre">continue</span></code> puede dificultar la lectura del código, por lo que se recomienda usarlo con moderación.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">continue</span>  <span class="c1"># Interrumpe del bucle cuando i es igual a 5, pero vuelve a él.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+6
+7
+8
+9
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sentencia-else-en-bucles">
+<h3>Sentencia <code class="docutils literal notranslate"><span class="pre">else</span></code> en bucles<a class="headerlink" href="#sentencia-else-en-bucles" title="Link to this heading">#</a></h3>
+<p>La sentencia <code class="docutils literal notranslate"><span class="pre">else</span></code> puede utilizarse junto con los bucles <code class="docutils literal notranslate"><span class="pre">for</span></code> y <code class="docutils literal notranslate"><span class="pre">while</span></code>. El bloque de código dentro de <code class="docutils literal notranslate"><span class="pre">else</span></code> se ejecuta cuando el bucle termina normalmente, es decir, cuando la condición del bucle se vuelve falsa (en el caso de <code class="docutils literal notranslate"><span class="pre">while</span></code>) o cuando se han iterado todos los elementos (en el caso de <code class="docutils literal notranslate"><span class="pre">for</span></code>). Si el bucle se termina prematuramente mediante una sentencia <code class="docutils literal notranslate"><span class="pre">break</span></code>, el bloque <code class="docutils literal notranslate"><span class="pre">else</span></code> no se ejecuta.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>El uso de <code class="docutils literal notranslate"><span class="pre">else</span></code> con bucles puede mejorar la legibilidad del código al permitir separar claramente el código que se ejecuta después de que el bucle haya terminado de forma normal.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>  <span class="c1"># Interrumpe del bucle cuando i es igual a 5, pero vuelve a él.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bucle terminado normalmente&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sentencia-pass">
+<h3>Sentencia <code class="docutils literal notranslate"><span class="pre">pass</span></code><a class="headerlink" href="#sentencia-pass" title="Link to this heading">#</a></h3>
+<p>La sentencia <code class="docutils literal notranslate"><span class="pre">pass</span></code> es una operación nula en Python. Se utiliza como un marcador de posición cuando se requiere una sintaxis pero no se desea ejecutar ninguna acción. En el contexto de los bucles, <code class="docutils literal notranslate"><span class="pre">pass</span></code> puede ser útil cuando se quiere definir un bucle que no realiza ninguna operación, pero que debe estar presente por razones de estructura del código o para futuras implementaciones.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>El uso de <code class="docutils literal notranslate"><span class="pre">pass</span></code> puede mejorar la legibilidad del código al indicar claramente que se ha considerado la necesidad de un bloque de código, pero que no se ha implementado ninguna acción en ese momento.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">pass</span>  <span class="c1"># Bucle que no hace nada</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="sentencia-if-else">
+<h2>Sentencia if-else<a class="headerlink" href="#sentencia-if-else" title="Link to this heading">#</a></h2>
+<p>La sentencia <code class="docutils literal notranslate"><span class="pre">if</span></code> permite ejecutar un bloque de código solo si se cumple una condición determinada. Si la condición es verdadera, se ejecuta el bloque de código indentado debajo de la sentencia <code class="docutils literal notranslate"><span class="pre">if</span></code>. Si la condición es falsa, se puede utilizar la sentencia <code class="docutils literal notranslate"><span class="pre">else</span></code> para ejecutar un bloque de código alternativo.
+Adicionalmente, se puede utilizar la sentencia <code class="docutils literal notranslate"><span class="pre">elif</span></code> (abreviatura de “else if”) para verificar múltiples condiciones de manera secuencial. Si la primera condición es falsa, se evalúa la siguiente condición <code class="docutils literal notranslate"><span class="pre">elif</span></code>, y así sucesivamente. Si ninguna de las condiciones es verdadera, se ejecuta el bloque de código bajo la sentencia <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condición1</span><span class="p">:</span>
+    <span class="c1"># Bloque de código si condición1 es verdadera</span>
+<span class="k">elif</span> <span class="n">condición2</span><span class="p">:</span>
+    <span class="c1"># Bloque de código si condición2 es verdadera</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Bloque de código si ninguna condición es verdadera</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;negativo&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cero&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;positivo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cero
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos anidar sentencias if-else dentro de otras sentencias if-else para manejar múltiples condiciones y casos complejos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var1</span><span class="o">=</span><span class="mi">2</span>
+<span class="k">if</span> <span class="n">var1</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+    <span class="n">var1</span><span class="o">=</span><span class="n">var1</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">var1</span><span class="o">&gt;=</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">var1</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">var1</span><span class="o">=</span><span class="mi">4</span>
+<span class="k">elif</span> <span class="n">var1</span><span class="o">&gt;-</span><span class="mi">5</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">var1</span><span class="o">==-</span><span class="mi">3</span><span class="p">:</span>
+          <span class="n">var1</span><span class="o">-=</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+	    <span class="n">var1</span><span class="o">+=</span><span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="n">var1</span><span class="o">=</span><span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>sometimes we want to loop over a list element and know its index – <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> helps here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1
+1 2.0
+2 three
+3 4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-quick-exercise admonition">
+<p class="admonition-title">Quick Exercise</p>
+<p><code class="docutils literal notranslate"><span class="pre">zip()</span></code> allows us to loop over two iterables at the same time.  Consider the following two
+lists:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+ <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+ <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">]</span>
+ 
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">zip(a,</span> <span class="pre">b)</span></code> will act like a list with each element a tuple with one item from <code class="docutils literal notranslate"><span class="pre">a</span></code> and the corresponding element from <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<p>Try looping over these lists together (using <code class="docutils literal notranslate"><span class="pre">zip()</span></code>) and print the corresponding elements from each list together on a single line.</p>
+</div>
+<div class="admonition-quick-exercise admonition">
+<p class="admonition-title">Quick Exercise</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.split()</span></code> function on a string can split it into words (separating on spaces).</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">.split()</span></code>, loop over the words in the string</p>
+<p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">&quot;The</span> <span class="pre">quick</span> <span class="pre">brown</span> <span class="pre">fox</span> <span class="pre">jumped</span> <span class="pre">over</span> <span class="pre">the</span> <span class="pre">lazy</span> <span class="pre">dog&quot;</span></code></p>
+<p>and print one word per line</p>
+</div>
+</section>
+<section id="list-comprehensions">
+<h2>List Comprehensions<a class="headerlink" href="#list-comprehensions" title="Link to this heading">#</a></h2>
+<p>list comprehensions provide a compact way to initialize lists.  Some examples from the tutorial</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-quick-exercise admonition">
+<p class="admonition-title">Quick Exercise</p>
+<p>Use a list comprehension to create a new list from <code class="docutils literal notranslate"><span class="pre">squares</span></code> containing only the even numbers.  It might be helpful to use the modulus operator, <code class="docutils literal notranslate"><span class="pre">%</span></code></p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "merismeris/python-TIF",
+            ref: "mi-cambio",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01-python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="w1-python-basicIO.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Entrada y Salida de Datos</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="data-classes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Estructuras de datos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-while">Bucle While</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminacion-del-bucle">Terminación del bucle</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-for">Bucle For</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminacion-de-bucles">Terminación de bucles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-break">Sentencia <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-continue">Sentencia <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-else-en-bucles">Sentencia <code class="docutils literal notranslate"><span class="pre">else</span></code> en bucles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-pass">Sentencia <code class="docutils literal notranslate"><span class="pre">pass</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-if-else">Sentencia if-else</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions">List Comprehensions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://merismeris.github.io">María Navarro y Álvaro Lozano</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+&copy; 2023-2025; CC-BY-NC-SA 4.0
+<p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
