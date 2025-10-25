@@ -14,6 +14,20 @@ parts:
       - file: 01-python/w1-python-basics.ipynb
       - file: 01-python/w1-python-datatypes.ipynb
       - file: 01-python/w1-python-basicIO.ipynb
+      - file: 01-python/w1-python-control-flow.ipynb
+  - caption: Estructuras de datos en Python
+    chapters:
+    - file: 01-python/data-classes
+      sections:
+      - file: 01-python/w4-python-classes.ipynb
+      - file: 01-python/w2-python-estructura-de-datos.ipynb
+  - caption: Funciones en Python
+  - caption: Material adicional de Python
+    chapters:
+    - file: 01-python/misc
+    sections:
+      - file: 01-python/w4-python-ad-classes.ipynb
+      - file: 01-python/w4-python-ad-exceptions.ipynb
     
     #  - file: 01-python/w2-python-advanced-datatypes.ipynb
    

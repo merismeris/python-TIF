@@ -1,5 +1,3 @@
-# Miscellaneous
+# Algunos conceptos y material adicionales
 
-There are a lot of topics that we didn't cover, as well as a lot of
-the python standard library that we won't address.  Here we introduce
-a few more concepts.
+Hay muchos temas que no podemos cubrir durante el curso por falta de tiempo. Aquí os dejamos material adicional para que podáis explorar por vuestra cuenta si tenéis interés. 
