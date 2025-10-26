@@ -466,13 +466,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas">Listas</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-list">Listas (<code class="docutils literal notranslate"><span class="pre">list</span></code>)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-listas">Acceso a listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificar-elementos">Modificar elementos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadir-y-eliminar-elementos">Añadir y eliminar elementos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuplas">Tuplas</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuplas-tuple">Tuplas (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-tuplas">Definición de tuplas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-tuplas">Acceso a tuplas</a></li>
 </ul>
@@ -482,19 +482,19 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-los-rangos">Acceso a los rangos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cadenas-de-caracteres">Cadenas de caracteres</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cadenas-de-caracteres-str">Cadenas de caracteres (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-cadenas">Definición de cadenas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-caracteres-en-una-cadena">Acceso a caracteres en una cadena</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diccionarios">Diccionarios</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diccionarios-dict">Diccionarios (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-diccionarios">Definición de diccionarios</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-valores-en-un-diccionario">Acceso a valores en un diccionario</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificacion-de-diccionarios">Modificación de diccionarios</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadido-borrado-de-elementos-en-un-diccionario">Añadido /borrado de elementos en un diccionario</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjuntos-set">Conjuntos (set)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjuntos-set">Conjuntos (<code class="docutils literal notranslate"><span class="pre">set</span></code>)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-conjuntos">Definición de conjuntos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-elementos-en-un-conjunto">Acceso a elementos en un conjunto</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificacion-de-conjuntos">Modificación de conjuntos</a></li>
@@ -583,8 +583,8 @@ document.write(`
 </div>
 <p>La diferencia entre se tipos mutables e inmutables radica en si el valor del objeto puede cambiar después de su creación. Los tipos mutables, como las listas y los diccionarios, permiten modificar su contenido, mientras que los tipos inmutables, como las tuplas y las cadenas de texto, no permiten cambios una vez creados.</p>
 <p>La diferencia entre secuencias, mapas y conjuntos radica en la forma en que almacenan y acceden a los datos. Las secuencias mantienen un orden y permiten el acceso por índice, los mapas utilizan pares clave-valor para almacenar datos, y los conjuntos son colecciones no ordenadas que no permiten elementos duplicados. Todo esto lo veremos en detalle en las siguientes secciones.</p>
-<section id="listas">
-<h2>Listas<a class="headerlink" href="#listas" title="Link to this heading">#</a></h2>
+<section id="listas-list">
+<h2>Listas (<code class="docutils literal notranslate"><span class="pre">list</span></code>)<a class="headerlink" href="#listas-list" title="Link to this heading">#</a></h2>
 <p>Las listas agrupan datos. Muchos lenguajes tienen arrays (veremos esos en python más adelante). Pero a diferencia de los arrays en la mayoría de los lenguajes, las listas pueden contener datos de diferentes tipos — no necesitan ser homogéneas. Los datos pueden ser una mezcla de enteros, números en punto flotante o complejos, cadenas, u otros objetos (incluyendo otras listas).</p>
 <p>Al ser un objeto mutable, las listas pueden ser modificadas después de su creación: se pueden agregar, eliminar o cambiar elementos.</p>
 <p>###Definición de listas</p>
@@ -608,6 +608,27 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2.0, &#39;my list&#39;, 4]
 []
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Podemos crear listas utilizando un método abreviado de bucle for que se denomina comprensión de listas. La comprensión de listas consiste en definir una lista en una sola línea de código, utilizando una expresión seguida de un bucle for. Por ejemplo, la siguiente comprensión de listas crea una lista de los cuadrados de los números del 0 al 9:</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>El equivalente usando un bucle for sería:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -696,8 +717,8 @@ document.write(`
 </div>
 </section>
 </section>
-<section id="tuplas">
-<h2>Tuplas<a class="headerlink" href="#tuplas" title="Link to this heading">#</a></h2>
+<section id="tuplas-tuple">
+<h2>Tuplas (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)<a class="headerlink" href="#tuplas-tuple" title="Link to this heading">#</a></h2>
 <p>Las tuplas son similares a las listas en que pueden contener una colección de elementos heterogéneos. Sin embargo, a diferencia de las listas, las tuplas son inmutables, lo que significa que una vez creadas, no se pueden modificar (no se pueden agregar, eliminar o cambiar elementos). Esto las hace útiles para almacenar datos que no deben cambiar a lo largo del tiempo, como coordenadas geográficas o registros de datos fijos.</p>
 <section id="definicion-de-tuplas">
 <h3>Definición de tuplas<a class="headerlink" href="#definicion-de-tuplas" title="Link to this heading">#</a></h3>
@@ -744,7 +765,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tuple1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span> <span class="mi">10</span> <span class="c1"># Esto generará un error porque las tuplas son inmutables</span>
 
 <span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
@@ -837,8 +858,8 @@ range(3, 9, 2)
 </div>
 </section>
 </section>
-<section id="cadenas-de-caracteres">
-<h2>Cadenas de caracteres<a class="headerlink" href="#cadenas-de-caracteres" title="Link to this heading">#</a></h2>
+<section id="cadenas-de-caracteres-str">
+<h2>Cadenas de caracteres (<code class="docutils literal notranslate"><span class="pre">str</span></code>)<a class="headerlink" href="#cadenas-de-caracteres-str" title="Link to this heading">#</a></h2>
 <p>Las cadenas de caracteres (strings) son secuencias inmutables de caracteres encerradas entre comillas simples (<code class="docutils literal notranslate"><span class="pre">'</span></code>) o dobles (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>). Al igual que las tuplas, las cadenas no pueden ser modificadas después de su creación.</p>
 <section id="definicion-de-cadenas">
 <h3>Definición de cadenas<a class="headerlink" href="#definicion-de-cadenas" title="Link to this heading">#</a></h3>
@@ -882,8 +903,8 @@ Hola
 </div>
 </section>
 </section>
-<section id="diccionarios">
-<h2>Diccionarios<a class="headerlink" href="#diccionarios" title="Link to this heading">#</a></h2>
+<section id="diccionarios-dict">
+<h2>Diccionarios (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)<a class="headerlink" href="#diccionarios-dict" title="Link to this heading">#</a></h2>
 <p>Los diccionarios son estructuras de datos que almacenan pares clave-valor. Cada valor en un diccionario está asociado a una clave única, lo que permite un acceso rápido y eficiente a los valores mediante sus claves. Los diccionarios son mutables, lo que significa que podemos agregar, eliminar o modificar pares clave-valor después de su creación.</p>
 <section id="definicion-de-diccionarios">
 <h3>Definición de diccionarios<a class="headerlink" href="#definicion-de-diccionarios" title="Link to this heading">#</a></h3>
@@ -965,11 +986,15 @@ Por ejemplo:</p></li>
 </section>
 </section>
 <section id="conjuntos-set">
-<h2>Conjuntos (set)<a class="headerlink" href="#conjuntos-set" title="Link to this heading">#</a></h2>
+<h2>Conjuntos (<code class="docutils literal notranslate"><span class="pre">set</span></code>)<a class="headerlink" href="#conjuntos-set" title="Link to this heading">#</a></h2>
 <p>Los conjuntos son colecciones no ordenadas de elementos únicos. A diferencia de las listas y tuplas, los conjuntos no permiten elementos duplicados y no mantienen un orden específico. Los conjuntos son mutables, lo que significa que podemos agregar o eliminar elementos después de su creación.</p>
 <section id="definicion-de-conjuntos">
 <h3>Definición de conjuntos<a class="headerlink" href="#definicion-de-conjuntos" title="Link to this heading">#</a></h3>
 <p>Los conjuntos se definen utilizando llaves <code class="docutils literal notranslate"><span class="pre">{}</span></code> o la función <code class="docutils literal notranslate"><span class="pre">set()</span></code>. Por ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mi_conjunto</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="n">otro_conjunto</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
 </section>
 <section id="acceso-a-elementos-en-un-conjunto">
 <h3>Acceso a elementos en un conjunto<a class="headerlink" href="#acceso-a-elementos-en-un-conjunto" title="Link to this heading">#</a></h3>
@@ -1009,7 +1034,7 @@ Por ejemplo:</p></li>
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Las listas o las tuplas (mucho menos las cadenas) NO son matrices. Por tanto, no podemos operar con ellas como si lo fueran  (por ejemplo, no podemos hacer multiplicaciones de listas o tuplas). Si usamos el operador <code class="docutils literal notranslate"><span class="pre">*</span></code> con una lista,tupla o cadena, lo que haremos será repetir su contenido. Si usamos el operador <code class="docutils literal notranslate"><span class="pre">+</span></code>, lo que haremos será concatenar dos listas, tuplas o cadenas. Si usamos operadores matemáticos como <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>, o <code class="docutils literal notranslate"><span class="pre">**</span></code>, obtendremos un error.
+<p>Las listas o las tuplas (o por supuesto las cadenas) NO son matrices. Por tanto, no podemos operar con ellas como si lo fueran  (por ejemplo, no podemos hacer multiplicaciones de listas o tuplas). Si usamos el operador <code class="docutils literal notranslate"><span class="pre">*</span></code> con una lista,tupla o cadena, lo que haremos será repetir su contenido. Si usamos el operador <code class="docutils literal notranslate"><span class="pre">+</span></code>, lo que haremos será concatenar dos listas, tuplas o cadenas. Si usamos operadores matemáticos como <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>, o <code class="docutils literal notranslate"><span class="pre">**</span></code>, obtendremos un error.
 Para trabajar con matrices, usaremos la librería <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, que veremos más adelante.</p>
 </div>
 <div class="cell docutils container">
@@ -1256,13 +1281,13 @@ True
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas">Listas</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-list">Listas (<code class="docutils literal notranslate"><span class="pre">list</span></code>)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-listas">Acceso a listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificar-elementos">Modificar elementos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadir-y-eliminar-elementos">Añadir y eliminar elementos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuplas">Tuplas</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuplas-tuple">Tuplas (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-tuplas">Definición de tuplas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-tuplas">Acceso a tuplas</a></li>
 </ul>
@@ -1272,19 +1297,19 @@ True
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-los-rangos">Acceso a los rangos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cadenas-de-caracteres">Cadenas de caracteres</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cadenas-de-caracteres-str">Cadenas de caracteres (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-cadenas">Definición de cadenas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-caracteres-en-una-cadena">Acceso a caracteres en una cadena</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diccionarios">Diccionarios</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diccionarios-dict">Diccionarios (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-diccionarios">Definición de diccionarios</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-valores-en-un-diccionario">Acceso a valores en un diccionario</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificacion-de-diccionarios">Modificación de diccionarios</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadido-borrado-de-elementos-en-un-diccionario">Añadido /borrado de elementos en un diccionario</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjuntos-set">Conjuntos (set)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjuntos-set">Conjuntos (<code class="docutils literal notranslate"><span class="pre">set</span></code>)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-conjuntos">Definición de conjuntos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-elementos-en-un-conjunto">Acceso a elementos en un conjunto</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificacion-de-conjuntos">Modificación de conjuntos</a></li>

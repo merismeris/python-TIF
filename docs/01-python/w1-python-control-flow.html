@@ -193,7 +193,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="data-classes.html">Estructuras de datos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="w2-python-classes.html">Introducción a la Programación Orientada a Objetos en Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="w2-python-advanced-data.html">Tipos de dato</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w2-python-advanced-data.html">Tipos de dato estructurados</a></li>
 </ul>
 </details></li>
 </ul>
@@ -466,11 +466,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-while">Bucle While</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminacion-del-bucle">Terminación del bucle</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-for">Bucle For</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-while">Bucle <code class="docutils literal notranslate"><span class="pre">While</span> </code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-for">Bucle <code class="docutils literal notranslate"><span class="pre">For</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminacion-de-bucles">Terminación de bucles</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-break">Sentencia <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-continue">Sentencia <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
@@ -479,7 +476,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-if-else">Sentencia if-else</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions">List Comprehensions</a></li>
 </ul>
             </nav>
         </div>
@@ -504,8 +500,8 @@ document.write(`
 <p>Python utiliza indentación (espacios en blanco al inicio de una línea) para definir bloques de código. Esto significa que el código dentro de una estructura de control debe estar indentado o tabulado con respecto al código principal.</p>
 </div>
 <section id="bucle-while">
-<h2>Bucle While<a class="headerlink" href="#bucle-while" title="Link to this heading">#</a></h2>
-<p>Permite ejecutar un bloque de código mientras una condición sea verdadera. La condición se evalúa ** antes** de entrar en el bucle. Por tanto, se puede repetir entre 0 y n veces.</p>
+<h2>Bucle <code class="docutils literal notranslate"><span class="pre">While</span> </code><a class="headerlink" href="#bucle-while" title="Link to this heading">#</a></h2>
+<p>Permite ejecutar un bloque de código mientras una condición sea verdadera. La condición se evalúa <strong>antes</strong> de entrar en el bucle. Por tanto, se puede repetir entre 0 y n veces.</p>
 <p>En el cuerpo se debe incluir alguna sentencia que en algún momento haga que la condición deje de cumplirse, para evitar bucles infinitos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -530,13 +526,9 @@ document.write(`
 <p class="admonition-title">Note</p>
 <p>Observa que hay una variable (<code class="docutils literal notranslate"><span class="pre">n</span></code> en este caso) que se inicializa antes del bucle, se utiliza en la condición y se actualiza dentro del cuerpo del bucle. Esta variable se denomina variable de control del bucle.</p>
 </div>
-<section id="terminacion-del-bucle">
-<h3>Terminación del bucle<a class="headerlink" href="#terminacion-del-bucle" title="Link to this heading">#</a></h3>
-<p>Existen varios métodos para controlar la terminación de un bucle <code class="docutils literal notranslate"><span class="pre">while</span></code>. Algunos de los más comunes y que veremos a lo largo del curso son:</p>
-</section>
 </section>
 <section id="bucle-for">
-<h2>Bucle For<a class="headerlink" href="#bucle-for" title="Link to this heading">#</a></h2>
+<h2>Bucle <code class="docutils literal notranslate"><span class="pre">For</span></code><a class="headerlink" href="#bucle-for" title="Link to this heading">#</a></h2>
 <p>El bucle for permite iterar sobre una secuencia u objeto iterable (como una lista, una tupla, un diccionario, un conjunto o una cadena de texto) o sobre un rango de números. La variable de control del bucle toma cada uno de los valores de la secuencia o del rango en cada iteración, es decir, se convierte en un iterador.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -583,6 +575,10 @@ g
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Ojo</strong> al usar range() para iterar de m hasta n, porque el valor n no se incluye en la iteración.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
@@ -598,10 +594,6 @@ g
 </pre></div>
 </div>
 </div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Ojo</strong> al usar range() para iterar de m hasta n, porque el valor n no se incluye en la iteración.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -793,70 +785,6 @@ Adicionalmente, se puede utilizar la sentencia <code class="docutils literal not
 </div>
 </div>
 </div>
-<p>sometimes we want to loop over a list element and know its index – <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> helps here:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1
-1 2.0
-2 three
-3 4
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-quick-exercise admonition">
-<p class="admonition-title">Quick Exercise</p>
-<p><code class="docutils literal notranslate"><span class="pre">zip()</span></code> allows us to loop over two iterables at the same time.  Consider the following two
-lists:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
- <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
- <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">]</span>
- 
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">zip(a,</span> <span class="pre">b)</span></code> will act like a list with each element a tuple with one item from <code class="docutils literal notranslate"><span class="pre">a</span></code> and the corresponding element from <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
-<p>Try looping over these lists together (using <code class="docutils literal notranslate"><span class="pre">zip()</span></code>) and print the corresponding elements from each list together on a single line.</p>
-</div>
-<div class="admonition-quick-exercise admonition">
-<p class="admonition-title">Quick Exercise</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">.split()</span></code> function on a string can split it into words (separating on spaces).</p>
-<p>Using <code class="docutils literal notranslate"><span class="pre">.split()</span></code>, loop over the words in the string</p>
-<p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">&quot;The</span> <span class="pre">quick</span> <span class="pre">brown</span> <span class="pre">fox</span> <span class="pre">jumped</span> <span class="pre">over</span> <span class="pre">the</span> <span class="pre">lazy</span> <span class="pre">dog&quot;</span></code></p>
-<p>and print one word per line</p>
-</div>
-</section>
-<section id="list-comprehensions">
-<h2>List Comprehensions<a class="headerlink" href="#list-comprehensions" title="Link to this heading">#</a></h2>
-<p>list comprehensions provide a compact way to initialize lists.  Some examples from the tutorial</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition-quick-exercise admonition">
-<p class="admonition-title">Quick Exercise</p>
-<p>Use a list comprehension to create a new list from <code class="docutils literal notranslate"><span class="pre">squares</span></code> containing only the even numbers.  It might be helpful to use the modulus operator, <code class="docutils literal notranslate"><span class="pre">%</span></code></p>
-</div>
 </section>
 </section>
 
@@ -924,11 +852,8 @@ lists:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-while">Bucle While</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminacion-del-bucle">Terminación del bucle</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-for">Bucle For</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-while">Bucle <code class="docutils literal notranslate"><span class="pre">While</span> </code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bucle-for">Bucle <code class="docutils literal notranslate"><span class="pre">For</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminacion-de-bucles">Terminación de bucles</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-break">Sentencia <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-continue">Sentencia <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
@@ -937,7 +862,6 @@ lists:</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sentencia-if-else">Sentencia if-else</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehensions">List Comprehensions</a></li>
 </ul>
   </nav></div>
 
