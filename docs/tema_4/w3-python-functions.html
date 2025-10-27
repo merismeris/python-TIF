@@ -709,7 +709,7 @@ Después de llamar: 5
 <p><strong>Consecuencia:</strong> Si se utiliza un objeto mutable vacío como valor por defecto (por ejemplo, <code class="docutils literal notranslate"><span class="pre">L=[]</span></code>), todas las llamadas a la función compartirán el mismo objeto, acumulando modificaciones entre llamadas. Este es uno de los errores más comunes entre programadores principiantes.</p>
 <p><strong>Solución:</strong> Utilizar <code class="docutils literal notranslate"><span class="pre">None</span></code> como valor por defecto y crear el objeto mutable dentro de la función cuando sea necesario.</p>
 </div>
-<p>A continuación se muestra un ejemplo de un intento de inicializar con una lista vacía:</p>
+<p>A continuación se muestra un ejemplo que ilustra este problema común al usar una lista vacía como valor por defecto:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="p">[]):</span>
@@ -735,8 +735,8 @@ Después de llamar: 5
 </div>
 </div>
 </div>
-<p>Obsérvese que cada llamada no crea su propia lista separada. En su lugar, se creó una única lista vacía cuando la función fue procesada por primera vez, y esta lista persiste en memoria como el valor por defecto para el argumento opcional <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p>
-<p>Si queremos que se cree una lista única cada vez (por ejemplo, un lugar separado en memoria), en su lugar inicializamos el argumento a <code class="docutils literal notranslate"><span class="pre">None</span></code> y luego comprobamos su valor real y creamos una lista vacía en el cuerpo de la función si el valor por defecto no cambió.</p>
+<p>Obsérvese que cada llamada no crea su propia lista separada. En su lugar, <strong>se creó una única lista vacía cuando la función fue procesada por primera vez, y esta lista persiste en memoria como el valor por defecto para el argumento opcional <code class="docutils literal notranslate"><span class="pre">L</span></code></strong>.</p>
+<p>Si queremos que se cree una lista única cada vez (por ejemplo, un lugar separado en memoria), en su lugar <strong>inicializamos el argumento a <code class="docutils literal notranslate"><span class="pre">None</span></code></strong> y luego comprobamos su valor real y creamos una lista vacía en el cuerpo de la función si el valor por defecto no cambió.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fnew</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -764,6 +764,7 @@ Después de llamar: 5
 </div>
 </div>
 </div>
+<p>También es posible pasar explícitamente una lista existente como argumento. En este caso, la función utilizará esa lista en lugar de crear una nueva, y las modificaciones se acumularán en la lista proporcionada:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="n">fnew</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -773,19 +774,6 @@ Después de llamar: 5
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Obsérvese que el mismo <code class="docutils literal notranslate"><span class="pre">None</span></code> que vimos anteriormente vuelve a aparecer aquí.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2]
 </pre></div>
 </div>
 </div>
