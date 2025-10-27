@@ -34,9 +34,11 @@ _build/
 .DS_Store
 
 # Sphinx documentation
-docs/_build/
-docs/_static/
-docs/_autosummary/
+# docs/ folder is now used for GitHub Pages, so we don't ignore it
+# Only ignore specific temporary Sphinx folders if needed
+# docs/_build/
+# docs/_static/
+# docs/_autosummary/
 
 # MyST-NB
 .myst_nb_cache/

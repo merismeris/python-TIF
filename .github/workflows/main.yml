@@ -1,37 +1,65 @@
 name: Publish JupyterBook to GitHub Pages
 
 on:
-  push: # trigger build only when push to main
+  push: # trigger build when push to mi-cambio
     branches:
-      - main
+      - mi-cambio
+    paths:
+      - 'content/**'
+      - 'requirements.txt'
+      - '.github/workflows/main.yml'
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v5
+    - name: Checkout repository
+      uses: actions/checkout@v5
+      with:
+        ref: mi-cambio
+        fetch-depth: 0  # Fetch all history for proper git operations
+
     - name: Set up Python
       uses: actions/setup-python@v6
       with:
         python-version: "3.11"
         cache: "pip"
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y python3-pip graphviz
+
     - name: Install Python dependencies
       run: |
-        sudo apt-get install python3-pip graphviz
+        python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install ghp-import
-        PATH="${PATH}:${HOME}/.local/bin"
 
-    - name: Build book HTML
+    - name: Build Jupyter Book
       run: |
         jupyter-book build ./content
 
-    - name: Push _build/html to gh-pages
+    - name: Copy build to docs/ folder
       run: |
-        sudo chown -R $(whoami):$(whoami) .
+        # Remove old docs content
+        rm -rf docs/*
+        # Copy new build to docs
+        cp -r content/_build/html/* docs/
+        # Create .nojekyll file to prevent GitHub from processing with Jekyll
+        touch docs/.nojekyll
+
+    - name: Commit and push docs/ to mi-cambio
+      run: |
         git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
         git config --global user.name "$GITHUB_ACTOR"
-        git remote set-url origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY"
-
-        ghp-import ./content/_build/html -f -p -n
+        git add docs/
+        # Only commit if there are changes
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Auto-update docs/ from Jupyter Book build [skip ci]"
+          git push origin mi-cambio
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
