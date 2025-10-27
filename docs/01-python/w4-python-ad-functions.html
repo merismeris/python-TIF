@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Algunos conceptos y material adicionales &#8212; Introducción a Python. Asignatura Técnicas Informáticas en Física</title>
+    <title>Funciones lambda (funciones anónimas) &#8212; Introducción a Python. Asignatura Técnicas Informáticas en Física</title>
   
   
   
@@ -58,14 +58,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '01-python/misc';</script>
-    <link rel="canonical" href="/python-TIF/01-python/misc.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = '01-python/w4-python-ad-functions';</script>
+    <link rel="canonical" href="/python-TIF/01-python/w4-python-ad-functions.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pequeña introducción a la creación de clases en Python" href="w4-python-ad-classes.html" />
-    <link rel="prev" title="Funciones" href="w3-python-functions.html" />
+    <link rel="prev" title="Excepciones" href="w4-python-ad-exceptions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -205,10 +202,10 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Material adicional de Python</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Algunos conceptos y material adicionales</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="misc.html">Algunos conceptos y material adicionales</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="w4-python-ad-classes.html">Pequeña introducción a la creación de clases en Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="w4-python-ad-exceptions.html">Excepciones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="w4-python-ad-functions.html">Funciones lambda (funciones anónimas)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Funciones lambda (funciones anónimas)</a></li>
 </ul>
 </details></li>
 </ul>
@@ -257,6 +254,73 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/merismeris/python-TIF/mi-cambio?urlpath=lab/tree/content/01-python/w4-python-ad-functions.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/merismeris/python-TIF/blob/mi-cambio/content/01-python/w4-python-ad-functions.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -282,7 +346,7 @@
       
       
       
-      <li><a href="https://github.com/merismeris/python-TIF/issues/new?title=Issue%20on%20page%20%2F01-python/misc.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/merismeris/python-TIF/issues/new?title=Issue%20on%20page%20%2F01-python/w4-python-ad-functions.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -312,7 +376,7 @@
       
       
       
-      <li><a href="../_sources/01-python/misc.md" target="_blank"
+      <li><a href="../_sources/01-python/w4-python-ad-functions.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -322,7 +386,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -394,7 +458,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Algunos conceptos y material adicionales</h1>
+    <h1>Funciones lambda (funciones anónimas)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -408,11 +472,157 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="algunos-conceptos-y-material-adicionales">
-<h1>Algunos conceptos y material adicionales<a class="headerlink" href="#algunos-conceptos-y-material-adicionales" title="Link to this heading">#</a></h1>
-<p>Hay muchos temas que no podemos cubrir durante el curso por falta de tiempo. Aquí os dejamos material adicional para que podáis explorar por vuestra cuenta si tenéis interés.</p>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="funciones-lambda-funciones-anonimas">
+<h1>Funciones lambda (funciones anónimas)<a class="headerlink" href="#funciones-lambda-funciones-anonimas" title="Link to this heading">#</a></h1>
+<p>Las funciones lambda son pequeñas funciones anónimas que se definen utilizando la palabra clave <code class="docutils literal notranslate"><span class="pre">lambda</span></code>. Estas funciones pueden tener cualquier número de argumentos, pero solo una expresión. La sintaxis básica de una función lambda es la siguiente:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">argumentos</span><span class="p">:</span> <span class="n">expresión</span>
+
+</pre></div>
 </div>
+<p>Las funciones lambda se guardan en variables o se pasan directamente como argumentos a otras funciones. No requieren una declaración <code class="docutils literal notranslate"><span class="pre">def</span></code> y no tienen un nombre explícito.</p>
+<p>Por ejemplo, podemos definir una función lambda que calcule el cuadrado de un número de la siguiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># Salida: 25</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">square</span></code> es una variable que contiene la función lambda. Es de tipo función y puede ser llamada como cualquier otra función en Python.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">square</span><span class="p">))</span>  <span class="c1"># Salida: &lt;class &#39;function&#39;&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;function&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Las funciones lambda sirven para crear funciones pequeñas y desechables, generalmente utilizadas como argumentos para otras funciones, como <code class="docutils literal notranslate"><span class="pre">map()</span></code>, <code class="docutils literal notranslate"><span class="pre">filter()</span></code> y <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>.</p>
+<p>Por ejemplo,  tenemos una lista de tuplas. Queremos ordenar la lista según el segundo elemento de la tupla. El método <code class="docutils literal notranslate"><span class="pre">sort</span></code> puede tomar un argumento opcional <code class="docutils literal notranslate"><span class="pre">key</span></code> que nos indica cómo interpretar el elemento de la lista para ordenar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">)]</span>
+<span class="n">pairs</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">pairs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(4, &#39;four&#39;), (1, &#39;one&#39;), (3, &#39;three&#39;), (2, &#39;two&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>El código anterior con sort podría reescribirse sin utilizar una función lambda de la siguiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_second_element</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> 
+<span class="n">pairs</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">get_second_element</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pairs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(4, &#39;four&#39;), (1, &#39;one&#39;), (3, &#39;three&#39;), (2, &#39;two&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aquí usamos una lambda en una extracción de una lista (con la función <code class="docutils literal notranslate"><span class="pre">filter</span></code>).
+La función <code class="docutils literal notranslate"><span class="pre">filter</span></code> toma dos argumentos: una función y un iterable. Aplica la función a cada elemento del iterable y devuelve un iterador con los elementos para los cuales la función devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Recuerda que un iterable es cualquier objeto en Python que puede ser recorrido elemento por elemento, como listas, tuplas, cadenas de texto, diccionarios y conjuntos.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+<span class="n">sq</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">%</span><span class="k">2</span> == 0 and x%3 == 0, squares))
+<span class="n">sq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0,
+ 36,
+ 144,
+ 324,
+ 576,
+ 900,
+ 1296,
+ 1764,
+ 2304,
+ 2916,
+ 3600,
+ 4356,
+ 5184,
+ 6084,
+ 7056,
+ 8100,
+ 9216]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">filter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on class filter in module builtins:
+
+class filter(object)
+ |  filter(function or None, iterable) --&gt; filter object
+ |  
+ |  Return an iterator yielding those items of iterable for which function(item)
+ |  is true. If function is None, return the items that are true.
+ |  
+ |  Methods defined here:
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __next__(self, /)
+ |      Implement next(self).
+ |  
+ |  __reduce__(...)
+ |      Return state information for pickling.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si quieres profundizar más en las funciones lambda y su uso en Python, puedes consultar la <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions">documentación oficial de Python sobre funciones lambda</a>.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -446,22 +656,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="w3-python-functions.html"
+       href="w4-python-ad-exceptions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Funciones</p>
+        <p class="prev-next-title">Excepciones</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="w4-python-ad-classes.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pequeña introducción a la creación de clases en Python</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

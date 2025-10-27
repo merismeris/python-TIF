@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Functions &#8212; Introducción a Python. Asignatura Técnicas Informáticas en Física</title>
+    <title>Funciones &#8212; Introducción a Python. Asignatura Técnicas Informáticas en Física</title>
   
   
   
@@ -64,6 +64,8 @@
     <link rel="canonical" href="/python-TIF/01-python/w3-python-functions.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Algunos conceptos y material adicionales" href="misc.html" />
+    <link rel="prev" title="Tipos de dato estructurados" href="w2-python-advanced-data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +127,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -193,15 +193,22 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Estructuras de datos en Python</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="data-classes.html">Estructuras de datos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="data-classes.html">Estructuras de datos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="w2-python-classes.html">Introducción a la Programación Orientada a Objetos en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w2-python-advanced-data.html">Tipos de dato estructurados</a></li>
 </ul>
 </details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Funciones en Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Funciones</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Material adicional de Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="misc.html">Algunos conceptos y material adicionales</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="w4-python-ad-classes.html">Pequeña introducción a la creación de clases en Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="w4-python-ad-exceptions.html">Excepciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w4-python-ad-functions.html">Funciones lambda (funciones anónimas)</a></li>
 </ul>
 </details></li>
 </ul>
@@ -456,7 +463,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Functions</h1>
+    <h1>Funciones</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -466,8 +473,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-arguments">Keyword arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambdas">Lambdas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-funciones">Definición de funciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llamada-a-funciones">Llamada a funciones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mutabiliad-e-inmutabilidad-de-los-argumentos">Mutabiliad e inmutabilidad de los argumentos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argumentos-por-palabra-clave">Argumentos por palabra clave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambdas-funciones-anonimas">Lambdas (funciones anónimas)</a></li>
 </ul>
             </nav>
         </div>
@@ -479,19 +491,37 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="functions">
-<h1>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h1>
-<p>Functions are used to organize program flow, especially to allow us to easily do commonly needed tasks over and over again.  We’ve already used a lot of functions, such as those that work on lists (<code class="docutils literal notranslate"><span class="pre">append()</span></code> and <code class="docutils literal notranslate"><span class="pre">pop()</span></code>) or strings (like <code class="docutils literal notranslate"><span class="pre">replace()</span></code>).  Here we see how to write our own functions</p>
-<p>A function takes arguments, listed in the <code class="docutils literal notranslate"><span class="pre">()</span></code> and returns a value.  Even if you don’t explicitly give a return value, one will be return (e.g., <code class="docutils literal notranslate"><span class="pre">None</span></code>).</p>
-<p>Here’s a simple example of a function that takes a single argument, <code class="docutils literal notranslate"><span class="pre">i</span></code></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="funciones">
+<h1>Funciones<a class="headerlink" href="#funciones" title="Link to this heading">#</a></h1>
+<p>Las funciones se usan para organizar el flujo del programa, especialmente para permitirnos realizar tareas comunes repetidamente de forma sencilla. Ya hemos usado muchas funciones, como las usadas a través del módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>, integradas en métodos de clases como las que operan sobre listas (<code class="docutils literal notranslate"><span class="pre">append()</span></code> y <code class="docutils literal notranslate"><span class="pre">pop()</span></code>) o sobre cadenas (como <code class="docutils literal notranslate"><span class="pre">split()</span></code>). Aquí veremos cómo escribir nuestras propias funciones.</p>
+<p>Para poder usar nuestras propias funciones, primero tenemos que definirlas. Podemos definirla en el propio programa o en módulos externos que luego importamos. Veremos ambas opciones en prácticas.</p>
+<section id="definicion-de-funciones">
+<h2>Definición de funciones<a class="headerlink" href="#definicion-de-funciones" title="Link to this heading">#</a></h2>
+<p>Para definir una función debemos:</p>
+<ul class="simple">
+<li><p>Usar la palabra clave <code class="docutils literal notranslate"><span class="pre">def</span></code>, seguida del nombre de la función y paréntesis <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p></li>
+<li><p>Dentro de los paréntesis, podemos listar los parámetros que la función tomará como entrada.</p></li>
+<li><p>Terminar la línea de definición con dos puntos <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p></li>
+<li><p>Identar el bloque de código que constituye el cuerpo de la función.</p></li>
+<li><p>Incluir una declaración de retorno para devolver un valor usando la palabra clave <code class="docutils literal notranslate"><span class="pre">return</span></code>. Si no se incluye una declaración de retorno, la función devolverá <code class="docutils literal notranslate"><span class="pre">None</span></code> por defecto.</p></li>
+</ul>
+<p>Aquí hay un ejemplo simple de una función que toma un único argumento, <code class="docutils literal notranslate"><span class="pre">i</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_fun</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;in the function, i = </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recibido el valor i = </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Para definir una función en un módulo externo, simplemente escribimos la definición de la función en un archivo <code class="docutils literal notranslate"><span class="pre">.py</span></code> separado. Por ejemplo, podemos crear un archivo llamado <code class="docutils literal notranslate"><span class="pre">mimodulo.py</span></code> con la siguiente función:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span>
+</pre></div>
+</div>
+<section id="llamada-a-funciones">
+<h3>Llamada a funciones<a class="headerlink" href="#llamada-a-funciones" title="Link to this heading">#</a></h3>
+<p>Para llamar a la función, simplemente usamos su nombre seguido de paréntesis que contienen los argumentos que queremos pasarle. Por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_fun</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -500,18 +530,24 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>in the function, i = 10
-in the function, i = 5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Recibido el valor i = 10
+Recibido el valor i = 5
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Functions are one place where <em>scope</em> comes into play.  A function has its own <em>namespace</em>.  If a variable is not defined in that function, then it will look to the namespace from where it was called to see if that variable exists there.</p>
-<p>However, you should avoid this as much as possible (variables that persist across namespaces are called global variables).</p>
+<p>Podemos definir una función en cualquier parte del código (siempre <strong>antes de llamarla</strong>), pero es una buena práctica definirlas al principio del archivo o en módulos separados para mantener el código organizado.</p>
 </div>
-<p>Functions always return a value—if one is not explicitly given, then they return <code class="docutils literal notranslate"><span class="pre">None</span></code>, otherwise, they can return values (even multiple values) of any type</p>
+<p>Si hemos creado una función en un módulo externo, podemos importarla en nuestro programa principal usando la instrucción <code class="docutils literal notranslate"><span class="pre">import</span></code> o <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">...</span> <span class="pre">import</span> <span class="pre">...</span></code>.</p>
+<p>En el ejemplo anterior, podemos importar la función <code class="docutils literal notranslate"><span class="pre">square</span></code> y usarla en nuestro programa principal de la siguiente manera:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mimodulo</span><span class="w"> </span><span class="kn">import</span> <span class="n">square</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># Salida: 25</span>
+</pre></div>
+</div>
+<p>En cualquier caso, las funciones siempre devuelven un valor (o varios) de cualquier tipo. Si no se da explícitamente, devuelven <code class="docutils literal notranslate"><span class="pre">None</span></code> (el equivalente a <code class="docutils literal notranslate"><span class="pre">null</span></code> en otros lenguajes).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">my_fun</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -520,12 +556,12 @@ in the function, i = 5
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>in the function, i = 10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Recibido el valor i = 10
 </pre></div>
 </div>
 </div>
 </div>
-<p>Here’s a simple function that takes two numbers and returns their product.</p>
+<p>Aquí hay una función simple que toma dos números y devuelve su producto.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -542,48 +578,47 @@ in the function, i = 5
 </div>
 </div>
 </div>
-<div class="admonition-quick-exercise admonition">
-<p class="admonition-title">Quick Exercise</p>
-<p>Write a simple function that takes a sentence (as a string) and returns an integer equal to the length of the longest word in the sentence.  The <code class="docutils literal notranslate"><span class="pre">len()</span></code> function and the <code class="docutils literal notranslate"><span class="pre">.split()</span></code> methods will be useful here.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Las funciones son un lugar donde entra en juego el <em>alcance</em> (scope). Una función tiene su propio <em>namespace</em>. Si una variable no está definida en esa función, buscará en el namespace desde donde fue llamada para ver si esa variable existe allí.</p>
+<p>Sin embargo, deberías evitar esto tanto como sea posible, e intentar que todas las variables que necesite la función sean variables locales (las variables que persisten a través de namespaces se llaman variables globales).</p>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">None</span></code> is a special quantity in python (analogous to <code class="docutils literal notranslate"><span class="pre">null</span></code> in some other languages).  We can test on <code class="docutils literal notranslate"><span class="pre">None</span></code>—the preferred manner is to use <code class="docutils literal notranslate"><span class="pre">is</span></code>:</p>
+</section>
+</section>
+<section id="mutabiliad-e-inmutabilidad-de-los-argumentos">
+<h2>Mutabiliad e inmutabilidad de los argumentos<a class="headerlink" href="#mutabiliad-e-inmutabilidad-de-los-argumentos" title="Link to this heading">#</a></h2>
+<p>Cuando pasamos argumentos a una función, estos pueden ser mutables o inmutables. En función de esta característica, Python maneja los argumentos de manera diferente.</p>
+<ul class="simple">
+<li><p>En el caso de los argumentos inmutables (como enteros, cadenas y tuplas), Python crea una copia del valor y lo pasa a la función. Cualquier cambio realizado en el argumento dentro de la función no afectará al valor original fuera de la función. Esto se denomina <strong>paso por valor</strong>.</p></li>
+<li><p>En el caso de los argumentos mutables (como listas y diccionarios), Python pasa una referencia al objeto original. Esto significa que cualquier cambio realizado en el argumento dentro de la función afectará al objeto original fuera de la función. Esto se denomina <strong>paso por referencia</strong>. Os dejamos un ejemplo para ilustrar esto:</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">do_nothing</span><span class="p">():</span>
-    <span class="k">pass</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">do_nothing</span><span class="p">()</span>
-<span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;we didn&#39;t do anything&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">agregar_elemento</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">elemento</span><span class="p">):</span>
+    <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lista</span>
+<span class="n">mi_lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">nueva_lista</span> <span class="o">=</span> <span class="n">agregar_elemento</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">)</span>      <span class="c1"># Salida: [1, 2, 3, 4]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nueva_lista</span><span class="p">)</span>   <span class="c1"># Salida: [1, 2, 3, 4] </span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>we didn&#39;t do anything
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4]
+[1, 2, 3, 4]
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span>
-</pre></div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>El paso por referencia o valor puede llevar a errores difíciles de detectar si no se sabe bien qué objetos son mutables y cuáles no. Para saber más sobre mutabilidad e inmutabilidad en Python, podéis consultar la <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#objects-values-and-types">documentación oficial</a>.</p>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<section id="keyword-arguments">
-<h2>Keyword arguments<a class="headerlink" href="#keyword-arguments" title="Link to this heading">#</a></h2>
-<p>You can have optional arguments which provide defaults.  Here’s a simple function that computes <span class="math notranslate nohighlight">\(\sin(\theta)\)</span> where <span class="math notranslate nohighlight">\(\theta\)</span> can optionally be in degrees.</p>
+</section>
+<section id="argumentos-por-palabra-clave">
+<h2>Argumentos por palabra clave<a class="headerlink" href="#argumentos-por-palabra-clave" title="Link to this heading">#</a></h2>
+<p>Puedes tener argumentos opcionales que proveen valores por defecto. Aquí hay una función simple que calcula <span class="math notranslate nohighlight">\(\sin(\theta)\)</span> donde <span class="math notranslate nohighlight">\(\theta\)</span> opcionalmente puede estar en grados.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
@@ -615,10 +650,10 @@ in the function, i = 5
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>It is important to note that python evaluates the optional arguments once—when the function is defined.  This means that if you make the default an empty object, for instance, it will persist across all call.</p>
-<p><strong>This leads to one of the most common errors for beginners</strong></p>
+<p>Es importante destacar que Python evalúa los argumentos opcionales una sola vez—cuando la función se define. Esto significa que si pones como valor por defecto un objeto mutable vacío, por ejemplo, persistirá entre llamadas. Esto tiene que ver con la mutabilidad que hemos comentado antes.</p>
+<p><strong>Esto conduce a uno de los errores más comunes entre quienes empiezan</strong></p>
 </div>
-<p>Here’s an example of trying to initialize to an empty list:</p>
+<p>Aquí hay un ejemplo de intentar inicializar con una lista vacía:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="p">[]):</span>
@@ -644,8 +679,8 @@ in the function, i = 5
 </div>
 </div>
 </div>
-<p>Notice that each call does not create its own separate list.  Instead a single empty list was created when the function was first processed, and this list persists in memory as the default value for the optional argument <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p>
-<p>If we want a unique list created each time (e.g., a separate place in memory), we instead initialize the argument’s value to <code class="docutils literal notranslate"><span class="pre">None</span></code> and then check its actual value and create an empty list in the function body itself if the default value was unchanged.</p>
+<p>Fíjate que cada llamada no crea su propia lista separada. En su lugar, se creó una única lista vacía cuando la función fue procesada por primera vez, y esta lista persiste en memoria como el valor por defecto para el argumento opcional <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p>
+<p>Si queremos que se cree una lista única cada vez (por ejemplo, un lugar separado en memoria), en su lugar inicializamos el argumento a <code class="docutils literal notranslate"><span class="pre">None</span></code> y luego comprobamos su valor real y creamos una lista vacía en el cuerpo de la función si el valor por defecto no cambió.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fnew</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -686,7 +721,7 @@ in the function, i = 5
 </div>
 </div>
 </div>
-<p>Notice that the same <code class="docutils literal notranslate"><span class="pre">None</span></code> that we saw previously comes into play here.</p>
+<p>Fíjate que el mismo <code class="docutils literal notranslate"><span class="pre">None</span></code> que vimos anteriormente vuelve a aparecer aquí.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span>
@@ -700,10 +735,10 @@ in the function, i = 5
 </div>
 </div>
 </section>
-<section id="lambdas">
-<h2>Lambdas<a class="headerlink" href="#lambdas" title="Link to this heading">#</a></h2>
-<p>Lambdas are “disposible” functions.  These are small, nameless functions that are often used as arguments in other functions.</p>
-<p>Ex, from the official tutorial: we have a list of tuples.  We want to sort the list based on the second item in the tuple.  The <code class="docutils literal notranslate"><span class="pre">sort</span></code> method can take a <code class="docutils literal notranslate"><span class="pre">key</span></code> optional argument that tells us how to interpret the list item for sorting</p>
+<section id="lambdas-funciones-anonimas">
+<h2>Lambdas (funciones anónimas)<a class="headerlink" href="#lambdas-funciones-anonimas" title="Link to this heading">#</a></h2>
+<p>Las lambdas son funciones “desechables”. Son funciones pequeñas y sin nombre que a menudo se usan como argumentos en otras funciones.</p>
+<p>Por ejemplo,  tenemos una lista de tuplas. Queremos ordenar la lista según el segundo elemento de la tupla. El método <code class="docutils literal notranslate"><span class="pre">sort</span></code> puede tomar un argumento opcional <code class="docutils literal notranslate"><span class="pre">key</span></code> que nos indica cómo interpretar el elemento de la lista para ordenar.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">)]</span>
@@ -724,7 +759,7 @@ in the function, i = 5
 </div>
 </div>
 </div>
-<p>Here we use a lambda in an extract from a list (with the filter function)</p>
+<p>Aquí usamos una lambda en una extracción de una lista (con la función <code class="docutils literal notranslate"><span class="pre">filter</span></code>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
@@ -826,6 +861,24 @@ class filter(object)
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="w2-python-advanced-data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Tipos de dato estructurados</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="misc.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Algunos conceptos y material adicionales</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -842,8 +895,13 @@ class filter(object)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-arguments">Keyword arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambdas">Lambdas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-funciones">Definición de funciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llamada-a-funciones">Llamada a funciones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mutabiliad-e-inmutabilidad-de-los-argumentos">Mutabiliad e inmutabilidad de los argumentos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argumentos-por-palabra-clave">Argumentos por palabra clave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambdas-funciones-anonimas">Lambdas (funciones anónimas)</a></li>
 </ul>
   </nav></div>
 

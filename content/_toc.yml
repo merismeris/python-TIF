@@ -21,13 +21,16 @@ parts:
       sections:
       - file: 01-python/w2-python-classes.ipynb
       - file: 01-python/w2-python-advanced-data.ipynb
- # - caption: Funciones en Python
+  - caption: Funciones en Python
+    chapters:
+    - file: 01-python/w3-python-functions.ipynb
   - caption: Material adicional de Python
     chapters:
     - file: 01-python/misc
       sections:
         - file: 01-python/w4-python-ad-classes.ipynb
         - file: 01-python/w4-python-ad-exceptions.ipynb
+        - file: 01-python/w4-python-ad-functions.ipynb
     
     #  - file: 01-python/w2-python-advanced-datatypes.ipynb
    
