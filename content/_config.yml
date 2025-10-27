@@ -31,6 +31,8 @@ html:
   use_repository_button: true
   use_baseurl: true
   baseurl: /python-TIF/
+  extra_css:
+    - _static/myfile.css
   extra_footer: |
     <p>
     &copy; 2023-2025; CC-BY-NC-SA 4.0
@@ -41,6 +43,8 @@ sphinx:
     html_show_copyright: false
     nbsphinx_timeout: 300
     nb_execution_timeout: 300
+  extra_extensions:
+    - sphinx_accessibility
 
 launch_buttons:
    thebe: true

@@ -72,7 +72,7 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
 
     def log_message(self, format, *args):
         # Silenciar logs de polling
-        if '/__check_reload__' not in args[0]:
+        if args and '/__check_reload__' not in str(args[0]):
             super().log_message(format, *args)
 
     def end_headers(self):
