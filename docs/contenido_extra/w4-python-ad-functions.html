@@ -35,7 +35,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=359afcf4" />
+    <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -54,9 +57,18 @@
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script src="../_static/Accessibility.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'contenido_extra/w4-python-ad-functions';</script>
     <link rel="canonical" href="/python-TIF/contenido_extra/w4-python-ad-functions.html" />
@@ -454,9 +466,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="funciones-lambda-funciones-anonimas">
 <h1>Funciones lambda (funciones anónimas)<a class="headerlink" href="#funciones-lambda-funciones-anonimas" title="Link to this heading">#</a></h1>
-<p>Las funciones lambda son pequeñas funciones anónimas que se definen utilizando la palabra clave <code class="docutils literal notranslate"><span class="pre">lambda</span></code>. Estas funciones pueden tener cualquier número de argumentos, pero solo una expresión. La sintaxis básica de una función lambda es la siguiente:</p>
+<p>Las funciones lambda son funciones anónimas pequeñas que se definen utilizando la palabra clave <code class="docutils literal notranslate"><span class="pre">lambda</span></code>. Estas funciones pueden tener cualquier número de argumentos, pero solo una expresión. La sintaxis básica de una función lambda es la siguiente:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">argumentos</span><span class="p">:</span> <span class="n">expresión</span>
-
 </pre></div>
 </div>
 <p>Las funciones lambda se guardan en variables o se pasan directamente como argumentos a otras funciones. No requieren una declaración <code class="docutils literal notranslate"><span class="pre">def</span></code> y no tienen un nombre explícito.</p>
@@ -468,25 +479,37 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">square</span></code> es una variable que contiene la función lambda. Es de tipo función y puede ser llamada como cualquier otra función en Python.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
 </pre></div>
 </div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">square</span></code> es una variable que contiene la función lambda. Es de tipo función y puede ser llamada como cualquier otra función en Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">square</span><span class="p">))</span>  <span class="c1"># Salida: &lt;class &#39;function&#39;&gt;</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;function&#39;&gt;
+</pre></div>
 </div>
-<p>Las funciones lambda sirven para crear funciones pequeñas y desechables, generalmente utilizadas como argumentos para otras funciones, como <code class="docutils literal notranslate"><span class="pre">map()</span></code>, <code class="docutils literal notranslate"><span class="pre">filter()</span></code> y <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>.</p>
-<p>Por ejemplo,  tenemos una lista de tuplas. Queremos ordenar la lista según el segundo elemento de la tupla. El método <code class="docutils literal notranslate"><span class="pre">sort</span></code> puede tomar un argumento opcional <code class="docutils literal notranslate"><span class="pre">key</span></code> que nos indica cómo interpretar el elemento de la lista para ordenar.</p>
+</div>
+</div>
+<p>Las funciones lambda son útiles para crear funciones pequeñas y temporales, generalmente utilizadas como argumentos para otras funciones, como <code class="docutils literal notranslate"><span class="pre">map()</span></code>, <code class="docutils literal notranslate"><span class="pre">filter()</span></code> y <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>.</p>
+<p>Por ejemplo, supongamos que tenemos una lista de tuplas y queremos ordenarla según el segundo elemento de cada tupla. El método <code class="docutils literal notranslate"><span class="pre">sort</span></code> acepta un argumento opcional <code class="docutils literal notranslate"><span class="pre">key</span></code> que indica qué parte del elemento usar para ordenar:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">)]</span>
 <span class="n">pairs</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">pairs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(4, &#39;four&#39;), (1, &#39;one&#39;), (3, &#39;three&#39;), (2, &#39;two&#39;)]
 </pre></div>
 </div>
 </div>
@@ -507,12 +530,16 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(4, &#39;four&#39;), (1, &#39;one&#39;), (3, &#39;three&#39;), (2, &#39;two&#39;)]
+</pre></div>
 </div>
-<p>Aquí usamos una lambda en una extracción de una lista (con la función <code class="docutils literal notranslate"><span class="pre">filter</span></code>).
-La función <code class="docutils literal notranslate"><span class="pre">filter</span></code> toma dos argumentos: una función y un iterable. Aplica la función a cada elemento del iterable y devuelve un iterador con los elementos para los cuales la función devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Recuerda que un iterable es cualquier objeto en Python que puede ser recorrido elemento por elemento, como listas, tuplas, cadenas de texto, diccionarios y conjuntos.</p>
+</div>
+</div>
+<p>Las funciones lambda también son útiles con funciones como <code class="docutils literal notranslate"><span class="pre">filter</span></code>, que filtra elementos de un iterable. La función <code class="docutils literal notranslate"><span class="pre">filter</span></code> toma dos argumentos: una función y un iterable. Aplica la función a cada elemento del iterable y devuelve un iterador con los elementos para los cuales la función devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>Un iterable es cualquier objeto en Python que puede ser recorrido elemento por elemento, como listas, tuplas, cadenas de texto, diccionarios y conjuntos.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -576,7 +603,7 @@ class filter(object)
  |  ----------------------------------------------------------------------
  |  Static methods defined here:
  |  
- |  __new__(*args, **kwargs) from builtins.type
+ |  __new__(*args, **kwargs)
  |      Create and return a new object.  See help(type) for accurate signature.
 </pre></div>
 </div>

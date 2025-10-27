@@ -35,7 +35,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=359afcf4" />
+    <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -54,9 +57,18 @@
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script src="../_static/Accessibility.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'contenido_extra/w4-python-ad-exceptions';</script>
     <link rel="canonical" href="/python-TIF/contenido_extra/w4-python-ad-exceptions.html" />
@@ -455,41 +467,69 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="excepciones">
 <h1>Excepciones<a class="headerlink" href="#excepciones" title="Link to this heading">#</a></h1>
-<p>Python lanza excepciones cuando encuentra un error. La idea es que puedes capturar estas excepciones y tomar una acción apropiada en lugar de hacer que el código falle. El mecanismo para esto es <code class="docutils literal notranslate"><span class="pre">try</span></code> / <code class="docutils literal notranslate"><span class="pre">except</span></code>. Aquí hay un ejemplo que causa una excepción, <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> (Error de División por Cero):</p>
+<p>Python lanza excepciones cuando encuentra un error. La idea es que se pueden capturar estas excepciones y tomar una acción apropiada en lugar de que el código falle. El mecanismo para esto es <code class="docutils literal notranslate"><span class="pre">try</span></code> / <code class="docutils literal notranslate"><span class="pre">except</span></code>. A continuación se muestra un ejemplo que causa una excepción <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> (Error de División por Cero):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+
+<span class="ne">ZeroDivisionError</span>: division by zero
 </pre></div>
 </div>
 </div>
 </div>
-<p>y aquí manejamos esto</p>
+<p>A continuación se muestra cómo manejar esta excepción:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
 <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;advertencia: has dividido por cero&quot;</span><span class="p">)</span>
     <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-
 <span class="n">a</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>advertencia: has dividido por cero
+</pre></div>
 </div>
-<p>otro ejemplo — intentar acceder a una clave que no existe en un diccionario:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">dict</span><span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">])</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">KeyError</span></code> es la excepción que se lanzó. Podemos comprobar esto y tomar la acción apropiada en su lugar</p>
+<p>Otro ejemplo: intentar acceder a una clave que no existe en un diccionario:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">dict</span><span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="nb">dict</span><span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">])</span>
+
+<span class="ne">KeyError</span>: &#39;d&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">KeyError</span></code> es la excepción que se lanzó. Podemos capturar esta excepción y tomar la acción apropiada:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">val</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">]</span>
 <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
     <span class="n">val</span> <span class="o">=</span> <span class="kc">None</span>
@@ -498,19 +538,29 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
 </div>
-<p>Todavía no hemos hablado de E/S (entrada/salida), pero como podrías esperar, cuando abres un archivo, obtienes un objeto con el que puedes interactuar. Aquí intentamos abrir un archivo para lectura que no existe.</p>
+</div>
+</div>
+<p>Todavía no hemos hablado de E/S (entrada/salida), pero cuando se abre un archivo, se obtiene un objeto con el que se puede interactuar. A continuación se muestra un ejemplo de intento de abrir un archivo para lectura que no existe:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error: ese archivo no existe&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>error: ese archivo no existe
+</pre></div>
 </div>
-<p>Hay muchos tipos diferentes de excepciones que puedes capturar, y puedes capturar múltiples excepciones por cláusula <code class="docutils literal notranslate"><span class="pre">except</span></code> o tener múltiples cláusulas <code class="docutils literal notranslate"><span class="pre">except</span></code>. Probablemente no podrás anticipar todos los modos de fallo por adelantado. En ese caso, cuando ejecutes y tu código falle debido a una excepción, el intérprete de Python imprimirá el nombre de la excepción y entonces podrás modificar tu código para tomar la acción apropiada.</p>
+</div>
+</div>
+<p>Existen muchos tipos diferentes de excepciones que se pueden capturar, y es posible capturar múltiples excepciones por cláusula <code class="docutils literal notranslate"><span class="pre">except</span></code> o tener múltiples cláusulas <code class="docutils literal notranslate"><span class="pre">except</span></code>. Probablemente no se podrán anticipar todos los modos de fallo por adelantado. En ese caso, cuando se ejecute el código y falle debido a una excepción, el intérprete de Python imprimirá el nombre de la excepción, lo que permitirá modificar el código para tomar la acción apropiada.</p>
 </section>
 
     <script type="text/x-thebe-config">

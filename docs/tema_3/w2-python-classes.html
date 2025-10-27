@@ -35,7 +35,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=359afcf4" />
+    <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -54,9 +57,18 @@
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script src="../_static/Accessibility.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tema_3/w2-python-classes';</script>
     <link rel="canonical" href="/python-TIF/tema_3/w2-python-classes.html" />
@@ -504,7 +516,7 @@ document.write(`
 </ul>
 <section id="que-es-un-objeto">
 <h2>¿Qué es un objeto?<a class="headerlink" href="#que-es-un-objeto" title="Link to this heading">#</a></h2>
-<p>Un objeto es una entidad (como una variable “especial”) a la que se le asocia:</p>
+<p>Un objeto es una entidad que encapsula:</p>
 <ul class="simple">
 <li><p>Un conjunto de datos (atributos o propiedades)</p></li>
 <li><p>Un conjunto de funciones o acciones (métodos)</p></li>
@@ -535,10 +547,10 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Como vemos, usamos el operador punto <code class="docutils literal notranslate"><span class="pre">.</span></code> para acceder a los miembros de la clase (atributos o métodos).</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Los atributos son variables, así que no llevan paréntesis, mientras que los métodos son funciones, por lo que sí llevan paréntesis.</p>
+<p>Como vemos, usamos el operador punto <code class="docutils literal notranslate"><span class="pre">.</span></code> para acceder a los miembros de un objeto (atributos o métodos).</p>
+<div class="tip admonition">
+<p class="admonition-title">Consejo</p>
+<p>Los atributos son variables y no llevan paréntesis, mientras que los métodos son funciones y llevan paréntesis.</p>
 </div>
 <p>En este curso no trabajaremos con la definición de clases y objetos, pero es importante entender estos conceptos ya que muchos tipos de datos en Python (como listas, tuplas, diccionarios, conjuntos, etc.) son implementados como clases y sus instancias son los objetos que utilizamos en nuestro código.</p>
 </section>

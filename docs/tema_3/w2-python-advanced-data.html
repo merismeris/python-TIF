@@ -35,7 +35,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=359afcf4" />
+    <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -54,9 +57,18 @@
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script src="../_static/Accessibility.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tema_3/w2-python-advanced-data';</script>
     <link rel="canonical" href="/python-TIF/tema_3/w2-python-advanced-data.html" />
@@ -452,6 +464,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-list">Listas (<code class="docutils literal notranslate"><span class="pre">list</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-listas">Definición de listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-listas">Acceso a listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificar-elementos">Modificar elementos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadir-y-eliminar-elementos">Añadir y eliminar elementos</a></li>
@@ -476,7 +489,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-diccionarios">Definición de diccionarios</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-valores-en-un-diccionario">Acceso a valores en un diccionario</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificacion-de-diccionarios">Modificación de diccionarios</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadido-borrado-de-elementos-en-un-diccionario">Añadido /borrado de elementos en un diccionario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadido-y-borrado-de-elementos-en-un-diccionario">Añadido y borrado de elementos en un diccionario</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjuntos-set">Conjuntos (<code class="docutils literal notranslate"><span class="pre">set</span></code>)</a><ul class="nav section-nav flex-column">
@@ -566,13 +579,14 @@ document.write(`
 </tbody>
 </table>
 </div>
-<p>La diferencia entre se tipos mutables e inmutables radica en si el valor del objeto puede cambiar después de su creación. Los tipos mutables, como las listas y los diccionarios, permiten modificar su contenido, mientras que los tipos inmutables, como las tuplas y las cadenas de texto, no permiten cambios una vez creados.</p>
+<p>La diferencia entre estos tipos mutables e inmutables radica en si el valor del objeto puede cambiar después de su creación. Los tipos mutables, como las listas y los diccionarios, permiten modificar su contenido, mientras que los tipos inmutables, como las tuplas y las cadenas de texto, no permiten cambios una vez creados.</p>
 <p>La diferencia entre secuencias, mapas y conjuntos radica en la forma en que almacenan y acceden a los datos. Las secuencias mantienen un orden y permiten el acceso por índice, los mapas utilizan pares clave-valor para almacenar datos, y los conjuntos son colecciones no ordenadas que no permiten elementos duplicados. Todo esto lo veremos en detalle en las siguientes secciones.</p>
 <section id="listas-list">
 <h2>Listas (<code class="docutils literal notranslate"><span class="pre">list</span></code>)<a class="headerlink" href="#listas-list" title="Link to this heading">#</a></h2>
 <p>Las listas agrupan datos. Muchos lenguajes tienen arrays (veremos esos en python más adelante). Pero a diferencia de los arrays en la mayoría de los lenguajes, las listas pueden contener datos de diferentes tipos — no necesitan ser homogéneas. Los datos pueden ser una mezcla de enteros, números en punto flotante o complejos, cadenas, u otros objetos (incluyendo otras listas).</p>
 <p>Al ser un objeto mutable, las listas pueden ser modificadas después de su creación: se pueden agregar, eliminar o cambiar elementos.</p>
-<p>###Definición de listas</p>
+<section id="definicion-de-listas">
+<h3>Definición de listas<a class="headerlink" href="#definicion-de-listas" title="Link to this heading">#</a></h3>
 <p>Una lista se define usando corchetes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -597,8 +611,8 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<div class="tip admonition">
+<p class="admonition-title">Consejo</p>
 <p>Podemos crear listas utilizando un método abreviado de bucle for que se denomina comprensión de listas. La comprensión de listas consiste en definir una lista en una sola línea de código, utilizando una expresión seguida de un bucle for. Por ejemplo, la siguiente comprensión de listas crea una lista de los cuadrados de los números del 0 al 9:</p>
 </div>
 <div class="cell docutils container">
@@ -618,11 +632,12 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
 <section id="acceso-a-listas">
 <h3>Acceso a listas<a class="headerlink" href="#acceso-a-listas" title="Link to this heading">#</a></h3>
 <p>Podemos acceder una lista para obtener un solo elemento utilizando el nombre de la lista seguido del índice (de tipo entero) del elemento entre corchetes.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
+<div class="important admonition">
+<p class="admonition-title">Importante</p>
 <p>En Python, los índices de las listas comienzan en 0.</p>
 </div>
 <div class="cell docutils container">
@@ -638,7 +653,7 @@ document.write(`
 4
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, -2.0]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2.0]
 </pre></div>
 </div>
 </div>
@@ -695,7 +710,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, &#39;my list&#39;, 4]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, &#39;new element&#39;, &#39;my list&#39;, 4, 6]
 </pre></div>
 </div>
 </div>
@@ -717,6 +732,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2.0, &#39;my tuple&#39;, 4)
+()
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="acceso-a-tuplas">
@@ -728,11 +749,26 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my tuple
+</pre></div>
+</div>
+</div>
 </div>
 <p>No podremos modificar los elementos de una tupla después de su creación, ya que son inmutables. Por tanto, cualquier intento de asignar un nuevo valor a un índice específico resultará en un error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tuple1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span> <span class="mi">10</span> <span class="c1"># Esto generará un error porque las tuplas son inmutables</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tuple1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span> <span class="mi">10</span> <span class="c1"># Esto generará un error porque las tuplas son inmutables</span>
+
+<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
 </pre></div>
 </div>
 </div>
@@ -838,7 +874,7 @@ document.write(`
 <h3>Definición de diccionarios<a class="headerlink" href="#definicion-de-diccionarios" title="Link to this heading">#</a></h3>
 <p>Los diccionarios se definen utilizando llaves <code class="docutils literal notranslate"><span class="pre">{}</span></code> y pares clave-valor separados por dos puntos <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
 <ul class="simple">
-<li><p>Las claves deben de ser cadenas o valores enteros</p></li>
+<li><p>Las claves deben ser cadenas o valores enteros</p></li>
 <li><p>Los valores pueden ser de cualquier tipo (entero, real, listas, tuplas, otro diccionario…)
 Por ejemplo:</p></li>
 </ul>
@@ -874,8 +910,8 @@ Por ejemplo:</p></li>
 </div>
 </div>
 </section>
-<section id="anadido-borrado-de-elementos-en-un-diccionario">
-<h3>Añadido /borrado de elementos en un diccionario<a class="headerlink" href="#anadido-borrado-de-elementos-en-un-diccionario" title="Link to this heading">#</a></h3>
+<section id="anadido-y-borrado-de-elementos-en-un-diccionario">
+<h3>Añadido y borrado de elementos en un diccionario<a class="headerlink" href="#anadido-y-borrado-de-elementos-en-un-diccionario" title="Link to this heading">#</a></h3>
 <p>Podemos añadir nuevos pares clave-valor simplemente asignando un valor a una nueva clave.</p>
 <p>Para eliminar un par clave-valor, podemos usar el método <code class="docutils literal notranslate"><span class="pre">pop()</span></code>. Podemos borrar el diccionario entero utilizando el método <code class="docutils literal notranslate"><span class="pre">clear()</span></code>, igual que en las listas.</p>
 <div class="cell docutils container">
@@ -926,7 +962,7 @@ Por ejemplo:</p></li>
 <section id="algunas-operaciones-interesantes">
 <h2>Algunas operaciones interesantes<a class="headerlink" href="#algunas-operaciones-interesantes" title="Link to this heading">#</a></h2>
 <p>Los tipos de dato estructurados tienen una serie de métodos propios que dependen de la definición (de su clase). Algunos métodos son comunes a varios tipos de datos estructurados, como listas, tuplas y cadenas. Nombramos por ejemplo index, count, min, max, etc. En diccionarios tenemos otros métodos importantes como items, values, keys, etc. Muchos los veremos en prácticas.</p>
-<p>Destacamos también la función <code class="docutils literal notranslate"><span class="pre">len()</span></code> devuelve la longitud de un tipo de dato estructurado.</p>
+<p>Destacamos también que la función <code class="docutils literal notranslate"><span class="pre">len()</span></code> devuelve la longitud de un tipo de dato estructurado.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -942,9 +978,9 @@ Por ejemplo:</p></li>
 </div>
 </div>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Las listas o las tuplas (o por supuesto las cadenas) NO son matrices. Por tanto, no podemos operar con ellas como si lo fueran  (por ejemplo, no podemos hacer multiplicaciones de listas o tuplas). Si usamos el operador <code class="docutils literal notranslate"><span class="pre">*</span></code> con una lista,tupla o cadena, lo que haremos será repetir su contenido. Si usamos el operador <code class="docutils literal notranslate"><span class="pre">+</span></code>, lo que haremos será concatenar dos listas, tuplas o cadenas. Si usamos operadores matemáticos como <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>, o <code class="docutils literal notranslate"><span class="pre">**</span></code>, obtendremos un error.
+<div class="important admonition">
+<p class="admonition-title">Importante</p>
+<p>Las listas, tuplas y cadenas no son matrices. Por tanto, no podemos operar con ellas como si lo fueran (por ejemplo, no podemos hacer multiplicaciones de listas o tuplas). Si usamos el operador <code class="docutils literal notranslate"><span class="pre">*</span></code> con una lista, tupla o cadena, lo que haremos será repetir su contenido. Si usamos el operador <code class="docutils literal notranslate"><span class="pre">+</span></code>, lo que haremos será concatenar dos listas, tuplas o cadenas. Si usamos operadores matemáticos como <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>, o <code class="docutils literal notranslate"><span class="pre">**</span></code>, obtendremos un error.
 Para trabajar con matrices, usaremos la librería <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, que veremos más adelante.</p>
 </div>
 <div class="cell docutils container">
@@ -972,21 +1008,16 @@ Para trabajar con matrices, usaremos la librería <code class="docutils literal 
 </div>
 </div>
 </div>
-<p>Podemos utilizar los operadores de comparación (<code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>) para comparar cualquier tipo de dato estructurado. La comparación se realiza elemento por elemento, y el resultado es un valor booleano (<code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>).
-Las operaciones de comparación funcionan de la siguiente manera:</p>
+<p>Podemos utilizar los operadores de comparación (<code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>) para comparar cualquier tipo de dato estructurado. La comparación se realiza elemento por elemento, y el resultado es un valor booleano (<code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p>
+<p>Las operaciones de comparación funcionan de la siguiente manera:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">==</span></code>: Devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> si todos los elementos son iguales en ambas estructuras.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code>: Devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> si al menos un elemento es diferente entre las dos estructuras.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>:</p>
 <ul>
-<li><p>En secuencias (listas, tuplas, rangos y cadenas): Compara las secuencias elemento por elemento, y <strong>se detiene en la primera diferencia encontrada</strong>.</p>
-<ul>
-<li><p>Para números, usa la comparación numérica normal</p></li>
-<li><p>Para cadenas, usa el orden lexicográfico</p></li>
-</ul>
-</li>
-<li><p>En mapas (diccionarios): Estas comparaciones no están definidas y generarán un error si se intentan usar.</p></li>
-<li><p>En conjuntos (set): Estas comparaciones se utilizan para verificar las relaciones de subconjunto y superconjunto entre conjuntos.</p></li>
+<li><p><strong>En secuencias</strong> (listas, tuplas, rangos y cadenas): Compara las secuencias elemento por elemento, y se detiene en la primera diferencia encontrada. Para números, usa la comparación numérica normal. Para cadenas, usa el orden lexicográfico.</p></li>
+<li><p><strong>En mapas</strong> (diccionarios): Estas comparaciones no están definidas y generarán un error si se intentan usar.</p></li>
+<li><p><strong>En conjuntos</strong> (set): Estas comparaciones se utilizan para verificar las relaciones de subconjunto y superconjunto entre conjuntos.</p></li>
 </ul>
 </li>
 </ul>
@@ -995,12 +1026,12 @@ Las operaciones de comparación funcionan de la siguiente manera:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># True</span>
 <span class="nb">print</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">!=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>      <span class="c1"># True</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;abd&quot;</span><span class="p">)</span>        <span class="c1"># True</span>
-<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="c1"># True</span>
-<span class="nb">print</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># True Primer elemento: 3 &gt; 1, por lo que la comparación se detiene aquí y devuelve `True`. No importa el resto de elementos porque la primera comparación ya determinó el resultado</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="c1"># False (el tercer elemento 5 &gt; 4)</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># True (primer elemento: 3 &gt; 1, se detiene aquí)</span>
 <span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 <span class="n">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
 <span class="c1"># Esto generará un error</span>
-<span class="c1">#dict1 &lt; dict2  # TypeError: unsupported operand type(s) for &lt;: &#39;</span>
+<span class="c1">#dict1 &lt; dict2  # TypeError: unsupported operand type(s) for &lt;: &#39;dict&#39; and &#39;dict&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dict1</span> <span class="o">==</span> <span class="n">dict2</span><span class="p">)</span>  <span class="c1"># False</span>
 <span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
 <span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
@@ -1064,7 +1095,7 @@ True
 </div>
 </div>
 <p>Por tanto, al copiar una lista (o cualquier tipo de dato u objeto mutable) a otra variable, ambas variables apuntan al mismo objeto en memoria.</p>
-<p>En cambio, al copiar una tupla (o cualquier otro tipo de dato inmutable), ambas variables apuntan a objetos diferentes en memoria, y modificar una no afecta a la otra.</p>
+<p>En cambio, al copiar una tupla (o cualquier otro tipo de dato inmutable), cuando se intenta modificar el objeto, Python crea un nuevo objeto en memoria, dejando el original intacto.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -1080,13 +1111,13 @@ True
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t3</span><span class="o">=</span><span class="n">t1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">l1</span> <span class="ow">is</span> <span class="n">l2</span><span class="p">)</span>  <span class="c1"># Devuelve True, ambas variables apuntan al mismo objeto</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">t1</span> <span class="ow">is</span> <span class="n">t3</span><span class="p">)</span>  <span class="c1"># Devuelve False, las variables apuntan a objetos diferentes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t1</span> <span class="ow">is</span> <span class="n">t3</span><span class="p">)</span>  <span class="c1"># Devuelve True, ambas variables apuntan al mismo objeto</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
+<div class="important admonition">
+<p class="admonition-title">Importante</p>
 <p>No confundir el operador de identidad <code class="docutils literal notranslate"><span class="pre">is</span></code> con el operador de igualdad <code class="docutils literal notranslate"><span class="pre">==</span></code>. El operador <code class="docutils literal notranslate"><span class="pre">==</span></code> compara los valores de los objetos, mientras que el operador <code class="docutils literal notranslate"><span class="pre">is</span></code> compara las identidades de los objetos en memoria.</p>
 </div>
 <div class="cell docutils container">
@@ -1165,6 +1196,7 @@ True
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-list">Listas (<code class="docutils literal notranslate"><span class="pre">list</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-listas">Definición de listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-listas">Acceso a listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificar-elementos">Modificar elementos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadir-y-eliminar-elementos">Añadir y eliminar elementos</a></li>
@@ -1189,7 +1221,7 @@ True
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-diccionarios">Definición de diccionarios</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-a-valores-en-un-diccionario">Acceso a valores en un diccionario</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modificacion-de-diccionarios">Modificación de diccionarios</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadido-borrado-de-elementos-en-un-diccionario">Añadido /borrado de elementos en un diccionario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anadido-y-borrado-de-elementos-en-un-diccionario">Añadido y borrado de elementos en un diccionario</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjuntos-set">Conjuntos (<code class="docutils literal notranslate"><span class="pre">set</span></code>)</a><ul class="nav section-nav flex-column">

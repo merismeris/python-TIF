@@ -35,7 +35,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=359afcf4" />
+    <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -54,9 +57,18 @@
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script src="../_static/Accessibility.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -461,7 +473,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-aritmeticos">Operadores Aritméticos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacion">Operadores de Comparación</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores lógicos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casting">Casting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casting-o-conversion-de-tipos"><code class="docutils literal notranslate"><span class="pre">Casting</span></code> o Conversión de tipos</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-operaciones-mas-complejas">Otras operaciones más complejas</a></li>
@@ -497,13 +509,14 @@ de datos compuestos, que permiten almacenar colecciones de datos:</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dict</span></code>: diccionarios (colecciones de pares clave-valor)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">set</span></code>: conjuntos (colecciones no ordenadas de elementos únicos)</p></li>
 </ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<div class="tip admonition">
+<p class="admonition-title">Consejo</p>
 <p>El punto flotante es esencial para la ciencia computacional. Una
 gran introducción al punto flotante y sus limitaciones es: <a class="reference external" href="http://dl.acm.org/citation.cfm?id=103163">Lo que
 todo científico de la computación debería saber sobre la aritmética
 de punto flotante</a> por
-D. Goldberg.</p>
+D. Goldberg. También existe la versión más escueta para programadores <a class="reference external" href="http://puntoflotante.org/">Lo que todo programador debería saber sobre aritmética de punto flotante
+</a></p>
 </div>
 <p>Los tipos de datos básicos son contenedores de un solo valor.  Podemos
 realizar operaciones matemáticas y lógicas con estos tipos de datos.  Por
@@ -511,8 +524,8 @@ ejemplo, podemos sumar dos enteros o comparar dos valores booleanos.</p>
 <p>Vamos a ver sus características principales y operaciones aritméticas básicas.</p>
 <section id="enteros-int">
 <h2>Enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>)<a class="headerlink" href="#enteros-int" title="Link to this heading">#</a></h2>
-<p>Loss enteros son números sin parte decimal.  Pueden ser positivos o negativos.  La mayoría de los lenguajes de programación usan una cantidad finita de memoria para almacenar un solo entero, pero en python se expandirá la cantidad de memoria según sea necesario para almacenar enteros grandes.
-Los operadores básicos, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, y <code class="docutils literal notranslate"><span class="pre">/</span></code> funcionan con enteros.  Además, python incluye el operador <code class="docutils literal notranslate"><span class="pre">//</span></code> para división entera (que redondea hacia abajo al entero más cercano) y el operador <code class="docutils literal notranslate"><span class="pre">%</span></code> para obtener el resto de una división.</p>
+<p>Los enteros son números sin parte decimal. Pueden ser positivos o negativos. La mayoría de los lenguajes de programación usan una cantidad finita de memoria para almacenar un solo entero, pero en Python se expandirá la cantidad de memoria según sea necesario para almacenar enteros grandes.
+Los operadores básicos, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, y <code class="docutils literal notranslate"><span class="pre">/</span></code> funcionan con enteros. Además, Python incluye el operador <code class="docutils literal notranslate"><span class="pre">//</span></code> para división entera (que redondea hacia abajo al entero más cercano) y el operador <code class="docutils literal notranslate"><span class="pre">%</span></code> para obtener el resto de una división entera (operador módulo).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span>
@@ -537,8 +550,8 @@ Los operadores básicos, <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
 <p>En python, dividir dos enteros resulta en un número de punto flotante (real). Si se desea una división entera, se debe usar el operador <code class="docutils literal notranslate"><span class="pre">//</span></code>.</p>
 </div>
 <div class="cell docutils container">
@@ -607,7 +620,7 @@ Los operadores básicos, <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 </div>
-<p>Como hemos comentado, la función <code class="docutils literal notranslate"><span class="pre">type()</span></code> returns the data type of a variable</p>
+<p>Como hemos comentado, la función <code class="docutils literal notranslate"><span class="pre">type()</span></code> devuelve el tipo de dato de una variable</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -620,9 +633,10 @@ Los operadores básicos, <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>En otros lenguajes de programación, los enteros tienen un tamaño fijo. En estos lenguajes, si se intenta almacenar un entero que excede el tamaño máximo permitido, se produce un error de desbordamiento (<em>overflow</em>). En Python, los enteros pueden crecer en tamaño según sea necesario, lo que evita este problema.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>En otros lenguajes de programación, los enteros tienen un tamaño fijo. En estos lenguajes, si se intenta almacenar un entero que excede el tamaño máximo permitido, se produce un error de desbordamiento (<em>overflow</em>). En Python, los enteros pueden crecer en tamaño según sea necesario, lo que evita este problema.
+Utiliza un tipo de dato conocido como de <a class="reference external" href="https://es.wikipedia.org/wiki/Precisi%C3%B3n_arbitraria">precisión arbitraria</a> para manejar enteros grandes sin preocuparte por desbordamientos.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -657,8 +671,8 @@ Los operadores básicos, <code class="docutils literal notranslate"><span class=
 </div>
 </div>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
+<div class="important admonition">
+<p class="admonition-title">Importante</p>
 <p>No todos los números pueden ser representados en punto flotante.  Dado que hay infinitos números reales entre dos límites cualesquiera, pero estamos usando una cantidad finita de memoria, en una computadora tenemos que aproximar los números.  Existe un estándar IEEE para punto flotante que prácticamente todos los lenguajes y procesadores siguen. En python, los números de punto flotante se representan utilizando el estándar IEEE 754 de doble precisión, lo que significa que ocupan 64 bits de memoria.</p>
 <p>Esto significa que:</p>
 <ul class="simple">
@@ -773,7 +787,7 @@ Usamos el operador <code class="docutils literal notranslate"><span class="pre">
 <p>Los operadores son ítems o símbolos que actúan sobre uno, dos o más operandos para realizar una determinada operación. Siempre producen un resultado. Hay varios tipos de operadores en Python, incluyendo:</p>
 <ul class="simple">
 <li><p>Aritméticos: <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code></p></li>
-<li><p>Comparación o relación: <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, `</p></li>
+<li><p>Comparación o relación: <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></li>
 <li><p>Lógicos: <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">is</span></code></p></li>
 <li><p>Asignación: <code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">+=</span></code>, <code class="docutils literal notranslate"><span class="pre">-=</span></code>, <code class="docutils literal notranslate"><span class="pre">*=</span></code>, <code class="docutils literal notranslate"><span class="pre">/=</span></code></p></li>
 <li><p>Bit a bit: <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">^</span></code>, <code class="docutils literal notranslate"><span class="pre">~</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></p></li>
@@ -790,9 +804,9 @@ Usamos el operador <code class="docutils literal notranslate"><span class="pre">
 <li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> : División</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">//</span></code> : División entera (redondea hacia abajo al entero más cercano)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> : Módulo (resto de la división para valores enteros o punto flotante)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">**</span></code> : Exponenciación (potenciación)  (¡ojo con el uso de <code class="docutils literal notranslate"><span class="pre">^</span></code> que en python es un operador bit a bit!)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**</span></code> : Exponenciación (potenciación)  (¡ojo con el uso de <code class="docutils literal notranslate"><span class="pre">^</span></code> que en Python es un operador bit a bit!)</p></li>
 </ul>
-<p>La precedencia de los operadores sigue la de la mayoría de los lenguajes.  Ver:</p>
+<p>La precedencia de los operadores sigue la de la mayoría de los lenguajes. Ver:</p>
 <p><a class="reference external" href="https://docs.python.org/3/reference/expressions.html#operator-precedence">https://docs.python.org/3/reference/expressions.html#operator-precedence</a></p>
 <p>Los operadores se evalúan en el siguiente orden (de mayor a menor precedencia):</p>
 <ul class="simple">
@@ -897,8 +911,8 @@ Algunos ejemplos:</p></li>
 </div>
 </div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<div class="tip admonition">
+<p class="admonition-title">Consejo</p>
 <p>Ojo con confundirnos con MATLAB! Si utilizáis los símbolos <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> y <code class="docutils literal notranslate"><span class="pre">|</span></code> para operaciones lógicas, en python estos son operadores bit a bit.</p>
 </div>
 <div class="cell docutils container">
@@ -911,9 +925,9 @@ Algunos ejemplos:</p></li>
 </div>
 </div>
 </section>
-<section id="casting">
-<h3>Casting<a class="headerlink" href="#casting" title="Link to this heading">#</a></h3>
-<p>Python permite convertir en ocasines variables con un tipo determinado a otro tipo diferente. Las conversiones pueden ser:</p>
+<section id="casting-o-conversion-de-tipos">
+<h3><code class="docutils literal notranslate"><span class="pre">Casting</span></code> o Conversión de tipos<a class="headerlink" href="#casting-o-conversion-de-tipos" title="Link to this heading">#</a></h3>
+<p>Python permite convertir en ocasiones variables con un tipo determinado a otro tipo diferente. Las conversiones pueden ser:</p>
 <ul class="simple">
 <li><p>Implícitas: Ejecutadas automáticamente (como en la división <code class="docutils literal notranslate"><span class="pre">/</span></code>)</p></li>
 <li><p>Explícitas: Realizadas por el programador. Estas obligan a una variable o expresión a ser <strong>temporalmente</strong> de un determinado tipo. Para hacer casting, se utilizan las funciones integradas: <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code>, <code class="docutils literal notranslate"><span class="pre">bool()</span></code>, <code class="docutils literal notranslate"><span class="pre">complex()</span></code>…  Algunos ejemplos</p></li>
@@ -1009,7 +1023,7 @@ sin(x, /)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;mi cadena&quot;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;yo soy otra cadenita&#39;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;otra cadena de ejemplo&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1122,7 +1136,7 @@ in culpa qui officia deserunt mollit anim id est laborum.
 </div>
 </div>
 </div>
-<p>Si queremos no utilizar los caracteres de escape, podemos definir una <em>raw string</em>, poniendo una <code class="docutils literal notranslate"><span class="pre">r</span></code>justo antes de la cadena (sin espacios en medio):</p>
+<p>Si queremos no utilizar los caracteres de escape, podemos definir una <em>raw string</em>, poniendo una <code class="docutils literal notranslate"><span class="pre">r</span></code> justo antes de la cadena (sin espacios en medio):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;this is a raw string\n&quot;</span>
@@ -1136,7 +1150,7 @@ in culpa qui officia deserunt mollit anim id est laborum.
 </div>
 </div>
 </div>
-<p>Podemos formatear cadenas utilizando una f: <em>f-strings</em> de la siuiente manera:</p>
+<p>Podemos formatear cadenas utilizando una f: <em>f-strings</em> de la siguiente manera:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">; b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">; c = </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -1225,7 +1239,7 @@ in culpa qui officia deserunt mollit anim id est laborum.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-aritmeticos">Operadores Aritméticos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacion">Operadores de Comparación</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores lógicos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casting">Casting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casting-o-conversion-de-tipos"><code class="docutils literal notranslate"><span class="pre">Casting</span></code> o Conversión de tipos</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-operaciones-mas-complejas">Otras operaciones más complejas</a></li>

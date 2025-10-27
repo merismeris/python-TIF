@@ -35,7 +35,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=359afcf4" />
+    <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -54,9 +57,18 @@
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script src="../_static/Accessibility.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -457,7 +469,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llamada-a-funciones">Llamada a funciones</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mutabiliad-e-inmutabilidad-de-los-argumentos">Mutabiliad e inmutabilidad de los argumentos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-de-argumentos-en-python">Paso de argumentos en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutabilidad-e-inmutabilidad">Mutabilidad e inmutabilidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-paso-de-argumentos-en-python">Modelo de paso de argumentos en Python</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argumentos-por-palabra-clave">Argumentos por palabra clave</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambdas-funciones-anonimas">Lambdas (funciones anónimas)</a></li>
 </ul>
@@ -482,10 +498,10 @@ document.write(`
 <li><p>Usar la palabra clave <code class="docutils literal notranslate"><span class="pre">def</span></code>, seguida del nombre de la función y paréntesis <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p></li>
 <li><p>Dentro de los paréntesis, podemos listar los parámetros que la función tomará como entrada.</p></li>
 <li><p>Terminar la línea de definición con dos puntos <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p></li>
-<li><p>Identar el bloque de código que constituye el cuerpo de la función.</p></li>
+<li><p>Indentar el bloque de código que constituye el cuerpo de la función.</p></li>
 <li><p>Incluir una declaración de retorno para devolver un valor usando la palabra clave <code class="docutils literal notranslate"><span class="pre">return</span></code>. Si no se incluye una declaración de retorno, la función devolverá <code class="docutils literal notranslate"><span class="pre">None</span></code> por defecto.</p></li>
 </ul>
-<p>Aquí hay un ejemplo simple de una función que toma un único argumento, <code class="docutils literal notranslate"><span class="pre">i</span></code></p>
+<p>Aquí se muestra un ejemplo de una función que toma un único argumento, <code class="docutils literal notranslate"><span class="pre">i</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_fun</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
@@ -501,7 +517,7 @@ document.write(`
 </div>
 <section id="llamada-a-funciones">
 <h3>Llamada a funciones<a class="headerlink" href="#llamada-a-funciones" title="Link to this heading">#</a></h3>
-<p>Para llamar a la función, simplemente usamos su nombre seguido de paréntesis que contienen los argumentos que queremos pasarle. Por ejemplo:</p>
+<p>Para llamar a la función, usamos su nombre seguido de paréntesis que contienen los argumentos que queremos pasarle. Por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_fun</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -509,9 +525,15 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Recibido el valor i = 10
+Recibido el valor i = 5
+</pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
 <p>Podemos definir una función en cualquier parte del código (siempre <strong>antes de llamarla</strong>), pero es una buena práctica definirlas al principio del archivo o en módulos separados para mantener el código organizado.</p>
 </div>
 <p>Si hemos creado una función en un módulo externo, podemos importarla en nuestro programa principal usando la instrucción <code class="docutils literal notranslate"><span class="pre">import</span></code> o <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">...</span> <span class="pre">import</span> <span class="pre">...</span></code>.</p>
@@ -529,8 +551,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Recibido el valor i = 10
+</pre></div>
 </div>
-<p>Aquí hay una función simple que toma dos números y devuelve su producto.</p>
+</div>
+</div>
+<p>A continuación se muestra una función que toma dos números y devuelve su producto.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -541,42 +568,112 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Las funciones son un lugar donde entra en juego el <em>alcance</em> (scope). Una función tiene su propio <em>namespace</em>. Si una variable no está definida en esa función, buscará en el namespace desde donde fue llamada para ver si esa variable existe allí.</p>
-<p>Sin embargo, deberías evitar esto tanto como sea posible, e intentar que todas las variables que necesite la función sean variables locales (las variables que persisten a través de namespaces se llaman variables globales).</p>
-</div>
-</section>
-</section>
-<section id="mutabiliad-e-inmutabilidad-de-los-argumentos">
-<h2>Mutabiliad e inmutabilidad de los argumentos<a class="headerlink" href="#mutabiliad-e-inmutabilidad-de-los-argumentos" title="Link to this heading">#</a></h2>
-<p>Cuando pasamos argumentos a una función, estos pueden ser mutables o inmutables. En función de esta característica, Python maneja los argumentos de manera diferente.</p>
-<ul class="simple">
-<li><p>En el caso de los argumentos inmutables (como enteros, cadenas y tuplas), Python crea una copia del valor y lo pasa a la función. Cualquier cambio realizado en el argumento dentro de la función no afectará al valor original fuera de la función. Esto se denomina <strong>paso por valor</strong>.</p></li>
-<li><p>En el caso de los argumentos mutables (como listas y diccionarios), Python pasa una referencia al objeto original. Esto significa que cualquier cambio realizado en el argumento dentro de la función afectará al objeto original fuera de la función. Esto se denomina <strong>paso por referencia</strong>. Os dejamos un ejemplo para ilustrar esto:</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">agregar_elemento</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">elemento</span><span class="p">):</span>
-    <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">lista</span>
-<span class="n">mi_lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">nueva_lista</span> <span class="o">=</span> <span class="n">agregar_elemento</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">)</span>      <span class="c1"># Salida: [1, 2, 3, 4]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">nueva_lista</span><span class="p">)</span>   <span class="c1"># Salida: [1, 2, 3, 4] </span>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
 </pre></div>
 </div>
 </div>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>El paso por referencia o valor puede llevar a errores difíciles de detectar si no se sabe bien qué objetos son mutables y cuáles no. Para saber más sobre mutabilidad e inmutabilidad en Python, podéis consultar la <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#objects-values-and-types">documentación oficial</a>.</p>
+<div class="note admonition">
+<p class="admonition-title">Nota</p>
+<p>Las funciones son un lugar donde entra en juego el <em>alcance</em> (scope). Una función tiene su propio <em>namespace</em>. Si una variable no está definida en esa función, buscará en el namespace desde donde fue llamada para ver si esa variable existe allí.</p>
+<p>Sin embargo, se debe evitar esto tanto como sea posible, e intentar que todas las variables que necesite la función sean variables locales (las variables que persisten a través de namespaces se llaman variables globales).</p>
 </div>
+</section>
+</section>
+<section id="paso-de-argumentos-en-python">
+<h2>Paso de argumentos en Python<a class="headerlink" href="#paso-de-argumentos-en-python" title="Link to this heading">#</a></h2>
+<section id="mutabilidad-e-inmutabilidad">
+<h3>Mutabilidad e inmutabilidad<a class="headerlink" href="#mutabilidad-e-inmutabilidad" title="Link to this heading">#</a></h3>
+<p>Antes de entender cómo Python pasa argumentos a las funciones, es fundamental comprender el concepto de mutabilidad.</p>
+<p>En Python, los objetos pueden ser:</p>
+<ul class="simple">
+<li><p><strong>Inmutables</strong>: Una vez creados, su valor no puede modificarse. Si intentamos “modificar” un objeto inmutable, Python crea un nuevo objeto en memoria. Ejemplos: <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">frozenset</span></code>.</p></li>
+<li><p><strong>Mutables</strong>: Su contenido puede modificarse después de su creación sin crear un nuevo objeto. Ejemplos: <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>.</p></li>
+</ul>
+<p>Esta distinción es crucial porque afecta al comportamiento de las funciones cuando reciben argumentos.</p>
+</section>
+<section id="modelo-de-paso-de-argumentos-en-python">
+<h3>Modelo de paso de argumentos en Python<a class="headerlink" href="#modelo-de-paso-de-argumentos-en-python" title="Link to this heading">#</a></h3>
+<p>Python utiliza un modelo de <strong>paso por asignación de objeto</strong> (también llamado “paso por objeto” o “paso por compartición”). Esto significa que:</p>
+<ol class="arabic simple">
+<li><p>Cuando se llama a una función, Python pasa <strong>referencias a los objetos</strong>, no copias de los valores ni referencias a las variables.</p></li>
+<li><p>El parámetro de la función se convierte en un alias (otro nombre) que apunta al mismo objeto en memoria.</p></li>
+</ol>
+<p>El comportamiento observable depende de si el objeto es mutable o inmutable:</p>
+<ul class="simple">
+<li><p><strong>Con objetos inmutables</strong>: Si intentamos “modificar” el argumento dentro de la función, Python crea un nuevo objeto y el parámetro local apunta a este nuevo objeto. El objeto original fuera de la función permanece inalterado.</p></li>
+<li><p><strong>Con objetos mutables</strong>: Si modificamos el contenido del objeto dentro de la función, estamos modificando el mismo objeto que existe fuera de la función, ya que ambos (el argumento y el parámetro) son referencias al mismo objeto en memoria.</p></li>
+</ul>
+<p>A continuación se presenta un ejemplo para ilustrar este comportamiento:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo con objeto mutable (lista)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">modificar_lista</span><span class="p">(</span><span class="n">lista</span><span class="p">):</span>
+    <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># Modifica el objeto original</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dentro de la función: </span><span class="si">{</span><span class="n">lista</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">mi_lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Antes de llamar: </span><span class="si">{</span><span class="n">mi_lista</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">modificar_lista</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Después de llamar: </span><span class="si">{</span><span class="n">mi_lista</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># La lista original se modificó</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Ejemplo con objeto inmutable (entero)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">modificar_entero</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
+    <span class="n">numero</span> <span class="o">=</span> <span class="n">numero</span> <span class="o">+</span> <span class="mi">10</span>  <span class="c1"># Crea un nuevo objeto, no modifica el original</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dentro de la función: </span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">mi_numero</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Antes de llamar: </span><span class="si">{</span><span class="n">mi_numero</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">modificar_entero</span><span class="p">(</span><span class="n">mi_numero</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Después de llamar: </span><span class="si">{</span><span class="n">mi_numero</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># El entero original no cambió</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Antes de llamar: [1, 2, 3]
+Dentro de la función: [1, 2, 3, 4]
+Después de llamar: [1, 2, 3, 4]
+
+==================================================
+
+Antes de llamar: 5
+Dentro de la función: 15
+Después de llamar: 5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Importante</p>
+<p>Cuando se pasa un argumento a una función en Python, lo que realmente se pasa es una <strong>referencia al objeto</strong>, no una copia del objeto. Esto significa que tanto el argumento original como el parámetro de la función apuntan al mismo objeto en memoria.</p>
+<p><strong>Implicaciones prácticas:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Con objetos mutables (listas, diccionarios, conjuntos)</strong>: Si se modifica el contenido del objeto dentro de la función, estos cambios se reflejarán fuera de la función, ya que ambos contextos están trabajando con el mismo objeto en memoria.</p></li>
+<li><p><strong>Con objetos inmutables (enteros, cadenas, tuplas)</strong>: Si se intenta “modificar” el objeto dentro de la función, Python crea un nuevo objeto, dejando el original intacto.</p></li>
+</ol>
+<p><strong>Estrategias para evitar modificaciones no deseadas:</strong></p>
+<ul class="simple">
+<li><p>Hacer una copia explícita del objeto antes de modificarlo:</p>
+<ul>
+<li><p>Para listas: <code class="docutils literal notranslate"><span class="pre">lista_copia</span> <span class="pre">=</span> <span class="pre">lista.copy()</span></code> o <code class="docutils literal notranslate"><span class="pre">lista_copia</span> <span class="pre">=</span> <span class="pre">lista[:]</span></code></p></li>
+<li><p>Para diccionarios: <code class="docutils literal notranslate"><span class="pre">dict_copia</span> <span class="pre">=</span> <span class="pre">dict_original.copy()</span></code></p></li>
+<li><p>Para copias profundas de objetos anidados: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">copy;</span> <span class="pre">copia</span> <span class="pre">=</span> <span class="pre">copy.deepcopy(objeto)</span></code></p></li>
+</ul>
+</li>
+<li><p>Utilizar tipos inmutables cuando sea posible (por ejemplo, tuplas en lugar de listas)</p></li>
+<li><p>Documentar claramente si una función modificará sus argumentos mutables</p></li>
+</ul>
+<p><strong>Buena práctica:</strong> Las funciones deberían evitar modificar sus argumentos mutables a menos que esa sea explícitamente su finalidad. En su lugar, es preferible devolver un nuevo objeto con las modificaciones.</p>
+<p>Para más información, se puede consultar la <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#objects-values-and-types">documentación oficial sobre el modelo de datos de Python</a>.</p>
+</div>
+</section>
 </section>
 <section id="argumentos-por-palabra-clave">
 <h2>Argumentos por palabra clave<a class="headerlink" href="#argumentos-por-palabra-clave" title="Link to this heading">#</a></h2>
-<p>Puedes tener argumentos opcionales que proveen valores por defecto. Aquí hay una función simple que calcula <span class="math notranslate nohighlight">\(\sin(\theta)\)</span> donde <span class="math notranslate nohighlight">\(\theta\)</span> opcionalmente puede estar en grados.</p>
+<p>Es posible tener argumentos opcionales que proporcionen valores por defecto. A continuación se muestra una función que calcula <span class="math notranslate nohighlight">\(\sin(\theta)\)</span> donde <span class="math notranslate nohighlight">\(\theta\)</span> opcionalmente puede estar en grados.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
@@ -600,13 +697,19 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.7071067811865476, 0.7071067811865476)
+</pre></div>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Es importante destacar que Python evalúa los argumentos opcionales una sola vez—cuando la función se define. Esto significa que si pones como valor por defecto un objeto mutable vacío, por ejemplo, persistirá entre llamadas. Esto tiene que ver con la mutabilidad que hemos comentado antes.</p>
-<p><strong>Esto conduce a uno de los errores más comunes entre quienes empiezan</strong></p>
 </div>
-<p>Aquí hay un ejemplo de intentar inicializar con una lista vacía:</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Importante</p>
+<p>Los valores por defecto de los argumentos opcionales se evalúan <strong>una única vez</strong> cuando se define la función, no cada vez que se llama. Si el valor por defecto es un objeto mutable (como una lista o un diccionario), este mismo objeto se reutilizará en todas las llamadas a la función.</p>
+<p><strong>Consecuencia:</strong> Si se utiliza un objeto mutable vacío como valor por defecto (por ejemplo, <code class="docutils literal notranslate"><span class="pre">L=[]</span></code>), todas las llamadas a la función compartirán el mismo objeto, acumulando modificaciones entre llamadas. Este es uno de los errores más comunes entre programadores principiantes.</p>
+<p><strong>Solución:</strong> Utilizar <code class="docutils literal notranslate"><span class="pre">None</span></code> como valor por defecto y crear el objeto mutable dentro de la función cuando sea necesario.</p>
+</div>
+<p>A continuación se muestra un ejemplo de un intento de inicializar con una lista vacía:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="p">[]):</span>
@@ -632,7 +735,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Fíjate que cada llamada no crea su propia lista separada. En su lugar, se creó una única lista vacía cuando la función fue procesada por primera vez, y esta lista persiste en memoria como el valor por defecto para el argumento opcional <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p>
+<p>Obsérvese que cada llamada no crea su propia lista separada. En su lugar, se creó una única lista vacía cuando la función fue procesada por primera vez, y esta lista persiste en memoria como el valor por defecto para el argumento opcional <code class="docutils literal notranslate"><span class="pre">L</span></code>.</p>
 <p>Si queremos que se cree una lista única cada vez (por ejemplo, un lugar separado en memoria), en su lugar inicializamos el argumento a <code class="docutils literal notranslate"><span class="pre">None</span></code> y luego comprobamos su valor real y creamos una lista vacía en el cuerpo de la función si el valor por defecto no cambió.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -653,6 +756,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1]
+[2]
+[3]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -661,11 +771,21 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2]
+</pre></div>
 </div>
-<p>Fíjate que el mismo <code class="docutils literal notranslate"><span class="pre">None</span></code> que vimos anteriormente vuelve a aparecer aquí.</p>
+</div>
+</div>
+<p>Obsérvese que el mismo <code class="docutils literal notranslate"><span class="pre">None</span></code> que vimos anteriormente vuelve a aparecer aquí.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2]
 </pre></div>
 </div>
 </div>
@@ -673,8 +793,19 @@ document.write(`
 </section>
 <section id="lambdas-funciones-anonimas">
 <h2>Lambdas (funciones anónimas)<a class="headerlink" href="#lambdas-funciones-anonimas" title="Link to this heading">#</a></h2>
-<p>Las lambdas son funciones “desechables”. Son funciones pequeñas y sin nombre que a menudo se usan como argumentos en otras funciones.</p>
-<p>Por ejemplo,  tenemos una lista de tuplas. Queremos ordenar la lista según el segundo elemento de la tupla. El método <code class="docutils literal notranslate"><span class="pre">sort</span></code> puede tomar un argumento opcional <code class="docutils literal notranslate"><span class="pre">key</span></code> que nos indica cómo interpretar el elemento de la lista para ordenar.</p>
+<p>Las funciones lambda son funciones anónimas que se definen en una única línea. Son útiles cuando necesitamos una función simple y breve, especialmente para pasarla como argumento a otras funciones.</p>
+<p><strong>Sintaxis básica:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">argumentos</span><span class="p">:</span> <span class="n">expresión</span>
+</pre></div>
+</div>
+<p>Las lambdas pueden tener varios argumentos separados por comas, pero solo pueden contener una expresión que se devuelve automáticamente (no se usa <code class="docutils literal notranslate"><span class="pre">return</span></code>).</p>
+<p><strong>Cuándo usar lambdas:</strong></p>
+<ul class="simple">
+<li><p>Cuando la función es muy simple y solo se necesita una vez</p></li>
+<li><p>Como argumento para funciones como <code class="docutils literal notranslate"><span class="pre">sort</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, etc.</p></li>
+<li><p>Para mantener el código más compacto y legible en casos sencillos</p></li>
+</ul>
+<p><strong>Ejemplo:</strong> Supongamos que tenemos una lista de tuplas y queremos ordenarla según el segundo elemento de cada tupla. El método <code class="docutils literal notranslate"><span class="pre">sort</span></code> acepta un argumento <code class="docutils literal notranslate"><span class="pre">key</span></code> que indica qué parte del elemento usar para ordenar:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">)]</span>
@@ -689,8 +820,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(4, &#39;four&#39;), (1, &#39;one&#39;), (3, &#39;three&#39;), (2, &#39;two&#39;)]
+</pre></div>
 </div>
-<p>Aquí usamos una lambda en una extracción de una lista (con la función <code class="docutils literal notranslate"><span class="pre">filter</span></code>)</p>
+</div>
+</div>
+<p>Las lambdas también son útiles con funciones como <code class="docutils literal notranslate"><span class="pre">filter</span></code> (que filtra elementos) o <code class="docutils literal notranslate"><span class="pre">map</span></code> (que aplica una operación a cada elemento). En este ejemplo, usamos <code class="docutils literal notranslate"><span class="pre">filter</span></code> con una lambda para seleccionar solo los cuadrados divisibles por 2 y por 3:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
@@ -699,10 +835,62 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0,
+ 36,
+ 144,
+ 324,
+ 576,
+ 900,
+ 1296,
+ 1764,
+ 2304,
+ 2916,
+ 3600,
+ 4356,
+ 5184,
+ 6084,
+ 7056,
+ 8100,
+ 9216]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">filter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on class filter in module builtins:
+
+class filter(object)
+ |  filter(function or None, iterable) --&gt; filter object
+ |  
+ |  Return an iterator yielding those items of iterable for which function(item)
+ |  is true. If function is None, return the items that are true.
+ |  
+ |  Methods defined here:
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __next__(self, /)
+ |      Implement next(self).
+ |  
+ |  __reduce__(...)
+ |      Return state information for pickling.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs)
+ |      Create and return a new object.  See help(type) for accurate signature.
 </pre></div>
 </div>
 </div>
@@ -778,7 +966,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llamada-a-funciones">Llamada a funciones</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mutabiliad-e-inmutabilidad-de-los-argumentos">Mutabiliad e inmutabilidad de los argumentos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-de-argumentos-en-python">Paso de argumentos en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutabilidad-e-inmutabilidad">Mutabilidad e inmutabilidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-paso-de-argumentos-en-python">Modelo de paso de argumentos en Python</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argumentos-por-palabra-clave">Argumentos por palabra clave</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambdas-funciones-anonimas">Lambdas (funciones anónimas)</a></li>
 </ul>

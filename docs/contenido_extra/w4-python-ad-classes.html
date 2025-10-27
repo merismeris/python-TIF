@@ -35,7 +35,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=359afcf4" />
+    <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -54,9 +57,18 @@
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script src="../_static/Accessibility.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -470,16 +482,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pequena-introduccion-a-la-creacion-de-clases-en-python">
 <h1>Pequeña introducción a la creación de clases en Python<a class="headerlink" href="#pequena-introduccion-a-la-creacion-de-clases-en-python" title="Link to this heading">#</a></h1>
-<p>Os dejamos aquí información sobre cómo crear clases y cómo utilizar sus métodos y atributos. Os dejamos un enlace para que podáis profundizar más en la Programación Orientada a Objetos en Python si os interesa:</p>
+<p>A continuación se presenta información sobre cómo crear clases y cómo utilizar sus métodos y atributos. Para profundizar más en la Programación Orientada a Objetos en Python, se puede consultar:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.python.org/es/3/tutorial/classes.html">Programación Orientada a Objetos en Python - Documentación oficial</a></p></li>
 </ul>
 <section id="una-clase-simple">
 <h2>Una clase simple<a class="headerlink" href="#una-clase-simple" title="Link to this heading">#</a></h2>
-<p>Aquí tenemos una clase que guarda información de un estudiante</p>
+<p>A continuación se presenta una clase que guarda información de un estudiante:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">grade</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">grade</span> <span class="o">=</span> <span class="n">grade</span>
@@ -487,21 +499,27 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Esta clase tiene una función, <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>, que se llama automáticamente cuando creamos una instancia de la clase.</p>
-<p>El argumento <code class="docutils literal notranslate"><span class="pre">self</span></code> se refiere al objeto que vamos a crear, y apunta a la memoria que el objeto usará para almacenar el contenido de la clase.</p>
+<p>Esta clase tiene una función especial, <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>, que se llama automáticamente cuando se crea una instancia de la clase.</p>
+<p>El argumento <code class="docutils literal notranslate"><span class="pre">self</span></code> se refiere al objeto que se va a crear, y apunta a la memoria que el objeto usará para almacenar el contenido de la clase.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Mike&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Mike&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">grade</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mike
+None
+</pre></div>
 </div>
-<p>Vamos a crear varios estudiantes y almacenarlos en una lista</p>
+</div>
+</div>
+<p>A continuación se crean varios estudiantes y se almacenan en una lista:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">students</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Student</span><span class="p">(</span><span class="s2">&quot;fry&quot;</span><span class="p">,</span> <span class="s2">&quot;F-&quot;</span><span class="p">))</span>
 <span class="n">students</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Student</span><span class="p">(</span><span class="s2">&quot;leela&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">))</span>
 <span class="n">students</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Student</span><span class="p">(</span><span class="s2">&quot;zoidberg&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">))</span>
@@ -523,11 +541,16 @@ document.write(`
 <p class="admonition-title">Ejercicio Rápido</p>
 <p>Recorre la lista <code class="docutils literal notranslate"><span class="pre">students</span></code> e imprime el nombre y la nota de cada estudiante, uno por línea.</p>
 </div>
-<p>Podemos usar comprensión de listas con nuestra lista de objetos. Por ejemplo, vamos a encontrar todos los estudiantes que tienen A</p>
+<p>Se puede usar comprensión de listas con la lista de objetos. Por ejemplo, encontremos todos los estudiantes que tienen una calificación que comienza con “A”:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">As</span> <span class="o">=</span> <span class="p">[</span><span class="n">q</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">students</span> <span class="k">if</span> <span class="n">q</span><span class="o">.</span><span class="n">grade</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">As</span> <span class="o">=</span> <span class="p">[</span><span class="n">q</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">students</span> <span class="k">if</span> <span class="n">q</span><span class="o">.</span><span class="n">grade</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)]</span>
 <span class="n">As</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;leela&#39;, &#39;amy&#39;, &#39;hermes&#39;, &#39;hypnotoad&#39;]
 </pre></div>
 </div>
 </div>
@@ -535,10 +558,10 @@ document.write(`
 </section>
 <section id="cartas-de-juego">
 <h2>Cartas de Juego<a class="headerlink" href="#cartas-de-juego" title="Link to this heading">#</a></h2>
-<p>Aquí tenemos una clase más complicada que representa una carta de juego. Observa que estamos usando unicode para representar los palos.</p>
+<p>A continuación se presenta una clase más compleja que representa una carta de juego. Obsérvese que se utiliza Unicode para representar los palos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Card</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Card</span><span class="p">:</span>
     
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">suit</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">suit</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">suit</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
@@ -583,59 +606,91 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Podemos crear una carta fácilmente.</p>
+<p>Se puede crear una carta fácilmente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Card</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Card</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Podemos pasar argumentos a <code class="docutils literal notranslate"><span class="pre">__init__</span></code> cuando configuramos la clase:</p>
+<p>Se pueden pasar argumentos a <code class="docutils literal notranslate"><span class="pre">__init__</span></code> cuando se crea la instancia de la clase:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c2</span> <span class="o">=</span> <span class="n">Card</span><span class="p">(</span><span class="n">suit</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c2</span> <span class="o">=</span> <span class="n">Card</span><span class="p">(</span><span class="n">suit</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Una vez que tenemos nuestro objeto, podemos acceder a cualquiera de las funciones en la clase usando el operador <code class="docutils literal notranslate"><span class="pre">punto</span></code></p>
+<p>Una vez que se tiene el objeto, se puede acceder a cualquiera de las funciones (métodos) de la clase usando el operador punto (<code class="docutils literal notranslate"><span class="pre">.</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c2</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c2</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c3</span> <span class="o">=</span> <span class="n">Card</span><span class="p">(</span><span class="n">suit</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c3</span> <span class="o">=</span> <span class="n">Card</span><span class="p">(</span><span class="n">suit</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>palo inválido, estableciendo a 1
 </pre></div>
 </div>
 </div>
 </div>
-<p>El método <code class="docutils literal notranslate"><span class="pre">__str__</span></code> convierte el objeto en una cadena que puede ser impresa.</p>
+<p>El método especial <code class="docutils literal notranslate"><span class="pre">__str__</span></code> convierte el objeto en una cadena que puede ser impresa:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<p>El método value asigna un valor al objeto que puede ser usado en comparaciones, y el método <code class="docutils literal notranslate"><span class="pre">__lt__</span></code> es el que hace la comparación real</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">c1</span> <span class="o">&gt;</span> <span class="n">c2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c1</span> <span class="o">&lt;</span> <span class="n">c2</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2:♠
+2:♥
 </pre></div>
 </div>
 </div>
 </div>
-<p>Ten en cuenta que no todos los operadores están definidos para nuestra clase, así que, por ejemplo, no podemos sumar dos cartas:</p>
+<p>El método <code class="docutils literal notranslate"><span class="pre">value</span></code> asigna un valor al objeto que puede ser usado en comparaciones, y el método especial <code class="docutils literal notranslate"><span class="pre">__lt__</span></code> es el que realiza la comparación cuando se usa el operador <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">+</span> <span class="n">c2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">c1</span> <span class="o">&gt;</span> <span class="n">c2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c1</span> <span class="o">&lt;</span> <span class="n">c2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nótese que no todos los operadores están definidos para esta clase, por lo que, por ejemplo, no se pueden sumar dos cartas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">+</span> <span class="n">c2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">c1</span> <span class="o">+</span> <span class="n">c2</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;Card&#39; and &#39;Card&#39;
 </pre></div>
 </div>
 </div>
@@ -645,16 +700,16 @@ document.write(`
 <ul class="simple">
 <li><p>Crea una “mano” correspondiente a una escalera (5 cartas de cualquier palo, pero en secuencia de rango)</p></li>
 <li><p>Crea otra mano correspondiente a un color (5 cartas todas del mismo palo, de cualquier rango)</p></li>
-<li><p>Finalmente crea una mano con una de las cartas duplicada — esto no debería estar permitido en una baraja estándar de cartas. ¿Cómo comprobarías esto?</p></li>
+<li><p>Finalmente crea una mano con una de las cartas duplicada. Esto no debería estar permitido en una baraja estándar de cartas. ¿Cómo se podría comprobar esto?</p></li>
 </ul>
 </div>
 </section>
 <section id="operadores">
 <h2>Operadores<a class="headerlink" href="#operadores" title="Link to this heading">#</a></h2>
-<p>Podemos definir operaciones como <code class="docutils literal notranslate"><span class="pre">+</span></code> y <code class="docutils literal notranslate"><span class="pre">-</span></code> que funcionen con nuestros objetos. Aquí hay un ejemplo simple de moneda — mantenemos un registro del país y la cantidad</p>
+<p>Se pueden definir operaciones como <code class="docutils literal notranslate"><span class="pre">+</span></code> y <code class="docutils literal notranslate"><span class="pre">-</span></code> para que funcionen con objetos personalizados. A continuación se presenta un ejemplo simple de una clase <code class="docutils literal notranslate"><span class="pre">Currency</span></code> que mantiene un registro del país y la cantidad:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Currency</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Currency</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; una clase simple para manejar moneda extranjera &quot;&quot;&quot;</span>
     
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="s2">&quot;US&quot;</span><span class="p">):</span>
@@ -673,19 +728,24 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Ahora podemos crear algunas cantidades monetarias para diferentes países</p>
+<p>Ahora se pueden crear algunas cantidades monetarias para diferentes países:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d1</span> <span class="o">=</span> <span class="n">Currency</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;US&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d1</span> <span class="o">=</span> <span class="n">Currency</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;US&quot;</span><span class="p">)</span>
 <span class="n">d2</span> <span class="o">=</span> <span class="n">Currency</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;US&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">d2</span> <span class="o">-</span> <span class="n">d1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 US
 </pre></div>
 </div>
 </div>
 </div>
 <div class="admonition-ejercicio-rapido admonition">
 <p class="admonition-title">Ejercicio Rápido</p>
-<p>Tal como está escrita, nuestra clase Currency tiene un error — no comprueba si las cantidades están en el mismo país antes de sumarlas. Modifica el método <code class="docutils literal notranslate"><span class="pre">__add__</span></code> para que primero compruebe si los países son los mismos. Si lo son, devuelve el nuevo objeto <code class="docutils literal notranslate"><span class="pre">Currency</span></code> con la suma, si no, devuelve <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>Tal como está escrita, la clase <code class="docutils literal notranslate"><span class="pre">Currency</span></code> tiene un error: no comprueba si las cantidades están en el mismo país antes de sumarlas. Modifica el método <code class="docutils literal notranslate"><span class="pre">__add__</span></code> para que primero compruebe si los países son los mismos. Si lo son, devuelve el nuevo objeto <code class="docutils literal notranslate"><span class="pre">Currency</span></code> con la suma; si no, devuelve <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </div>
 </section>
 <section id="ejemplo-de-vectores">
@@ -696,10 +756,16 @@ document.write(`
 <p>Este ejemplo nos mostrará cómo sobrecargar las operaciones estándar en python. Aquí hay una lista de los métodos incorporados:</p>
 <p><a class="reference external" href="https://docs.python.org/3/reference/datamodel.html">https://docs.python.org/3/reference/datamodel.html</a></p>
 <p>Para que quede muy claro qué se está llamando y cuándo, he añadido prints en cada una de las funciones</p>
-<p>import math</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vector</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vector</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; un vector bidimensional general &quot;&quot;&quot;</span>
     
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
@@ -782,15 +848,30 @@ document.write(`
 <p><a class="reference external" href="http://stackoverflow.com/questions/1436703/difference-between-str-and-repr-in-python">http://stackoverflow.com/questions/1436703/difference-between-str-and-repr-in-python</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>en __init__
+en __repr__
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vector(1, 2)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>en __str__
+(1 î + 2 ĵ)
 </pre></div>
 </div>
 </div>
@@ -803,7 +884,15 @@ document.write(`
 \[|\vec{v}| = \sqrt{\alpha^2 + \beta^2}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>en __abs__
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.23606797749979
 </pre></div>
 </div>
 </div>
@@ -811,16 +900,35 @@ document.write(`
 <p>Veamos ahora las operaciones matemáticas con vectores. Queremos poder sumar y restar dos vectores así como multiplicar y dividir por un escalar.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>en __init__
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">u</span> <span class="o">+</span> <span class="n">v</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">u</span> <span class="o">+</span> <span class="n">v</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
 <span class="n">u</span> <span class="o">-</span> <span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>en __add__
+en __init__
+en __str__
+(4 î + 7 ĵ)
+en __sub__
+en __init__
+en __repr__
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vector(2, 3)
 </pre></div>
 </div>
 </div>
@@ -828,7 +936,27 @@ document.write(`
 <p>No tiene sentido sumar un escalar a un vector, así que no implementamos esto – ¿qué ocurre?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">+</span> <span class="mf">2.0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">+</span> <span class="mf">2.0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>en __add__
+no sabemos cómo sumar un &lt;class &#39;float&#39;&gt; a un Vector
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">u</span> <span class="o">+</span> <span class="mf">2.0</span>
+
+<span class="nn">Cell In[22], line 24,</span> in <span class="ni">Vector.__add__</span><span class="nt">(self, other)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="c1"># no tiene sentido sumar algo que no sean dos vectores</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;no sabemos cómo sumar un </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2"> a un Vector&quot;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">24</span>     <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+<span class="ne">NotImplementedError</span>: 
 </pre></div>
 </div>
 </div>
@@ -837,8 +965,38 @@ document.write(`
 <p>Ten en cuenta que Python proporciona tanto una función <code class="docutils literal notranslate"><span class="pre">__mul__</span></code> como una <code class="docutils literal notranslate"><span class="pre">__rmul__</span></code> para definir qué ocurre cuando multiplicamos un vector por una cantidad y qué ocurre cuando multiplicamos otra cosa por un vector.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">u</span><span class="o">*</span><span class="mf">2.0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span><span class="o">*</span><span class="mf">2.0</span>
 <span class="mf">2.0</span><span class="o">*</span><span class="n">u</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>en __mul__
+en __init__
+en __rmul__
+en __mul__
+en __init__
+en __repr__
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vector(6.0, 10.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span><span class="o">/</span><span class="mf">5.0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>en __truediv__
+en __init__
+en __repr__
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vector(0.6, 1.0)
 </pre></div>
 </div>
 </div>
@@ -847,14 +1005,17 @@ document.write(`
 <p>Dividir un escalar por un vector no tiene sentido:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">u</span><span class="o">/</span><span class="mf">5.0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">5.0</span><span class="o">/</span><span class="n">u</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">5.0</span><span class="o">/</span><span class="n">u</span>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">31</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mf">5.0</span><span class="o">/</span><span class="n">u</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for /: &#39;float&#39; and &#39;Vector&#39;
 </pre></div>
 </div>
 </div>
@@ -862,7 +1023,15 @@ document.write(`
 <p>Python 3.5 introdujo un nuevo operador de multiplicación matricial, <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> – lo usaremos para implementar un producto escalar entre dos vectores:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">@</span> <span class="n">v</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">@</span> <span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>en __matmul__
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
 </pre></div>
 </div>
 </div>
@@ -870,7 +1039,12 @@ document.write(`
 <p>Para un producto vectorial, no tenemos un operador obvio, así que usaremos una función. Para vectores 2-d, esto resultará en un escalar</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">u</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -878,7 +1052,17 @@ document.write(`
 <p>Finalmente, la negación es una operación separada:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">u</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">u</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>en __neg__
+en __init__
+en __repr__
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vector(-3, -5)
 </pre></div>
 </div>
 </div>
