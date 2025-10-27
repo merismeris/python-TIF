@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(conda env list:*)",
+      "Bash(call conda activate ..conda)",
+      "Bash(jupyter-book build:*)",
+      "Bash(cmd /c \"conda activate .\\.conda && jupyter-book build content\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

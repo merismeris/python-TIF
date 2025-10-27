@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test SSE Auto-Reload</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            background: #1e1e1e;
+            color: #00ff00;
+        }
+        .log {
+            padding: 10px;
+            margin: 5px 0;
+            background: #2d2d2d;
+            border-left: 3px solid #00ff00;
+        }
+        .error {
+            border-left-color: #ff0000;
+            color: #ff6b6b;
+        }
+        .success {
+            border-left-color: #00ff00;
+        }
+        .info {
+            border-left-color: #3b82f6;
+            color: #60a5fa;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Test de Server-Sent Events (SSE)</h1>
+    <p>Esta página prueba si el auto-reload funciona correctamente.</p>
+
+    <h2>Estado de Conexión:</h2>
+    <div id="status" class="log info">Iniciando...</div>
+
+    <h2>Log de Eventos:</h2>
+    <div id="log"></div>
+
+    <script>
+    const statusDiv = document.getElementById('status');
+    const logDiv = document.getElementById('log');
+
+    function addLog(message, type = 'info') {
+        const timestamp = new Date().toLocaleTimeString();
+        const logEntry = document.createElement('div');
+        logEntry.className = `log ${type}`;
+        logEntry.textContent = `[${timestamp}] ${message}`;
+        logDiv.insertBefore(logEntry, logDiv.firstChild);
+        console.log(`[${timestamp}] ${message}`);
+    }
+
+    addLog('Iniciando test de SSE...', 'info');
+
+    try {
+        const eventSource = new EventSource('/__reload_sse__');
+
+        eventSource.onopen = function(e) {
+            const msg = '✓ Conexión SSE establecida correctamente';
+            statusDiv.textContent = msg;
+            statusDiv.className = 'log success';
+            addLog(msg, 'success');
+        };
+
+        eventSource.addEventListener('reload', function(e) {
+            const msg = '⟳ Evento RELOAD recibido! Datos: ' + e.data;
+            addLog(msg, 'success');
+            addLog('La página se recargará en 2 segundos...', 'info');
+            setTimeout(() => location.reload(), 2000);
+        });
+
+        eventSource.onmessage = function(e) {
+            const msg = '📨 Mensaje genérico recibido: ' + e.data;
+            addLog(msg, 'info');
+        };
+
+        eventSource.onerror = function(e) {
+            const msg = '✗ Error en conexión SSE';
+            statusDiv.textContent = msg;
+            statusDiv.className = 'log error';
+            addLog(msg, 'error');
+            addLog('Estado de conexión: ' + eventSource.readyState, 'error');
+
+            if (eventSource.readyState === EventSource.CLOSED) {
+                addLog('La conexión está cerrada', 'error');
+            } else if (eventSource.readyState === EventSource.CONNECTING) {
+                addLog('Reconectando...', 'info');
+            }
+        };
+
+        // Información de debug
+        addLog('EventSource creado, URL: ' + eventSource.url, 'info');
+        addLog('Estado inicial: ' + eventSource.readyState, 'info');
+
+    } catch (err) {
+        const msg = '✗ Error al crear EventSource: ' + err.message;
+        statusDiv.textContent = msg;
+        statusDiv.className = 'log error';
+        addLog(msg, 'error');
+    }
+
+    // Verificar soporte de SSE
+    if (typeof(EventSource) !== "undefined") {
+        addLog('✓ Tu navegador soporta Server-Sent Events', 'success');
+    } else {
+        addLog('✗ Tu navegador NO soporta Server-Sent Events', 'error');
+    }
+    </script>
+
+    <hr>
+    <p style="color: #888;">
+        <strong>Instrucciones de prueba:</strong><br>
+        1. Verifica que aparezca "Conexión SSE establecida correctamente" arriba<br>
+        2. Edita y guarda cualquier archivo .md o .ipynb en content/<br>
+        3. Deberías ver "Evento RELOAD recibido!" y la página se recargará<br>
+        4. Si hay errores, revisa la consola del navegador (F12)
+    </p>
+</body>
+</html>

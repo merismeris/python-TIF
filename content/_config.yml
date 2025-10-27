@@ -1,15 +1,16 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: "Introducción a Python. Asignatura Técnicas Informáticas en Física"
+title: "Introducción a Python - Técnicas Informáticas en Física"
 author: <a href="https://merismeris.github.io">María Navarro y Álvaro Lozano</a>
 #logo: logo.png
 copyright: "2025"
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
+# Opciones: 'off' (no ejecuta), 'cache' (solo si cambian), 'force' (siempre ejecuta)
 execute:
-  execute_notebooks: force
+  execute_notebooks: off
   allow_errors: true
 
 # Define the name of the latex output file for PDF builds
@@ -43,9 +44,10 @@ sphinx:
 
 launch_buttons:
    thebe: true
-   notebook_interface: "jupyterlab"
-   binderhub_url: "https://mybinder.org"
+   notebook_interface: "classic"
    colab_url: "https://colab.research.google.com"
+   thebe_config:
+      use_thebe_lite: true
 
 parse:
   extensions:
