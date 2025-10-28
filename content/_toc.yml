@@ -7,22 +7,25 @@ parts:
     - file: tema_0/resources
   - caption: Tema 1 Conceptos básicos
     chapters:
-    - file: tema_1/w1-python-basics.ipynb
-    - file: tema_1/w1-python-basicIO.ipynb
+    - file: tema_1/t1-python-basics.ipynb
+    - file: tema_1/t1-python-basicIO.ipynb
   - caption: Tema 2 Estructuras de control de flujo
     chapters:
-      - file: tema_2/w1-python-control-flow.ipynb
+      - file: tema_2/t2-python-control-flow.ipynb
   - caption: Tema 3 Tipos de datos en Python
     chapters:
-      - file: tema_3/w1-python-datatypes.ipynb
-      - file: tema_3/w2-python-classes.ipynb
-      - file: tema_3/w2-python-advanced-data.ipynb
+      - file: tema_3/t3-python-datatypes.ipynb
+      - file: tema_3/t3-python-classes.ipynb
+      - file: tema_3/t3-python-advanced-data.ipynb
   - caption: Tema 4 Funciones, métodos y módulos en Python
     chapters:
-    - file: tema_4/w3-python-functions.ipynb
-#  - caption: Tema 5 Representación gráfica y cálculo científico
-#    chapters:
-#    - file: tema_5/XXXXX.ipynb
+    - file: tema_4/t4-python-functions.ipynb
+  - caption: Tema 5 Representación gráfica y cálculo científico
+    chapters:
+    - file: tema_5/t5-python-calculo.md
+      sections:
+      - file: tema_5/t5-python-numpy.ipynb
+      - file: tema_5/t5-python-matplotlib.ipynb
 #  - caption: Tema 6 Pandas y manejo de ficheros
 #    chapters:
 #    - file: tema_6/XXXXX.ipynb

@@ -1,6 +1,8 @@
 # Recursos bibliográficos de Python
 
-Las siguientes referencias son útiles para introducirse en Python y profundizar en su uso:
+Este tutorial de Python se ha basado en información sacada de: 
+
+* [PHY 546: Python for Scientific Computing](https://sbu-python-class.github.io/python-science/Introduction.html) de Stony Brook University.
 
 * [El tutorial oficial de Python](https://docs.python.org/es/3.14/tutorial/)
 
