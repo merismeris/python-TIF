@@ -197,6 +197,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 1 Conceptos básicos</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../tema_1/t1-python-basics.html">Primeros pasos con Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_1/t1-python-datatypes.html">Tipos de dato básicos y operadores en Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tema_1/t1-python-basicIO.html">Entrada y salida de datos (por consola)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 Estructuras de control de flujo</span></p>
@@ -570,7 +571,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11e915240&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x117951240&gt;]
 </pre></div>
 </div>
 <img alt="../_images/e1d963c8ffdc65da7f2356a671e6f6d4089a16d407dfb8fd67b6a83d1535de63.png" src="../_images/e1d963c8ffdc65da7f2356a671e6f6d4089a16d407dfb8fd67b6a83d1535de63.png" />
@@ -586,7 +587,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11ea92aa0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x117acaaa0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/e1d963c8ffdc65da7f2356a671e6f6d4089a16d407dfb8fd67b6a83d1535de63.png" src="../_images/e1d963c8ffdc65da7f2356a671e6f6d4089a16d407dfb8fd67b6a83d1535de63.png" />
@@ -630,7 +631,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11ec4a770&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x117c7e3e0&gt;
 </pre></div>
 </div>
 <img alt="../_images/dcf11d8fa7455909dde9ce9ded91817d7274d3e0da04785fd398519ce34062a8.png" src="../_images/dcf11d8fa7455909dde9ce9ded91817d7274d3e0da04785fd398519ce34062a8.png" />
@@ -650,11 +651,50 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x117d5a9b0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/3bdb476baaf1b1d578cf9d58567ee8983b832f5e264a12e191f9dbb28b0d4feb.png" src="../_images/3bdb476baaf1b1d578cf9d58567ee8983b832f5e264a12e191f9dbb28b0d4feb.png" />
+</div>
 </div>
 <p>También existen estilos predefinidos que pueden usarse. Para ello, debes seleccionar el estilo al crear la figura para que tenga efecto.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">available</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Solarize_Light2&#39;,
+ &#39;_classic_test_patch&#39;,
+ &#39;_mpl-gallery&#39;,
+ &#39;_mpl-gallery-nogrid&#39;,
+ &#39;bmh&#39;,
+ &#39;classic&#39;,
+ &#39;dark_background&#39;,
+ &#39;fast&#39;,
+ &#39;fivethirtyeight&#39;,
+ &#39;ggplot&#39;,
+ &#39;grayscale&#39;,
+ &#39;petroff10&#39;,
+ &#39;seaborn-v0_8&#39;,
+ &#39;seaborn-v0_8-bright&#39;,
+ &#39;seaborn-v0_8-colorblind&#39;,
+ &#39;seaborn-v0_8-dark&#39;,
+ &#39;seaborn-v0_8-dark-palette&#39;,
+ &#39;seaborn-v0_8-darkgrid&#39;,
+ &#39;seaborn-v0_8-deep&#39;,
+ &#39;seaborn-v0_8-muted&#39;,
+ &#39;seaborn-v0_8-notebook&#39;,
+ &#39;seaborn-v0_8-paper&#39;,
+ &#39;seaborn-v0_8-pastel&#39;,
+ &#39;seaborn-v0_8-poster&#39;,
+ &#39;seaborn-v0_8-talk&#39;,
+ &#39;seaborn-v0_8-ticks&#39;,
+ &#39;seaborn-v0_8-white&#39;,
+ &#39;seaborn-v0_8-whitegrid&#39;,
+ &#39;tableau-colorblind10&#39;]
 </pre></div>
 </div>
 </div>
@@ -670,6 +710,12 @@ document.write(`
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 6.283185307179586)
+</pre></div>
+</div>
+<img alt="../_images/c59de0ab51e69c113e502d0493db2945df45c803f03404e2666dbbd0b222d71b.png" src="../_images/c59de0ab51e69c113e502d0493db2945df45c803f03404e2666dbbd0b222d71b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -709,6 +755,9 @@ document.write(`
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6e88d9a6615dd17555325af5c7f8e3c37bfe42ede2a5269b13945b247704fcc2.png" src="../_images/6e88d9a6615dd17555325af5c7f8e3c37bfe42ede2a5269b13945b247704fcc2.png" />
 </div>
 </div>
 </section>
@@ -759,6 +808,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x117f0f490&gt;
+</pre></div>
+</div>
+<img alt="../_images/42d4fbc0433ea1eb5acb9568fb68a3ebc3db666770dace4c699bf7ab172c0e95.png" src="../_images/42d4fbc0433ea1eb5acb9568fb68a3ebc3db666770dace4c699bf7ab172c0e95.png" />
+</div>
 </div>
 </section>
 <section id="contornos">
@@ -772,6 +827,12 @@ document.write(`
 <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>   <span class="c1"># ajusta el tamaño de la imagen para que las longitudes x e y sean iguales</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(0.0), np.float64(99.0), np.float64(0.0), np.float64(99.0))
+</pre></div>
+</div>
+<img alt="../_images/7e8f40ee45a96b3bd372f3b4d9e96905389099c58b018760d415a97bfc09d758.png" src="../_images/7e8f40ee45a96b3bd372f3b4d9e96905389099c58b018760d415a97bfc09d758.png" />
 </div>
 </div>
 <p>Los contornos pueden etiquetarse usando <code class="docutils literal notranslate"><span class="pre">ax.clabel()</span></code>.</p>
@@ -808,6 +869,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ErrorbarContainer object of 3 artists&gt;
+</pre></div>
+</div>
+<img alt="../_images/9e5b2323a9680a1eb46d9b765a398a64b8cf40e14965f3869f532dbf45ffa711.png" src="../_images/9e5b2323a9680a1eb46d9b765a398a64b8cf40e14965f3869f532dbf45ffa711.png" />
+</div>
 </div>
 </section>
 <section id="histogramas">
@@ -835,7 +902,7 @@ $<span class="math notranslate nohighlight">\(y(x) = \frac{1}{\sigma \sqrt{2\pi}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;x&#39;)
 </pre></div>
 </div>
-<img alt="../_images/0df4db404cd1a000d77021c3f056da9e1425b87abde2471eb96a134c4ff19c37.png" src="../_images/0df4db404cd1a000d77021c3f056da9e1425b87abde2471eb96a134c4ff19c37.png" />
+<img alt="../_images/265a32a7c8c43ade5e5c51d065f2aef048f92fd68c2361a13917e6bbe1f78100.png" src="../_images/265a32a7c8c43ade5e5c51d065f2aef048f92fd68c2361a13917e6bbe1f78100.png" />
 </div>
 </div>
 </section>
@@ -858,6 +925,12 @@ $<span class="math notranslate nohighlight">\(y(x) = \frac{1}{\sigma \sqrt{2\pi}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(1.5707963267948966, 1.0, &#39;maximum&#39;)
+</pre></div>
+</div>
+<img alt="../_images/32dda5963713bc2f303b5ea3d61bfc0926d03f36312f442823e1325b78fb35fb.png" src="../_images/32dda5963713bc2f303b5ea3d61bfc0926d03f36312f442823e1325b78fb35fb.png" />
+</div>
 </div>
 <p>También podemos desactivar las líneas superior y derecha.</p>
 <div class="cell docutils container">
@@ -869,6 +942,9 @@ $<span class="math notranslate nohighlight">\(y(x) = \frac{1}{\sigma \sqrt{2\pi}
 <span class="n">fig</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/46ff7d65c4f7656b1ef39876d6833bb060efa6770e93fa3bddf48bcc0fd9d2ac.png" src="../_images/46ff7d65c4f7656b1ef39876d6833bb060efa6770e93fa3bddf48bcc0fd9d2ac.png" />
 </div>
 </div>
 <p>Las anotaciones con una flecha también son posibles.</p>
@@ -946,228 +1022,10 @@ $<span class="math notranslate nohighlight">\(y(x) = \frac{1}{\sigma \sqrt{2\pi}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10fb4d660&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1185ed7e0&gt;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-findfont: Font family &#39;xkcd&#39; not found.
-findfont: Font family &#39;xkcd Script&#39; not found.
-findfont: Font family &#39;Comic Neue&#39; not found.
-</pre></div>
-</div>
-<img alt="../_images/44dba06501aca4096570b35f2a008b0b1f63dea872937f9355031a87d5bd0636.png" src="../_images/44dba06501aca4096570b35f2a008b0b1f63dea872937f9355031a87d5bd0636.png" />
+<img alt="../_images/90b4d01de5a86ee4711745de24f5644434ca3a379ccc7e85347d54d1f6217832.png" src="../_images/90b4d01de5a86ee4711745de24f5644434ca3a379ccc7e85347d54d1f6217832.png" />
 </div>
 </div>
 <p>Si hacemos cambios en los datos, podemos guardarlos utilizando <code class="docutils literal notranslate"><span class="pre">np.savetxt('nombrefichero.ext',</span> <span class="pre">data,</span> <span class="pre">delimiter=',')</span></code></p>
@@ -1183,7 +1041,7 @@ plt.xkcd()</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;contextlib.ExitStack at 0x11f967df0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;contextlib.ExitStack at 0x1186858d0&gt;
 </pre></div>
 </div>
 </div>
