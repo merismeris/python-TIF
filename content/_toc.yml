@@ -8,13 +8,13 @@ parts:
   - caption: Tema 1 Conceptos básicos
     chapters:
     - file: tema_1/t1-python-basics.ipynb
+    - file: tema_1/t1-python-datatypes.ipynb
     - file: tema_1/t1-python-basicIO.ipynb
   - caption: Tema 2 Estructuras de control de flujo
     chapters:
       - file: tema_2/t2-python-control-flow.ipynb
   - caption: Tema 3 Tipos de datos en Python
     chapters:
-      - file: tema_3/t3-python-datatypes.ipynb
       - file: tema_3/t3-python-classes.ipynb
       - file: tema_3/t3-python-advanced-data.ipynb
   - caption: Tema 4 Funciones, métodos y módulos en Python
