@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tipos de dato básicos y operadores en Python &#8212; Introducción a Python - Técnicas Informáticas en Física</title>
+    <title>Tipos de datos básicos y operadores en Python &#8212; Introducción a Python - Técnicas Informáticas en Física</title>
   
   
   
@@ -197,7 +197,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 1 Conceptos básicos</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="t1-python-basics.html">Primeros pasos con Python</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tipos de dato básicos y operadores en Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tipos de datos básicos y operadores en Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="t1-python-basicIO.html">Entrada y salida de datos (por consola)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 Estructuras de control de flujo</span></p>
@@ -470,7 +470,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tipos de dato básicos y operadores en Python</h1>
+    <h1>Tipos de datos básicos y operadores en Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -504,8 +504,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tipos-de-dato-basicos-y-operadores-en-python">
-<h1>Tipos de dato básicos y operadores en Python<a class="headerlink" href="#tipos-de-dato-basicos-y-operadores-en-python" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="tipos-de-datos-basicos-y-operadores-en-python">
+<h1>Tipos de datos básicos y operadores en Python<a class="headerlink" href="#tipos-de-datos-basicos-y-operadores-en-python" title="Link to this heading">#</a></h1>
 <p>Python es un lenguaje de tipado dinámico: esto significa que no es
 necesario especificar de antemano qué tipo de dato se va a almacenar
 en una variable.  Sin embargo, existen algunos tipos de datos básicos
@@ -774,6 +774,11 @@ Usamos el operador <code class="docutils literal notranslate"><span class="pre">
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;bool&#39;&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Los valores booleanos se almacenan utilizando un solo bit de memoria, donde <code class="docutils literal notranslate"><span class="pre">True</span></code> se representa como 1 y <code class="docutils literal notranslate"><span class="pre">False</span></code> como 0.</p>
 </section>
@@ -791,6 +796,13 @@ Usamos el operador <code class="docutils literal notranslate"><span class="pre">
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Suma:&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplicación:&quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;División:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Suma: (4+2j)
+Multiplicación: (11-2j)
+División: (-1+2j)
 </pre></div>
 </div>
 </div>
@@ -904,6 +916,11 @@ Algunos ejemplos:</p></li>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False True False
+</pre></div>
+</div>
+</div>
 </div>
 <p>En Python, se considera que ciertos valores son “falsos” en un contexto booleano, incluyendo:</p>
 <ul class="simple">
@@ -925,6 +942,16 @@ Algunos ejemplos:</p></li>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
+False
+True
+False
+True
+</pre></div>
+</div>
+</div>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Consejo</p>
@@ -935,6 +962,13 @@ Algunos ejemplos:</p></li>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="mi">3</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Resultado: 1 (AND bit a bit)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="mi">3</span> <span class="o">|</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Resultado: 3 (OR bit a bit)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="mi">3</span> <span class="o">^</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Resultado: 2 (XOR bit a bit)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3
+2
 </pre></div>
 </div>
 </div>
@@ -1052,7 +1086,7 @@ sin(x, /)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mi cadena
-yo soy otra cadenita
+otra cadena de ejemplo
 </pre></div>
 </div>
 </div>
@@ -1061,6 +1095,11 @@ yo soy otra cadenita
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1073,7 +1112,7 @@ yo soy otra cadenita
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;mi cadenayo soy otra cadenita&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;mi cadenaotra cadena de ejemplo&#39;
 </pre></div>
 </div>
 </div>
@@ -1085,7 +1124,7 @@ yo soy otra cadenita
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;mi cadena. yo soy otra cadenita&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;mi cadena. otra cadena de ejemplo&#39;
 </pre></div>
 </div>
 </div>
@@ -1115,7 +1154,7 @@ yo soy otra cadenita
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mi cadena
 
-yo soy otra cadenita	mi cadena
+otra cadena de ejemplo	mi cadena
 </pre></div>
 </div>
 </div>
@@ -1173,12 +1212,20 @@ in culpa qui officia deserunt mollit anim id est laborum.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 1; b = 2.0; c = test
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = mi cadena
+; b = otra cadena de ejemplo	mi cadena
+; c = 
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt 
+in culpa qui officia deserunt mollit anim id est laborum.
 </pre></div>
 </div>
 </div>
 </div>
-<p>Veremos más ejemplos en el siguiente capítulo de E/S de datos. Asimismo, veremos más operatoria con cadenas en el próximo tema.</p>
+<p>Veremos más ejemplos en el siguiente capítulo de E/S de datos. Asimismo, veremos más operaciones con cadenas en el próximo tema.</p>
 </section>
 </section>
 
