@@ -43,7 +43,8 @@ El numero binario 10111011 es 187 en decimal
 ```{admonition} Recordatorio
 :class: hint
 - Una cadena binaria como `"1011"` representa $1\cdot 2^3 + 0\cdot 2^2 + 1\cdot 2^1 + 1\cdot 2^0 = 11$.
-- Puedes invertir con `reversed(cadena)` o `cadena[::-1]`.
+- Puedes utilizar un bucle `for` para recorrer la cadena (tanto de izquierda a derecha como de derecha a izquierda). Recuerda `range(inicio, fin_exclusivo, paso)`; por ejemplo, `range(len(cadena)-1, -1, -1)` recorre los índices de la cadena de derecha a izquierda.
+- Puedes también invertir la cadena con `reversed(cadena)` o `cadena[::-1]`.
 - `enumerate(iterable)` te da pares `(indice, valor)`. Útil para potencias.
 - Valida que la entrada **solo contiene** `0` y `1`; en caso contrario, vuelve a pedirla.
 - Puedes utilizar tabuladores para alinear la salida. Usa `\t` para tabulaciones al igual que `\n` era un salto de línea.
