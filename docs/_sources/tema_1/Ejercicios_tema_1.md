@@ -81,7 +81,7 @@ $$
 * Convierte grados a radianes con `math.radians`. 
 * Valida rangos: lat ∈ [-90, 90], lon ∈ [-180, 180].
 * Prueba con coordenadas conocidas, por ejemplo:
-  - Salamanca (40.9704, -5.6635) a Madrid (40.4168, -3.7038) ≈ 168 km (este valor dependerá de la fórmula implementada y del radio terrestre usado).
+  - Salamanca (40.97915031936888, -5.609452413216567) a Madrid (40.44727142930985, -3.522017541475585) ≈ 168 km (este valor dependerá de la fórmula implementada y del radio terrestre usado).
 
 Puedes obtener las coordenadas de ciudades con [Google Maps](https://www.google.com/maps) pulsando con el botón derecho en el mapa y obteniendo la las coordenadas del punto. También puedes usar la opción de *medir distancia* para comprobar resultados.
 
@@ -90,9 +90,7 @@ Puedes obtener las coordenadas de ciudades con [Google Maps](https://www.google.
 
 ## 4. Distancia con la biblioteca `haversine`
 
-**Enunciado.** Repite el cálculo anterior, pero ahora usando la biblioteca de terceros `haversine`.
-
-En este caso será necesario instalar la biblioteca. Desde la terminal de VSCode (o cualquier consola), tienes que seguir los siguientes pasos:
+**Enunciado.** Repite el cálculo anterior, pero ahora usando la biblioteca de terceros `haversine`. En este caso será necesario instalar la biblioteca. Desde la terminal de VSCode (o cualquier consola), tienes que seguir los siguientes pasos:
 
 1. **Asegúrate de tener el entorno virtual activado** (si lo estás usando). Por ejemplo, en Windows CMD:
 
@@ -119,7 +117,7 @@ distance = haversine(point1, point2, unit=Unit.KILOMETERS)
 print(f"La distancia es {distance:.2f} km")
 ```
 
-```{admonition} Consejos
+```{admonition} Recordatorio
 :class: tip
 * Asegúrate de que las coordenadas estén en el formato correcto (grados decimales).
 * **Compara los resultados con la implementación anterior** para verificar la precisión.
@@ -132,17 +130,18 @@ print(f"La distancia es {distance:.2f} km")
 El número de Reynolds es un parámetro adimensional que caracteriza el régimen de flujo de un fluido. A continuación se muestra un video con un experimento visualizando diferentes regímenes de flujo según el valor del número de Reynolds:
 
 <div style="position: relative; padding-bottom: 70.25%; height: 0; overflow: hidden;margin-bottom: 2em;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/xMheDmiKH38?t=365" title="Documental de Python (YouTube)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/xMheDmiKH38?start=365" title="Documental de Python (YouTube)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 </div>
 
-**Enunciado.** Implementa en Python el cálculo del **Número de Reynolds**.
-Recuerda la definición típica \( Re = \dfrac{\rho\, v\, D}{\mu} \) (ajusta a la formulación de tu práctica).
+**Enunciado.** Implementa en Python el cálculo del **Número de Reynolds**. El programa debe pedir los datos necesarios por consola y mostrar el resultado formateado. Recuerda la definición del número de Reynolds:
 
-```{hint}
-- Pide por consola densidad \(\rho\), velocidad \(v\), diámetro \(D\) (o longitud característica) y viscosidad \(\mu\).
+$$ Re = \dfrac{\rho\, v\, D}{\mu} $$
+
+```{admonition} Recordatorio
+:class: hint
+- Pide por consola densidad $\rho$, velocidad $v$, diámetro $D$ (o longitud característica) y viscosidad $\mu$.
 - Devuelve **Re** y clasifica el régimen (turbulento/transicional/laminar según umbrales habituales).
 ```
----
 
 ## Referencias y enlaces útiles
 
@@ -151,10 +150,3 @@ Recuerda la definición típica \( Re = \dfrac{\rho\, v\, D}{\mu} \) (ajusta a l
 - Fórmula de Haversine (Wikipedia): <https://en.wikipedia.org/wiki/Haversine_formula>
 - `haversine` en PyPI: <https://pypi.org/project/haversine/>
 - F-strings *cheat sheet*: <https://fstring.help/cheat/>
-- VSCode para Python: <https://code.visualstudio.com/docs/languages/python>
-
-```{admonition} Nota de procedencia
-:class: note
-Estos enunciados están adaptados del material del **Tema 1** de la asignatura *Técnicas Informáticas en Física*
-(Grado en Física), extendidos y formateados para su uso en Jupyter Book con MyST Markdown.
-```

@@ -1,0 +1,786 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tema 2 — Estructuras selectivas y repetitivas (Hoja de ejercicios) &#8212; Introducción a Python Técnicas Informáticas en Física</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script src="../_static/Accessibility.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tema_2/Ejercicios_tema_2';</script>
+    <link rel="canonical" href="/python-TIF/tema_2/Ejercicios_tema_2.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introducción a la Programación Orientada a Objetos en Python" href="../tema_3/t3-python-classes.html" />
+    <link rel="prev" title="Control de flujo" href="t2-python-control-flow.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../Home.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Introducción a Python Técnicas Informáticas en Física</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Home.html">
+                    ¿Qué es Python?
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Conociendo Python y el editor (IDE)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_0/using.html">Primeros pasos con VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_0/resources.html">Recursos bibliográficos de Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 1 Conceptos básicos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_1/t1-python-basics.html">Primeros pasos con Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_1/t1-python-datatypes.html">Tipos de datos básicos y operadores en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_1/t1-python-basicIO.html">Entrada y salida de datos (por consola)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_1/Ejercicios_tema_1.html">Tema 1 — Introducción a Python (Hoja de ejercicios)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 Estructuras de control de flujo</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="t2-python-control-flow.html">Control de flujo</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tema 2 — Estructuras selectivas y repetitivas (Hoja de ejercicios)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 3 Tipos de datos en Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_3/t3-python-classes.html">Introducción a la Programación Orientada a Objetos en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_3/t3-python-advanced-data.html">Tipos de datos estructurados</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 Funciones, métodos y módulos en Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_4/t4-python-functions.html">Funciones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 Representación gráfica y cálculo científico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema_5/t5-python-calculo.html">Cálculo Científico y Representación Gráfica con Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema_5/t5-python-numpy.html">NumPy</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../tema_5/t5-python-matplotlib.html">Matplotlib</a></li>
+
+
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Material adicional de Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contenido_extra/misc.html">Algunos conceptos y material adicionales</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-classes.html">Pequeña introducción a la creación de clases en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-exceptions.html">Excepciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-functions.html">Funciones lambda (funciones anónimas)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acerca de este libro</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">Acerca de este libro</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/merismeris/python-TIF" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/merismeris/python-TIF/issues/new?title=Issue%20on%20page%20%2Ftema_2/Ejercicios_tema_2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tema_2/Ejercicios_tema_2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tema 2 — Estructuras selectivas y repetitivas (Hoja de ejercicios)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversor-de-binario-sin-signo-a-decimal">1. Conversor de binario (sin signo) a decimal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial-con-validacion-de-entrada">2. Factorial con validación de entrada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dibuja-un-patron-con-bucles-anidados">3. Dibuja un patrón con bucles anidados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fizzbuzz-multiplos-de-5-y-7">4. FizzBuzz (múltiplos de 5 y 7)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproxima-con-la-serie-de-gregoryleibniz">5. Aproxima π con la <strong>Serie de Gregory–Leibniz</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adicional-aproxima-con-monte-carlo">6. (Adicional) Aproxima π con <strong>Monte Carlo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendaciones-generales-de-implementacion">Recomendaciones generales de implementación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-enlaces-utiles">Referencias y enlaces útiles</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tema-2-estructuras-selectivas-y-repetitivas-hoja-de-ejercicios">
+<h1>Tema 2 — Estructuras selectivas y repetitivas (Hoja de ejercicios)<a class="headerlink" href="#tema-2-estructuras-selectivas-y-repetitivas-hoja-de-ejercicios" title="Link to this heading">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Objetivos de aprendizaje</p>
+<ul class="simple">
+<li><p>Practicar <strong>sentencias selectivas</strong>: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p></li>
+<li><p>Usar <strong>bucles</strong> <code class="docutils literal notranslate"><span class="pre">for</span></code> y <code class="docutils literal notranslate"><span class="pre">while</span></code> para iteraciones controladas.</p></li>
+<li><p>Entender y aplicar <strong>sentencias de control</strong>: <code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code> y <code class="docutils literal notranslate"><span class="pre">pass</span></code>.</p></li>
+<li><p>Validar entradas por consola (<code class="docutils literal notranslate"><span class="pre">input</span></code>) y realizar <em>casting</em> de tipos (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>).</p></li>
+<li><p>Trabajar con funciones útiles como <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> en bucles.</p></li>
+<li><p>Implementar pequeños algoritmos clásicos (conversión binario→decimal, factorial, patrones de texto, FizzBuzz, aproximación de π).</p></li>
+</ul>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Requisitos previos</p>
+<ul class="simple">
+<li><p>Python 3.10+ instalado.</p></li>
+<li><p>VSCode con extensión de Python.</p></li>
+<li><p>Conocimientos mínimos de consola/terminal.</p></li>
+</ul>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">Contenidos del tema</p>
+<ul class="simple">
+<li><p><strong>Selectivas</strong>: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code></p></li>
+<li><p><strong>Repetitivas</strong>: <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code></p></li>
+<li><p><strong>Control de bucle</strong>: <code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code>, <code class="docutils literal notranslate"><span class="pre">pass</span></code></p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<section id="conversor-de-binario-sin-signo-a-decimal">
+<h2>1. Conversor de binario (sin signo) a decimal<a class="headerlink" href="#conversor-de-binario-sin-signo-a-decimal" title="Link to this heading">#</a></h2>
+<p><strong>Enunciado.</strong> Escribe un programa que pida por consola una <strong>cadena</strong> con un número binario <strong>sin signo</strong> y devuelva su <strong>valor decimal</strong>.<br />
+Pista: recorre la cadena de derecha a izquierda o usa <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> sobre la cadena invertida.</p>
+<p>La salida debería ser similar a:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Introduzca un numero en binario:10111011
+  1    0   1   1   1   0   1   1
+128   64  32  16   8   4   2   1
+El numero binario 10111011 es 187 en decimal
+</pre></div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Una cadena binaria como <code class="docutils literal notranslate"><span class="pre">&quot;1011&quot;</span></code> representa <span class="math notranslate nohighlight">\(1\cdot 2^3 + 0\cdot 2^2 + 1\cdot 2^1 + 1\cdot 2^0 = 11\)</span>.</p></li>
+<li><p>Puedes invertir con <code class="docutils literal notranslate"><span class="pre">reversed(cadena)</span></code> o <code class="docutils literal notranslate"><span class="pre">cadena[::-1]</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enumerate(iterable)</span></code> te da pares <code class="docutils literal notranslate"><span class="pre">(indice,</span> <span class="pre">valor)</span></code>. Útil para potencias.</p></li>
+<li><p>Valida que la entrada <strong>solo contiene</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code> y <code class="docutils literal notranslate"><span class="pre">1</span></code>; en caso contrario, vuelve a pedirla.</p></li>
+<li><p>Puedes utilizar tabuladores para alinear la salida. Usa <code class="docutils literal notranslate"><span class="pre">\t</span></code> para tabulaciones al igual que <code class="docutils literal notranslate"><span class="pre">\n</span></code> era un salto de línea.</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="factorial-con-validacion-de-entrada">
+<h2>2. Factorial con validación de entrada<a class="headerlink" href="#factorial-con-validacion-de-entrada" title="Link to this heading">#</a></h2>
+<p><strong>Enunciado.</strong> Pide al usuario un <strong>número natural</strong> <span class="math notranslate nohighlight">\(n\)</span>.<br />
+Si es válido (<span class="math notranslate nohighlight">\(n \ge 0\)</span>), calcula <strong>n!</strong>. Si no lo es, vuelve a pedir el valor hasta que cumpla el requisito.</p>
+<p>Un posible ejemplo de ejecución del programa:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Introduzca un numero natural: -3
+Entrada no valida.
+Introduzca un numero natural: 5
+El factorial de 5 es 120.
+</pre></div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Valida con un bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> hasta obtener un entero <span class="math notranslate nohighlight">\(n\)</span> con <span class="math notranslate nohighlight">\(n \ge 0\)</span>.</p></li>
+<li><p>Implementa el factorial con <code class="docutils literal notranslate"><span class="pre">for</span></code> o <code class="docutils literal notranslate"><span class="pre">while</span></code> (también existe <code class="docutils literal notranslate"><span class="pre">math.factorial</span></code>).</p></li>
+<li><p>Haz pruebas con valores grandes y observa tiempos: en Python, <code class="docutils literal notranslate"><span class="pre">int</span></code> es de <a class="reference external" href="https://docs.python.org/3/c-api/long.html">precisión arbitraria</a>, pero el tiempo y la memoria crecen con <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="dibuja-un-patron-con-bucles-anidados">
+<h2>3. Dibuja un patrón con bucles anidados<a class="headerlink" href="#dibuja-un-patron-con-bucles-anidados" title="Link to this heading">#</a></h2>
+<p><strong>Enunciado.</strong> Muestra exactamente el siguiente patrón por consola. Intenta pensar una solución con <strong>bucles anidados</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span>
+<span class="o">*</span> <span class="o">*</span>
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span>
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span>
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span>
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span>
+<span class="o">*</span> <span class="o">*</span> <span class="o">*</span>
+<span class="o">*</span> <span class="o">*</span>
+<span class="o">*</span>
+</pre></div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Divide el problema en <strong>fase ascendente</strong> y <strong>fase descendente</strong>.</p></li>
+<li><p>Usa bucles anidados o genera cada línea con <code class="docutils literal notranslate"><span class="pre">'*</span> <span class="pre">'</span> <span class="pre">*</span> <span class="pre">k</span></code> y <code class="docutils literal notranslate"><span class="pre">strip()</span></code>.</p></li>
+<li><p>Controla los saltos de línea con <code class="docutils literal notranslate"><span class="pre">print(...,</span> <span class="pre">end=&quot;&quot;)</span></code> si lo necesitas.</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="fizzbuzz-multiplos-de-5-y-7">
+<h2>4. FizzBuzz (múltiplos de 5 y 7)<a class="headerlink" href="#fizzbuzz-multiplos-de-5-y-7" title="Link to this heading">#</a></h2>
+<p><strong>Enunciado.</strong> Recorre los números desde <strong>1</strong> hasta un <strong>límite</strong> indicado por el usuario.<br />
+Imprime:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Fizz&quot;</span></code> en lugar del número si es múltiplo de <strong>7</strong>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Buzz&quot;</span></code> si es múltiplo de <strong>5</strong>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;FizzBuzz&quot;</span></code> si es múltiplo de <strong>5 y 7</strong>,</p></li>
+<li><p>el número en caso contrario.</p></li>
+</ul>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Usa el operador módulo <code class="docutils literal notranslate"><span class="pre">%</span></code> para la divisibilidad. Por ejemplo, <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">5</span> <span class="pre">==</span> <span class="pre">0</span></code> indica que <code class="docutils literal notranslate"><span class="pre">n</span></code> es múltiplo de 5.</p></li>
+<li><p><strong>El orden importa</strong>: comprueba primero el caso <strong>ambos</strong> (5 y 7).</p></li>
+<li><p>Añade validación para que el límite sea un entero positivo.</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="aproxima-con-la-serie-de-gregoryleibniz">
+<h2>5. Aproxima π con la <strong>Serie de Gregory–Leibniz</strong><a class="headerlink" href="#aproxima-con-la-serie-de-gregoryleibniz" title="Link to this heading">#</a></h2>
+<p>La <a class="reference external" href="https://es.wikipedia.org/wiki/Serie_de_Leibniz">serie de Gregory–Leibniz</a> para <span class="math notranslate nohighlight">\(\frac{\pi}{4}\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots = \sum_{k=0}^{\infty} \frac{(-1)^k}{2k+1}.
+\]</div>
+<p><strong>Enunciado.</strong> Pide al usuario una <strong>tolerancia positiva</strong> <span class="math notranslate nohighlight">\(\varepsilon\)</span> que represente la <strong>diferencia máxima permitida entre dos sumas parciales consecutivas</strong>.<br />
+Suma términos hasta que <span class="math notranslate nohighlight">\(|S_n - S_{n-1}| &lt; \varepsilon\)</span> y reporta <span class="math notranslate nohighlight">\(\pi \approx 4\,S_n\)</span>.</p>
+<p>Una posible ejecución del programa:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Introduzca la tolerancia (ej. 1e-6): 0.01 
+Iteracion N=1, Error: 1.0 
+Iteracion N=2, Error: 0.33333333333333326 
+Iteracion N=3, Error: 0.19999999999999996 
+....
+Iteracion N=49, Error: 0.010309278350515427 
+Iteracion N=50, Error: 0.010101010101010055 
+Iteracion N=51, Error: 0.00990099009900991 
+Aproximacion de pi: 3.1611986129870506
+</pre></div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Usa un <code class="docutils literal notranslate"><span class="pre">while</span></code> que avance el índice <code class="docutils literal notranslate"><span class="pre">k</span></code> y acumule en <code class="docutils literal notranslate"><span class="pre">S</span></code>.</p></li>
+<li><p>La serie <strong>converge lentamente</strong>; elige <span class="math notranslate nohighlight">\(\varepsilon\)</span> razonable (p. ej., <code class="docutils literal notranslate"><span class="pre">1e-6</span></code>).</p></li>
+<li><p>Puedes mostrar una <strong>traza</strong>: cada cierto número de iteraciones imprime el error aproximado.</p></li>
+<li><p>Considera <code class="docutils literal notranslate"><span class="pre">decimal</span></code> si quieres controlar precisión, aunque no es necesario.</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="adicional-aproxima-con-monte-carlo">
+<h2>6. (Adicional) Aproxima π con <strong>Monte Carlo</strong><a class="headerlink" href="#adicional-aproxima-con-monte-carlo" title="Link to this heading">#</a></h2>
+<p>Imagina un tablero cuadrado <strong>1×1</strong> que contiene <strong>un cuarto de círculo</strong> de radio 1 en una esquina.</p>
+<p>Si generas puntos aleatorios <span class="math notranslate nohighlight">\((x, y)\)</span> uniformes en <span class="math notranslate nohighlight">\([0,1]\times[0,1]\)</span>, la fracción que cae dentro del cuarto de círculo (de color rojo donde <span class="math notranslate nohighlight">\(x^2 + y^2 \le 1\)</span>) aproxima <span class="math notranslate nohighlight">\(\pi/4\)</span>.</p>
+<figure class="align-default" id="fig-pi-montecarlo">
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Pi_monte_carlo_all.gif/660px-Pi_monte_carlo_all.gif"><img alt="Simulación Monte Carlo para aproximación de pi" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Pi_monte_carlo_all.gif/660px-Pi_monte_carlo_all.gif" style="width: 50%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Animación que muestra puntos aleatorios en el cuadrante y la convergencia visual de la estimación de <span class="math notranslate nohighlight">\(\pi\)</span>. Fuente: <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Pi_monte_carlo_all.gif">Wikimedia Commons - Pi_monte_carlo_all.gif</a>.</span><a class="headerlink" href="#fig-pi-montecarlo" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Enunciado.</strong> Pide un entero <strong>t</strong> (número de lanzamientos/puntos).<br />
+Genera <span class="math notranslate nohighlight">\(t\)</span> puntos aleatorios <span class="math notranslate nohighlight">\((x, y)\)</span> en <span class="math notranslate nohighlight">\([0,1]^2\)</span>, cuenta cuántos caen dentro del cuarto de círculo (<strong>g</strong>), y estima:</p>
+<p><span class="math notranslate nohighlight">\(
+\pi \approx \frac{4g}{t}.
+\)</span></p>
+<div class="tip admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Usa <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">random</span> <span class="pre">import</span> <span class="pre">random</span></code> para generar <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">random()</span></code> y <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">random()</span></code>.</p></li>
+<li><p>Utiliza la distancia al origen para determinar si el punto está dentro del cuarto de círculo.</p></li>
+<li><p>Prueba distintos valores de <code class="docutils literal notranslate"><span class="pre">t</span></code> (p. ej., 1e3, 1e4, 1e5) y observa la <strong><a class="reference external" href="https://es.wikipedia.org/wiki/Ley_de_los_grandes_n%C3%BAmeros">ley de los grandes números</a></strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="recomendaciones-generales-de-implementacion">
+<h2>Recomendaciones generales de implementación<a class="headerlink" href="#recomendaciones-generales-de-implementacion" title="Link to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Buenas prácticas</p>
+<ul class="simple">
+<li><p>Valida entradas con bucles <code class="docutils literal notranslate"><span class="pre">while</span></code> (opcionalmente — si queréis — consultad los <a class="reference internal" href="../contenido_extra/w4-python-ad-exceptions.html"><span class="std std-doc">materiales adicionales</span></a> para ver manejo de excepciones y como manejar si el usuario introduce un valor no válido).</p></li>
+<li><p>Documenta tus ejercicios con comentarios y comenta los pasos clave (sobre todo en las aproximaciones de π).</p></li>
+<li><p>Utiliza el depurador de VSCode para seguir la ejecución paso a paso.</p></li>
+</ul>
+</div>
+</section>
+<section id="referencias-y-enlaces-utiles">
+<h2>Referencias y enlaces útiles<a class="headerlink" href="#referencias-y-enlaces-utiles" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Serie Gregory–Leibniz: <a class="reference external" href="https://es.wikipedia.org/wiki/Serie_de_Leibniz">https://es.wikipedia.org/wiki/Serie_de_Leibniz</a></p></li>
+<li><p>El Método Montecarlo explicado por <a class="reference external" href="https://investigacion.unirioja.es/investigadores/247/detalle">Eduardo Sáenz de Cabezón</a> en el canal de YouTube “Derivando”</p></li>
+</ul>
+<div style="position: relative; padding-bottom: 70.25%; height: 0; overflow: hidden;margin-bottom: 2em;">
+<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/m4X94Sq1Q4M" title="
+Ruletas y bombas atómicas: EL MÉTODO MONTECARLO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "merismeris/python-TIF",
+            ref: "mi-cambio",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tema_2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="t2-python-control-flow.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Control de flujo</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../tema_3/t3-python-classes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introducción a la Programación Orientada a Objetos en Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversor-de-binario-sin-signo-a-decimal">1. Conversor de binario (sin signo) a decimal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorial-con-validacion-de-entrada">2. Factorial con validación de entrada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dibuja-un-patron-con-bucles-anidados">3. Dibuja un patrón con bucles anidados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fizzbuzz-multiplos-de-5-y-7">4. FizzBuzz (múltiplos de 5 y 7)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aproxima-con-la-serie-de-gregoryleibniz">5. Aproxima π con la <strong>Serie de Gregory–Leibniz</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adicional-aproxima-con-monte-carlo">6. (Adicional) Aproxima π con <strong>Monte Carlo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendaciones-generales-de-implementacion">Recomendaciones generales de implementación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-enlaces-utiles">Referencias y enlaces útiles</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://produccioncientifica.usal.es/investigadores/57777/detalle">María Navarro Cáceres</a> y <a href="https://produccioncientifica.usal.es/investigadores/148041/detalle">Álvaro Lozano Murciego</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+&copy; 2023-2025; CC-BY-NC-SA 4.0
+<p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
