@@ -6,22 +6,41 @@ echo "  Build y Servidor del Jupyter Book"
 echo "========================================"
 echo ""
 
-# Activar el entorno conda local
-echo "[1/4] Activando entorno conda local..."
-eval "$(conda shell.bash hook)"
-conda activate ./.conda
-if [ $? -ne 0 ]; then
-    echo "ERROR: No se pudo activar el entorno conda local"
-    echo "Verifica que el entorno existe en .conda"
-    exit 1
+# Verificar y activar el entorno conda si es necesario
+echo "[1/4] Verificando entorno conda..."
+CONDA_ENV_PATH="$(pwd)/.conda"
+NEEDS_ACTIVATION=0
+
+if [ -n "$CONDA_PREFIX" ]; then
+    if [ "$CONDA_PREFIX" = "$CONDA_ENV_PATH" ]; then
+        echo "[INFO] Ya estás en el entorno conda local correcto"
+    else
+        echo "[INFO] Estás en otro entorno conda, cambiando al entorno local..."
+        NEEDS_ACTIVATION=1
+    fi
+else
+    echo "[INFO] Activando entorno conda local..."
+    NEEDS_ACTIVATION=1
 fi
-echo "Entorno activado correctamente."
+
+if [ "$NEEDS_ACTIVATION" -eq 1 ]; then
+    eval "$(conda shell.bash hook)"
+    conda activate ./.conda
+    if [ $? -ne 0 ]; then
+        echo "ERROR: No se pudo activar el entorno conda local"
+        echo "Verifica que el entorno existe en .conda"
+        exit 1
+    fi
+    echo "Entorno activado correctamente."
+fi
 echo ""
 
 # Verificar si existe el directorio content
 if [ ! -d "content" ]; then
     echo "ERROR: No se encuentra el directorio 'content'"
-    conda deactivate
+    if [ "$NEEDS_ACTIVATION" -eq 1 ]; then
+        conda deactivate
+    fi
     exit 1
 fi
 
@@ -41,12 +60,16 @@ echo "Esto puede tomar varios minutos debido a la ejecución de notebooks..."
 echo ""
 jupyter-book build content
 
+BUILD_ERROR=$?
+
 # Verificar si el build fue exitoso
-if [ $? -ne 0 ]; then
+if [ $BUILD_ERROR -ne 0 ]; then
     echo ""
     echo "ERROR: El build falló. Revisa los mensajes de error arriba."
-    conda deactivate
-    exit $?
+    if [ "$NEEDS_ACTIVATION" -eq 1 ]; then
+        conda deactivate
+    fi
+    exit $BUILD_ERROR
 fi
 
 echo ""
@@ -72,5 +95,7 @@ fi
 cd content/_build/html
 python -m http.server 8000
 
-# Desactivar el entorno al salir
-conda deactivate
+# Desactivar el entorno solo si lo activamos nosotros
+if [ "$NEEDS_ACTIVATION" -eq 1 ]; then
+    conda deactivate
+fi

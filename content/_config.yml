@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: "Introducción a Python - Técnicas Informáticas en Física"
-author: <a href="https://merismeris.github.io">María Navarro y Álvaro Lozano</a>
+title: "Introducción a Python Técnicas Informáticas en Física"
+author: <a href="https://produccioncientifica.usal.es/investigadores/57777/detalle">María Navarro Cáceres</a> y <a href="https://produccioncientifica.usal.es/investigadores/148041/detalle">Álvaro Lozano Murciego</a>
 #logo: logo.png
 copyright: "2025"
 

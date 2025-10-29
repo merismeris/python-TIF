@@ -6,12 +6,30 @@ echo   Build rapido (sin ejecutar notebooks)
 echo ========================================
 echo.
 
-echo Activando entorno conda local...
-call conda activate .\.conda
-if %ERRORLEVEL% neq 0 (
-    echo ERROR: No se pudo activar el entorno conda local
-    pause
-    exit /b 1
+REM Verificar y activar el entorno conda si es necesario
+set "CONDA_ENV_PATH=%CD%\.conda"
+set "NEEDS_ACTIVATION=0"
+
+REM Comprobar si estamos en el entorno correcto
+if defined CONDA_PREFIX (
+    if /I "%CONDA_PREFIX%"=="%CONDA_ENV_PATH%" (
+        echo [INFO] Ya estas en el entorno conda local correcto
+    ) else (
+        echo [INFO] Estas en otro entorno conda, cambiando al entorno local...
+        set "NEEDS_ACTIVATION=1"
+    )
+) else (
+    echo [INFO] Activando entorno conda local...
+    set "NEEDS_ACTIVATION=1"
+)
+
+if "%NEEDS_ACTIVATION%"=="1" (
+    call conda activate .\.conda
+    if %ERRORLEVEL% neq 0 (
+        echo ERROR: No se pudo activar el entorno conda local
+        pause
+        exit /b 1
+    )
 )
 echo.
 
@@ -35,12 +53,16 @@ echo [2/2] Construyendo libro (rapido, sin ejecutar notebooks)...
 echo.
 jupyter-book build content
 
-if %ERRORLEVEL% neq 0 (
+set "BUILD_ERROR=%ERRORLEVEL%"
+
+if %BUILD_ERROR% neq 0 (
     echo.
     echo ERROR: El build fallo
-    call conda deactivate
+    if "%NEEDS_ACTIVATION%"=="1" (
+        call conda deactivate
+    )
     pause
-    exit /b %ERRORLEVEL%
+    exit /b %BUILD_ERROR%
 )
 
 echo.
@@ -50,5 +72,8 @@ echo   Archivo: content\_build\html\index.html
 echo ========================================
 echo.
 
-call conda deactivate
+REM Desactivar solo si lo activamos nosotros
+if "%NEEDS_ACTIVATION%"=="1" (
+    call conda deactivate
+)
 pause

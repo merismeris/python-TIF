@@ -10,9 +10,11 @@ parts:
     - file: tema_1/t1-python-basics.ipynb
     - file: tema_1/t1-python-datatypes.ipynb
     - file: tema_1/t1-python-basicIO.ipynb
+    - file: tema_1/Ejercicios_tema_1
   - caption: Tema 2 Estructuras de control de flujo
     chapters:
       - file: tema_2/t2-python-control-flow.ipynb
+      - file: tema_2/Ejercicios_tema_2
   - caption: Tema 3 Tipos de datos en Python
     chapters:
       - file: tema_3/t3-python-classes.ipynb
@@ -36,3 +38,6 @@ parts:
       - file: contenido_extra/w4-python-ad-classes.ipynb
       - file: contenido_extra/w4-python-ad-exceptions.ipynb
       - file: contenido_extra/w4-python-ad-functions.ipynb
+  - caption: Acerca de este libro
+    chapters:
+    - file: about/about

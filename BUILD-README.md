@@ -234,7 +234,31 @@ build-clean.bat
 
 ## 📝 Notas
 
-- Todos los scripts activan automáticamente el entorno conda local (`.conda`)
+- **Todos los scripts detectan automáticamente si ya estás en el entorno conda correcto**
+  - Si ya estás en `.conda`, no hace nada
+  - Si estás en otro entorno o en `base`, cambia al entorno local
+  - Solo desactiva el entorno si lo activó el script
 - El servidor usa el puerto 8000 por defecto
 - Presiona `Ctrl+C` para detener el servidor
 - Los builds se guardan en `content/_build/html/`
+
+## 🔍 Detección de Entorno Conda
+
+Los scripts ahora son más inteligentes:
+
+```bash
+# ✅ CASO 1: No hay entorno activo
+# El script activa .conda y lo desactiva al terminar
+
+# ✅ CASO 2: Ya estás en .conda
+# El script detecta que estás en el entorno correcto
+# No hace activación ni desactivación
+
+# ✅ CASO 3: Estás en otro entorno (ej: base)
+# El script cambia a .conda y lo desactiva al terminar
+```
+
+Esto evita errores como:
+- "CondaError: Cannot activate environment"
+- "Environment stack inconsistency"
+- Conflictos de paquetes entre entornos

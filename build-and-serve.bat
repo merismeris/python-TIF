@@ -6,16 +6,34 @@ echo   Build y Servidor del Jupyter Book
 echo ========================================
 echo.
 
-REM Activar el entorno conda local
-echo [1/4] Activando entorno conda local...
-call conda activate .\.conda
-if %ERRORLEVEL% neq 0 (
-    echo ERROR: No se pudo activar el entorno conda local
-    echo Verifica que el entorno existe en .conda
-    pause
-    exit /b 1
+REM Verificar y activar el entorno conda si es necesario
+echo [1/4] Verificando entorno conda...
+set "CONDA_ENV_PATH=%CD%\.conda"
+set "NEEDS_ACTIVATION=0"
+
+REM Comprobar si estamos en el entorno correcto
+if defined CONDA_PREFIX (
+    if /I "%CONDA_PREFIX%"=="%CONDA_ENV_PATH%" (
+        echo [INFO] Ya estas en el entorno conda local correcto
+    ) else (
+        echo [INFO] Estas en otro entorno conda, cambiando al entorno local...
+        set "NEEDS_ACTIVATION=1"
+    )
+) else (
+    echo [INFO] Activando entorno conda local...
+    set "NEEDS_ACTIVATION=1"
 )
-echo Entorno activado correctamente.
+
+if "%NEEDS_ACTIVATION%"=="1" (
+    call conda activate .\.conda
+    if %ERRORLEVEL% neq 0 (
+        echo ERROR: No se pudo activar el entorno conda local
+        echo Verifica que el entorno existe en .conda
+        pause
+        exit /b 1
+    )
+    echo Entorno activado correctamente.
+)
 echo.
 
 REM Verificar si existe el directorio content
@@ -42,13 +60,17 @@ echo Esto puede tomar varios minutos debido a la ejecucion de notebooks...
 echo.
 jupyter-book build content
 
+set "BUILD_ERROR=%ERRORLEVEL%"
+
 REM Verificar si el build fue exitoso
-if %ERRORLEVEL% neq 0 (
+if %BUILD_ERROR% neq 0 (
     echo.
     echo ERROR: El build fallo. Revisa los mensajes de error arriba.
-    call conda deactivate
+    if "%NEEDS_ACTIVATION%"=="1" (
+        call conda deactivate
+    )
     pause
-    exit /b %ERRORLEVEL%
+    exit /b %BUILD_ERROR%
 )
 
 echo.
@@ -69,5 +91,7 @@ start http://localhost:8000
 REM Iniciar el servidor sin cambiar de directorio
 python -m http.server 8000 --directory content\_build\html
 
-REM Desactivar el entorno al salir
-call conda deactivate
+REM Desactivar el entorno solo si lo activamos nosotros
+if "%NEEDS_ACTIVATION%"=="1" (
+    call conda deactivate
+)

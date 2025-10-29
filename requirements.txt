@@ -10,4 +10,6 @@ sphinx-copybutton
 sphinx-prompt
 jupyterlab_myst
 sphinx-accessibility
+jupyterquiz
+
 
