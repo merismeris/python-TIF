@@ -1,5 +1,16 @@
 # Primeros pasos con VS Code
 
+
+## Instalación de VS Code y extensiones
+
+Para instalar VS Code (no confundir con su "hermano mayor" Visual Studio), podemos dirigirnos a su [página oficial](https://code.visualstudio.com/) y descargar el instalador adecuado para nuestro sistema operativo (Windows, macOS o Linux). Una vez descargado, seguimos los pasos del asistente de instalación.
+
+Posteriormente, en VSCode, en el apartado de extensiones (icono de cuadrados en la barra lateral izquierda), buscamos e instalamos la [extensión oficial de Python desarrollada por Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-python.python). Esta extensión nos proporcionará funcionalidades adicionales como resaltado de sintaxis, autocompletado, depuración, entre otras.
+
+Con todo esto instalado, ya podemos comenzar a [programar en Python utilizando VS](https://code.visualstudio.com/docs/languages/python) Code como nuestro entorno de desarrollo integrado (IDE).
+
+## Hola Mundo en Python con VS Code
+
 Una vez que hemos instalado Python y sus componentes, ya podemos empezar a programar. Comenzaremos con un ejercicio muy sencillo, el famoso `Hola Mundo`. Para ello, creamos un nuevo fichero (con extension `.py`) en nuestro workspace y escribimos `print("Hola mundo")`. Recordad utilizar nombres sin espacios ni caracteres especiales para los ficheros fuente. 
 
 :::{figure} ../images/vscode/slide7_img9.png
