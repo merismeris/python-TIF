@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Algunos conceptos y material adicionales &#8212; Introducción a Python Técnicas Informáticas en Física</title>
+    <title>Acerca de este libro &#8212; Introducción a Python Técnicas Informáticas en Física</title>
   
   
   
@@ -70,14 +70,11 @@
     <script>let enableContrast = 'Enable high contrast';</script>
     <script>let disableContrast = 'Disable high contrast';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'contenido_extra/misc';</script>
-    <link rel="canonical" href="/python-TIF/contenido_extra/misc.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'about/about';</script>
+    <link rel="canonical" href="/python-TIF/about/about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pequeña introducción a la creación de clases en Python" href="w4-python-ad-classes.html" />
-    <link rel="prev" title="Matplotlib" href="../tema_5/t5-python-matplotlib.html" />
+    <link rel="prev" title="Funciones lambda (funciones anónimas)" href="../contenido_extra/w4-python-ad-functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -232,17 +229,17 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Material adicional de Python</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Algunos conceptos y material adicionales</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="w4-python-ad-classes.html">Pequeña introducción a la creación de clases en Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="w4-python-ad-exceptions.html">Excepciones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="w4-python-ad-functions.html">Funciones lambda (funciones anónimas)</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contenido_extra/misc.html">Algunos conceptos y material adicionales</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-classes.html">Pequeña introducción a la creación de clases en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-exceptions.html">Excepciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-functions.html">Funciones lambda (funciones anónimas)</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Acerca de este libro</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../about/about.html">Acerca de este libro</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Acerca de este libro</a></li>
 
 
 
@@ -317,7 +314,7 @@
       
       
       
-      <li><a href="https://github.com/merismeris/python-TIF/issues/new?title=Issue%20on%20page%20%2Fcontenido_extra/misc.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/merismeris/python-TIF/issues/new?title=Issue%20on%20page%20%2Fabout/about.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,7 +344,7 @@
       
       
       
-      <li><a href="../_sources/contenido_extra/misc.md" target="_blank"
+      <li><a href="../_sources/about/about.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -418,7 +415,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -429,11 +428,23 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Algunos conceptos y material adicionales</h1>
+    <h1>Acerca de este libro</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Acerca de este libro</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#agradecimientos">Agradecimientos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#descargo-de-responsabilidad">Descargo de responsabilidad</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#erratas-errores-y-contribuciones">Erratas/Errores y contribuciones</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -443,11 +454,31 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="algunos-conceptos-y-material-adicionales">
-<h1>Algunos conceptos y material adicionales<a class="headerlink" href="#algunos-conceptos-y-material-adicionales" title="Link to this heading">#</a></h1>
-<p>Hay muchos temas que no podemos cubrir durante el curso por falta de tiempo. Aquí os dejamos material adicional para que podáis explorar por vuestra cuenta si tenéis interés.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section id="acerca-de-este-libro">
+<h1>Acerca de este libro<a class="headerlink" href="#acerca-de-este-libro" title="Link to this heading">#</a></h1>
+<p>Este recurso de introducción a Python es un <em>fork</em> del material original de <a class="reference external" href="https://sbu-python-class.github.io/python-science/Introduction.html"><strong>PHY 546: Python for Scientific Computing</strong></a>, creado por <strong>Michael Zingale</strong> en la <strong>Stony Brook University</strong>.
+El presente libro adapta y amplía ese contenido, incorporando la visión, materiales y ejercicios desarrollados para la asignatura <strong>TIF (Técnicas Informáticas para Física)</strong> de la <strong>Universidad de Salamanca</strong>.</p>
+<p>El material original está licenciado bajo una <a class="reference external" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es"><strong>Licencia Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</strong></a>, y este trabajo derivado se distribuye bajo los mismos términos.</p>
+<hr class="docutils" />
+</section>
+<section id="agradecimientos">
+<h1>Agradecimientos<a class="headerlink" href="#agradecimientos" title="Link to this heading">#</a></h1>
+<p>Mi más sincero agradecimiento a <strong>Michael Zingale</strong> por compartir su excelente trabajo docente y por su compromiso con la educación abierta.
+Su curso <em>PHY 546: Python for Scientific Computing</em> ha servido de inspiración y base para esta adaptación, que busca continuar su espíritu de aprendizaje práctico y accesible del lenguaje Python en el ámbito científico.</p>
+<hr class="docutils" />
+</section>
+<section id="descargo-de-responsabilidad">
+<h1>Descargo de responsabilidad<a class="headerlink" href="#descargo-de-responsabilidad" title="Link to this heading">#</a></h1>
+<p>Este libro es una adaptación no oficial del material original y no cuenta con el aval ni la revisión de <strong>Michael Zingale</strong>, <strong>Stony Brook University</strong> ni <strong>la Universidad de Salamanca</strong>.
+Los errores, interpretaciones o modificaciones del contenido son responsabilidad exclusiva del autor de esta versión.
+El uso de este material está restringido a fines educativos y no comerciales, conforme a los términos de la licencia <strong>CC BY-NC-SA 4.0</strong>.</p>
+<hr class="docutils" />
+</section>
+<section id="erratas-errores-y-contribuciones">
+<h1>Erratas/Errores y contribuciones<a class="headerlink" href="#erratas-errores-y-contribuciones" title="Link to this heading">#</a></h1>
+<p>Si encuentras algún error o tienes sugerencias para mejorar el contenido, no dudes en ponerte en contacto con nosotros a:</p>
+<p><a class="reference external" href="https://produccioncientifica.usal.es/investigadores/57777/detalle">María Navarro Cáceres</a></p>
+<p><a class="reference external" href="https://produccioncientifica.usal.es/investigadores/148041/detalle">Álvaro Lozano Murciego</a></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -463,7 +494,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./contenido_extra"
+            path: "./about"
         },
         predefinedOutput: true
     }
@@ -481,22 +512,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../tema_5/t5-python-matplotlib.html"
+       href="../contenido_extra/w4-python-ad-functions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Matplotlib</p>
+        <p class="prev-next-title">Funciones lambda (funciones anónimas)</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="w4-python-ad-classes.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pequeña introducción a la creación de clases en Python</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -504,6 +526,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Acerca de este libro</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#agradecimientos">Agradecimientos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#descargo-de-responsabilidad">Descargo de responsabilidad</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#erratas-errores-y-contribuciones">Erratas/Errores y contribuciones</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

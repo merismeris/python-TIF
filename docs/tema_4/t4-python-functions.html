@@ -46,7 +46,7 @@
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -64,6 +64,12 @@
     <script src="../_static/Accessibility.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tema_4/t4-python-functions';</script>
@@ -71,7 +77,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Cálculo Científico y Representación Gráfica con Python" href="../tema_5/t5-python-calculo.html" />
-    <link rel="prev" title="Tipos de dato estructurados" href="../tema_3/t3-python-advanced-data.html" />
+    <link rel="prev" title="Tema 3 — Tipos de datos y estructuras de datos en Python (Hoja de ejercicios)" href="../tema_3/Ejercicios_tema_3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -198,11 +204,13 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 Estructuras de control de flujo</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../tema_2/t2-python-control-flow.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_2/Ejercicios_tema_2.html">Tema 2 — Estructuras selectivas y repetitivas (Hoja de ejercicios)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 3 Tipos de datos en Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../tema_3/t3-python-classes.html">Introducción a la Programación Orientada a Objetos en Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tema_3/t3-python-advanced-data.html">Tipos de dato estructurados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_3/t3-python-advanced-data.html">Tipos de datos estructurados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_3/Ejercicios_tema_3.html">Tema 3 — Tipos de datos y estructuras de datos en Python (Hoja de ejercicios)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 Funciones, métodos y módulos en Python</span></p>
 <ul class="current nav bd-sidenav">
@@ -231,6 +239,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-functions.html">Funciones lambda (funciones anónimas)</a></li>
 </ul>
 </details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acerca de este libro</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">Acerca de este libro</a></li>
+
+
+
 </ul>
 
     </div>
@@ -500,7 +515,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="funciones">
 <h1>Funciones<a class="headerlink" href="#funciones" title="Link to this heading">#</a></h1>
 <p>Las funciones se usan para organizar el flujo del programa, especialmente para permitirnos realizar tareas comunes repetidamente de forma sencilla. Ya hemos usado muchas funciones, como las usadas a través del módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>, integradas en métodos de clases como las que operan sobre listas (<code class="docutils literal notranslate"><span class="pre">append()</span></code> y <code class="docutils literal notranslate"><span class="pre">pop()</span></code>) o sobre cadenas (como <code class="docutils literal notranslate"><span class="pre">split()</span></code>). Aquí veremos cómo escribir nuestras propias funciones.</p>
-<p>Para poder usar nuestras propias funciones, primero tenemos que definirlas. Podemos definirla en el propio programa o en módulos externos que luego importamos. Veremos ambas opciones en prácticas.</p>
+<p>Para poder usar nuestras propias funciones, primero tenemos que definirlas. Podemos definirlas en el propio programa o en módulos externos que luego importamos. Veremos ambas opciones en prácticas.</p>
 <section id="definicion-de-funciones">
 <h2>Definición de funciones<a class="headerlink" href="#definicion-de-funciones" title="Link to this heading">#</a></h2>
 <p>Para definir una función debemos:</p>
@@ -571,7 +586,7 @@ Recibido el valor i = 5
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 
 <span class="n">c</span> <span class="o">=</span> <span class="n">multiply</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">c</span>
@@ -586,8 +601,8 @@ Recibido el valor i = 5
 </div>
 <div class="note admonition">
 <p class="admonition-title">Nota</p>
-<p>Las funciones son un lugar donde entra en juego el <em>alcance</em> (scope). Una función tiene su propio <em>namespace</em>. Si una variable no está definida en esa función, buscará en el namespace desde donde fue llamada para ver si esa variable existe allí.</p>
-<p>Sin embargo, se debe evitar esto tanto como sea posible, e intentar que todas las variables que necesite la función sean variables locales (las variables que persisten a través de namespaces se llaman variables globales).</p>
+<p>Cada función trabaja dentro de su propio <strong>ámbito</strong> (<em>scope</em>). Cuando Python necesita un nombre dentro de una función, lo busca primero en ese ámbito; si no aparece, revisa los ámbitos que envuelven a la función, luego el módulo actual y, por último, los nombres incorporados del lenguaje. El lugar desde el que llamamos a la función no forma parte de esta cadena de búsqueda.</p>
+<p>Para mantener el código claro, intenta que la función reciba todo lo que necesita a través de parámetros o cree sus propias variables. Depender de variables externas (variables globales) debe ser la excepción, no la norma.</p>
 </div>
 </section>
 </section>
@@ -828,7 +843,7 @@ Después de llamar: 5
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
-<span class="n">sq</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">%</span><span class="k">2</span> == 0 and x%3 == 0, squares))
+<span class="n">sq</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">squares</span><span class="p">))</span>
 <span class="n">sq</span>
 </pre></div>
 </div>
@@ -927,12 +942,12 @@ class filter(object)
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../tema_3/t3-python-advanced-data.html"
+       href="../tema_3/Ejercicios_tema_3.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tipos de dato estructurados</p>
+        <p class="prev-next-title">Tema 3 — Tipos de datos y estructuras de datos en Python (Hoja de ejercicios)</p>
       </div>
     </a>
     <a class="right-next"
@@ -985,7 +1000,7 @@ class filter(object)
   <div class="footer-item">
     
 <p class="component-author">
-By <a href="https://merismeris.github.io">María Navarro y Álvaro Lozano</a>
+By <a href="https://produccioncientifica.usal.es/investigadores/57777/detalle">María Navarro Cáceres</a> y <a href="https://produccioncientifica.usal.es/investigadores/148041/detalle">Álvaro Lozano Murciego</a>
 </p>
 
   </div>

@@ -19,6 +19,7 @@ parts:
     chapters:
       - file: tema_3/t3-python-classes.ipynb
       - file: tema_3/t3-python-advanced-data.ipynb
+      - file: tema_3/Ejercicios_tema_3
   - caption: Tema 4 Funciones, métodos y módulos en Python
     chapters:
     - file: tema_4/t4-python-functions.ipynb
