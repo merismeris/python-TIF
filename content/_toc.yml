@@ -29,9 +29,9 @@ parts:
       sections:
       - file: tema_5/t5-python-numpy.ipynb
       - file: tema_5/t5-python-matplotlib.ipynb
-#  - caption: Tema 6 Pandas y manejo de ficheros
-#    chapters:
-#    - file: tema_6/XXXXX.ipynb
+  - caption: Tema 6 Pandas y manejo de ficheros
+    chapters:
+    - file: tema_6/t6-python-pandas.ipynb
   - caption: Material adicional de Python
     chapters:
     - file: contenido_extra/misc

@@ -1,0 +1,743 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tema 1 — Introducción a Python (Hoja de ejercicios) &#8212; Introducción a Python Técnicas Informáticas en Física</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css?v=46651883" />
+    <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css?v=8a518117" />
+    <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css?v=733fec42" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script src="../_static/Accessibility.js?v=1a5d511f"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tema_1/Ejercicios_tema_1';</script>
+    <link rel="canonical" href="/python-TIF/tema_1/Ejercicios_tema_1.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Control de flujo" href="../tema_2/t2-python-control-flow.html" />
+    <link rel="prev" title="Entrada y salida de datos (por consola)" href="t1-python-basicIO.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../Home.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Introducción a Python Técnicas Informáticas en Física</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Home.html">
+                    ¿Qué es Python?
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Conociendo Python y el editor (IDE)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_0/using.html">Primeros pasos con VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_0/resources.html">Recursos bibliográficos de Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 1 Conceptos básicos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="t1-python-basics.html">Primeros pasos con Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="t1-python-datatypes.html">Tipos de datos básicos y operadores en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="t1-python-basicIO.html">Entrada y salida de datos (por consola)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tema 1 — Introducción a Python (Hoja de ejercicios)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 Estructuras de control de flujo</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_2/t2-python-control-flow.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_2/Ejercicios_tema_2.html">Tema 2 — Estructuras selectivas y repetitivas (Hoja de ejercicios)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 3 Tipos de datos en Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_3/t3-python-classes.html">Introducción a la Programación Orientada a Objetos en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_3/t3-python-advanced-data.html">Tipos de datos estructurados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_3/Ejercicios_tema_3.html">Tema 3 — Tipos de datos y estructuras de datos en Python (Hoja de ejercicios)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 Funciones, métodos y módulos en Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_4/t4-python-functions.html">Funciones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 Representación gráfica y cálculo científico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema_5/t5-python-calculo.html">Cálculo Científico y Representación Gráfica con Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema_5/t5-python-numpy.html">NumPy</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../tema_5/t5-python-matplotlib.html">Matplotlib</a></li>
+
+
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 6 Pandas y manejo de ficheros</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_6/t6-python-pandas.html">Pandas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Material adicional de Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contenido_extra/misc.html">Algunos conceptos y material adicionales</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-classes.html">Pequeña introducción a la creación de clases en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-exceptions.html">Excepciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-functions.html">Funciones lambda (funciones anónimas)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acerca de este libro</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">Acerca de este libro</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/merismeris/python-TIF" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/merismeris/python-TIF/issues/new?title=Issue%20on%20page%20%2Ftema_1/Ejercicios_tema_1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tema_1/Ejercicios_tema_1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tema 1 — Introducción a Python (Hoja de ejercicios)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#par-o-impar">1. Par o impar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ficha-personal-con-formato">2. Ficha personal con formato</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distancia-entre-coordenadas-formula-de-haversine">3. Distancia entre coordenadas (Fórmula de Haversine)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distancia-con-la-biblioteca-haversine">4. Distancia con la biblioteca <code class="docutils literal notranslate"><span class="pre">haversine</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adicional-numero-de-reynolds">5. (Adicional) Número de Reynolds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-enlaces-utiles">Referencias y enlaces útiles</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tema-1-introduccion-a-python-hoja-de-ejercicios">
+<h1>Tema 1 — Introducción a Python (Hoja de ejercicios)<a class="headerlink" href="#tema-1-introduccion-a-python-hoja-de-ejercicios" title="Link to this heading">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Objetivos de aprendizaje</p>
+<ul class="simple">
+<li><p>Familiarizarte con el entorno de trabajo (VSCode + extensiones de Python).</p></li>
+<li><p>Practicar <strong>variables y operadores</strong>, <strong>casting</strong> de tipos y E/S por consola (<code class="docutils literal notranslate"><span class="pre">input</span></code>, <code class="docutils literal notranslate"><span class="pre">print</span></code>).</p></li>
+<li><p>Usar <code class="docutils literal notranslate"><span class="pre">import</span></code> para <strong>bibliotecas estándar</strong> (<code class="docutils literal notranslate"><span class="pre">math</span></code>) y de <strong>terceros</strong> (<code class="docutils literal notranslate"><span class="pre">haversine</span></code>).</p></li>
+<li><p>Implementar y validar la <strong>fórmula de Haversine</strong>.</p></li>
+<li><p>Reproducir en Python un cálculo clásico de <strong>Número de Reynolds</strong>.</p></li>
+</ul>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Requisitos previos</p>
+<ul class="simple">
+<li><p>Python 3.10+ instalado.</p></li>
+<li><p>VSCode con extensión de Python.</p></li>
+<li><p>Conocimientos mínimos de consola/terminal.</p></li>
+</ul>
+</div>
+<section id="par-o-impar">
+<h2>1. Par o impar<a class="headerlink" href="#par-o-impar" title="Link to this heading">#</a></h2>
+<p><strong>Enunciado.</strong> Escribe un programa que determine si un número entero es <strong>par</strong> o <strong>impar</strong>.<br />
+Usa <code class="docutils literal notranslate"><span class="pre">input()</span></code> para leer, <code class="docutils literal notranslate"><span class="pre">int()</span></code> para <em>casting</em> y el operador <strong>módulo</strong> <code class="docutils literal notranslate"><span class="pre">%</span></code>. De momento no es necesario validar la entrada.</p>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Recuerda que <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">0</span></code> indica que <code class="docutils literal notranslate"><span class="pre">n</span></code> es par.</p></li>
+<li><p>La función <code class="docutils literal notranslate"><span class="pre">input()</span></code> devuelve una cadena, usa operaciones de <em>casting</em> como <code class="docutils literal notranslate"><span class="pre">int()</span></code> para convertir a entero.</p></li>
+<li><p>Practica el uso de <code class="docutils literal notranslate"><span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">else</span></code> para la lógica condicional.</p></li>
+<li><p>Usa <code class="docutils literal notranslate"><span class="pre">print()</span></code> para mostrar el resultado.</p></li>
+<li><p>Revisa el uso de las f-strings para formatear la salida.</p></li>
+</ul>
+</div>
+</section>
+<section id="ficha-personal-con-formato">
+<h2>2. Ficha personal con formato<a class="headerlink" href="#ficha-personal-con-formato" title="Link to this heading">#</a></h2>
+<p><strong>Enunciado.</strong> Pide <strong>nombre</strong>, <strong>apellidos</strong>, <strong>edad</strong>, <strong>peso</strong> (kg), <strong>altura</strong> (m) y <strong>DNI</strong> (número y letra).<br />
+Muestra exactamente el formato:</p>
+<blockquote>
+<div><p>Se llama <strong>XXX XXXX XXXX</strong>, tiene <strong>XX</strong> años, pesa <strong>XX.X</strong> kg, mide <strong>XX.XX</strong> m y su número de DNI es <strong>XXXXX</strong> y letra <strong>X</strong>.</p>
+</div></blockquote>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Usa <code class="docutils literal notranslate"><span class="pre">input()</span></code> para cada dato y convierte a tipos adecuados (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>).</p></li>
+<li><p>F-strings con formato: <code class="docutils literal notranslate"><span class="pre">peso:.1f</span></code>, <code class="docutils literal notranslate"><span class="pre">altura:.2f</span></code>. Chuleta de f-strings: <a class="reference external" href="https://fstring.help/cheat/">https://fstring.help/cheat/</a></p></li>
+</ul>
+</div>
+</section>
+<section id="distancia-entre-coordenadas-formula-de-haversine">
+<h2>3. Distancia entre coordenadas (Fórmula de Haversine)<a class="headerlink" href="#distancia-entre-coordenadas-formula-de-haversine" title="Link to this heading">#</a></h2>
+<p>La <a class="reference external" href="https://en.wikipedia.org/wiki/Haversine_formula">fórmula de Haversine</a> permite calcular la distancia entre dos puntos en la superficie de una esfera a partir de sus latitudes y longitudes.</p>
+<figure class="align-default" id="fig-haversine-diagram">
+<a class="reference internal image-reference" href="../_images/haversine_wikipedia.png"><img alt="Distancia" src="../_images/haversine_wikipedia.png" style="width: 50%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Un diagrama que ilustra la distancia entre dos puntos en la superficie de una esfera según la fórmula de Haversine. Fuente: <a class="reference external" href="https://commons.wikimedia.org/wiki/User:CheCheDaWaff">CheCheDaWaff</a>, vía <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Illustration_of_great-circle_distance.svg">Wikimedia Commons</a>. Licencia: <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</span><a class="headerlink" href="#fig-haversine-diagram" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Enunciado.</strong> Pide latitudes y longitudes (en <strong>grados decimales</strong>) de dos puntos y calcula la distancia usando
+la <strong>fórmula de Haversine</strong> con funciones del módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> (<code class="docutils literal notranslate"><span class="pre">radians</span></code>, <code class="docutils literal notranslate"><span class="pre">cos</span></code>, <code class="docutils literal notranslate"><span class="pre">sin</span></code>, <code class="docutils literal notranslate"><span class="pre">asin</span></code>, <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>).</p>
+<p>Sea <span class="math notranslate nohighlight">\(r = 6372.7954\ \text{km}\)</span> el radio medio terrestre.<br />
+Para <span class="math notranslate nohighlight">\((\varphi_1,\lambda_1)\)</span> y <span class="math notranslate nohighlight">\((\varphi_2,\lambda_2)\)</span> en <strong>radianes</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\Delta \varphi = \varphi_2 - \varphi_1 \\
+\Delta \lambda = \lambda_2 - \lambda_1 \\
+a = \sin^2\left(\frac{\Delta \varphi}{2}\right) +
+\cos(\varphi_1)\cos(\varphi_2)\sin^2\left(\frac{\Delta \lambda}{2}\right) \\
+d = 2r \arcsin(\sqrt{a})
+\end{align*}
+\end{split}\]</div>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Convierte grados a radianes con <code class="docutils literal notranslate"><span class="pre">math.radians</span></code>.</p></li>
+<li><p>Valida rangos: lat ∈ [-90, 90], lon ∈ [-180, 180].</p></li>
+<li><p>Prueba con coordenadas conocidas, por ejemplo:</p>
+<ul>
+<li><p>Salamanca (40.97915031936888, -5.609452413216567) a Madrid (40.44727142930985, -3.522017541475585) ≈ 168 km (este valor dependerá de la fórmula implementada y del radio terrestre usado).</p></li>
+</ul>
+</li>
+</ul>
+<p>Puedes obtener las coordenadas de ciudades con <a class="reference external" href="https://www.google.com/maps">Google Maps</a> pulsando con el botón derecho en el mapa y obteniendo la las coordenadas del punto. También puedes usar la opción de <em>medir distancia</em> para comprobar resultados.</p>
+<p><img alt="Medir distancia en Google Maps" src="../_images/medir_distancia_gmaps.jpg" /></p>
+</div>
+</section>
+<section id="distancia-con-la-biblioteca-haversine">
+<h2>4. Distancia con la biblioteca <code class="docutils literal notranslate"><span class="pre">haversine</span></code><a class="headerlink" href="#distancia-con-la-biblioteca-haversine" title="Link to this heading">#</a></h2>
+<p><strong>Enunciado.</strong> Repite el cálculo anterior, pero ahora usando la biblioteca de terceros <code class="docutils literal notranslate"><span class="pre">haversine</span></code>. En este caso será necesario instalar la biblioteca. Desde la terminal de VSCode (o cualquier consola), tienes que seguir los siguientes pasos:</p>
+<ol class="arabic simple">
+<li><p><strong>Asegúrate de tener el entorno virtual activado</strong> (si lo estás usando). Por ejemplo, en Windows CMD:</p></li>
+</ol>
+<p>Si el entorno virtual está en la carpeta <code class="docutils literal notranslate"><span class="pre">.conda</span></code> dentro de la carpeta raíz del proyecto:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>./.conda
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Instala la biblioteca</strong> <a class="reference external" href="https://pypi.org/project/haversine/"><code class="docutils literal notranslate"><span class="pre">haversine</span></code></a> usando <code class="docutils literal notranslate"><span class="pre">pip</span></code>, el gestor de paquetes de Python:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>haversine
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Explora los ejemplos disponibles en la <a class="reference external" href="https://pypi.org/project/haversine/">documentación oficial</a> para usar la función adecuada.</p></li>
+</ol>
+<p>Ejemplo básico de uso:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">haversine</span><span class="w"> </span><span class="kn">import</span> <span class="n">haversine</span><span class="p">,</span> <span class="n">Unit</span>
+<span class="n">point1</span> <span class="o">=</span> <span class="p">(</span><span class="n">lat1</span><span class="p">,</span> <span class="n">lon1</span><span class="p">)</span>
+<span class="n">point2</span> <span class="o">=</span> <span class="p">(</span><span class="n">lat2</span><span class="p">,</span> <span class="n">lon2</span><span class="p">)</span>
+<span class="n">distance</span> <span class="o">=</span> <span class="n">haversine</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">Unit</span><span class="o">.</span><span class="n">KILOMETERS</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La distancia es </span><span class="si">{</span><span class="n">distance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Asegúrate de que las coordenadas estén en el formato correcto (grados decimales).</p></li>
+<li><p><strong>Compara los resultados con la implementación anterior</strong> para verificar la precisión.</p></li>
+<li><p>Revisa el código fuente de la biblioteca en <a class="reference external" href="https://github.com/mapado/haversine/blob/e0daab1fcd8def37ac0449dd05814a64a93d357a/haversine/haversine.py#L116">GitHub</a> para entender cómo se implementa la fórmula internamente.</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="adicional-numero-de-reynolds">
+<h2>5. (Adicional) Número de Reynolds<a class="headerlink" href="#adicional-numero-de-reynolds" title="Link to this heading">#</a></h2>
+<p>El número de Reynolds es un parámetro adimensional que caracteriza el régimen de flujo de un fluido. A continuación se muestra un video con un experimento visualizando diferentes regímenes de flujo según el valor del número de Reynolds:</p>
+<div style="position: relative; padding-bottom: 70.25%; height: 0; overflow: hidden;margin-bottom: 2em;">
+<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/xMheDmiKH38?start=365" title="Documental de Python (YouTube)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+<p><strong>Enunciado.</strong> Implementa en Python el cálculo del <strong>Número de Reynolds</strong>. El programa debe pedir los datos necesarios por consola y mostrar el resultado formateado. Recuerda la definición del número de Reynolds:</p>
+<div class="math notranslate nohighlight">
+\[ Re = \dfrac{\rho\, v\, D}{\mu} \]</div>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Pide por consola densidad <span class="math notranslate nohighlight">\(\rho\)</span>, velocidad <span class="math notranslate nohighlight">\(v\)</span>, diámetro <span class="math notranslate nohighlight">\(D\)</span> (o longitud característica) y viscosidad <span class="math notranslate nohighlight">\(\mu\)</span>.</p></li>
+<li><p>Devuelve <strong>Re</strong> y clasifica el régimen (turbulento/transicional/laminar según umbrales habituales).</p></li>
+</ul>
+</div>
+</section>
+<section id="referencias-y-enlaces-utiles">
+<h2>Referencias y enlaces útiles<a class="headerlink" href="#referencias-y-enlaces-utiles" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Documentación de Python: <a class="reference external" href="https://docs.python.org/3/">https://docs.python.org/3/</a></p></li>
+<li><p>Conversión angular en <code class="docutils literal notranslate"><span class="pre">math</span></code>: <a class="reference external" href="https://docs.python.org/3/library/math.html#angular-conversion">https://docs.python.org/3/library/math.html#angular-conversion</a></p></li>
+<li><p>Fórmula de Haversine (Wikipedia): <a class="reference external" href="https://en.wikipedia.org/wiki/Haversine_formula">https://en.wikipedia.org/wiki/Haversine_formula</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">haversine</span></code> en PyPI: <a class="reference external" href="https://pypi.org/project/haversine/">https://pypi.org/project/haversine/</a></p></li>
+<li><p>F-strings <em>cheat sheet</em>: <a class="reference external" href="https://fstring.help/cheat/">https://fstring.help/cheat/</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "merismeris/python-TIF",
+            ref: "mi-cambio",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tema_1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="t1-python-basicIO.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Entrada y salida de datos (por consola)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../tema_2/t2-python-control-flow.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Control de flujo</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#par-o-impar">1. Par o impar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ficha-personal-con-formato">2. Ficha personal con formato</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distancia-entre-coordenadas-formula-de-haversine">3. Distancia entre coordenadas (Fórmula de Haversine)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distancia-con-la-biblioteca-haversine">4. Distancia con la biblioteca <code class="docutils literal notranslate"><span class="pre">haversine</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adicional-numero-de-reynolds">5. (Adicional) Número de Reynolds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-enlaces-utiles">Referencias y enlaces útiles</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://produccioncientifica.usal.es/investigadores/57777/detalle">María Navarro Cáceres</a> y <a href="https://produccioncientifica.usal.es/investigadores/148041/detalle">Álvaro Lozano Murciego</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+&copy; 2023-2025; CC-BY-NC-SA 4.0
+<p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
