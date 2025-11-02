@@ -1,4 +1,4 @@
-## Acerca de este libro
+# Acerca de este libro
 
 Este recurso de introducción a Python es un *fork* del material original de [**PHY 546: Python for Scientific Computing**](https://sbu-python-class.github.io/python-science/Introduction.html), creado por **Michael Zingale** en la **Stony Brook University**.
 El presente libro adapta y amplía ese contenido, incorporando la visión, materiales y ejercicios desarrollados para la asignatura **TIF (Técnicas Informáticas para Física)** de la **Universidad de Salamanca**.
