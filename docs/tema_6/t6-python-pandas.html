@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Pandas &#8212; Introducción a Python Técnicas Informáticas en Física</title>
   
@@ -29,48 +28,48 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
     <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
     <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>let enableFont = 'Enable';</script>
     <script>let disableFont = 'Disable';</script>
     <script>let enableContrast = 'Enable high contrast';</script>
     <script>let disableContrast = 'Disable high contrast';</script>
     <script src="../_static/Accessibility.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tema_6/t6-python-pandas';</script>
     <link rel="canonical" href="/python-TIF/tema_6/t6-python-pandas.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -167,7 +166,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">Introducción a Python Técnicas Informáticas en Física</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -265,9 +275,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -292,14 +302,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/merismeris/python-TIF/blob/mi-cambio/content/tema_6/t6-python-pandas.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -457,9 +467,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -506,7 +516,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas">
-<h1>Pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h1>
+<h1>Pandas<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> es un módulo que extiende el ndarray de numpy para permitir una estructura de datos que etiqueta las columnas. Tiene dos clases principales, que son:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Series</span></code>: una estructura unidimensional que puede contener cualquier tipo de datos.</p></li>
@@ -533,7 +543,7 @@ document.write(`
 </div>
 </div>
 <section id="serie">
-<h2>Serie<a class="headerlink" href="#serie" title="Permalink to this heading">#</a></h2>
+<h2>Serie<a class="headerlink" href="#serie" title="Link to this heading">#</a></h2>
 <p>Una serie es un arreglo etiquetado. Superficialmente parece un diccionario, pero tiene un tamaño fijo y puede manejar valores faltantes. También puede ser operado con cualquier operación numpy o los operadores estándar (un diccionario no puede). Las etiquetas se conocen como el <em>índice</em>.</p>
 <p>Algunos ejemplos de: <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/dsintro.html">http://pandas.pydata.org/pandas-docs/stable/dsintro.html</a></p>
 <div class="cell docutils container">
@@ -803,7 +813,7 @@ dtype: float64
 </div>
 </section>
 <section id="dataframe">
-<h2>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this heading">#</a></h2>
+<h2>DataFrame<a class="headerlink" href="#dataframe" title="Link to this heading">#</a></h2>
 <p>El dataframe es la estuctura básica de pandas, es como una hoja de cálculo – las columnas y filas tienen etiquetas. Es bidimensional.</p>
 <p>Puedes inicializar desde:</p>
 <ul class="simple">
@@ -1119,7 +1129,7 @@ dtype: float64
 </div></div></div>
 </div>
 <section id="csv">
-<h3>CSV<a class="headerlink" href="#csv" title="Permalink to this heading">#</a></h3>
+<h3>CSV<a class="headerlink" href="#csv" title="Link to this heading">#</a></h3>
 <p>También puedes leer desde CSV</p>
 <p>Nota: si hay espacios en blanco extraños en tus cadenas en el CSV, pandas los mantendrá. Esto es un poco molesto y es posible que necesites investigar convertidores para que las cosas estén adecuadamente formateadas.</p>
 <p>El método general es:</p>
@@ -1133,7 +1143,7 @@ dtype: float64
 <p>Consulta la documentación para más detalles.</p>
 </section>
 <section id="acceso-a-dataframes">
-<h3>Acceso a DataFrames<a class="headerlink" href="#acceso-a-dataframes" title="Permalink to this heading">#</a></h3>
+<h3>Acceso a DataFrames<a class="headerlink" href="#acceso-a-dataframes" title="Link to this heading">#</a></h3>
 <p>Pandas proporciona métodos optimizados para acceder a datos: .at, .iat, .loc, .iloc, y .ix. También puedes indexarlo como si fueran objetos Series. Algunos accesos son los siguientes:</p>
 <ul class="simple">
 <li><p>Seleccionar columna: <code class="docutils literal notranslate"><span class="pre">df[col]</span></code> (retorna Series)</p></li>
@@ -1497,7 +1507,7 @@ Name: four, dtype: float64
 </div>
 </section>
 <section id="indexado-booleano">
-<h3>Indexado booleano<a class="headerlink" href="#indexado-booleano" title="Permalink to this heading">#</a></h3>
+<h3>Indexado booleano<a class="headerlink" href="#indexado-booleano" title="Link to this heading">#</a></h3>
 <p>Igual que ocurría en NumPy, podemos usar indexado booleano para seleccionar filas que cumplan una condición. También podemos seleccionar columnas de forma similar.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Acceder a la columna &quot;three&quot; de df cuyas filas cumplen una condición</span>
 
@@ -1566,7 +1576,7 @@ Name: four, dtype: float64
 </div>
 </section>
 <section id="modificacion-de-dataframes">
-<h3>Modificación de DataFrames<a class="headerlink" href="#modificacion-de-dataframes" title="Permalink to this heading">#</a></h3>
+<h3>Modificación de DataFrames<a class="headerlink" href="#modificacion-de-dataframes" title="Link to this heading">#</a></h3>
 <p>Pandas permite modificar DataFrames de varias maneras, incluyendo la adición, eliminación y actualización de filas y columnas. Como ocurre en otro tipo de clases en Python, podemos modificar valores ya existentes accediendo a ellos y asignándoles nuevos valores.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1832,7 +1842,7 @@ Name: three, dtype: float64
 </section>
 </section>
 <section id="un-ejemplo-completo">
-<h2>Un ejemplo completo<a class="headerlink" href="#un-ejemplo-completo" title="Permalink to this heading">#</a></h2>
+<h2>Un ejemplo completo<a class="headerlink" href="#un-ejemplo-completo" title="Link to this heading">#</a></h2>
 <p>A continuación, vamos a utilizar pandas para analizar un conjunto de datos que hemos leído en el fichero samples.csv. Este fichero contiene una serie de calificaciones de estudiantes en varias tareas (homework) y en el examen de una asignatura. Vamos a realizar algunas operaciones básicas de análisis de datos utilizando pandas.</p>
 <p>Lo primero, vamos a guardar el contenido del fichero samples.csv en un DataFrame llamado <code class="docutils literal notranslate"><span class="pre">grades</span></code>.</p>
 <div class="cell docutils container">
@@ -2680,7 +2690,7 @@ Name: hw 1, dtype: float64
 </div></div></div>
 </div>
 <section id="estadisticas">
-<h3>Estadísticas<a class="headerlink" href="#estadisticas" title="Permalink to this heading">#</a></h3>
+<h3>Estadísticas<a class="headerlink" href="#estadisticas" title="Link to this heading">#</a></h3>
 <p>Podemos obtener estadísticas descriptivas básicas de las columnas numéricas usando el método <code class="docutils literal notranslate"><span class="pre">describe()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3102,7 +3112,7 @@ dtype: float64
 </div>
 </section>
 <section id="arrays-de-np">
-<h3>Arrays de np<a class="headerlink" href="#arrays-de-np" title="Permalink to this heading">#</a></h3>
+<h3>Arrays de np<a class="headerlink" href="#arrays-de-np" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g2</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">g2</span><span class="p">))</span>
@@ -3578,7 +3588,7 @@ dtype: float64
 </section>
 </section>
 <section id="graficas">
-<h2>Gráficas<a class="headerlink" href="#graficas" title="Permalink to this heading">#</a></h2>
+<h2>Gráficas<a class="headerlink" href="#graficas" title="Link to this heading">#</a></h2>
 <p>Al igual que matplotlib, pandas tiene capacidades de graficación integradas. Podemos crear gráficos directamente desde DataFrames y Series utilizando el método <code class="docutils literal notranslate"><span class="pre">.plot()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
