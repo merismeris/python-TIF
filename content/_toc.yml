@@ -23,7 +23,7 @@ parts:
   - caption: Tema 4 Funciones, métodos y módulos en Python
     chapters:
       - file: tema_4/t4-python-functions.ipynb
-      #- file: tema_4/Ejercicios_tema_4
+      - file: tema_4/Ejercicios_tema_4
   - caption: Tema 5 Representación gráfica y cálculo científico
     chapters:
     - file: tema_5/t5-python-calculo.md
