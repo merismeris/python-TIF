@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Control de flujo &#8212; Introducción a Python Técnicas Informáticas en Física</title>
   
@@ -28,48 +29,48 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
     <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
     <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>let enableFont = 'Enable';</script>
     <script>let disableFont = 'Disable';</script>
     <script>let enableContrast = 'Enable high contrast';</script>
     <script>let disableContrast = 'Disable high contrast';</script>
     <script src="../_static/Accessibility.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>let enableFont = 'Enable';</script>
-    <script>let disableFont = 'Disable';</script>
-    <script>let enableContrast = 'Enable high contrast';</script>
-    <script>let disableContrast = 'Disable high contrast';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tema_2/t2-python-control-flow';</script>
     <link rel="canonical" href="/python-TIF/tema_2/t2-python-control-flow.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -166,18 +167,7 @@
     <p class="title logo__title">Introducción a Python Técnicas Informáticas en Física</p>
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -213,6 +203,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 Funciones, métodos y módulos en Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../tema_4/t4-python-functions.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_4/Ejercicios_tema_4.html">Tema 4 — Funciones en Python y módulos externos (Hoja de ejercicios)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 Representación gráfica y cálculo científico</span></p>
 <ul class="nav bd-sidenav">
@@ -274,9 +265,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -301,14 +292,14 @@
       
       <li><a href="https://colab.research.google.com/github/merismeris/python-TIF/blob/mi-cambio/content/tema_2/t2-python-control-flow.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
+   title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+    <img src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -466,9 +457,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -511,7 +502,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="control-de-flujo">
-<h1>Control de flujo<a class="headerlink" href="#control-de-flujo" title="Link to this heading">#</a></h1>
+<h1>Control de flujo<a class="headerlink" href="#control-de-flujo" title="Permalink to this heading">#</a></h1>
 <p>En algunas ocasiones, necesitamos que se ejecuten operaciones o tareas solo en determinados casos, bajo algunas condiciones. Por ejemplo, si un usuario tiene una edad mayor a 18 años, puede acceder a cierto contenido. Si no, no puede.</p>
 <p>Para esto, Python nos ofrece las estructuras de <strong>control de flujo</strong> o sentencias de control al igual que sucede en otros lenguajes de programación.</p>
 <p>Las sentencias de control se pueden dividir principalmente en:</p>
@@ -524,7 +515,7 @@ document.write(`
 <p>Python utiliza indentación para definir bloques de código. La recomendación de estilo es emplear cuatro espacios en blanco al inicio de cada línea indentada, pero lo fundamental es mantener una indentación consistente dentro del bloque.</p>
 </div>
 <section id="bucle-while">
-<h2>Bucle <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#bucle-while" title="Link to this heading">#</a></h2>
+<h2>Bucle <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#bucle-while" title="Permalink to this heading">#</a></h2>
 <p>Permite ejecutar un bloque de código mientras una condición sea verdadera. La condición se evalúa <strong>antes</strong> de entrar en el bucle. Por tanto, se puede repetir entre 0 y n veces.</p>
 <p>En el cuerpo se debe incluir alguna sentencia que en algún momento haga que la condición deje de cumplirse, para evitar bucles infinitos.</p>
 <div class="cell docutils container">
@@ -552,7 +543,7 @@ document.write(`
 </div>
 </section>
 <section id="bucle-for">
-<h2>Bucle <code class="docutils literal notranslate"><span class="pre">For</span></code><a class="headerlink" href="#bucle-for" title="Link to this heading">#</a></h2>
+<h2>Bucle <code class="docutils literal notranslate"><span class="pre">For</span></code><a class="headerlink" href="#bucle-for" title="Permalink to this heading">#</a></h2>
 <p>El bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> permite iterar sobre una secuencia u objeto iterable, como una lista (<code class="docutils literal notranslate"><span class="pre">list</span></code>), una tupla (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>), un diccionario (<code class="docutils literal notranslate"><span class="pre">dict</span></code>), un conjunto (<code class="docutils literal notranslate"><span class="pre">set</span></code>) o una cadena de texto (<code class="docutils literal notranslate"><span class="pre">str</span></code>) o sobre un rango de números. La variable de control del bucle toma cada uno de los valores de la secuencia o del rango en cada iteración, es decir, se convierte en un <strong>iterador</strong>. Internamente, Python obtiene un iterador mediante la función <code class="docutils literal notranslate"><span class="pre">iter()</span></code> y solicita valores sucesivos con <code class="docutils literal notranslate"><span class="pre">next()</span></code> hasta agotar la secuencia.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -638,7 +629,7 @@ key = key3, value = 3
 </div>
 </section>
 <section id="terminacion-de-bucles">
-<h2>Terminación de bucles<a class="headerlink" href="#terminacion-de-bucles" title="Link to this heading">#</a></h2>
+<h2>Terminación de bucles<a class="headerlink" href="#terminacion-de-bucles" title="Permalink to this heading">#</a></h2>
 <p>Existen varias formas de terminar un bucle, entre las que se incluyen:</p>
 <ul class="simple">
 <li><p>Que la condición del bucle deje de cumplirse. Esto puede lograrse mediante:</p>
@@ -653,7 +644,7 @@ key = key3, value = 3
 </ul>
 <p>Consejo: prioriza condiciones claras y legibles; utiliza <code class="docutils literal notranslate"><span class="pre">break</span></code> con moderación cuando mejore la claridad del código.</p>
 <section id="sentencia-break">
-<h3>Sentencia <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#sentencia-break" title="Link to this heading">#</a></h3>
+<h3>Sentencia <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#sentencia-break" title="Permalink to this heading">#</a></h3>
 <p>La sentencia <code class="docutils literal notranslate"><span class="pre">break</span></code> permite salir de un bucle de forma inmediata, independientemente de si la condición del bucle es verdadera o falsa. Se utiliza dentro del cuerpo del bucle y puede ser útil para terminar un bucle cuando se cumple una condición específica. Si hay bucles anidados, <code class="docutils literal notranslate"><span class="pre">break</span></code> solo termina el bucle más interno en el que se encuentra.</p>
 <div class="note admonition">
 <p class="admonition-title">Nota</p>
@@ -722,7 +713,7 @@ Fin de la iteración externa 2
 </div>
 </section>
 <section id="sentencia-continue">
-<h3>Sentencia <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#sentencia-continue" title="Link to this heading">#</a></h3>
+<h3>Sentencia <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#sentencia-continue" title="Permalink to this heading">#</a></h3>
 <p>La sentencia <code class="docutils literal notranslate"><span class="pre">continue</span></code> permite saltar a la siguiente iteración del bucle, omitiendo el resto del código en el cuerpo del bucle para la iteración actual. Se utiliza dentro del cuerpo del bucle y puede ser útil para evitar ejecutar ciertas partes del código cuando se cumple una condición específica. Al igual que con <code class="docutils literal notranslate"><span class="pre">break</span></code>, si hay bucles anidados, <code class="docutils literal notranslate"><span class="pre">continue</span></code> solo afecta al bucle más interno en el que se encuentra.</p>
 <div class="note admonition">
 <p class="admonition-title">Nota</p>
@@ -753,7 +744,7 @@ Fin de la iteración externa 2
 </div>
 </section>
 <section id="sentencia-else-en-bucles">
-<h3>Sentencia <code class="docutils literal notranslate"><span class="pre">else</span></code> en bucles<a class="headerlink" href="#sentencia-else-en-bucles" title="Link to this heading">#</a></h3>
+<h3>Sentencia <code class="docutils literal notranslate"><span class="pre">else</span></code> en bucles<a class="headerlink" href="#sentencia-else-en-bucles" title="Permalink to this heading">#</a></h3>
 <p>La sentencia <code class="docutils literal notranslate"><span class="pre">else</span></code> puede utilizarse junto con los bucles <code class="docutils literal notranslate"><span class="pre">for</span></code> y <code class="docutils literal notranslate"><span class="pre">while</span></code>. El bloque de código dentro de <code class="docutils literal notranslate"><span class="pre">else</span></code> se ejecuta cuando el bucle termina normalmente, es decir, cuando la condición del bucle se vuelve falsa (en el caso de <code class="docutils literal notranslate"><span class="pre">while</span></code>) o cuando se han iterado todos los elementos (en el caso de <code class="docutils literal notranslate"><span class="pre">for</span></code>). Si el bucle se termina prematuramente mediante una sentencia <code class="docutils literal notranslate"><span class="pre">break</span></code>, el bloque <code class="docutils literal notranslate"><span class="pre">else</span></code> no se ejecuta.</p>
 <div class="note admonition">
 <p class="admonition-title">Nota</p>
@@ -782,7 +773,7 @@ Fin de la iteración externa 2
 </div>
 </section>
 <section id="sentencia-pass">
-<h3>Sentencia <code class="docutils literal notranslate"><span class="pre">pass</span></code><a class="headerlink" href="#sentencia-pass" title="Link to this heading">#</a></h3>
+<h3>Sentencia <code class="docutils literal notranslate"><span class="pre">pass</span></code><a class="headerlink" href="#sentencia-pass" title="Permalink to this heading">#</a></h3>
 <p>La sentencia <code class="docutils literal notranslate"><span class="pre">pass</span></code> es una operación nula en Python. Se utiliza como un marcador de posición cuando se requiere una sintaxis pero no se desea ejecutar ninguna acción. En el contexto de los bucles, <code class="docutils literal notranslate"><span class="pre">pass</span></code> puede ser útil cuando se quiere definir un bucle que no realiza ninguna operación, pero que debe estar presente por razones de estructura del código o para futuras implementaciones.</p>
 <div class="note admonition">
 <p class="admonition-title">Nota</p>
@@ -801,7 +792,7 @@ Fin de la iteración externa 2
 </section>
 </section>
 <section id="sentencia-if-else">
-<h2>Sentencia <code class="docutils literal notranslate"><span class="pre">if-else</span></code><a class="headerlink" href="#sentencia-if-else" title="Link to this heading">#</a></h2>
+<h2>Sentencia <code class="docutils literal notranslate"><span class="pre">if-else</span></code><a class="headerlink" href="#sentencia-if-else" title="Permalink to this heading">#</a></h2>
 <p>La sentencia <code class="docutils literal notranslate"><span class="pre">if</span></code> permite ejecutar un bloque de código solo si se cumple una condición determinada. Si la condición es verdadera, se ejecuta el bloque de código indentado debajo de la sentencia <code class="docutils literal notranslate"><span class="pre">if</span></code>. Si la condición es falsa, se puede utilizar la sentencia <code class="docutils literal notranslate"><span class="pre">else</span></code> para ejecutar un bloque de código alternativo.
 Adicionalmente, se puede utilizar la sentencia <code class="docutils literal notranslate"><span class="pre">elif</span></code> (abreviatura de “else if”) para verificar múltiples condiciones de manera secuencial. Si la primera condición es falsa, se evalúa la siguiente condición <code class="docutils literal notranslate"><span class="pre">elif</span></code>, y así sucesivamente. Si ninguna de las condiciones es verdadera, se ejecuta el bloque de código bajo la sentencia <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condición1</span><span class="p">:</span>

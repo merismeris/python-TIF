@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Matplotlib &#8212; Introducción a Python Técnicas Informáticas en Física</title>
   
@@ -28,48 +29,48 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
     <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
     <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>let enableFont = 'Enable';</script>
     <script>let disableFont = 'Disable';</script>
     <script>let enableContrast = 'Enable high contrast';</script>
     <script>let disableContrast = 'Disable high contrast';</script>
     <script src="../_static/Accessibility.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>let enableFont = 'Enable';</script>
-    <script>let disableFont = 'Disable';</script>
-    <script>let enableContrast = 'Enable high contrast';</script>
-    <script>let disableContrast = 'Disable high contrast';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tema_5/t5-python-matplotlib';</script>
@@ -168,18 +169,7 @@
     <p class="title logo__title">Introducción a Python Técnicas Informáticas en Física</p>
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -215,6 +205,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 Funciones, métodos y módulos en Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../tema_4/t4-python-functions.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_4/Ejercicios_tema_4.html">Tema 4 — Funciones en Python y módulos externos (Hoja de ejercicios)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 Representación gráfica y cálculo científico</span></p>
 <ul class="current nav bd-sidenav">
@@ -276,9 +267,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -303,14 +294,14 @@
       
       <li><a href="https://colab.research.google.com/github/merismeris/python-TIF/blob/mi-cambio/content/tema_5/t5-python-matplotlib.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
+   title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+    <img src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -468,9 +459,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -526,7 +517,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matplotlib">
-<h1>Matplotlib<a class="headerlink" href="#matplotlib" title="Link to this heading">#</a></h1>
+<h1>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this heading">#</a></h1>
 <p>Matplotlib es el paquete básico para la creación de gráficos en Python científico.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -537,7 +528,7 @@ document.write(`
 </div>
 </div>
 <section id="conceptos-de-matplotlib">
-<h2>Conceptos de Matplotlib<a class="headerlink" href="#conceptos-de-matplotlib" title="Link to this heading">#</a></h2>
+<h2>Conceptos de Matplotlib<a class="headerlink" href="#conceptos-de-matplotlib" title="Permalink to this heading">#</a></h2>
 <p>Matplotlib fue diseñado con los siguientes objetivos (según la documentación):</p>
 <ul class="simple">
 <li><p>Las gráficas deben tener aspecto excelente — calidad de publicación (por ejemplo, antialiasing)</p></li>
@@ -548,12 +539,12 @@ document.write(`
 </ul>
 <p>Matplotlib se usa principalmente para datos 2-D, aunque existe soporte básico para superficies 3-D.</p>
 <section id="galeria">
-<h3>Galería<a class="headerlink" href="#galeria" title="Link to this heading">#</a></h3>
+<h3>Galería<a class="headerlink" href="#galeria" title="Permalink to this heading">#</a></h3>
 <p>Matplotlib tiene una gran galería en su web — busca algo parecido a lo que quieres hacer y úsalo como punto de partida:</p>
 <p><a class="reference external" href="https://matplotlib.org/stable/gallery/index.html">https://matplotlib.org/stable/gallery/index.html</a></p>
 </section>
 <section id="importar">
-<h3>Importar<a class="headerlink" href="#importar" title="Link to this heading">#</a></h3>
+<h3>Importar<a class="headerlink" href="#importar" title="Permalink to this heading">#</a></h3>
 <p>Existen varias interfaces para matplotlib (ver <a class="reference external" href="https://matplotlib.org/3.1.1/faq/index.html">https://matplotlib.org/3.1.1/faq/index.html</a>)</p>
 <p>Ideas básicas:</p>
 <ul class="simple">
@@ -564,7 +555,7 @@ document.write(`
 <p>Hay varios módulos que amplían su comportamiento, p.ej. <code class="docutils literal notranslate"><span class="pre">basemap</span></code> para trazar en una esfera, <code class="docutils literal notranslate"><span class="pre">mplot3d</span></code> para superficies 3-D.</p>
 </section>
 <section id="anatomia-de-una-figura">
-<h3>Anatomía de una figura<a class="headerlink" href="#anatomia-de-una-figura" title="Link to this heading">#</a></h3>
+<h3>Anatomía de una figura<a class="headerlink" href="#anatomia-de-una-figura" title="Permalink to this heading">#</a></h3>
 <p>Las figuras son el objeto de más alto nivel y pueden incluir múltiples ejes
 <img alt="" src="../_images/anatomy1.png" /></p>
 <p>(figura de: <a class="reference external" href="http://matplotlib.org/faq/usage_faq.html#parts-of-a-figure">http://matplotlib.org/faq/usage_faq.html#parts-of-a-figure</a> )</p>
@@ -572,7 +563,7 @@ document.write(`
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="trazado-basico">
-<h1>Trazado básico<a class="headerlink" href="#trazado-basico" title="Link to this heading">#</a></h1>
+<h1>Trazado básico<a class="headerlink" href="#trazado-basico" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
@@ -739,7 +730,7 @@ document.write(`
 <p>Para una descripción completa de los campos a modificar de las gráficas, así como de todas las opciones, se puede consultar la documentación oficial de MatPlotLib <a class="reference external" href="https://matplotlib.org/stable/api/">https://matplotlib.org/stable/api/</a> Aquí nos hemos limitado a ilustrar algunos ejemplos.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="multiples-plots">
-<h1>Múltiples plots<a class="headerlink" href="#multiples-plots" title="Link to this heading">#</a></h1>
+<h1>Múltiples plots<a class="headerlink" href="#multiples-plots" title="Permalink to this heading">#</a></h1>
 <p>Hay una amplia variedad de métodos para colocar múltiples ejes en una cuadrícula. Veremos el método más simple.</p>
 <p>El método <code class="docutils literal notranslate"><span class="pre">add_subplot()</span></code> que hemos estado usando puede tomar 3 números: número de filas, número de columnas y el índice actual.</p>
 <div class="cell docutils container">
@@ -773,7 +764,7 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="graficos-2-d-adicionales">
-<h1>Gráficos 2-D adicionales<a class="headerlink" href="#graficos-2-d-adicionales" title="Link to this heading">#</a></h1>
+<h1>Gráficos 2-D adicionales<a class="headerlink" href="#graficos-2-d-adicionales" title="Permalink to this heading">#</a></h1>
 <p>Algunos tipos de gráficas adicionales son:</p>
 <ul class="simple">
 <li><p>Gráficas de dispersión (scatter plots) .scatter()</p></li>
@@ -789,7 +780,7 @@ document.write(`
 <p>La documentación oficial de Matplotlib tiene muchos ejemplos de estos tipos de gráficas: <a class="reference external" href="https://matplotlib.org/stable/plot_types/index.html">https://matplotlib.org/stable/plot_types/index.html</a></p>
 <p>Vamos a ver a continuación algunos ejemplos simples</p>
 <section id="meshgrids">
-<h2>Meshgrids<a class="headerlink" href="#meshgrids" title="Link to this heading">#</a></h2>
+<h2>Meshgrids<a class="headerlink" href="#meshgrids" title="Permalink to this heading">#</a></h2>
 <p>Los conjuntos de datos 2-d consisten en pares (x, y) y un valor asociado a ese punto. Aquí creamos una gaussiana 2-d, usando <code class="docutils literal notranslate"><span class="pre">meshgrid()</span></code> para definir una rejilla rectangular de puntos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -808,7 +799,7 @@ document.write(`
 </div>
 </section>
 <section id="mapa-de-calor">
-<h2>Mapa de calor<a class="headerlink" href="#mapa-de-calor" title="Link to this heading">#</a></h2>
+<h2>Mapa de calor<a class="headerlink" href="#mapa-de-calor" title="Permalink to this heading">#</a></h2>
 <p>Un gráfico de tipo ‘heatmap’ asigna colores a los valores de los datos. Mucho trabajo se ha dedicado en las versiones recientes de matplotlib para definir mapas de color que funcionen bien para daltonismo y para impresión en blanco y negro.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -828,7 +819,7 @@ document.write(`
 </div>
 </section>
 <section id="contornos">
-<h2>Contornos<a class="headerlink" href="#contornos" title="Link to this heading">#</a></h2>
+<h2>Contornos<a class="headerlink" href="#contornos" title="Permalink to this heading">#</a></h2>
 <p>A veces queremos mostrar solo las líneas de contorno — como en un mapa topográfico. La función <code class="docutils literal notranslate"><span class="pre">contour()</span></code> hace esto por nosotros.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -849,7 +840,7 @@ document.write(`
 <p>Los contornos pueden etiquetarse usando <code class="docutils literal notranslate"><span class="pre">ax.clabel()</span></code>.</p>
 </section>
 <section id="barras-de-error">
-<h2>Barras de error<a class="headerlink" href="#barras-de-error" title="Link to this heading">#</a></h2>
+<h2>Barras de error<a class="headerlink" href="#barras-de-error" title="Permalink to this heading">#</a></h2>
 <p>En experimentos, a menudo tenemos errores asociados con los valores de <span class="math notranslate nohighlight">\(y\)</span>. Aquí creamos algunos datos y añadimos ruido, luego los graficamos con sus errores.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -889,7 +880,7 @@ document.write(`
 </div>
 </section>
 <section id="histogramas">
-<h2>Histogramas<a class="headerlink" href="#histogramas" title="Link to this heading">#</a></h2>
+<h2>Histogramas<a class="headerlink" href="#histogramas" title="Permalink to this heading">#</a></h2>
 <p>Aquí generamos muchos números gaussianos normalizados y hacemos un histograma. La distribución de probabilidad debería coincidir con
 $<span class="math notranslate nohighlight">\(y(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-x^2/(2\sigma^2)}\)</span>$</p>
 <div class="cell docutils container">
@@ -919,7 +910,7 @@ $<span class="math notranslate nohighlight">\(y(x) = \frac{1}{\sigma \sqrt{2\pi}
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="anotaciones">
-<h1>Anotaciones<a class="headerlink" href="#anotaciones" title="Link to this heading">#</a></h1>
+<h1>Anotaciones<a class="headerlink" href="#anotaciones" title="Permalink to this heading">#</a></h1>
 <p>Añadir texto y anotaciones es sencillo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -991,7 +982,7 @@ $<span class="math notranslate nohighlight">\(y(x) = \frac{1}{\sigma \sqrt{2\pi}
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="graficar-datos-desde-un-fichero">
-<h1>Graficar datos desde un fichero<a class="headerlink" href="#graficar-datos-desde-un-fichero" title="Link to this heading">#</a></h1>
+<h1>Graficar datos desde un fichero<a class="headerlink" href="#graficar-datos-desde-un-fichero" title="Permalink to this heading">#</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">numpy.loadtxt()</span></code> ofrece una forma fácil de leer columnas de datos desde un fichero ASCII.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1042,7 +1033,7 @@ $<span class="math notranslate nohighlight">\(y(x) = \frac{1}{\sigma \sqrt{2\pi}
 <p>Si hacemos cambios en los datos, podemos guardarlos utilizando <code class="docutils literal notranslate"><span class="pre">np.savetxt('nombrefichero.ext',</span> <span class="pre">data,</span> <span class="pre">delimiter=',')</span></code></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="diversion-final">
-<h1>Diversión final<a class="headerlink" href="#diversion-final" title="Link to this heading">#</a></h1>
+<h1>Diversión final<a class="headerlink" href="#diversion-final" title="Permalink to this heading">#</a></h1>
 <p>Si quieres que las gráficas tengan un aspecto dibujado a mano al estilo xkcd, vuelve a ejecutar estos ejemplos después de hacer
 plt.xkcd()</p>
 <div class="cell docutils container">
