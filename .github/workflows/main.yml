@@ -38,7 +38,7 @@ jobs:
 
     - name: Build Jupyter Book
       run: |
-        jupyter-book build ./content html
+        jupyter-book build ./content
 
     - name: Copy build to docs/ folder
       run: |

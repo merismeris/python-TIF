@@ -48,7 +48,7 @@ jobs:
           sed -i 's|baseurl: /python-TIF/|baseurl: /|g' ./content/_config.yml
 
       - name: Build Jupyter Book
-        run: jupyter-book build ./content html
+        run: jupyter-book build ./content
 
       - name: Restore original config
         run: mv ./content/_config.yml.bak ./content/_config.yml
