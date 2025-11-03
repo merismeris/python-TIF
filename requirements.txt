@@ -1,4 +1,4 @@
-jupyter-book==0.15.1
+jupyter-book==1.0.4.post1
 matplotlib
 numpy
 sympy
@@ -9,7 +9,7 @@ scikit-learn
 sphinx-copybutton
 sphinx-prompt
 jupyterlab_myst
-sphinx-accessibility
+sphinx-accessibility==1.0.1
 jupyterquiz
 
 
