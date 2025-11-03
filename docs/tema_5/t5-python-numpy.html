@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>NumPy &#8212; Introducción a Python Técnicas Informáticas en Física</title>
   
@@ -28,48 +29,48 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
     <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
     <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>let enableFont = 'Enable';</script>
     <script>let disableFont = 'Disable';</script>
     <script>let enableContrast = 'Enable high contrast';</script>
     <script>let disableContrast = 'Disable high contrast';</script>
     <script src="../_static/Accessibility.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>let enableFont = 'Enable';</script>
-    <script>let disableFont = 'Disable';</script>
-    <script>let enableContrast = 'Enable high contrast';</script>
-    <script>let disableContrast = 'Disable high contrast';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tema_5/t5-python-numpy';</script>
     <link rel="canonical" href="/python-TIF/tema_5/t5-python-numpy.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -166,18 +167,7 @@
     <p class="title logo__title">Introducción a Python Técnicas Informáticas en Física</p>
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -213,6 +203,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 Funciones, métodos y módulos en Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../tema_4/t4-python-functions.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_4/Ejercicios_tema_4.html">Tema 4 — Funciones en Python y módulos externos (Hoja de ejercicios)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 Representación gráfica y cálculo científico</span></p>
 <ul class="current nav bd-sidenav">
@@ -274,9 +265,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -301,14 +292,14 @@
       
       <li><a href="https://colab.research.google.com/github/merismeris/python-TIF/blob/mi-cambio/content/tema_5/t5-python-numpy.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
+   title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+    <img src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -466,9 +457,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -522,7 +513,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="numpy">
-<h1>NumPy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h1>
+<h1>NumPy<a class="headerlink" href="#numpy" title="Permalink to this heading">#</a></h1>
 <p>NumPy es una biblioteca fundamental para la computación científica en Python. Proporciona soporte para arreglos y matrices multidimensionales, junto con una amplia colección de funciones matemáticas para operar con estos datos de manera eficiente.</p>
 <p>Además, NumPy es compatible con otras bibliotecas populares de Python, como SciPy y Matplotlib, lo que lo convierte en una herramienta versátil para el análisis y la visualización de datos.</p>
 <p>Recuerda que, como todo módulo, para poder usarlo hay que instalarlo, importarlo y luego llamar a sus métodos o atributos a través del operador <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
@@ -549,7 +540,7 @@ document.write(`
 <li><p>las operaciones aritméticas funcionan como en Matlab — esto significa que puedes evitar escribir bucles en Python (que tienden a ser lentos). En su lugar el ‘bucle’ se realiza en el código compilado subyacente.</p></li>
 </ul>
 <section id="creacion-de-arrays-y-propiedades">
-<h2>Creación de arrays y propiedades<a class="headerlink" href="#creacion-de-arrays-y-propiedades" title="Link to this heading">#</a></h2>
+<h2>Creación de arrays y propiedades<a class="headerlink" href="#creacion-de-arrays-y-propiedades" title="Permalink to this heading">#</a></h2>
 <p>Hay muchas formas de crear arrays. En esta sección veremos algunas de ellas.</p>
 <p>La forma más clásica de crear un array de numpy es a partir de una lista o una tupla de Python, utilizando la función <code class="docutils literal notranslate"><span class="pre">numpy.array()</span></code>. Por ejemplo:</p>
 <div class="cell docutils container">
@@ -650,7 +641,7 @@ int64
 </div>
 </div>
 <section id="arrays-multidimensionales">
-<h3>Arrays multidimensionales<a class="headerlink" href="#arrays-multidimensionales" title="Link to this heading">#</a></h3>
+<h3>Arrays multidimensionales<a class="headerlink" href="#arrays-multidimensionales" title="Permalink to this heading">#</a></h3>
 <p>Los arrays multidimensionales se almacenan en un espacio contiguo en memoria — esto significa que las columnas/filas necesitan desenrollarse (aplanarse) para que puedan pensarse como un único array unidimensional.</p>
 <p>Podemos crear arrays multidimensionales utilizando <code class="docutils literal notranslate"><span class="pre">reshape()</span></code>:</p>
 <div class="cell docutils container">
@@ -734,7 +725,7 @@ int64
 </section>
 </section>
 <section id="acceso-a-los-elementos-de-un-array">
-<h2>Acceso a los elementos de un array<a class="headerlink" href="#acceso-a-los-elementos-de-un-array" title="Link to this heading">#</a></h2>
+<h2>Acceso a los elementos de un array<a class="headerlink" href="#acceso-a-los-elementos-de-un-array" title="Permalink to this heading">#</a></h2>
 <p>El acceso a elementos funciona de manera muy similar a como lo vimos con las listas. Recuerda, los índices en Python empiezan en 0.</p>
 <p>Considera el siguiente array:</p>
 <div class="cell docutils container">
@@ -802,7 +793,7 @@ int64
 </div>
 </div>
 <section id="acceso-a-arrays-multidimensionales">
-<h3>Acceso a arrays multidimensionales<a class="headerlink" href="#acceso-a-arrays-multidimensionales" title="Link to this heading">#</a></h3>
+<h3>Acceso a arrays multidimensionales<a class="headerlink" href="#acceso-a-arrays-multidimensionales" title="Permalink to this heading">#</a></h3>
 <p>El acceso a los elementos de un array multidimensional se realiza utilizando múltiples índices separados por comas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -918,7 +909,7 @@ int64
 </section>
 </section>
 <section id="modificacion-de-los-elementos-de-un-array">
-<h2>Modificación de los elementos de un array<a class="headerlink" href="#modificacion-de-los-elementos-de-un-array" title="Link to this heading">#</a></h2>
+<h2>Modificación de los elementos de un array<a class="headerlink" href="#modificacion-de-los-elementos-de-un-array" title="Permalink to this heading">#</a></h2>
 <p>Podemos añadir elementos a un array existente utilizando las funciones <code class="docutils literal notranslate"><span class="pre">numpy.append()</span></code> y <code class="docutils literal notranslate"><span class="pre">numpy.insert()</span></code>. Estas funciones permiten agregar elementos al final del array o en posiciones específicas, respectivamente, igual que hacíamos en listas.</p>
 <p>De la misma manera, podemos modificar elementos específicos de un array utilizando indexación y asignación directa.
 Además, podemos eliminar elementos de un array utilizando la función <code class="docutils literal notranslate"><span class="pre">numpy.delete()</span></code>, que permite eliminar elementos en posiciones específicas o según una condición dada.</p>
@@ -945,7 +936,7 @@ Además, podemos eliminar elementos de un array utilizando la función <code cla
 </div>
 </section>
 <section id="operaciones-con-arrays">
-<h2>Operaciones con Arrays<a class="headerlink" href="#operaciones-con-arrays" title="Link to this heading">#</a></h2>
+<h2>Operaciones con Arrays<a class="headerlink" href="#operaciones-con-arrays" title="Permalink to this heading">#</a></h2>
 <p>La mayoría de las operaciones (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>) funcionan sobre un array entero a la vez, elemento por elemento.</p>
 <p>Ten en cuenta que el operador <code class="docutils literal notranslate"><span class="pre">*</span></code> no es una multiplicación matricial; <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> realiza la multiplicación matricial.</p>
 <p>Vamos a crear un array sencillo para empezar</p>
@@ -1053,7 +1044,7 @@ Además, podemos eliminar elementos de un array utilizando la función <code cla
 </div>
 </section>
 <section id="funciones-universales">
-<h2>Funciones universales<a class="headerlink" href="#funciones-universales" title="Link to this heading">#</a></h2>
+<h2>Funciones universales<a class="headerlink" href="#funciones-universales" title="Permalink to this heading">#</a></h2>
 <p>Numpy contiene algunas funcion matemáticas muy utilizadas, las hemos llamado funciones universales. Las funciones universales trabajan elemento a elemento. Algunos ejemplos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1092,9 +1083,9 @@ Además, podemos eliminar elementos de un array utilizando la función <code cla
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="operaciones-avanzadas-con-numpy">
-<h1>Operaciones avanzadas con NumPy<a class="headerlink" href="#operaciones-avanzadas-con-numpy" title="Link to this heading">#</a></h1>
+<h1>Operaciones avanzadas con NumPy<a class="headerlink" href="#operaciones-avanzadas-con-numpy" title="Permalink to this heading">#</a></h1>
 <section id="copiar-arrays">
-<h2>Copiar arrays<a class="headerlink" href="#copiar-arrays" title="Link to this heading">#</a></h2>
+<h2>Copiar arrays<a class="headerlink" href="#copiar-arrays" title="Permalink to this heading">#</a></h2>
 <p>Usar simplemente <code class="docutils literal notranslate"><span class="pre">=</span></code> no hace una copia de los valores y crea una nueva variable; al igual que con los objetos mutables, simplemente tendrás múltiples nombres apuntando al mismo objeto <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> en memoria.</p>
 <p>Por lo tanto, necesitamos entender si dos arrays, <code class="docutils literal notranslate"><span class="pre">A</span></code> y <code class="docutils literal notranslate"><span class="pre">B</span></code>, apuntan a:</p>
 <ul class="simple">
@@ -1246,7 +1237,7 @@ True
 </div>
 </section>
 <section id="comparaciones-en-arrays">
-<h2>Comparaciones en arrays<a class="headerlink" href="#comparaciones-en-arrays" title="Link to this heading">#</a></h2>
+<h2>Comparaciones en arrays<a class="headerlink" href="#comparaciones-en-arrays" title="Permalink to this heading">#</a></h2>
 <p>En general, podemos comparar arrays en numpy, y  nos devolverá el resultado elemento a elemento:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1287,7 +1278,7 @@ False
 </div>
 </section>
 <section id="indexado-booleano">
-<h2>Indexado booleano<a class="headerlink" href="#indexado-booleano" title="Link to this heading">#</a></h2>
+<h2>Indexado booleano<a class="headerlink" href="#indexado-booleano" title="Permalink to this heading">#</a></h2>
 <p>Hay muchas formas de indexar arrays para acceder solo a aquellos elementos que cumplen cierta condición</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

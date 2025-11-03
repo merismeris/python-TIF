@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Tipos de datos básicos y operadores en Python &#8212; Introducción a Python Técnicas Informáticas en Física</title>
   
@@ -28,48 +29,48 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
     <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
     <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>let enableFont = 'Enable';</script>
     <script>let disableFont = 'Disable';</script>
     <script>let enableContrast = 'Enable high contrast';</script>
     <script>let disableContrast = 'Disable high contrast';</script>
     <script src="../_static/Accessibility.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>let enableFont = 'Enable';</script>
-    <script>let disableFont = 'Disable';</script>
-    <script>let enableContrast = 'Enable high contrast';</script>
-    <script>let disableContrast = 'Disable high contrast';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tema_1/t1-python-datatypes';</script>
@@ -168,18 +169,7 @@
     <p class="title logo__title">Introducción a Python Técnicas Informáticas en Física</p>
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -215,6 +205,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 Funciones, métodos y módulos en Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../tema_4/t4-python-functions.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_4/Ejercicios_tema_4.html">Tema 4 — Funciones en Python y módulos externos (Hoja de ejercicios)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 Representación gráfica y cálculo científico</span></p>
 <ul class="nav bd-sidenav">
@@ -276,9 +267,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -303,14 +294,14 @@
       
       <li><a href="https://colab.research.google.com/github/merismeris/python-TIF/blob/mi-cambio/content/tema_1/t1-python-datatypes.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
+   title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+    <img src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -468,9 +459,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -516,7 +507,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tipos-de-datos-basicos-y-operadores-en-python">
-<h1>Tipos de datos básicos y operadores en Python<a class="headerlink" href="#tipos-de-datos-basicos-y-operadores-en-python" title="Link to this heading">#</a></h1>
+<h1>Tipos de datos básicos y operadores en Python<a class="headerlink" href="#tipos-de-datos-basicos-y-operadores-en-python" title="Permalink to this heading">#</a></h1>
 <p>Python es un lenguaje de tipado dinámico: esto significa que no es
 necesario especificar de antemano qué tipo de dato se va a almacenar
 en una variable.  Sin embargo, existen algunos tipos de datos básicos
@@ -549,7 +540,7 @@ realizar operaciones matemáticas y lógicas con estos tipos de datos.  Por
 ejemplo, podemos sumar dos enteros o comparar dos valores booleanos.</p>
 <p>Vamos a ver sus características principales y operaciones aritméticas básicas.</p>
 <section id="enteros-int">
-<h2>Enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>)<a class="headerlink" href="#enteros-int" title="Link to this heading">#</a></h2>
+<h2>Enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>)<a class="headerlink" href="#enteros-int" title="Permalink to this heading">#</a></h2>
 <p>Los enteros son números sin parte decimal. Pueden ser positivos o negativos. La mayoría de los lenguajes de programación usan una cantidad finita de memoria para almacenar un solo entero, pero en Python se expandirá la cantidad de memoria según sea necesario para almacenar enteros grandes.
 Los operadores básicos, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, y <code class="docutils literal notranslate"><span class="pre">/</span></code> funcionan con enteros. Además, Python incluye el operador <code class="docutils literal notranslate"><span class="pre">//</span></code> para división entera (que redondea hacia abajo al entero más cercano) y el operador <code class="docutils literal notranslate"><span class="pre">%</span></code> para obtener el resto de una división entera (operador módulo).</p>
 <div class="cell docutils container">
@@ -683,7 +674,7 @@ Utiliza un tipo de dato conocido como de <a class="reference external" href="htt
 </div>
 </section>
 <section id="numeros-de-punto-flotante-float-reales">
-<h2>Números de punto flotante (<code class="docutils literal notranslate"><span class="pre">float</span></code>) - Reales<a class="headerlink" href="#numeros-de-punto-flotante-float-reales" title="Link to this heading">#</a></h2>
+<h2>Números de punto flotante (<code class="docutils literal notranslate"><span class="pre">float</span></code>) - Reales<a class="headerlink" href="#numeros-de-punto-flotante-float-reales" title="Permalink to this heading">#</a></h2>
 <p>Los reales son números que pueden tener una parte decimal.   Los operadores básicos, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, y <code class="docutils literal notranslate"><span class="pre">/</span></code> funcionan con números reales. Podemos mezclar enteros y reales en operaciones aritméticas, y el resultado será un número real.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -773,7 +764,7 @@ Usamos el operador <code class="docutils literal notranslate"><span class="pre">
 </div>
 </section>
 <section id="valores-booleanos-bool">
-<h2>Valores booleanos (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)<a class="headerlink" href="#valores-booleanos-bool" title="Link to this heading">#</a></h2>
+<h2>Valores booleanos (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)<a class="headerlink" href="#valores-booleanos-bool" title="Permalink to this heading">#</a></h2>
 <p>Los valores booleanos representan dos estados: verdadero (<code class="docutils literal notranslate"><span class="pre">True</span></code>) y falso (<code class="docutils literal notranslate"><span class="pre">False</span></code>).  En python, los valores booleanos son de tipo <code class="docutils literal notranslate"><span class="pre">bool</span></code>.  Podemos crear variables booleanas asignándoles los valores <code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code> directamente, o utilizando operadores de comparación.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -794,7 +785,7 @@ Usamos el operador <code class="docutils literal notranslate"><span class="pre">
 <p>Los valores booleanos se almacenan utilizando un solo bit de memoria, donde <code class="docutils literal notranslate"><span class="pre">True</span></code> se representa como 1 y <code class="docutils literal notranslate"><span class="pre">False</span></code> como 0.</p>
 </section>
 <section id="numeros-complejos-complex">
-<h2>Números complejos (<code class="docutils literal notranslate"><span class="pre">complex</span></code>)<a class="headerlink" href="#numeros-complejos-complex" title="Link to this heading">#</a></h2>
+<h2>Números complejos (<code class="docutils literal notranslate"><span class="pre">complex</span></code>)<a class="headerlink" href="#numeros-complejos-complex" title="Permalink to this heading">#</a></h2>
 <p>Los números complejos tienen una parte real y una parte imaginaria.  En python, los números complejos se representan utilizando el tipo de dato <code class="docutils literal notranslate"><span class="pre">complex</span></code>.  Podemos crear números complejos utilizando la letra <code class="docutils literal notranslate"><span class="pre">j</span></code> para representar la unidad imaginaria.  Por ejemplo, <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4j</span></code> representa el número complejo con parte real 3 y parte imaginaria 4.</p>
 <p>Podemos realizar operaciones aritméticas con números complejos utilizando los operadores básicos <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, y <code class="docutils literal notranslate"><span class="pre">/</span></code>.  Python maneja automáticamente las operaciones con números complejos, siguiendo las reglas matemáticas correspondientes.</p>
 <div class="cell docutils container">
@@ -821,7 +812,7 @@ División: (-1+2j)
 <p>Los números complejos se almacenan utilizando dos números de punto flotante: uno para la parte real y otro para la parte imaginaria.  Por lo tanto, las limitaciones y precisiones discutidas anteriormente para los números de punto flotante también se aplican a las partes real e imaginaria de los números complejos.</p>
 </section>
 <section id="operadores">
-<h2>Operadores<a class="headerlink" href="#operadores" title="Link to this heading">#</a></h2>
+<h2>Operadores<a class="headerlink" href="#operadores" title="Permalink to this heading">#</a></h2>
 <p>Los operadores son ítems o símbolos que actúan sobre uno, dos o más operandos para realizar una determinada operación. Siempre producen un resultado. Hay varios tipos de operadores en Python, incluyendo:</p>
 <ul class="simple">
 <li><p>Aritméticos: <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code></p></li>
@@ -833,7 +824,7 @@ División: (-1+2j)
 <li><p>Operadores especiales (de pertenencia e identidad): <code class="docutils literal notranslate"><span class="pre">in</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>, <code class="docutils literal notranslate"><span class="pre">is</span></code>, <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> – En el próximo tema</p></li>
 </ul>
 <section id="operadores-aritmeticos">
-<h3>Operadores Aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Link to this heading">#</a></h3>
+<h3>Operadores Aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Permalink to this heading">#</a></h3>
 <p>Los operadores aritméticos se utilizan para realizar operaciones matemáticas básicas. Aquí hay una lista de los operadores aritméticos más comunes en Python:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> : Suma</p></li>
@@ -856,7 +847,7 @@ División: (-1+2j)
 <p>Por último, vienen los operadores de comparación y lógicos.</p>
 </section>
 <section id="operadores-de-comparacion">
-<h3>Operadores de Comparación<a class="headerlink" href="#operadores-de-comparacion" title="Link to this heading">#</a></h3>
+<h3>Operadores de Comparación<a class="headerlink" href="#operadores-de-comparacion" title="Permalink to this heading">#</a></h3>
 <p>Los operadores de comparación se utilizan para comparar dos valores. Aquí hay una lista de los operadores de comparación más comunes en Python:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> : Igualdad</p></li>
@@ -908,7 +899,7 @@ False
 </div>
 </section>
 <section id="operadores-logicos">
-<h3>Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Link to this heading">#</a></h3>
+<h3>Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permalink to this heading">#</a></h3>
 <p>Los operadores lógicos se utilizan para combinar expresiones booleanas. Aquí hay una lista de los operadores lógicos más comunes en Python:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">and</span></code> : Devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> si ambas expresiones son <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
@@ -986,7 +977,7 @@ True
 </div>
 </section>
 <section id="casting-o-conversion-de-tipos">
-<h3><code class="docutils literal notranslate"><span class="pre">Casting</span></code> o Conversión de tipos<a class="headerlink" href="#casting-o-conversion-de-tipos" title="Link to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">Casting</span></code> o Conversión de tipos<a class="headerlink" href="#casting-o-conversion-de-tipos" title="Permalink to this heading">#</a></h3>
 <p>Python permite convertir en ocasiones variables con un tipo determinado a otro tipo diferente. Las conversiones pueden ser:</p>
 <ul class="simple">
 <li><p>Implícitas: Ejecutadas automáticamente (como en la división <code class="docutils literal notranslate"><span class="pre">/</span></code>)</p></li>
@@ -1005,7 +996,7 @@ True
 </section>
 </section>
 <section id="otras-operaciones-mas-complejas">
-<h2>Otras operaciones más complejas<a class="headerlink" href="#otras-operaciones-mas-complejas" title="Link to this heading">#</a></h2>
+<h2>Otras operaciones más complejas<a class="headerlink" href="#otras-operaciones-mas-complejas" title="Permalink to this heading">#</a></h2>
 <p>El núcleo de Python se extiende mediante una biblioteca estándar que proporciona funcionalidad adicional. Estas piezas añadidas están en forma de módulos que podemos <em>importar</em> en nuestra sesión de Python (o programa), como ya hemos visto.</p>
 <p>Hay varios módulos integrados en Python que proporcionan funcionalidades adicionales. Uno de los módulos más comunes es el módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>, que proporciona funciones matemáticas avanzadas y constantes (o <code class="docutils literal notranslate"><span class="pre">cmath</span></code> para números complejos).</p>
 <p>Dejamos aquí algunas operaciones básicas usando el módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>:</p>
@@ -1078,7 +1069,7 @@ sin(x, /)
 </div>
 </section>
 <section id="cadenas-strings">
-<h2>Cadenas (strings)<a class="headerlink" href="#cadenas-strings" title="Link to this heading">#</a></h2>
+<h2>Cadenas (strings)<a class="headerlink" href="#cadenas-strings" title="Permalink to this heading">#</a></h2>
 <p>Una cadena es una secuencia de caracteres.  En python, las cadenas se representan utilizando comillas simples (<code class="docutils literal notranslate"><span class="pre">'...'</span></code>) o comillas dobles (<code class="docutils literal notranslate"><span class="pre">&quot;...&quot;</span></code>).  Podemos crear cadenas asignándolas a variables:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
