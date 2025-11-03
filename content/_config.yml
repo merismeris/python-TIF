@@ -13,6 +13,11 @@ execute:
   execute_notebooks: off
   allow_errors: true
 
+# Ensure latest myst-nb respects the no-execution policy
+execution:
+  execute_notebooks: off
+  allow_errors: true
+
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
@@ -43,6 +48,7 @@ sphinx:
     html_show_copyright: false
     nbsphinx_timeout: 300
     nb_execution_timeout: 300
+    nb_execution_mode: "off"
   extra_extensions:
     - sphinx_accessibility
 
