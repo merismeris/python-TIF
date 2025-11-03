@@ -32,6 +32,7 @@
 **Enunciado.**  
 Implementa una función que calcule el **número de Reynolds** y devuelva **dos valores**: el número y el **régimen** como cadena `"laminar"`, `"transición"` o `"turbulento"`.
 
+```{admonition} Recordatorio
 :class: hint
 - Fórmula: $ \mathrm{Re} = \dfrac{\rho\, v\, L}{\mu} $ o $ \mathrm{Re} = \dfrac{v\, L}{\nu} $.  
 - Umbrales típicos en tuberías: `laminar < 2300`, `2300–4000 transición`, `> 4000 turbulento`.  
@@ -60,6 +61,9 @@ $$
 $$
 b = (Σy - m·Σx) / N
 
+```
+
+
 ```{admonition} Nota de estilo
 :class: tip
 - Evita `print` dentro de las funciones; **devuelve** resultados para poder probarlos.
@@ -85,7 +89,9 @@ import TIF
 
 ````{admonition} ¿Qué es __pycache__?
 :class: hint
----
+Es la carpeta donde Python guarda **bytecode compilado** (`.pyc`) para acelerar cargas futuras.  
+Se regenera automáticamente al importar módulos.
+````
 
 ### 4. Distancia Haversine como función
 
@@ -216,5 +222,5 @@ print(requests.get("http://numbersapi.com/42?json", timeout=10).json())
 ## Recomendaciones generales
 
 - Prefiere funciones **puras** (devuelven valores sin imprimir ni leer de teclado).  
-- Añade **docstrings** y **anotaciones de tipo**; facilita pruebas con `pytest` o `doctest`.  
+- Añade **docstrings** y **anotaciones de tipo**.
 - Utiliza parametros con valores por defecto cuando tenga sentido. Ejemplo: `def funcion(param1, param2=valor_por_defecto):`
