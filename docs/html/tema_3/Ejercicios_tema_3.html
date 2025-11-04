@@ -1,0 +1,933 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tema 3 — Tipos de datos y estructuras de datos en Python (Hoja de ejercicios) &#8212; Introducción a Python Técnicas Informáticas en Física</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css?v=46651883" />
+    <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css?v=8a518117" />
+    <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css?v=733fec42" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script src="../_static/Accessibility.js?v=1a5d511f"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tema_3/Ejercicios_tema_3';</script>
+    <link rel="canonical" href="/python-TIF/tema_3/Ejercicios_tema_3.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Funciones" href="../tema_4/t4-python-functions.html" />
+    <link rel="prev" title="Tipos de datos estructurados" href="t3-python-advanced-data.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../Home.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Introducción a Python Técnicas Informáticas en Física</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Home.html">
+                    ¿Qué es Python?
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Conociendo Python y el editor (IDE)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_0/using.html">Primeros pasos con VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_0/resources.html">Recursos bibliográficos de Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 1 Conceptos básicos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_1/t1-python-basics.html">Primeros pasos con Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_1/t1-python-datatypes.html">Tipos de datos básicos y operadores en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_1/t1-python-basicIO.html">Entrada y salida de datos (por consola)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_1/Ejercicios_tema_1.html">Tema 1 — Introducción a Python (Hoja de ejercicios)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 Estructuras de control de flujo</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_2/t2-python-control-flow.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_2/Ejercicios_tema_2.html">Tema 2 — Estructuras selectivas y repetitivas (Hoja de ejercicios)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 3 Tipos de datos en Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="t3-python-classes.html">Introducción a la Programación Orientada a Objetos en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="t3-python-advanced-data.html">Tipos de datos estructurados</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tema 3 — Tipos de datos y estructuras de datos en Python (Hoja de ejercicios)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 Funciones, métodos y módulos en Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_4/t4-python-functions.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_4/Ejercicios_tema_4.html">Tema 4 — Funciones en Python y módulos externos (Hoja de ejercicios)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 Representación gráfica y cálculo científico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema_5/t5-python-calculo.html">Cálculo Científico y Representación Gráfica con Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema_5/t5-python-numpy.html">NumPy</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../tema_5/t5-python-matplotlib.html">Matplotlib</a></li>
+
+
+
+
+
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 6 Pandas y manejo de ficheros</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_6/t6-python-pandas.html">Pandas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Material adicional de Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contenido_extra/misc.html">Algunos conceptos y material adicionales</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-classes.html">Pequeña introducción a la creación de clases en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-exceptions.html">Excepciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-functions.html">Funciones lambda (funciones anónimas)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acerca de este libro</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">Acerca de este libro</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/merismeris/python-TIF" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/merismeris/python-TIF/issues/new?title=Issue%20on%20page%20%2Ftema_3/Ejercicios_tema_3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tema_3/Ejercicios_tema_3.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tema 3 — Tipos de datos y estructuras de datos en Python (Hoja de ejercicios)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#letra-del-nif-usando-listas-y-diccionarios">1. Letra del NIF usando listas y diccionarios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-basicas-con-listas">2. Operaciones básicas con listas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lista-de-numeros-primos-hasta-un-limite">3. Lista de números primos hasta un límite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-texto">4. Análisis de texto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-palabras-entre-dos-textos">5. Comparación de palabras entre dos textos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#densidad-de-los-planetas-del-sistema-solar">6. Densidad de los planetas del sistema solar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adicional-sucesiones-y-limites-analisis-matematico-i">(Adicional) Sucesiones y límites (Análisis Matemático I)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tema-3-tipos-de-datos-y-estructuras-de-datos-en-python-hoja-de-ejercicios">
+<h1>Tema 3 — Tipos de datos y estructuras de datos en Python (Hoja de ejercicios)<a class="headerlink" href="#tema-3-tipos-de-datos-y-estructuras-de-datos-en-python-hoja-de-ejercicios" title="Link to this heading">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Objetivos de aprendizaje</p>
+<ul class="simple">
+<li><p>Familiarizarse con el concepto de <strong>clase y objeto</strong> (solo para su uso, no su definición).</p></li>
+<li><p>Acceder a <strong>atributos</strong> y <strong>métodos</strong> de un objeto.</p></li>
+<li><p>Utilizar <strong>estructuras de datos básicas</strong> en Python: <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">range</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>.</p></li>
+<li><p>Trabajar con <strong>cadenas de caracteres</strong> y sus métodos.</p></li>
+</ul>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Requisitos previos</p>
+<ul class="simple">
+<li><p>Python 3.10+ instalado.</p></li>
+<li><p>VSCode con extensión de Python.</p></li>
+<li><p>Conocimientos básicos de estructuras iterables y funciones integradas (<code class="docutils literal notranslate"><span class="pre">len</span></code>, <code class="docutils literal notranslate"><span class="pre">in</span></code>, <code class="docutils literal notranslate"><span class="pre">range</span></code>, etc.).</p></li>
+</ul>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">Contenidos del tema</p>
+<ul class="simple">
+<li><p>Listas y tuplas (<code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>)</p></li>
+<li><p>Diccionarios (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</p></li>
+<li><p>Conjuntos (<code class="docutils literal notranslate"><span class="pre">set</span></code>)</p></li>
+<li><p>Rangos (<code class="docutils literal notranslate"><span class="pre">range</span></code>)</p></li>
+<li><p>Cadenas (<code class="docutils literal notranslate"><span class="pre">str</span></code>) y sus métodos (<code class="docutils literal notranslate"><span class="pre">split</span></code>, <code class="docutils literal notranslate"><span class="pre">replace</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>, etc.)</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<section id="letra-del-nif-usando-listas-y-diccionarios">
+<h2>1. Letra del NIF usando listas y diccionarios<a class="headerlink" href="#letra-del-nif-usando-listas-y-diccionarios" title="Link to this heading">#</a></h2>
+<p><strong>Enunciado.</strong><br />
+La letra del NIF es un carácter de verificación que se añade al número del DNI. Se calcula a partir del <strong>resto de la división del número del DNI entre 23</strong> y una <strong>tabla de correspondencia</strong> entre letras y restos.</p>
+<figure class="align-default" id="fig-dni-control">
+<a class="reference internal image-reference" href="../_images/dni-digito.jpg"><img alt="Dígito de control NIF" src="../_images/dni-digito.jpg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Tabla para el cálculo de la letra del NIF. Fuente: <a class="reference external" href="https://www.interior.gob.es/opencms/es/servicios-al-ciudadano/tramites-y-gestiones/dni/calculo-del-digito-de-control-del-nif-nie/">Ministerio del Interior</a>.</span><a class="headerlink" href="#fig-dni-control" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>Implementa un programa que pida el número al usuario y muestre el DNI completo (número + letra) <strong>utilizando listas</strong>. Recorre una cadena de caracteres y añade cada carácter a una lista.</p></li>
+<li><p>Implementa el mismo programa <strong>usando un diccionario</strong>, donde las claves sean los restos y los valores las letras correspondientes.</p></li>
+</ol>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Usa el operador módulo <code class="docutils literal notranslate"><span class="pre">%</span></code> para obtener el resto.</p></li>
+<li><p>Ejemplo de lista: <code class="docutils literal notranslate"><span class="pre">letras</span> <span class="pre">=</span> <span class="pre">['T',</span> <span class="pre">'R',</span> <span class="pre">'W',</span> <span class="pre">'A',</span> <span class="pre">...]</span></code></p></li>
+<li><p>Ejemplo de diccionario: <code class="docutils literal notranslate"><span class="pre">letras</span> <span class="pre">=</span> <span class="pre">{0:'T',</span> <span class="pre">1:'R',</span> <span class="pre">2:'W',</span> <span class="pre">...}</span></code></p></li>
+<li><p>Una string es iterable, puedes recorrerla con un bucle <code class="docutils literal notranslate"><span class="pre">for</span></code>, por lo que podría definir una string con los dígitos y recorrerla para crear la lista.</p></li>
+<li><p>Convierte el número a cadena si necesitas recorrer sus dígitos.</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="operaciones-basicas-con-listas">
+<h2>2. Operaciones básicas con listas<a class="headerlink" href="#operaciones-basicas-con-listas" title="Link to this heading">#</a></h2>
+<p><strong>Enunciado.</strong><br />
+Escribe un programa que pida al usuario <strong>10 números por consola</strong> (incluyendo los valores 1, 9 y 11 para las pruebas) y los almacene en una lista.</p>
+<p>Posteriormente:</p>
+<ul class="simple">
+<li><p>Muestra la lista <strong>ordenada</strong> (<code class="docutils literal notranslate"><span class="pre">lista.sort()</span></code>).</p></li>
+<li><p>Muestra cuántas veces aparece el número <strong>1</strong> (<code class="docutils literal notranslate"><span class="pre">lista.count(1)</span></code>).</p></li>
+<li><p>Indica si el número <strong>11</strong> está o no en la lista (<code class="docutils literal notranslate"><span class="pre">in</span></code>).</p></li>
+<li><p>Muestra la <strong>posición</strong> del número <strong>9</strong> (<code class="docutils literal notranslate"><span class="pre">lista.index(9)</span></code>).</p></li>
+</ul>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Valida que el usuario introduzca números enteros (<code class="docutils literal notranslate"><span class="pre">int(input(...))</span></code>).</p></li>
+<li><p>Usa <code class="docutils literal notranslate"><span class="pre">print(lista)</span></code> para mostrar el contenido completo.</p></li>
+<li><p>El método <code class="docutils literal notranslate"><span class="pre">sort()</span></code> ordena la lista <strong>en su lugar</strong>.</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="lista-de-numeros-primos-hasta-un-limite">
+<h2>3. Lista de números primos hasta un límite<a class="headerlink" href="#lista-de-numeros-primos-hasta-un-limite" title="Link to this heading">#</a></h2>
+<p><strong>Enunciado.</strong><br />
+Escribe un programa que almacene en una lista los <strong>números primos</strong> hasta un número dado por el usuario.<br />
+Usa <code class="docutils literal notranslate"><span class="pre">range()</span></code> para generar el rango hasta ese número y comprueba la primalidad de cada elemento.</p>
+<p>El programa deberá mostrar la <strong>longitud de la lista</strong> (<code class="docutils literal notranslate"><span class="pre">len(lista)</span></code>).</p>
+<p>Puedes hacerlo de dos formas:</p>
+<ul class="simple">
+<li><p>Con <strong>puro Python</strong>, implementando tu propia función <code class="docutils literal notranslate"><span class="pre">es_primo(n)</span></code>.</p></li>
+<li><p>O usando la función <code class="docutils literal notranslate"><span class="pre">isprime</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">sympy</span></code> (debes instalarlo primero con <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sympy</span></code>).</p></li>
+</ul>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Documentación de <code class="docutils literal notranslate"><span class="pre">sympy.isprime</span></code>:<br />
+<a class="reference external" href="https://docs.sympy.org/latest/modules/ntheory.html#sympy.ntheory.primetest.isprime">https://docs.sympy.org/latest/modules/ntheory.html#sympy.ntheory.primetest.isprime</a></p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="analisis-de-texto">
+<h2>4. Análisis de texto<a class="headerlink" href="#analisis-de-texto" title="Link to this heading">#</a></h2>
+<p><strong>Enunciado.</strong><br />
+Pide un texto por teclado y muestra:</p>
+<ul class="simple">
+<li><p>Cuántas <strong>palabras</strong> tiene (<code class="docutils literal notranslate"><span class="pre">split</span></code> para separar por espacios).</p></li>
+<li><p>Cuántos <strong>espacios</strong> contiene (<code class="docutils literal notranslate"><span class="pre">count(&quot;</span> <span class="pre">&quot;)</span></code>).</p></li>
+<li><p>Cuántas <strong>letras</strong> tiene (excluyendo los espacios).</p></li>
+<li><p>El texto con todas las ocurrencias de <code class="docutils literal notranslate"><span class="pre">&quot;de&quot;</span></code> reemplazadas por <code class="docutils literal notranslate"><span class="pre">&quot;xx&quot;</span></code> (<code class="docutils literal notranslate"><span class="pre">replace(&quot;de&quot;,</span> <span class="pre">&quot;xx&quot;)</span></code>).</p></li>
+</ul>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Puedes usar <code class="docutils literal notranslate"><span class="pre">len(cadena)</span></code> para contar caracteres.</p></li>
+<li><p>Usa <code class="docutils literal notranslate"><span class="pre">cadena.replace()</span></code> para obtener una nueva cadena modificada.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">split()</span></code> sin argumentos separa por cualquier espacio en blanco.</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="comparacion-de-palabras-entre-dos-textos">
+<h2>5. Comparación de palabras entre dos textos<a class="headerlink" href="#comparacion-de-palabras-entre-dos-textos" title="Link to this heading">#</a></h2>
+<p><strong>Enunciado.</strong><br />
+Pide <strong>dos textos</strong> por teclado. El programa debe indicar:</p>
+<ul class="simple">
+<li><p>Cuántas <strong>palabras tienen en común</strong> ambos textos.</p></li>
+<li><p>Las <strong>palabras únicas</strong> de cada texto.</p></li>
+</ul>
+<p>Convierte cada lista de palabras a un conjunto (<code class="docutils literal notranslate"><span class="pre">set</span></code>) y utiliza las operaciones de conjuntos:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">union</span></code>, <code class="docutils literal notranslate"><span class="pre">intersection</span></code>, <code class="docutils literal notranslate"><span class="pre">difference</span></code>.</p></li>
+</ul>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">set(palabras)</span></code> elimina duplicados automáticamente.</p></li>
+<li><p>Usa <code class="docutils literal notranslate"><span class="pre">texto.split()</span></code> para dividir y <code class="docutils literal notranslate"><span class="pre">texto.lower()</span></code> para evitar problemas de mayúsculas.</p></li>
+<li><p>Ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">comun</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">&amp;</span> <span class="n">set2</span>
+<span class="n">unicas1</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">-</span> <span class="n">set2</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="densidad-de-los-planetas-del-sistema-solar">
+<h2>6. Densidad de los planetas del sistema solar<a class="headerlink" href="#densidad-de-los-planetas-del-sistema-solar" title="Link to this heading">#</a></h2>
+<p><strong>Enunciado.</strong><br />
+Crea un <strong>diccionario</strong> donde las claves sean los nombres de los planetas y los valores sean <strong>tuplas (volumen, masa)</strong>.<br />
+Calcula y muestra para cada planeta su <strong>densidad relativa</strong> (masa / volumen).</p>
+<p>Recorre las claves del diccionario (<code class="docutils literal notranslate"><span class="pre">diccionario_planetas.keys()</span></code>) y accede a los valores correspondientes.</p>
+<p>Puedes basarte en la siguiente fuente de referencia:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cuerpo celeste</p></th>
+<th class="head text-right"><p>Diámetro (Tierra=1)</p></th>
+<th class="head text-right"><p>Volumen (Tierras)</p></th>
+<th class="head text-right"><p>Masa (Tierras)</p></th>
+<th class="head text-right"><p>Densidad (Terrestre=1)</p></th>
+<th class="head text-right"><p>Radio orbital (UA)</p></th>
+<th class="head text-right"><p>Periodo orbital (años)</p></th>
+<th class="head text-right"><p>Periodo de rotación (días)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sol</p></td>
+<td class="text-right"><p>109</p></td>
+<td class="text-right"><p>1,294,037.4</p></td>
+<td class="text-right"><p>332,950</p></td>
+<td class="text-right"><p>0.257</p></td>
+<td class="text-right"><p>0</p></td>
+<td class="text-right"><p>0</p></td>
+<td class="text-right"><p>25–35</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mercurio</p></td>
+<td class="text-right"><p>0.382</p></td>
+<td class="text-right"><p>0.056</p></td>
+<td class="text-right"><p>0.06</p></td>
+<td class="text-right"><p>1.071</p></td>
+<td class="text-right"><p>0.38</p></td>
+<td class="text-right"><p>0.241</p></td>
+<td class="text-right"><p>58.6</p></td>
+</tr>
+<tr class="row-even"><td><p>Venus</p></td>
+<td class="text-right"><p>0.949</p></td>
+<td class="text-right"><p>0.854</p></td>
+<td class="text-right"><p>0.82</p></td>
+<td class="text-right"><p>0.943</p></td>
+<td class="text-right"><p>0.72</p></td>
+<td class="text-right"><p>0.615</p></td>
+<td class="text-right"><p>-243</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Tierra</strong></p></td>
+<td class="text-right"><p><strong>1.00</strong></p></td>
+<td class="text-right"><p><strong>1.00</strong></p></td>
+<td class="text-right"><p><strong>1.00</strong></p></td>
+<td class="text-right"><p><strong>1.00</strong></p></td>
+<td class="text-right"><p><strong>1.00</strong></p></td>
+<td class="text-right"><p><strong>1.00</strong></p></td>
+<td class="text-right"><p><strong>1.00</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Marte</p></td>
+<td class="text-right"><p>0.53</p></td>
+<td class="text-right"><p>0.149</p></td>
+<td class="text-right"><p>0.11</p></td>
+<td class="text-right"><p>0.738</p></td>
+<td class="text-right"><p>1.52</p></td>
+<td class="text-right"><p>1.88</p></td>
+<td class="text-right"><p>1.03</p></td>
+</tr>
+<tr class="row-odd"><td><p>Júpiter</p></td>
+<td class="text-right"><p>11.2</p></td>
+<td class="text-right"><p>1,403.85</p></td>
+<td class="text-right"><p>318</p></td>
+<td class="text-right"><p>0.227</p></td>
+<td class="text-right"><p>5.20</p></td>
+<td class="text-right"><p>11.86</p></td>
+<td class="text-right"><p>0.414</p></td>
+</tr>
+<tr class="row-even"><td><p>Saturno</p></td>
+<td class="text-right"><p>9.41</p></td>
+<td class="text-right"><p>832.6</p></td>
+<td class="text-right"><p>95</p></td>
+<td class="text-right"><p>0.141</p></td>
+<td class="text-right"><p>9.49</p></td>
+<td class="text-right"><p>29.46</p></td>
+<td class="text-right"><p>0.426</p></td>
+</tr>
+<tr class="row-odd"><td><p>Urano</p></td>
+<td class="text-right"><p>3.98</p></td>
+<td class="text-right"><p>62.997</p></td>
+<td class="text-right"><p>14.6</p></td>
+<td class="text-right"><p>0.224</p></td>
+<td class="text-right"><p>19.24</p></td>
+<td class="text-right"><p>84.01</p></td>
+<td class="text-right"><p>0.718</p></td>
+</tr>
+<tr class="row-even"><td><p>Neptuno</p></td>
+<td class="text-right"><p>3.81</p></td>
+<td class="text-right"><p>55.264</p></td>
+<td class="text-right"><p>17.2</p></td>
+<td class="text-right"><p>0.311</p></td>
+<td class="text-right"><p>30.06</p></td>
+<td class="text-right"><p>164.79</p></td>
+<td class="text-right"><p>0.671</p></td>
+</tr>
+<tr class="row-odd"><td><p>Plutón</p></td>
+<td class="text-right"><p>0.186</p></td>
+<td class="text-right"><p>0.003</p></td>
+<td class="text-right"><p>0.0021</p></td>
+<td class="text-right"><p>0.7</p></td>
+<td class="text-right"><p>29.67–48.83</p></td>
+<td class="text-right"><p>248.53</p></td>
+<td class="text-right"><p>6.375</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Magnitud</p></th>
+<th class="head"><p>Valor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Diámetro ecuatorial</p></td>
+<td><p>12,756.2 km</p></td>
+</tr>
+<tr class="row-odd"><td><p>Volumen</p></td>
+<td><p>1.08321×10^12 km³</p></td>
+</tr>
+<tr class="row-even"><td><p>Masa</p></td>
+<td><p>5.9736×10^24 kg</p></td>
+</tr>
+<tr class="row-odd"><td><p>Densidad</p></td>
+<td><p>5.515 g/cm³</p></td>
+</tr>
+<tr class="row-even"><td><p>Radio orbital medio</p></td>
+<td><p>149.59×10^6 km (1 UA)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Periodo orbital</p></td>
+<td><p>1 año</p></td>
+</tr>
+<tr class="row-even"><td><p>Periodo de rotación</p></td>
+<td><p>1 día</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Fuente:
+<a class="reference external" href="https://saberesyciencias.com.mx/2017/10/09/tamanos-distancias-sistema-solar-respecto-planeta/">https://saberesyciencias.com.mx/2017/10/09/tamanos-distancias-sistema-solar-respecto-planeta/</a></p>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Las tuplas son inmutables, pero puedes acceder con índices: <code class="docutils literal notranslate"><span class="pre">tupla[0]</span></code>, <code class="docutils literal notranslate"><span class="pre">tupla[1]</span></code>.</p></li>
+<li><p>Recorre el diccionario con <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">planeta,</span> <span class="pre">datos</span> <span class="pre">in</span> <span class="pre">diccionario.items():</span></code>.</p></li>
+<li><p>Calcula la densidad con <code class="docutils literal notranslate"><span class="pre">masa</span> <span class="pre">/</span> <span class="pre">volumen</span></code>.</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="adicional-sucesiones-y-limites-analisis-matematico-i">
+<h2>(Adicional) Sucesiones y límites (Análisis Matemático I)<a class="headerlink" href="#adicional-sucesiones-y-limites-analisis-matematico-i" title="Link to this heading">#</a></h2>
+<p><strong>Enunciado.</strong><br />
+Considera la sucesión definida por:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a_0 = \sqrt{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_n = \sqrt{a + a_{n-1}}\)</span></p></li>
+</ul>
+<p>para <span class="math notranslate nohighlight">\(n \ge 1\)</span>, con <span class="math notranslate nohighlight">\(a &gt; 0\)</span>.</p>
+<p>Implementa un programa en Python que:</p>
+<ul>
+<li><p>Pida al usuario un valor de (a) y valide que sea positivo (vuelve a solicitarlo mientras no lo sea).</p></li>
+<li><p>Pida un <strong>error máximo permitido</strong> y úsalo como criterio de parada.</p></li>
+<li><p>Calcule y almacene en una lista los términos de la sucesión hasta que <span class="math notranslate nohighlight">\(|a_n - a_{n-1}| &lt; \text{error}\)</span>.</p></li>
+<li><p>Muestre cuántos términos se han calculado y el valor del último término obtenido.</p></li>
+<li><p>Calcule el límite teórico:</p>
+<div class="math notranslate nohighlight">
+\[
+  l_1 = \tfrac{1}{2}\left(1 + \sqrt{1 + 4a}\right)
+  \]</div>
+<p>y muestre la diferencia con el último término de la lista.</p>
+</li>
+</ul>
+<p>Ejemplo de ejecución:</p>
+<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>Introduce a (&gt;0): 2
+Introduce el error máximo permitido (&gt;0): 1e-6
+Se han calculado 12 términos (incluyendo a0).
+Último término a_11 = 1.999999852931
+Límite teórico l1 = 2.000000000000
+Diferencia |a_n - l1| = 1.470685642e-07
+Error interno |a_n - a_(n-1)| = 4.412056713e-07
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul class="simple">
+<li><p>Usa <code class="docutils literal notranslate"><span class="pre">math.sqrt</span></code> para las raíces y <code class="docutils literal notranslate"><span class="pre">abs</span></code> para la diferencia absoluta.</p></li>
+<li><p>Inicializa la lista con <code class="docutils literal notranslate"><span class="pre">a0</span> <span class="pre">=</span> <span class="pre">math.sqrt(a)</span></code> antes del bucle.</p></li>
+<li><p>Valida que los valores introducidos por el usuario sean positivos.</p></li>
+<li><p>Conviene controlar casos extremos (errores muy pequeños, máximos de iteraciones) para evitar bucles infinitos.</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "merismeris/python-TIF",
+            ref: "mi-cambio",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tema_3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="t3-python-advanced-data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Tipos de datos estructurados</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../tema_4/t4-python-functions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Funciones</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#letra-del-nif-usando-listas-y-diccionarios">1. Letra del NIF usando listas y diccionarios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-basicas-con-listas">2. Operaciones básicas con listas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lista-de-numeros-primos-hasta-un-limite">3. Lista de números primos hasta un límite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-texto">4. Análisis de texto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-palabras-entre-dos-textos">5. Comparación de palabras entre dos textos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#densidad-de-los-planetas-del-sistema-solar">6. Densidad de los planetas del sistema solar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adicional-sucesiones-y-limites-analisis-matematico-i">(Adicional) Sucesiones y límites (Análisis Matemático I)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://produccioncientifica.usal.es/investigadores/57777/detalle">María Navarro Cáceres</a> y <a href="https://produccioncientifica.usal.es/investigadores/148041/detalle">Álvaro Lozano Murciego</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+&copy; 2023-2025; CC-BY-NC-SA 4.0
+<p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
