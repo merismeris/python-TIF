@@ -606,8 +606,12 @@ document.write(`
 </tbody>
 </table>
 </div>
-<p>La diferencia entre estos tipos mutables e inmutables radica en si el valor del objeto puede cambiar después de su creación. Los tipos mutables, como las listas y los diccionarios, permiten modificar su contenido, mientras que los tipos inmutables, como las tuplas y las cadenas de texto, no permiten cambios una vez creados.</p>
 <p>La diferencia entre secuencias, mapas y conjuntos radica en la forma en que almacenan y acceden a los datos. Las secuencias mantienen un orden y permiten el acceso por índice, los mapas utilizan pares clave-valor para almacenar datos, y los conjuntos son colecciones no ordenadas que no permiten elementos duplicados. Todo esto lo veremos en detalle en las siguientes secciones.</p>
+<p>Por otro lado, en Python, los tipos de datos (y en general, los objetos), pueden dividirse en:</p>
+<ul class="simple">
+<li><p><strong>Inmutables</strong>: Una vez creados, su valor no puede modificarse. Para “modificar” un objeto inmutable, Python crea un nuevo objeto en memoria. Ejemplos: <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">frozenset</span></code>.</p></li>
+<li><p><strong>Mutables</strong>: Su contenido puede modificarse después de su creación sin crear un nuevo objeto. Ejemplos: <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>.</p></li>
+</ul>
 <section id="listas-list">
 <h2>Listas (<code class="docutils literal notranslate"><span class="pre">list</span></code>)<a class="headerlink" href="#listas-list" title="Link to this heading">#</a></h2>
 <p>Las listas agrupan datos. Muchos lenguajes tienen arrays (veremos esos en python más adelante). Pero a diferencia de los arrays en la mayoría de los lenguajes, las listas pueden contener datos de diferentes tipos — no necesitan ser homogéneas. Los datos pueden ser una mezcla de enteros, números en punto flotante o complejos, cadenas, u otros objetos (incluyendo otras listas).</p>

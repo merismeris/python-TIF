@@ -497,7 +497,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-de-argumentos-en-python">Paso de argumentos en Python</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutabilidad-e-inmutabilidad">Mutabilidad e inmutabilidad</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-paso-de-argumentos-en-python">Modelo de paso de argumentos en Python</a></li>
 </ul>
 </li>
@@ -603,29 +602,44 @@ Recibido el valor i = 5
 </div>
 <div class="note admonition">
 <p class="admonition-title">Nota</p>
-<p>Cada función trabaja dentro de su propio <strong>ámbito</strong> (<em>scope</em>). Cuando Python necesita un nombre dentro de una función, lo busca primero en ese ámbito; si no aparece, revisa los ámbitos que envuelven a la función, luego el módulo actual y, por último, los nombres incorporados del lenguaje. El lugar desde el que llamamos a la función no forma parte de esta cadena de búsqueda.</p>
+<p>Cada función trabaja dentro de su propio <strong>ámbito</strong> (<em>scope</em>). Cuando Python necesita un nombre dentro de una función, lo busca primero en ese ámbito; si no aparece, revisa los ámbitos que envuelven a la función (funciones anidadas), luego el módulo actual y, por último, los nombres incorporados del lenguaje. El lugar desde el que llamamos a la función no forma parte de esta cadena de búsqueda.</p>
 <p>Para mantener el código claro, intenta que la función reciba todo lo que necesita a través de parámetros o cree sus propias variables. Depender de variables externas (variables globales) debe ser la excepción, no la norma.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">saludar</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hola, </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Busca &#39;nombre&#39;</span>
+
+<span class="c1"># Contexto de la llamada #1</span>
+<span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;María&quot;</span>
+<span class="n">saludar</span><span class="p">()</span>  <span class="c1"># Imprime: Hola, María ✅</span>
+
+<span class="c1"># Contexto de la llamada #2</span>
+<span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Pedro&quot;</span>
+<span class="n">saludar</span><span class="p">()</span>  <span class="c1"># Imprime: Hola, Pedro ✅</span>
+
+<span class="c1"># Pero esto NO funcionaría:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">otro_saludar</span><span class="p">():</span>
+    <span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Ana&quot;</span>
+    <span class="n">saludar</span><span class="p">()</span>  <span class="c1"># ¿Usa la &#39;nombre&#39; local de otro_saludar()?</span>
+
+<span class="n">otro_saludar</span><span class="p">()</span>  <span class="c1"># Imprime: Hola, Pedro (NO Ana)</span>
+                <span class="c1"># Porque saludar() NO busca en otro_saludar()</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
 <section id="paso-de-argumentos-en-python">
 <h2>Paso de argumentos en Python<a class="headerlink" href="#paso-de-argumentos-en-python" title="Link to this heading">#</a></h2>
-<section id="mutabilidad-e-inmutabilidad">
-<h3>Mutabilidad e inmutabilidad<a class="headerlink" href="#mutabilidad-e-inmutabilidad" title="Link to this heading">#</a></h3>
-<p>Antes de entender cómo Python pasa argumentos a las funciones, es fundamental comprender el concepto de mutabilidad.</p>
-<p>En Python, los objetos pueden ser:</p>
-<ul class="simple">
-<li><p><strong>Inmutables</strong>: Una vez creados, su valor no puede modificarse. Si intentamos “modificar” un objeto inmutable, Python crea un nuevo objeto en memoria. Ejemplos: <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">frozenset</span></code>.</p></li>
-<li><p><strong>Mutables</strong>: Su contenido puede modificarse después de su creación sin crear un nuevo objeto. Ejemplos: <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>.</p></li>
-</ul>
-<p>Esta distinción es crucial porque afecta al comportamiento de las funciones cuando reciben argumentos.</p>
-</section>
+<p>Tal como vimos en el tema 3, en Python, los objetos pueden ser mutables, si podemos modificar su valor después de ser creados, e inmutables, si no podemos hacerlo. Esta distinción es crucial porque afecta al comportamiento de las funciones cuando reciben argumentos.</p>
 <section id="modelo-de-paso-de-argumentos-en-python">
 <h3>Modelo de paso de argumentos en Python<a class="headerlink" href="#modelo-de-paso-de-argumentos-en-python" title="Link to this heading">#</a></h3>
 <p>Python utiliza un modelo de <strong>paso por asignación de objeto</strong> (también llamado “paso por objeto” o “paso por compartición”). Esto significa que:</p>
 <ol class="arabic simple">
 <li><p>Cuando se llama a una función, Python pasa <strong>referencias a los objetos</strong>, no copias de los valores ni referencias a las variables.</p></li>
-<li><p>El parámetro de la función se convierte en un alias (otro nombre) que apunta al mismo objeto en memoria.</p></li>
+<li><p>El argumento de la función se convierte en un alias (otro nombre) que apunta al mismo objeto en memoria.</p></li>
 </ol>
 <p>El comportamiento observable depende de si el objeto es mutable o inmutable:</p>
 <ul class="simple">
@@ -675,17 +689,11 @@ Después de llamar: 5
 </div>
 <div class="important admonition">
 <p class="admonition-title">Importante</p>
-<p>Cuando se pasa un argumento a una función en Python, lo que realmente se pasa es una <strong>referencia al objeto</strong>, no una copia del objeto. Esto significa que tanto el argumento original como el parámetro de la función apuntan al mismo objeto en memoria.</p>
-<p><strong>Implicaciones prácticas:</strong></p>
-<ol class="arabic simple">
-<li><p><strong>Con objetos mutables (listas, diccionarios, conjuntos)</strong>: Si se modifica el contenido del objeto dentro de la función, estos cambios se reflejarán fuera de la función, ya que ambos contextos están trabajando con el mismo objeto en memoria.</p></li>
-<li><p><strong>Con objetos inmutables (enteros, cadenas, tuplas)</strong>: Si se intenta “modificar” el objeto dentro de la función, Python crea un nuevo objeto, dejando el original intacto.</p></li>
-</ol>
 <p><strong>Estrategias para evitar modificaciones no deseadas:</strong></p>
 <ul class="simple">
 <li><p>Hacer una copia explícita del objeto antes de modificarlo:</p>
 <ul>
-<li><p>Para listas: <code class="docutils literal notranslate"><span class="pre">lista_copia</span> <span class="pre">=</span> <span class="pre">lista.copy()</span></code> o <code class="docutils literal notranslate"><span class="pre">lista_copia</span> <span class="pre">=</span> <span class="pre">lista[:]</span></code></p></li>
+<li><p>Para listas: <code class="docutils literal notranslate"><span class="pre">lista_copia</span> <span class="pre">=</span> <span class="pre">lista.copy()</span></code></p></li>
 <li><p>Para diccionarios: <code class="docutils literal notranslate"><span class="pre">dict_copia</span> <span class="pre">=</span> <span class="pre">dict_original.copy()</span></code></p></li>
 <li><p>Para copias profundas de objetos anidados: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">copy;</span> <span class="pre">copia</span> <span class="pre">=</span> <span class="pre">copy.deepcopy(objeto)</span></code></p></li>
 </ul>
@@ -720,12 +728,14 @@ Después de llamar: 5
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="n">my_sin</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="n">in_degrees</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>                    
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="n">my_sin</span><span class="p">(</span><span class="n">theta</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">in_degrees</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#my_sin(math.pi/4), my_sin(theta=45, in_degrees=True)     </span>
+<span class="c1">#my_sin(math.pi/4), my_sin(in_degrees=True, theta=45)                 </span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.7071067811865476, 0.7071067811865476)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.7071067811865475, 0.7071067811865475)
 </pre></div>
 </div>
 </div>
@@ -982,7 +992,6 @@ class filter(object)
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-de-argumentos-en-python">Paso de argumentos en Python</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutabilidad-e-inmutabilidad">Mutabilidad e inmutabilidad</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-paso-de-argumentos-en-python">Modelo de paso de argumentos en Python</a></li>
 </ul>
 </li>
