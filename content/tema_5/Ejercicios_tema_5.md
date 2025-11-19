@@ -91,9 +91,9 @@ Matriz A
 
 Trabajando con Numpy:
 
-1. Obtén la **submatriz en verde** indicada en el enunciado original (ver figura de la matriz coloreada).  
-2. Obtén la **submatriz en rojo**.  
-3. Obtén la **submatriz en azul**.  
+1. Obtén la **submatriz en rojo**.  
+2. Obtén la **submatriz en azul**.  
+3. Obtén la **submatriz en verde** indicada en el enunciado original (ver figura de la matriz coloreada). Cuidado en este caso, ya que las filas y columnas no son consecutivas.
 4. Calcula el resultado de **multiplicar** la matriz azul por la matriz verde (en ese orden, usando producto matricial).  
 5. Obtén la **exponencial** de los elementos de la matriz roja (función $e^x$ elemento a elemento).  
 6. Calcula el **valor mayor de la primera fila** de $A$ y el **valor menor de la tercera columna** de $A$.
