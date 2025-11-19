@@ -30,6 +30,7 @@ parts:
       sections:
       - file: tema_5/t5-python-numpy.ipynb
       - file: tema_5/t5-python-matplotlib.ipynb
+    - file: tema_5/Ejercicios_tema_5
   - caption: Tema 6 Pandas y manejo de ficheros
     chapters:
     - file: tema_6/t6-python-pandas.ipynb
