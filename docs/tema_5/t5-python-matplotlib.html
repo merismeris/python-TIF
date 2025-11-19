@@ -76,7 +76,7 @@
     <link rel="canonical" href="/python-TIF/tema_5/t5-python-matplotlib.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pandas" href="../tema_6/t6-python-pandas.html" />
+    <link rel="next" title="Tema 5 — Numpy y Matplotlib (Hoja de ejercicios)" href="Ejercicios_tema_5.html" />
     <link rel="prev" title="NumPy" href="t5-python-numpy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -231,6 +231,7 @@
 
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="Ejercicios_tema_5.html">Tema 5 — Numpy y Matplotlib (Hoja de ejercicios)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 6 Pandas y manejo de ficheros</span></p>
 <ul class="nav bd-sidenav">
@@ -560,15 +561,20 @@ document.write(`
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> es el paquete completo</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> es un módulo dentro de matplotlib que proporciona acceso sencillo a las rutinas de trazado</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pylab</span></code> combina pyplot y numpy en un único namespace para dar una interfaz tipo MatLab. Deberías evitarlo — podría eliminarse en el futuro.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pylab</span></code> combina pyplot y numpy en un único namespace para dar una interfaz tipo MATLAB. Deberías evitarlo — podría eliminarse en el futuro.</p></li>
 </ul>
 <p>Hay varios módulos que amplían su comportamiento, p.ej. <code class="docutils literal notranslate"><span class="pre">basemap</span></code> para trazar en una esfera, <code class="docutils literal notranslate"><span class="pre">mplot3d</span></code> para superficies 3-D.</p>
 </section>
 <section id="anatomia-de-una-figura">
 <h3>Anatomía de una figura<a class="headerlink" href="#anatomia-de-una-figura" title="Link to this heading">#</a></h3>
-<p>Las figuras son el objeto de más alto nivel y pueden incluir múltiples ejes
-<img alt="" src="../_images/anatomy1.png" /></p>
-<p>(figura de: <a class="reference external" href="http://matplotlib.org/faq/usage_faq.html#parts-of-a-figure">http://matplotlib.org/faq/usage_faq.html#parts-of-a-figure</a> )</p>
+<p>Las figuras son el objeto de más alto nivel y pueden incluir múltiples ejes:</p>
+<figure class="align-default" id="fig-anatomy-figure">
+<a class="reference internal image-reference" href="../_images/anatomy1.png"><img alt="Anatomía de una figura" src="../_images/anatomy1.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Anatomía de una figura de Matplotlib. Una figura puede contener múltiples ejes (subgráficas), cada uno con sus propios títulos, etiquetas, líneas de cuadrícula, etc. <a class="reference external" href="http://matplotlib.org/faq/usage_faq.html#parts-of-a-figure">Fuente de la imagen</a></span><a class="headerlink" href="#fig-anatomy-figure" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 </section>
@@ -583,13 +589,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x117951240&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2176f799990&gt;]
 </pre></div>
 </div>
-<img alt="../_images/e1d963c8ffdc65da7f2356a671e6f6d4089a16d407dfb8fd67b6a83d1535de63.png" src="../_images/e1d963c8ffdc65da7f2356a671e6f6d4089a16d407dfb8fd67b6a83d1535de63.png" />
+<img alt="../_images/4b391cceb99cc1dfe72b1c0c0a00366b4ca600b0c2bd8a730d104eed4a2a5761.png" src="../_images/4b391cceb99cc1dfe72b1c0c0a00366b4ca600b0c2bd8a730d104eed4a2a5761.png" />
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">plot()</span></code> es el comando más básico. No obstante, es una buena práctica usar <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code> para tener acceso al objeto  <code class="docutils literal notranslate"><span class="pre">Figure</span></code> y el objeto <code class="docutils literal notranslate"><span class="pre">Axis</span></code>, y poder modificarlos. También podemos utilizar <code class="docutils literal notranslate"><span class="pre">figure()</span></code> para obtener acceso al objeto <code class="docutils literal notranslate"><span class="pre">Figure</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">plot()</span></code> es el comando más básico. No obstante, es una buena práctica usar <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code> para tener acceso al objeto  <code class="docutils literal notranslate"><span class="pre">Figure</span></code> y el objeto <code class="docutils literal notranslate"><span class="pre">Axes</span></code>, y poder modificarlos. También podemos utilizar <code class="docutils literal notranslate"><span class="pre">figure()</span></code> para obtener acceso al objeto <code class="docutils literal notranslate"><span class="pre">Figure</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -599,10 +605,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x117acaaa0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x21770a99190&gt;]
 </pre></div>
 </div>
-<img alt="../_images/e1d963c8ffdc65da7f2356a671e6f6d4089a16d407dfb8fd67b6a83d1535de63.png" src="../_images/e1d963c8ffdc65da7f2356a671e6f6d4089a16d407dfb8fd67b6a83d1535de63.png" />
+<img alt="../_images/4b391cceb99cc1dfe72b1c0c0a00366b4ca600b0c2bd8a730d104eed4a2a5761.png" src="../_images/4b391cceb99cc1dfe72b1c0c0a00366b4ca600b0c2bd8a730d104eed4a2a5761.png" />
 </div>
 </div>
 <p>Con matplotlib, podemos modificar todas las partes de la gráfica: ejes, etiquetas, leyendas, etc. Las etiquetas de los ejes, los títulos o las leyendas pueden incluir notación LaTeX para incluir fórmulas matemáticas.</p>
@@ -627,7 +633,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 6.283185307179586)
 </pre></div>
 </div>
-<img alt="../_images/13848505b1eac60d066e7f39245c5ea6d3830278a7fca31e0bbd159a3ceabf41.png" src="../_images/13848505b1eac60d066e7f39245c5ea6d3830278a7fca31e0bbd159a3ceabf41.png" />
+<img alt="../_images/8740c84f45baff1031de859161b1615cb655a0253eca6f65ae2ec973a4e2b34b.png" src="../_images/8740c84f45baff1031de859161b1615cb655a0253eca6f65ae2ec973a4e2b34b.png" />
 </div>
 </div>
 <p>También podemos usar símbolos en lugar de líneas con facilidad — y etiquetarlos con leyendas.</p>
@@ -643,15 +649,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x117c7e3e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x21772dc8650&gt;
 </pre></div>
 </div>
-<img alt="../_images/dcf11d8fa7455909dde9ce9ded91817d7274d3e0da04785fd398519ce34062a8.png" src="../_images/dcf11d8fa7455909dde9ce9ded91817d7274d3e0da04785fd398519ce34062a8.png" />
+<img alt="../_images/50079b5a10377769b10b9bafad6ddbacdde1d75701b35d37faac695f4639c477.png" src="../_images/50079b5a10377769b10b9bafad6ddbacdde1d75701b35d37faac695f4639c477.png" />
 </div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Igual que pasaba en MatLab, podemos especificar un estilo básico usando una “format string” (ver <a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.plot.html">https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.plot.html</a>)</p>
+<p>Igual que pasaba en MATLAB, podemos especificar un estilo básico usando una “format string” (ver <a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.plot.html">https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.plot.html</a>)</p>
 <p>Tiene la forma <code class="docutils literal notranslate"><span class="pre">'[marcador][línea][color]'</span></code></p>
 </div>
 <p>Aquí podemos cambiar el estilo de línea y el grosor.</p>
@@ -664,10 +670,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x117d5a9b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x21772e4ccd0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/3bdb476baaf1b1d578cf9d58567ee8983b832f5e264a12e191f9dbb28b0d4feb.png" src="../_images/3bdb476baaf1b1d578cf9d58567ee8983b832f5e264a12e191f9dbb28b0d4feb.png" />
+<img alt="../_images/8bed2445d57545d1e178501f092f200cf05482cc4628bf5f3fd3473b7c72ba3e.png" src="../_images/8bed2445d57545d1e178501f092f200cf05482cc4628bf5f3fd3473b7c72ba3e.png" />
 </div>
 </div>
 <p>También existen estilos predefinidos que pueden usarse. Para ello, debes seleccionar el estilo al crear la figura para que tenga efecto.</p>
@@ -727,7 +733,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 6.283185307179586)
 </pre></div>
 </div>
-<img alt="../_images/c59de0ab51e69c113e502d0493db2945df45c803f03404e2666dbbd0b222d71b.png" src="../_images/c59de0ab51e69c113e502d0493db2945df45c803f03404e2666dbbd0b222d71b.png" />
+<img alt="../_images/64bb8e83479a054ae03c217088aee5493697b5e363c2cf3238ab7a4c508bcd8b.png" src="../_images/64bb8e83479a054ae03c217088aee5493697b5e363c2cf3238ab7a4c508bcd8b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -737,7 +743,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Para una descripción completa de los campos a modificar de las gráficas, así como de todas las opciones, se puede consultar la documentación oficial de MatPlotLib <a class="reference external" href="https://matplotlib.org/stable/api/">https://matplotlib.org/stable/api/</a> Aquí nos hemos limitado a ilustrar algunos ejemplos.</p>
+<p>Para una descripción completa de los campos a modificar de las gráficas, así como de todas las opciones, se puede consultar la documentación oficial de Matplotlib <a class="reference external" href="https://matplotlib.org/stable/api/">https://matplotlib.org/stable/api/</a> Aquí nos hemos limitado a ilustrar algunos ejemplos.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="multiples-plots">
 <h1>Múltiples plots<a class="headerlink" href="#multiples-plots" title="Link to this heading">#</a></h1>
@@ -769,7 +775,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6e88d9a6615dd17555325af5c7f8e3c37bfe42ede2a5269b13945b247704fcc2.png" src="../_images/6e88d9a6615dd17555325af5c7f8e3c37bfe42ede2a5269b13945b247704fcc2.png" />
+<img alt="../_images/33b8f6eee6091bdf79c7b040be095e766db98149bef0a8b736227bcd4c21d8d6.png" src="../_images/33b8f6eee6091bdf79c7b040be095e766db98149bef0a8b736227bcd4c21d8d6.png" />
 </div>
 </div>
 </section>
@@ -791,7 +797,7 @@ document.write(`
 <p>Vamos a ver a continuación algunos ejemplos simples</p>
 <section id="meshgrids">
 <h2>Meshgrids<a class="headerlink" href="#meshgrids" title="Link to this heading">#</a></h2>
-<p>Los conjuntos de datos 2-d consisten en pares (x, y) y un valor asociado a ese punto. Aquí creamos una gaussiana 2-d, usando <code class="docutils literal notranslate"><span class="pre">meshgrid()</span></code> para definir una rejilla rectangular de puntos.</p>
+<p>Los conjuntos de datos 2-D consisten en pares (x, y) y un valor asociado a ese punto. Aquí creamos una gaussiana 2-D, usando <code class="docutils literal notranslate"><span class="pre">meshgrid()</span></code> para definir una rejilla rectangular de puntos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
@@ -821,10 +827,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x117f0f490&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x217731aa090&gt;
 </pre></div>
 </div>
-<img alt="../_images/42d4fbc0433ea1eb5acb9568fb68a3ebc3db666770dace4c699bf7ab172c0e95.png" src="../_images/42d4fbc0433ea1eb5acb9568fb68a3ebc3db666770dace4c699bf7ab172c0e95.png" />
+<img alt="../_images/c1d1e4d25b39a7c110993559c7e8f8422f2ed279f58560d695eda836e381569f.png" src="../_images/c1d1e4d25b39a7c110993559c7e8f8422f2ed279f58560d695eda836e381569f.png" />
 </div>
 </div>
 </section>
@@ -844,7 +850,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(0.0), np.float64(99.0), np.float64(0.0), np.float64(99.0))
 </pre></div>
 </div>
-<img alt="../_images/7e8f40ee45a96b3bd372f3b4d9e96905389099c58b018760d415a97bfc09d758.png" src="../_images/7e8f40ee45a96b3bd372f3b4d9e96905389099c58b018760d415a97bfc09d758.png" />
+<img alt="../_images/8854cef96972df9b61040623479c9cad987c7e024ed815616cebb157fb328000.png" src="../_images/8854cef96972df9b61040623479c9cad987c7e024ed815616cebb157fb328000.png" />
 </div>
 </div>
 <p>Los contornos pueden etiquetarse usando <code class="docutils literal notranslate"><span class="pre">ax.clabel()</span></code>.</p>
@@ -885,7 +891,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ErrorbarContainer object of 3 artists&gt;
 </pre></div>
 </div>
-<img alt="../_images/9e5b2323a9680a1eb46d9b765a398a64b8cf40e14965f3869f532dbf45ffa711.png" src="../_images/9e5b2323a9680a1eb46d9b765a398a64b8cf40e14965f3869f532dbf45ffa711.png" />
+<img alt="../_images/1846af398f4ba2ded0c35cbbee07acba43acdda6be2abebc299dba2926bd95ec.png" src="../_images/1846af398f4ba2ded0c35cbbee07acba43acdda6be2abebc299dba2926bd95ec.png" />
 </div>
 </div>
 </section>
@@ -914,7 +920,7 @@ $<span class="math notranslate nohighlight">\(y(x) = \frac{1}{\sigma \sqrt{2\pi}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;x&#39;)
 </pre></div>
 </div>
-<img alt="../_images/265a32a7c8c43ade5e5c51d065f2aef048f92fd68c2361a13917e6bbe1f78100.png" src="../_images/265a32a7c8c43ade5e5c51d065f2aef048f92fd68c2361a13917e6bbe1f78100.png" />
+<img alt="../_images/6ff0d29b4e05ffcd260494a960dde84f0e7de68a30309883a9e331ca403f753a.png" src="../_images/6ff0d29b4e05ffcd260494a960dde84f0e7de68a30309883a9e331ca403f753a.png" />
 </div>
 </div>
 </section>
@@ -941,7 +947,7 @@ $<span class="math notranslate nohighlight">\(y(x) = \frac{1}{\sigma \sqrt{2\pi}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(1.5707963267948966, 1.0, &#39;maximum&#39;)
 </pre></div>
 </div>
-<img alt="../_images/32dda5963713bc2f303b5ea3d61bfc0926d03f36312f442823e1325b78fb35fb.png" src="../_images/32dda5963713bc2f303b5ea3d61bfc0926d03f36312f442823e1325b78fb35fb.png" />
+<img alt="../_images/dbe31e36762693254bafc06bb53e5f73aaa9246f59f73e333043188e328aba7b.png" src="../_images/dbe31e36762693254bafc06bb53e5f73aaa9246f59f73e333043188e328aba7b.png" />
 </div>
 </div>
 <p>También podemos desactivar las líneas superior y derecha.</p>
@@ -956,7 +962,7 @@ $<span class="math notranslate nohighlight">\(y(x) = \frac{1}{\sigma \sqrt{2\pi}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/46ff7d65c4f7656b1ef39876d6833bb060efa6770e93fa3bddf48bcc0fd9d2ac.png" src="../_images/46ff7d65c4f7656b1ef39876d6833bb060efa6770e93fa3bddf48bcc0fd9d2ac.png" />
+<img alt="../_images/8a2b5015aece6ea2630d14e51d2f33662495f140379b2d1ed46b65545c087cd4.png" src="../_images/8a2b5015aece6ea2630d14e51d2f33662495f140379b2d1ed46b65545c087cd4.png" />
 </div>
 </div>
 <p>Las anotaciones con una flecha también son posibles.</p>
@@ -987,7 +993,7 @@ $<span class="math notranslate nohighlight">\(y(x) = \frac{1}{\sigma \sqrt{2\pi}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.05, 0.05, &#39;a polar annotation&#39;)
 </pre></div>
 </div>
-<img alt="../_images/b7be05f24a5c832e5b494c26a2ac4a5de4e905017de91d934df8c31e575e999c.png" src="../_images/b7be05f24a5c832e5b494c26a2ac4a5de4e905017de91d934df8c31e575e999c.png" />
+<img alt="../_images/f79fc848096f20d63f2866c1441ab5c78cb4cb15464d4442320d43a4bb245540.png" src="../_images/f79fc848096f20d63f2866c1441ab5c78cb4cb15464d4442320d43a4bb245540.png" />
 </div>
 </div>
 </section>
@@ -1025,37 +1031,55 @@ $<span class="math notranslate nohighlight">\(y(x) = \frac{1}{\sigma \sqrt{2\pi}
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\rho$&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$u&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$p&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">5</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">5</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$T&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$u$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$p$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">5</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">5</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$T$&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1185ed7e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x21770afaf90&gt;
 </pre></div>
 </div>
-<img alt="../_images/90b4d01de5a86ee4711745de24f5644434ca3a379ccc7e85347d54d1f6217832.png" src="../_images/90b4d01de5a86ee4711745de24f5644434ca3a379ccc7e85347d54d1f6217832.png" />
+<img alt="../_images/b375ac323cb17e3175a0498e10ef670d56a538d19e82bd9a253a8fdc5492cebc.png" src="../_images/b375ac323cb17e3175a0498e10ef670d56a538d19e82bd9a253a8fdc5492cebc.png" />
 </div>
 </div>
 <p>Si hacemos cambios en los datos, podemos guardarlos utilizando <code class="docutils literal notranslate"><span class="pre">np.savetxt('nombrefichero.ext',</span> <span class="pre">data,</span> <span class="pre">delimiter=',')</span></code></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="diversion-final">
 <h1>Diversión final<a class="headerlink" href="#diversion-final" title="Link to this heading">#</a></h1>
-<p>Si quieres que las gráficas tengan un aspecto dibujado a mano al estilo xkcd, vuelve a ejecutar estos ejemplos después de hacer
-plt.xkcd()</p>
+<p>Si quieres que las gráficas tengan un aspecto dibujado a mano al estilo xkcd, vuelve a ejecutar estos ejemplos después de hacer <code class="docutils literal notranslate"><span class="pre">plt.xkcd()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">xkcd</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Activar modo xkcd</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xkcd</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;contextlib.ExitStack at 0x1186858d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;contextlib.ExitStack at 0x217733b0710&gt;
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica de ejemplo en estilo XKCD</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\rho$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$u$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$p$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">5</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">5</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$T$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcdefaults</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/bb96a6e53590e2941a80e669ec29ec7aa135fc38035244eb69af4654344e2e89.png" src="../_images/bb96a6e53590e2941a80e669ec29ec7aa135fc38035244eb69af4654344e2e89.png" />
 </div>
 </div>
 </section>
@@ -1100,11 +1124,11 @@ plt.xkcd()</p>
       </div>
     </a>
     <a class="right-next"
-       href="../tema_6/t6-python-pandas.html"
+       href="Ejercicios_tema_5.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pandas</p>
+        <p class="prev-next-title">Tema 5 — Numpy y Matplotlib (Hoja de ejercicios)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
