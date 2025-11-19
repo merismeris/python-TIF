@@ -1,0 +1,984 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tema 5 — Numpy y Matplotlib (Hoja de ejercicios) &#8212; Introducción a Python Técnicas Informáticas en Física</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=8832aa6a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script src="../_static/Accessibility.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tema_5/Ejercicios_tema_5';</script>
+    <link rel="canonical" href="/python-TIF/tema_5/Ejercicios_tema_5.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pandas" href="../tema_6/t6-python-pandas.html" />
+    <link rel="prev" title="Matplotlib" href="t5-python-matplotlib.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../Home.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Introducción a Python Técnicas Informáticas en Física</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Home.html">
+                    ¿Qué es Python?
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Conociendo Python y el editor (IDE)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_0/using.html">Primeros pasos con VS Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_0/resources.html">Recursos bibliográficos de Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 1 Conceptos básicos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_1/t1-python-basics.html">Primeros pasos con Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_1/t1-python-datatypes.html">Tipos de datos básicos y operadores en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_1/t1-python-basicIO.html">Entrada y salida de datos (por consola)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_1/Ejercicios_tema_1.html">Tema 1 — Introducción a Python (Hoja de ejercicios)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 Estructuras de control de flujo</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_2/t2-python-control-flow.html">Control de flujo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_2/Ejercicios_tema_2.html">Tema 2 — Estructuras selectivas y repetitivas (Hoja de ejercicios)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 3 Tipos de datos en Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_3/t3-python-classes.html">Introducción a la Programación Orientada a Objetos en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_3/t3-python-advanced-data.html">Tipos de datos estructurados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_3/Ejercicios_tema_3.html">Tema 3 — Tipos de datos y estructuras de datos en Python (Hoja de ejercicios)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 Funciones, métodos y módulos en Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_4/t4-python-functions.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema_4/Ejercicios_tema_4.html">Tema 4 — Funciones en Python y módulos externos (Hoja de ejercicios)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 Representación gráfica y cálculo científico</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="t5-python-calculo.html">Cálculo Científico y Representación Gráfica con Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="t5-python-numpy.html">NumPy</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="t5-python-matplotlib.html">Matplotlib</a></li>
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tema 5 — Numpy y Matplotlib (Hoja de ejercicios)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 6 Pandas y manejo de ficheros</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema_6/t6-python-pandas.html">Pandas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Material adicional de Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contenido_extra/misc.html">Algunos conceptos y material adicionales</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-classes.html">Pequeña introducción a la creación de clases en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-exceptions.html">Excepciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contenido_extra/w4-python-ad-functions.html">Funciones lambda (funciones anónimas)</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acerca de este libro</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">Acerca de este libro</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/merismeris/python-TIF" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/merismeris/python-TIF/issues/new?title=Issue%20on%20page%20%2Ftema_5/Ejercicios_tema_5.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tema_5/Ejercicios_tema_5.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tema 5 — Numpy y Matplotlib (Hoja de ejercicios)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enunciados-basicos">Enunciados básicos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays-funciones-y-representacion-con-matplotlib">1. Arrays, funciones y representación con Matplotlib</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submatrices-y-operaciones-matriciales-con-numpy">2. Submatrices y operaciones matriciales con Numpy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ajuste-lineal-y-cuadratico-con-np-polyfit">3. Ajuste lineal y cuadrático con <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-datos-meteorologicos-con-np-genfromtxt">4. Análisis de datos meteorológicos con <code class="docutils literal notranslate"><span class="pre">np.genfromtxt</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enunciados-adicionales">Enunciados adicionales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-la-serie-de-gregory-leibniz-para">5. Visualización de la serie de Gregory-Leibniz para π</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-del-metodo-de-monte-carlo-para">6. Visualización del método de Monte Carlo para π</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendaciones-generales">Recomendaciones generales</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tema-5-numpy-y-matplotlib-hoja-de-ejercicios">
+<h1>Tema 5 — Numpy y Matplotlib (Hoja de ejercicios)<a class="headerlink" href="#tema-5-numpy-y-matplotlib-hoja-de-ejercicios" title="Link to this heading">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Objetivos de aprendizaje</p>
+<ul class="simple">
+<li><p>Trabajar con <strong>arrays N-dimensionales</strong> de Numpy (<code class="docutils literal notranslate"><span class="pre">ndarray</span></code>): creación, indexación y operaciones.</p></li>
+<li><p>Aplicar <strong>funciones matemáticas</strong> de Numpy de forma vectorizada sobre arrays.</p></li>
+<li><p>Realizar <strong>operaciones matriciales</strong> (submatrices, productos, exponenciales elemento a elemento).</p></li>
+<li><p>Representar datos con <strong>Matplotlib</strong>: títulos, etiquetas, leyendas, estilos y <code class="docutils literal notranslate"><span class="pre">subplot</span></code>.</p></li>
+<li><p>Cargar y analizar datos desde <strong>ficheros CSV</strong> con <code class="docutils literal notranslate"><span class="pre">np.genfromtxt</span></code> (más adelantes veremos <code class="docutils literal notranslate"><span class="pre">pandas</span></code> para análisis de datos).</p></li>
+<li><p>Visualizar la <strong>convergencia de métodos numéricos</strong> (serie de Gregory-Leibniz, Monte Carlo) para el cálculo de π.</p></li>
+</ul>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Requisitos previos</p>
+<ul class="simple">
+<li><p>Python 3.10+ y VSCode con la extensión de Python.</p></li>
+<li><p>Haber trabajado con tipos básicos, listas y bucles en Python.</p></li>
+<li><p>Tener instaladas las bibliotecas <code class="docutils literal notranslate"><span class="pre">numpy</span></code> y <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> (por ejemplo mediante <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span> <span class="pre">matplotlib</span></code>).</p></li>
+<li><p>Conocer los ejercicios del <strong>Tema 3</strong> sobre el cálculo de π (serie de Gregory-Leibniz y método de Monte Carlo).</p></li>
+</ul>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">Contenidos del tema</p>
+<ul class="simple">
+<li><p>Creación de arrays con <code class="docutils literal notranslate"><span class="pre">np.array</span></code>, <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> y lectura de datos con <code class="docutils literal notranslate"><span class="pre">np.genfromtxt</span></code>.</p></li>
+<li><p>Indexación, slicing y selección de <strong>submatrices</strong>; funciones agregadas (<code class="docutils literal notranslate"><span class="pre">np.max</span></code>, <code class="docutils literal notranslate"><span class="pre">np.min</span></code>, <code class="docutils literal notranslate"><span class="pre">np.exp</span></code>, …).</p></li>
+<li><p>Ajuste de datos con <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> y evaluación con <code class="docutils literal notranslate"><span class="pre">np.polyval</span></code>.</p></li>
+<li><p>Representación de datos con <strong>Matplotlib</strong>: <code class="docutils literal notranslate"><span class="pre">plot</span></code>, <code class="docutils literal notranslate"><span class="pre">scatter</span></code>, estilos, leyendas y <code class="docutils literal notranslate"><span class="pre">subplot</span></code>.</p></li>
+<li><p>Integración de Numpy y Matplotlib para analizar datos científicos (meteorología, métodos numéricos, etc.).</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<section id="enunciados-basicos">
+<h2>Enunciados básicos<a class="headerlink" href="#enunciados-basicos" title="Link to this heading">#</a></h2>
+<section id="arrays-funciones-y-representacion-con-matplotlib">
+<h3>1. Arrays, funciones y representación con Matplotlib<a class="headerlink" href="#arrays-funciones-y-representacion-con-matplotlib" title="Link to this heading">#</a></h3>
+<p><strong>Enunciado.</strong><br />
+Define un array de <strong>200 elementos</strong> entre los valores -50 y 50 utilizando <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code>.<br />
+Calcula el valor de la función</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \log(x) \cdot \sin(x)
+\]</div>
+<figure class="align-default" id="fig-simple-plot">
+<a class="reference internal image-reference" href="../_images/ejercicio1_tema5.png"><img alt="Representación de f(x)=log(x)*sin(x)" src="../_images/ejercicio1_tema5.png" style="width: 50%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Plot resultante</span><a class="headerlink" href="#fig-simple-plot" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>para todos los valores del array. Posteriormente:</p>
+<ol class="arabic simple">
+<li><p><strong>Representa</strong> dichos valores con un <code class="docutils literal notranslate"><span class="pre">plot</span></code>.</p></li>
+<li><p>Observa qué ocurre con los valores tras el cálculo (especialmente para los valores de <code class="docutils literal notranslate"><span class="pre">x</span></code> en los que <code class="docutils literal notranslate"><span class="pre">log(x)</span></code> no está definido).</p></li>
+<li><p>Responde: ¿se representan correctamente todos los puntos con <code class="docutils literal notranslate"><span class="pre">plot</span></code>? ¿Aparecen huecos o advertencias?</p></li>
+<li><p>Da <strong>título</strong> a la gráfica, añade <strong>etiquetas</strong> a los ejes, limita el eje x a los valores mínimo y máximo del array, añade una <strong>leyenda</strong> y representa los valores con <strong>asteriscos verdes</strong> y <strong>línea discontinua</strong>.</p></li>
+</ol>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul>
+<li><p>Importaciones típicas:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Generar 200 puntos entre -50 y 50:<br />
+<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">np.linspace(-50,</span> <span class="pre">50,</span> <span class="pre">200)</span></code></p></li>
+<li><p>La función logarítmica de Numpy es <code class="docutils literal notranslate"><span class="pre">np.log</span></code>. Para valores negativos devolverá <code class="docutils literal notranslate"><span class="pre">nan</span></code> y puede lanzar <em>warnings</em>.</p></li>
+<li><p>Estilos de representación, por ejemplo:<br />
+<code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y,</span> <span class="pre">'g*--',</span> <span class="pre">label=&quot;f(x)</span> <span class="pre">=</span> <span class="pre">log(x)*sin(x)&quot;)</span></code></p></li>
+<li><p>No olvides <code class="docutils literal notranslate"><span class="pre">plt.title</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.xlabel</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.ylabel</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.xlim</span></code> y <code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code>.</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="submatrices-y-operaciones-matriciales-con-numpy">
+<h3>2. Submatrices y operaciones matriciales con Numpy<a class="headerlink" href="#submatrices-y-operaciones-matriciales-con-numpy" title="Link to this heading">#</a></h3>
+<p><strong>Enunciado.</strong><br />
+Define en Python la siguiente matriz <span class="math notranslate nohighlight">\(A\)</span> (4×4) utilizando Numpy:</p>
+<figure class="align-default" id="fig-slice-matrix">
+<a class="reference internal image-reference" href="../_images/ejercicio2_tema5.png"><img alt="Matriz con submatrices coloreadas" src="../_images/ejercicio2_tema5.png" style="width: 50%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Matriz A</span><a class="headerlink" href="#fig-slice-matrix" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Trabajando con Numpy:</p>
+<ol class="arabic simple">
+<li><p>Obtén la <strong>submatriz en verde</strong> indicada en el enunciado original (ver figura de la matriz coloreada).</p></li>
+<li><p>Obtén la <strong>submatriz en rojo</strong>.</p></li>
+<li><p>Obtén la <strong>submatriz en azul</strong>.</p></li>
+<li><p>Calcula el resultado de <strong>multiplicar</strong> la matriz azul por la matriz verde (en ese orden, usando producto matricial).</p></li>
+<li><p>Obtén la <strong>exponencial</strong> de los elementos de la matriz roja (función <span class="math notranslate nohighlight">\(e^x\)</span> elemento a elemento).</p></li>
+<li><p>Calcula el <strong>valor mayor de la primera fila</strong> de <span class="math notranslate nohighlight">\(A\)</span> y el <strong>valor menor de la tercera columna</strong> de <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+</ol>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul>
+<li><p>Por convención, las importaciones suelen ser:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</li>
+<li><p>Para definir la matriz:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</li>
+<li><p>En Numpy, <strong>la indexación comienza en 0.</strong></p></li>
+<li><p>En Numpy, el slicing se hace con <code class="docutils literal notranslate"><span class="pre">matriz[inicio:fin_sin_incluir]</span></code> (el índice <code class="docutils literal notranslate"><span class="pre">fin</span></code> no se incluye). Ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">submatriz_roja</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># Filas 1 a 3, columnas 0 a 2</span>
+</pre></div>
+</div>
+</li>
+<li><p>El slicing <strong>no permite seleccionar filas y columnas no consecutivas.</strong> (La submatriz verde no puede obtenerse con slicing).</p></li>
+<li><p>No obstante, para una indexación similar a MATLAB (seleccionar filas y columnas concretas aunque sean no consecutivas) se recomienda usar:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sub</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ix_</span><span class="p">([</span><span class="n">filas</span><span class="p">],</span> <span class="p">[</span><span class="n">columnas</span><span class="p">])]</span>
+</pre></div>
+</div>
+<p>Por ejemplo, filas 0 y 2, columnas 1 y 2:<br />
+<code class="docutils literal notranslate"><span class="pre">A[np.ix_([0,</span> <span class="pre">2],</span> <span class="pre">[1,</span> <span class="pre">2])]</span></code></p>
+</li>
+<li><p>Producto matricial: <code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">A</span> <span class="pre">&#64;</span> <span class="pre">B</span></code> o <code class="docutils literal notranslate"><span class="pre">np.matmul(A,</span> <span class="pre">B)</span></code>.</p></li>
+<li><p>Exponencial elemento a elemento: <code class="docutils literal notranslate"><span class="pre">np.exp(matriz_roja)</span></code>.</p></li>
+<li><p>Primera fila: <code class="docutils literal notranslate"><span class="pre">A[0,</span> <span class="pre">:]</span></code>; tercera columna: <code class="docutils literal notranslate"><span class="pre">A[:,</span> <span class="pre">2]</span></code>.<br />
+Usa <code class="docutils literal notranslate"><span class="pre">np.max</span></code> y <code class="docutils literal notranslate"><span class="pre">np.min</span></code> según convenga.</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="ajuste-lineal-y-cuadratico-con-np-polyfit">
+<h3>3. Ajuste lineal y cuadrático con <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code><a class="headerlink" href="#ajuste-lineal-y-cuadratico-con-np-polyfit" title="Link to this heading">#</a></h3>
+<p><strong>Enunciado.</strong><br />
+Dispones de los siguientes <strong>valores experimentales</strong>:</p>
+<ul class="simple">
+<li><p>Variable independiente <span class="math notranslate nohighlight">\(x\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+x = [1.2,\ 2.5,\ 3.4,\ 4.0,\ 5.4,\ 6.1,\ 7.2,\ 8.1,\ 9.0,\ 10.1]
+\]</div>
+<ul class="simple">
+<li><p>Variable dependiente <span class="math notranslate nohighlight">\(y\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+y = [24.8,\ 24.5,\ 24.0,\ 23.3,\ 22.4,\ 21.3,\ 20.0,\ 18.5,\ 16.8,\ 14.9]
+\]</div>
+<p>Se pide:</p>
+<ol class="arabic simple">
+<li><p>Ajusta los datos a un <strong>modelo lineal</strong> <span class="math notranslate nohighlight">\(y = m x + b\)</span> utilizando <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> con grado 1.</p></li>
+<li><p>Ajusta los mismos datos a un <strong>modelo cuadrático</strong> <span class="math notranslate nohighlight">\(y = ax^2 + bx + c\)</span> utilizando <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> con grado 2.</p></li>
+<li><p>Representa los datos y los ajustes usando <code class="docutils literal notranslate"><span class="pre">subplot</span></code> en <strong>dos subplots diferentes</strong>, de forma que la figura resultante sea similar a la mostrada en la hoja de enunciados:</p>
+<ul class="simple">
+<li><p>Subplot 1: datos experimentales y recta del modelo lineal.</p></li>
+<li><p>Subplot 2: datos experimentales y curva del modelo cuadrático.</p></li>
+</ul>
+</li>
+<li><p>Muestra por pantalla los <strong>coeficientes</strong> del modelo lineal y del modelo cuadrático.</p></li>
+</ol>
+<figure class="align-default" id="fig-representation-linear-quadratic">
+<a class="reference internal image-reference" href="../_images/ejercicio3_tema5.png"><img alt="Representación de ajustes lineal y cuadrático" src="../_images/ejercicio3_tema5.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Representación de ajustes lineal y cuadrático</span><a class="headerlink" href="#fig-representation-linear-quadratic" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul>
+<li><p>Arrays de Numpy para los datos:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.4</span><span class="p">,</span> <span class="mf">6.1</span><span class="p">,</span> <span class="mf">7.2</span><span class="p">,</span> <span class="mf">8.1</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">10.1</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">24.8</span><span class="p">,</span> <span class="mf">24.5</span><span class="p">,</span> <span class="mf">24.0</span><span class="p">,</span> <span class="mf">23.3</span><span class="p">,</span> <span class="mf">22.4</span><span class="p">,</span> <span class="mf">21.3</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">18.5</span><span class="p">,</span> <span class="mf">16.8</span><span class="p">,</span> <span class="mf">14.9</span><span class="p">])</span>
+</pre></div>
+</div>
+</li>
+<li><p>Ajuste lineal:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">coef_lin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1"># [m, b]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Ajuste cuadrático:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">coef_quad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># [a, b, c]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Para evaluar los modelos:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y_lin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">coef_lin</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">y_quad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">coef_quad</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Para crear dos subplots:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Luego usa <code class="docutils literal notranslate"><span class="pre">ax1.plot(...)</span></code>, <code class="docutils literal notranslate"><span class="pre">ax2.plot(...)</span></code>, añade títulos, etiquetas y leyendas en cada subplot.</p>
+</li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="analisis-de-datos-meteorologicos-con-np-genfromtxt">
+<h3>4. Análisis de datos meteorológicos con <code class="docutils literal notranslate"><span class="pre">np.genfromtxt</span></code><a class="headerlink" href="#analisis-de-datos-meteorologicos-con-np-genfromtxt" title="Link to this heading">#</a></h3>
+<p><strong>Enunciado.</strong><br />
+Se dispone de un fichero <a class="reference download internal" download="" href="../_downloads/376a27d7757d8c0dfe4c441973499cde/estacion_2867.csv"><code class="xref download docutils literal notranslate"><span class="pre">estacion_2867.csv</span></code></a> (en el mismo directorio que tu programa) con información meteorológica de Matacán. Cada fila del fichero contiene:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Año},\ \text{Mes},\ \text{Día},\ \text{TempMedia},\ \text{TempMaxima},\ \text{TempMinima}
+\]</div>
+<ol class="arabic">
+<li><p>Carga los datos en una matriz Numpy llamada <code class="docutils literal notranslate"><span class="pre">matrix_datos</span></code> con:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matrix_datos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s1">&#39;estacion_2867.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Usando las funciones disponibles en Numpy, calcula y muestra por pantalla:</p>
+<ul class="simple">
+<li><p>La <strong>temperatura media</strong> de noviembre de <strong>1990</strong>.</p></li>
+<li><p>La <strong>temperatura máxima</strong> de noviembre de <strong>1992</strong>.</p></li>
+<li><p>La <strong>temperatura mínima</strong> del año <strong>2010</strong> (en cualquier mes).</p></li>
+</ul>
+</li>
+<li><p>Inicialmente, recorre las filas de la matriz con un bucle y <strong>almacena</strong> aquellos registros que cumplan las condiciones anteriores. Posteriormente, intenta resolver lo mismo utilizando las funciones de Numpy (boolean masks, <code class="docutils literal notranslate"><span class="pre">np.mean</span></code>, <code class="docutils literal notranslate"><span class="pre">np.max</span></code>, <code class="docutils literal notranslate"><span class="pre">np.min</span></code>…).</p></li>
+<li><p>Representa en una <strong>misma gráfica</strong> las temperaturas de los 3 años anteriores (1990, 1992 y 2010) del <strong>mes de noviembre</strong> (por ejemplo, la temperatura media) usando colores y marcadores distintos para cada año.</p>
+<ul class="simple">
+<li><p>El eje de las abscisas será el <strong>día del mes</strong>.</p></li>
+<li><p>Añade <strong>leyenda</strong>, título y etiquetas de ejes.</p></li>
+</ul>
+</li>
+</ol>
+<figure class="align-default" id="fig-representation-november-temperatures">
+<a class="reference internal image-reference" href="../_images/ejercicio4_tema5.png"><img alt="Temperaturas de noviembre de 1990, 1992 y 2010" src="../_images/ejercicio4_tema5.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Temperaturas de noviembre de 1990, 1992 y 2010 en la estación de Matacán (2867)</span><a class="headerlink" href="#fig-representation-november-temperatures" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul>
+<li><p>Si el fichero tiene cabecera, puedes necesitar <code class="docutils literal notranslate"><span class="pre">skip_header=1</span></code> en <code class="docutils literal notranslate"><span class="pre">np.genfromtxt</span></code>. Revisa el fichero para comprobarlo.</p></li>
+<li><p>Recuerda que las columnas se indexan como:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>col 0 -&gt; Año
+col 1 -&gt; Mes
+col 2 -&gt; Día
+col 3 -&gt; TempMedia
+col 4 -&gt; TempMaxima
+col 5 -&gt; TempMinima
+</pre></div>
+</div>
+</li>
+<li><p>Máscaras booleanas en Numpy, permiten filtrar filas que cumplen condiciones. Por ejemplo, para obtener los datos de noviembre de 1990:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mask_nov_1990</span> <span class="o">=</span> <span class="p">(</span><span class="n">matrix_datos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1990</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">matrix_datos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">datos_nov_1990</span> <span class="o">=</span> <span class="n">matrix_datos</span><span class="p">[</span><span class="n">mask_nov_1990</span><span class="p">]</span>
+<span class="n">temp_media_nov_1990</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">datos_nov_1990</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</li>
+<li><p>Para la representación, puedes obtener el vector de días con <code class="docutils literal notranslate"><span class="pre">datos_nov_1990[:,</span> <span class="pre">2]</span></code> y las temperaturas correspondientes con la columna que elijas.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="enunciados-adicionales">
+<h2>Enunciados adicionales<a class="headerlink" href="#enunciados-adicionales" title="Link to this heading">#</a></h2>
+<section id="visualizacion-de-la-serie-de-gregory-leibniz-para">
+<h3>5. Visualización de la serie de Gregory-Leibniz para π<a class="headerlink" href="#visualizacion-de-la-serie-de-gregory-leibniz-para" title="Link to this heading">#</a></h3>
+<p><strong>Enunciado.</strong><br />
+En el <strong>Tema 3</strong> implementaste un programa para calcular aproximaciones de π utilizando la <strong>serie de Gregory-Leibniz</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi \approx 4 \sum_{k=0}^{N} \frac{(-1)^k}{2k+1}
+\]</div>
+<p>Ahora, utilizando Numpy y Matplotlib:</p>
+<ol class="arabic simple">
+<li><p>Calcula un array con las <strong>aproximaciones parciales</strong> de π para distintos valores de <span class="math notranslate nohighlight">\(N\)</span> (por ejemplo, desde 1 hasta un valor suficientemente grande).</p></li>
+<li><p>Representa en una gráfica la <strong>evolución de la aproximación</strong> de π en función de <span class="math notranslate nohighlight">\(N\)</span> (en el eje x, el número de términos; en el eje y, el valor aproximado de π).</p></li>
+<li><p>Añade una línea horizontal con el valor real de <code class="docutils literal notranslate"><span class="pre">np.pi</span></code> para comparar visualmente la convergencia.</p></li>
+<li><p>Etiqueta los ejes, añade título y leyenda.</p></li>
+</ol>
+<figure class="align-default" id="fig-representation-pi-approximation">
+<a class="reference internal image-reference" href="../_images/pi_approximation.gif"><img alt="Aproximación de π mediante la serie de Gregory-Leibniz" src="../_images/pi_approximation.gif" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Aproximación de π mediante la serie de Gregory-Leibniz</span><a class="headerlink" href="#fig-representation-pi-approximation" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul>
+<li><p>Puedes generar una secuencia de Ns con <code class="docutils literal notranslate"><span class="pre">np.arange(1,</span> <span class="pre">N_max+1)</span></code>.</p></li>
+<li><p>Para crear las aproximaciones, o bien reutilizas tu código del Tema 3 adaptándolo a Numpy, o bien usas bucles y vas almacenando cada aproximación en una lista/array.</p></li>
+<li><p>Para la línea horizontal:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;π (np.pi)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Es interesante usar escala logarítmica en el eje x si quieres apreciar mejor la convergencia para grandes N (<code class="docutils literal notranslate"><span class="pre">plt.xscale('log')</span></code>), aunque no es obligatorio.</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="visualizacion-del-metodo-de-monte-carlo-para">
+<h3>6. Visualización del método de Monte Carlo para π<a class="headerlink" href="#visualizacion-del-metodo-de-monte-carlo-para" title="Link to this heading">#</a></h3>
+<p><strong>Enunciado.</strong><br />
+En el <strong>Tema 3</strong> resolviste el cálculo de π mediante el <strong>método de Monte Carlo</strong>, generando puntos aleatorios en el cuadrado <span class="math notranslate nohighlight">\([-1, 1] \times [-1, 1]\)</span> y contando cuántos caen dentro del círculo de radio 1 centrado en el origen.</p>
+<p>En este ejercicio, usando Numpy y Matplotlib:</p>
+<ol class="arabic simple">
+<li><p>Reutiliza o escribe una función que genere <strong>N puntos aleatorios</strong> en el cuadrado <span class="math notranslate nohighlight">\([-1, 1] \times [-1, 1]\)</span>.</p></li>
+<li><p>Determina qué puntos caen <strong>dentro</strong> del círculo <span class="math notranslate nohighlight">\(x^2 + y^2 \leq 1\)</span> y cuáles quedan <strong>fuera</strong>.</p></li>
+<li><p>Representa gráficamente:</p>
+<ul class="simple">
+<li><p>La <strong>circunferencia</strong> de radio 1 centrada en el origen.</p></li>
+<li><p>Los puntos que caen <strong>dentro</strong> del círculo en color azul.</p></li>
+<li><p>Los puntos que caen <strong>fuera</strong> del círculo en color rojo.</p></li>
+</ul>
+</li>
+<li><p>Calcula el valor aproximado de π con el método de Monte Carlo y muéstralo en el <strong>título de la figura</strong>.</p></li>
+<li><p>Asegúrate de que los ejes x e y tengan la misma escala para que el círculo parezca realmente un círculo.</p></li>
+</ol>
+<figure class="align-default" id="fig-representation-monte-carlo-pi-approximation">
+<a class="reference internal image-reference" href="../_images/monte_carlo_pi_approximation.gif"><img alt="Aproximación de π mediante Monte Carlo" src="../_images/monte_carlo_pi_approximation.gif" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Aproximación de π mediante Monte Carlo</span><a class="headerlink" href="#fig-representation-monte-carlo-pi-approximation" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="hint admonition">
+<p class="admonition-title">Recordatorio</p>
+<ul>
+<li><p>Generación de puntos aleatorios con Numpy:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Condición de pertenencia al círculo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dentro</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</li>
+<li><p>Estimación de π:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pi_est</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dentro</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
+</pre></div>
+</div>
+</li>
+<li><p>Para representar la circunferencia, puedes generar puntos en el círculo unitario:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p>Asegura la misma escala en ambos ejes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="recomendaciones-generales">
+<h2>Recomendaciones generales<a class="headerlink" href="#recomendaciones-generales" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Intenta <strong>vectorizar</strong> los cálculos usando Numpy en lugar de usar bucles siempre que sea posible.</p></li>
+<li><p>Etiqueta siempre los <strong>ejes</strong>, añade <strong>títulos</strong> descriptivos y <strong>leyendas</strong> claras.</p></li>
+<li><p>Ajusta límites de los ejes (<code class="docutils literal notranslate"><span class="pre">plt.xlim</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.ylim</span></code>) para que la información se vea bien.</p></li>
+<li><p>Para depurar, puedes imprimir dimensiones (<code class="docutils literal notranslate"><span class="pre">.shape</span></code>) de los arrays y comprobar que las operaciones matriciales tienen sentido.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "merismeris/python-TIF",
+            ref: "mi-cambio",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tema_5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="t5-python-matplotlib.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Matplotlib</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../tema_6/t6-python-pandas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Pandas</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enunciados-basicos">Enunciados básicos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays-funciones-y-representacion-con-matplotlib">1. Arrays, funciones y representación con Matplotlib</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submatrices-y-operaciones-matriciales-con-numpy">2. Submatrices y operaciones matriciales con Numpy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ajuste-lineal-y-cuadratico-con-np-polyfit">3. Ajuste lineal y cuadrático con <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-datos-meteorologicos-con-np-genfromtxt">4. Análisis de datos meteorológicos con <code class="docutils literal notranslate"><span class="pre">np.genfromtxt</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enunciados-adicionales">Enunciados adicionales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-la-serie-de-gregory-leibniz-para">5. Visualización de la serie de Gregory-Leibniz para π</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-del-metodo-de-monte-carlo-para">6. Visualización del método de Monte Carlo para π</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendaciones-generales">Recomendaciones generales</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By <a href="https://produccioncientifica.usal.es/investigadores/57777/detalle">María Navarro Cáceres</a> y <a href="https://produccioncientifica.usal.es/investigadores/148041/detalle">Álvaro Lozano Murciego</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+&copy; 2023-2025; CC-BY-NC-SA 4.0
+<p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
