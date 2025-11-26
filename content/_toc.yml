@@ -34,6 +34,7 @@ parts:
   - caption: Tema 6 Pandas y manejo de ficheros
     chapters:
     - file: tema_6/t6-python-pandas.ipynb
+    - file: tema_6/Ejercicios_tema_6
   - caption: Material adicional de Python
     chapters:
     - file: contenido_extra/misc
