@@ -559,7 +559,8 @@ Crea un <code class="docutils literal notranslate"><span class="pre">DataFrame</
 <p><strong>d)</strong> Busca y muestra por pantalla el astronauta con <strong>más horas de vuelo</strong>.</p>
 <p><strong>e)</strong> Obtén el número total de astronautas con <strong>un único vuelo</strong> (<code class="docutils literal notranslate"><span class="pre">Total</span> <span class="pre">Flights</span> <span class="pre">==</span> <span class="pre">1</span></code>). (Usa boolean indexing).</p>
 <p><strong>f)</strong> Obtén todos los astronautas <strong>estadounidenses</strong>. (Filtrado igual que el anterior).</p>
-<p><strong>g)</strong> Obtén la <strong>media de horas de vuelo por género</strong>. (Operaciones de estadística / agregación).</p>
+<p><strong>g)</strong> Obtén la <strong>media de horas de vuelo por género</strong>. (Operaciones de estadística / agregación).
+Filtra por género y calcula la media de la columna de minutos totales.</p>
 <div class="hint admonition">
 <p class="admonition-title">Recordatorio</p>
 <ul>
@@ -598,12 +599,6 @@ Crea un <code class="docutils literal notranslate"><span class="pre">DataFrame</
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">df[df[&quot;Total</span> <span class="pre">Flights&quot;]</span> <span class="pre">==</span> <span class="pre">1]</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">df[df[&quot;Country&quot;]</span> <span class="pre">==</span> <span class="pre">&quot;United</span> <span class="pre">States&quot;]</span></code></p></li>
-</ul>
-</li>
-<li><p>Media por grupos:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">df.groupby(&quot;Gender&quot;)[&quot;Total</span> <span class="pre">Minutes&quot;].mean()</span></code></p></li>
-<li><p>Si lo prefieres en horas, divide por <code class="docutils literal notranslate"><span class="pre">60</span></code>.</p></li>
 </ul>
 </li>
 </ul>

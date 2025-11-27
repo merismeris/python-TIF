@@ -72,6 +72,7 @@ A partir del `DataFrame` creado:
 **f)** Obtén todos los astronautas **estadounidenses**. (Filtrado igual que el anterior).
 
 **g)** Obtén la **media de horas de vuelo por género**. (Operaciones de estadística / agregación).
+Filtra por género y calcula la media de la columna de minutos totales.
 
 ````{admonition} Recordatorio
 :class: hint
@@ -101,9 +102,7 @@ A partir del `DataFrame` creado:
 - Filtrado booleano:
   - `df[df["Total Flights"] == 1]`
   - `df[df["Country"] == "United States"]`
-- Media por grupos:
-  - `df.groupby("Gender")["Total Minutes"].mean()`
-  - Si lo prefieres en horas, divide por `60`.
+
 ````
 
 ---
